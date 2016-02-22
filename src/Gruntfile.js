@@ -36,6 +36,7 @@ module.exports = function( grunt ) {
 			dist: {
 				files: {
 					'<%= dirs.js %>/main.min.js': [
+						'<%= dirs.js %>/src/*.js', // External libs/plugins
 						'<%= dirs.js %>/libs/*.js', // External libs/plugins
 						'<%= dirs.js %>/main.js'    // Custom JavaScript
 					]
@@ -87,7 +88,8 @@ module.exports = function( grunt ) {
 			},
 			js: {
 				files: [
-					'<%= jshint.all %>'
+					'<%= jshint.all %>',
+					'<%= dirs.js %>/src/*.js'
 				],
 				tasks: ['jshint', 'uglify']
 			},
