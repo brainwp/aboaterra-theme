@@ -87,3 +87,13 @@ if ( ! function_exists( 'odin_paging_nav' ) ) {
 		echo odin_pagination( $mid, $end, false );
 	}
 }
+/**
+ * Get user city
+ * @return string
+ */
+function get_the_city() {
+	if ( is_user_logged_in() && $field = get_user_meta( get_current_user_id(), 'user_city', true ) ) {
+		return apply_filters( 'woocommerce_get_the_city', $field );
+	}
+	return apply_filters( 'woocommerce_get_the_city', 'São Paulo' );
+}

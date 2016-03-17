@@ -65,6 +65,11 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 				'main-menu' => __( 'Main Menu', 'odin' )
 			)
 		);
+		register_nav_menus(
+			array(
+				'institucional' => __( 'Menu institucional', 'odin' )
+			)
+		);
 
 		/*
 		 * Add post_thumbnails suport.
@@ -302,3 +307,8 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/functions.php';
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 }
+
+/**
+ * WP Customizer ( kirki )
+ */
+require_once get_template_directory() . '/inc/customizer.php';

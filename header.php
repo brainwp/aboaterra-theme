@@ -29,28 +29,32 @@
 			<span class="skiplink-text"><?php _e( 'Skip to content', 'odin' ); ?></span>
 		</div>
 	</a>
-
+	<div class="col-md-12 prices-warn">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 pull-left text">
+					<?php if ( is_user_logged_in() ) : ?>
+						<?php _e( 'Bem-vindo ao nosso sítio!', 'odin' );?>
+					<?php else : ?>
+						<?php printf( __( 'Região de visitação - Preços praticados - %s. Faça o <a class="login-modal-open">log in</a> para conferir os preços na sua região' ), get_the_city() );?>
+					<?php endif;?>
+				</div><!-- .col-md-6 pull-left -->
+				<div class="col-md-4 pull-right text">
+					<?php if ( $value = get_theme_mod( 'phone', false ) ) : ?>
+						<i class="fa fa-phone"></i>
+						<a class="phone icon"><?php echo apply_filters( 'the_title', $value );?></a>
+					<?php endif; ?>
+					<?php if ( $value = get_theme_mod( 'whatsapp', false ) ) : ?>
+						<i class="fa fa-whatsapp"></i>
+						<a class="whatsapp icon"><?php echo apply_filters( 'the_title', $value );?></a>
+					<?php endif; ?>
+				</div><!-- .col-md-4 pull-right text -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .col-md-12 prices-warn -->
 	<header id="header" role="banner">
 		<div class="container">
-			<div class="page-header hidden-xs">
-				<?php if ( is_home() ) : ?>
-					<h1 class="site-title">
-						<a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<?php bloginfo( 'name' ); ?>
-						</a>
-					</h1>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-				<?php else : ?>
-					<div class="site-title h1">
-						<a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<?php bloginfo( 'name' ); ?>
-						</a>
-					</div>
-					<div class="site-description h2">
-						<?php bloginfo( 'description' ); ?>
-					</div>
-				<?php endif ?>
-
+			<div class="header-image col-md-4">
 				<?php
 					$header_image = get_header_image();
 					if ( ! empty( $header_image ) ) :
@@ -60,6 +64,68 @@
 					</a>
 				<?php endif; ?>
 			</div><!-- .site-header-->
+			<div class="col-md-7 pull-right">
+				<div class="col-md-8 pull-left search-form">
+					<?php get_search_form( true );?>
+				</div><!-- .col-md-7 pull-left search-form -->
+				<div class="col-md-4 pull-right woocommerce-infos">
+					<?php $myaccount_page = get_option( 'woocommerce_myaccount_page_id' );?>
+					<?php if ( $myaccount_page ) : ?>
+						<a href="<?php echo get_permalink( $myaccount_page );?>" class="myacc"><?php _e( 'minha conta', 'odin');?></a>
+						<span class="separator">|</span>
+					<?php endif;?>
+					<?php if ( function_exists( 'WC' ) ) : ?>
+						<a  class="myacc" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-shopping-cart"></i>
+							<span class="cart-infos">[<?php echo WC()->cart->get_cart_contents_count();?>]</span>
+						</a>
+						<?php if ( ! WC()->cart->is_empty() ) : ?>
+						<ul class="dropdown-menu cart-dropdown" aria-labelledby="dLabel">
+							<div class="col-md-12">
+								<div class="col-md-12 title"><?php _e( 'Carrinho', 'odin');?></div><!-- .col-md-12 -->
+								<div class="separator"></div><!-- .separator -->
+								<?php foreach( WC()->cart->get_cart() as $cart_item ) : ?>
+									<div class="col-md-4 pull-left img">
+										<?php if ( has_post_thumbnail( $cart_item['product_id'] ) ) : ?>
+											<?php echo get_the_post_thumbnail( $cart_item['product_id'], 'thumbnail', null );?>
+										<?php endif;?>
+									</div><!-- .col-md-6 pull-left img -->
+									<div class="col-md-7 pull-right">
+										<div class="post-title">
+											<?php echo apply_filters( 'the_title', $cart_item['data']->post->post_title );?>
+										</div><!-- .col-md-12 post-title -->
+										<div class="qty-infos">
+											<?php printf( '%s x %s %s', $cart_item['quantity'], get_woocommerce_currency_symbol(), $cart_item['line_total'] );?>
+										</div><!-- .col-md-12 qty-infos -->
+									</div><!-- .col-md-6 pull-right -->
+									<div class="separator"></div><!-- .separator -->
+								<?php endforeach;?>
+								<div class="post-title"><?php printf( __( 'Total de itens adicionados: <span>%s</span>', 'odin'), WC()->cart->get_cart_contents_count() );?></div><!-- .post-title -->
+								<div class="post-title"><?php printf( __( 'SUBTOTAL: <span>%s</span>', 'odin'), WC()->cart->get_cart_subtotal() );?></div><!-- .post-title -->
+								<div class="separator"></div><!-- .separator -->
+								<div class="post-title"><?php printf( __( 'TOTAL: <span class="big">%s</span>', 'odin'), WC()->cart->get_cart_total() );?></div><!-- .post-title -->
+								<div class="col-md-12 text-center">
+									<a href="<?php echo WC()->cart->get_cart_url();?>" class="btn btn-primary btn-large btn-buy"><?php _e( 'Comprar', 'odin' );?></a>
+								</div><!-- .col-md-12 text-center -->
+							</div><!-- .col-md-12 -->
+  						</ul>
+  						<?php endif;?>
+					<?php endif;?>
+				</div><!-- .col-md-4 pull-right -->
+			</div><!-- .col-md-6 pull-right -->
+			<div class="col-md-6 pull-right menu-institucional">
+				<?php echo wp_nav_menu(
+						array(
+							'theme_location' => 'institucional',
+							'depth'          => 2,
+							'container'      => false,
+							'menu_class'     => 'nav navbar-nav',
+							'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
+							'walker'         => new Odin_Bootstrap_Nav_Walker()
+						)
+					);
+				?>
+			</div><!-- .col-md-6 pull-right menu-institucional -->
 
 			<div id="main-navigation" class="navbar navbar-default">
 				<div class="navbar-header">
@@ -100,6 +166,3 @@
 
 		</div><!-- .container-->
 	</header><!-- #header -->
-
-	<div id="wrapper" class="container">
-		<div class="row">
