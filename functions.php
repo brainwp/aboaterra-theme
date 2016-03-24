@@ -24,6 +24,8 @@ if ( ! isset( $content_width ) ) {
  * Odin Classes.
  */
 require_once get_template_directory() . '/core/classes/class-bootstrap-nav.php';
+require_once get_template_directory() . '/inc/class-bootstrap-nav-boaterra.php';
+
 require_once get_template_directory() . '/core/classes/class-shortcodes.php';
 require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.php';
 // require_once get_template_directory() . '/core/classes/class-theme-options.php';
@@ -167,6 +169,8 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
+
+		add_image_size( 'mini-thumbnail', 80, 80 );
 	}
 }
 

@@ -147,20 +147,11 @@
 								'depth'          => 2,
 								'container'      => false,
 								'menu_class'     => 'nav navbar-nav',
-								'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
-								'walker'         => new Odin_Bootstrap_Nav_Walker()
+								'fallback_cb'    => 'Odin_Bootstrap_Boaterra_Nav_Walker::fallback',
+								'walker'         => new Odin_Bootstrap_Boaterra_Nav_Walker()
 							)
 						);
 					?>
-					<form method="get" class="navbar-form navbar-right" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-						<label for="navbar-search" class="sr-only">
-							<?php _e( 'Search:', 'odin' ); ?>
-						</label>
-						<div class="form-group">
-							<input type="search" class="form-control" name="s" id="navbar-search" />
-						</div>
-						<button type="submit" class="btn btn-default"><?php _e( 'Search', 'odin' ); ?></button>
-					</form>
 				</nav><!-- .navbar-collapse -->
 			</div><!-- #main-navigation-->
 
