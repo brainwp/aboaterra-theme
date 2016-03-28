@@ -146,10 +146,17 @@
 			height: 80px;
 			width: 80px;
     	}
+    	@media screen and (max-width: 480px) {
+    		img {
+    			display: none;
+    		}
+    	}
+
 	}
 	ul.nav > li > ul.dropdown-menu {
 		box-shadow: 0px 1px 2px 0px rgba(146,147,147,0.75) !important;
 		border-radius:0 !important;
+		background: rgba(255, 255, 255, 0.9) none repeat scroll 0% 0%;
 		a {
 			font-family: 'Source Sans Pro', sans-serif;
 			font-weight: 600;
@@ -171,6 +178,9 @@
 	}
 	ul.nav > li.open {
 		box-shadow: 0px -1px 5px 0px rgba(146,147,147, 0.75);
+	}
+	ul.nav li:last-child a span {
+		display:none;
 	}
 }
 #main-navigation {
