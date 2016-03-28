@@ -15,5 +15,6 @@ get_header(); ?>
 			<?php echo $brasa_slider->shortcode( array( 'name' => $slider_name, 'size' => 'full' ) );?>
 		<?php endif;?>
 	</section><!-- .col-md-12 home-slider -->
+	<?php get_template_part( '/parts/slider', 'destaques' );?>
 <?php
 get_footer();

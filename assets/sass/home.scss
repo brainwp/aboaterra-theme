@@ -9,3 +9,26 @@
 		max-width: 100% !important;
 	}
 }
+.slider-destaques {
+	@media screen and (min-width: 760px) {
+		.slick-slide {
+			padding-right:10px;
+		}
+	}
+}
+button.slick-prev {
+	width:40px;
+	height:60px;
+	background: url('../images/slider-prev.png') no-repeat !important;
+}
+button.slick-next {
+	width:40px;
+	height:60px;
+	background: url('../images/slider-next.png') no-repeat !important;
+}
+button.slick-prev, button.slick-next {
+	&:before {
+		content: '';
+		display:none;
+	}
+}
