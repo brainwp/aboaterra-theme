@@ -10,6 +10,10 @@ jQuery(document).ready(function($) {
 		}
 		else {
 			var value = value - 1;
+			if ( value < 1 ) {
+				return;
+			}
+
 		}
 		$input.val( value );
 		$input.trigger( 'change' );
