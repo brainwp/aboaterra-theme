@@ -5,7 +5,6 @@
  * @package Odin
  * @since 2.2.0
  */
-
 get_header(); ?>
 	<section class="home-slider">
 		<?php $slider_name = 'Home Slider';?>
@@ -16,5 +15,13 @@ get_header(); ?>
 		<?php endif;?>
 	</section><!-- .col-md-12 home-slider -->
 	<?php get_template_part( '/parts/slider', 'destaques' );?>
+	<?php get_template_part( '/parts/query', 'mais-pedidos' );?>
+	<div class="col-md-12">
+		<div class="container">
+			<div class="row">
+				<?php dynamic_sidebar( 'home-email-sidebar' ); ?>
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .col-md-12 -->
 <?php
-get_footer();
+get_footer( 'shop' );

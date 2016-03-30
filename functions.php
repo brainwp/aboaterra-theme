@@ -45,6 +45,11 @@ require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.p
  */
 require_once get_template_directory() . '/core/classes/widgets/class-widget-like-box.php';
 
+/**
+ * A Boa Terra Widgets
+ */
+require_once get_template_directory() . '/inc/widgets.php';
+
 if ( ! function_exists( 'odin_setup_features' ) ) {
 
 	/**
@@ -193,6 +198,18 @@ function odin_widgets_init() {
 			'after_title' => '</h3>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name' => __( 'Home E-mail Sidebar', 'odin' ),
+			'id' => 'home-email-sidebar',
+			'description' => __( 'Home E-mail Sidebar', 'odin' ),
+			'before_widget' => '',
+			'after_widget' => '',
+			'before_title' => '',
+			'after_title' => '',
+		)
+	);
+
 }
 
 add_action( 'widgets_init', 'odin_widgets_init' );
