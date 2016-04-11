@@ -209,7 +209,17 @@ function odin_widgets_init() {
 			'after_title' => '',
 		)
 	);
-
+	register_sidebar(
+		array(
+			'name' => __( 'Home Produtos Sidebar', 'odin' ),
+			'id' => 'home-produtos-sidebar',
+			'description' => __( 'Home Produtos Sidebar', 'odin' ),
+			'before_widget' => '',
+			'after_widget' => '',
+			'before_title' => '',
+			'after_title' => '',
+		)
+	);
 }
 
 add_action( 'widgets_init', 'odin_widgets_init' );

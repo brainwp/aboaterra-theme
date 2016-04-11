@@ -23,5 +23,12 @@ get_header(); ?>
 			</div><!-- .row -->
 		</div><!-- .container -->
 	</div><!-- .col-md-12 -->
+	<div class="col-md-12">
+		<div class="container">
+			<div class="row">
+				<?php dynamic_sidebar( 'home-produtos-sidebar' ); ?>
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .col-md-12 -->
 <?php
 get_footer( 'shop' );
