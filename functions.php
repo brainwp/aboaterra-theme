@@ -220,6 +220,29 @@ function odin_widgets_init() {
 			'after_title' => '',
 		)
 	);
+	register_sidebar(
+		array(
+			'name' => __( 'Footer', 'odin' ),
+			'id' => 'footer-sidebar',
+			'description' => __( 'Footer Sidebar', 'odin' ),
+			'before_widget' => '',
+			'after_widget' => '',
+			'before_title' => '',
+			'after_title' => '',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name' => __( 'Footer 2', 'odin' ),
+			'id' => 'footer-sidebar-2',
+			'description' => __( 'Footer Sidebar 2', 'odin' ),
+			'before_widget' => '',
+			'after_widget' => '',
+			'before_title' => '',
+			'after_title' => '',
+		)
+	);
 }
 
 add_action( 'widgets_init', 'odin_widgets_init' );
