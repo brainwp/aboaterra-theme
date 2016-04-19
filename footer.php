@@ -47,14 +47,21 @@
 							<i class="fa fa-facebook"></i>
 						</a>
 					<?php endif;?>
-					<?php if ( $value = get_theme_mod( 'facebook', false ) ) : ?>
+					<?php if ( $value = get_theme_mod( 'instagram', false ) ) : ?>
 						<a href="<?php echo esc_url( $value );?>" class="rounded-icon">
 							<i class="fa fa-instagram"></i>
 						</a>
 					<?php endif;?>
 				</div><!-- .col-md-12 -->
+				<div class="col-md-12">
+					<?php dynamic_sidebar( 'footer-sidebar-3' );?>
+				</div><!-- .col-md-12 -->
 			</div><!-- .col-md-3 footer-sidebar -->
-
+			<?php if ( is_active_sidebar( 'footer-sidebar-4' ) ) : ?>
+				<div class="col-md-3 footer-sidebar">
+					<?php dynamic_sidebar( 'footer-sidebar-4' );?>
+				</div><!-- .col-md-3 footer-sidebar -->
+			<?php endif;?>
 		</div><!-- .row -->
 	</div><!-- .container -->
 </footer><!-- #footer-default.col-md-12 -->

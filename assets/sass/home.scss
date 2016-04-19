@@ -128,7 +128,7 @@ button.slick-prev, button.slick-next {
 		display: inline;
 	}
 }
-#mdirector_widget_form {
+#mdirector_sh_suscription {
 	clear: both;
 	width:100%;
 	text-align: center;
@@ -138,10 +138,10 @@ button.slick-prev, button.slick-next {
 		padding-left: 30%;
 		padding-right: 12%;
 	}
-	.mdirector_widget_accept {
+	.mdirector_sh_accept {
 		display: none;
 	}
-	.widget_form_field:first-child {
+	.mdirector_sh_field:first-child {
 		float: left;
 		width:50%;
 		display: block;
@@ -163,10 +163,10 @@ button.slick-prev, button.slick-next {
 			text-transform: lowercase !important;
 		}
 	}
-	#md_frequency {
+	#md_sh_frequency {
 		display: none;
 	}
-	.widget_form_field > .widget_form_field {
+	.mdirector_sh_field {
 		float:left;
 		padding-left:20px;
 		margin-bottom: 0 !important;
@@ -186,10 +186,6 @@ button.slick-prev, button.slick-next {
 			clear:both;
 			padding:0 !important;
 		}
-
-	}
-	.widget_form_field {
-		margin-bottom: 0 !important;
 	}
 }
 .md_success_handling {

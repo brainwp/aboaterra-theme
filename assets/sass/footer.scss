@@ -38,6 +38,24 @@
 		&:last-child {
 			border-right:0 solid transparent !important;
 		}
+		#mdirector_sh_suscription {
+			padding:0 !important;
+			input {
+				color: #4b4a4a !important;
+			}
+			.mdirector_sh_field:first-child {
+				width:100% !important;
+			}
+			.mdirector_sh_field {
+				padding:0 !important;
+			}
+			button {
+				font-size:1.0em !important;
+			}
+		}
+		.textwidget {
+			padding-top:10px !important;
+		}
 	}
 }
 .rounded-icon {

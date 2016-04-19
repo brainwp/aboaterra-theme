@@ -222,7 +222,7 @@ function odin_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name' => __( 'Footer', 'odin' ),
+			'name' => __( 'Rodapé 1', 'odin' ),
 			'id' => 'footer-sidebar',
 			'description' => __( 'Footer Sidebar', 'odin' ),
 			'before_widget' => '',
@@ -234,9 +234,31 @@ function odin_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name' => __( 'Footer 2', 'odin' ),
+			'name' => __( 'Rodapé 2', 'odin' ),
 			'id' => 'footer-sidebar-2',
 			'description' => __( 'Footer Sidebar 2', 'odin' ),
+			'before_widget' => '',
+			'after_widget' => '',
+			'before_title' => '',
+			'after_title' => '',
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => __( 'Rodapé 3', 'odin' ),
+			'id' => 'footer-sidebar-3',
+			'description' => __( 'Footer Sidebar 3', 'odin' ),
+			'before_widget' => '',
+			'after_widget' => '',
+			'before_title' => '',
+			'after_title' => '',
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => __( 'Rodapé 4', 'odin' ),
+			'id' => 'footer-sidebar-4',
+			'description' => __( 'Footer Sidebar 4', 'odin' ),
 			'before_widget' => '',
 			'after_widget' => '',
 			'before_title' => '',
