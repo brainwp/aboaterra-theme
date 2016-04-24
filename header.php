@@ -22,7 +22,7 @@
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>
-<div class="col-md-12"></div><!-- .col-md-12 -->
+<div class="col-md-12">ahoy</div><!-- .col-md-12 -->
 <body <?php body_class(); ?>>
 	<a id="skippy" class="sr-only sr-only-focusable" href="#content">
 		<div class="container">
