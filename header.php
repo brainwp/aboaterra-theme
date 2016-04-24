@@ -22,7 +22,7 @@
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>
-
+TESTE <BR><BR>
 <body <?php body_class(); ?>>
 	<a id="skippy" class="sr-only sr-only-focusable" href="#content">
 		<div class="container">

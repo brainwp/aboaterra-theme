@@ -205,7 +205,7 @@ module.exports = function( grunt ) {
 					'!../**.zip',
 					'<%= dirs.js %>/main.min.js'
 				],
-				dest: '../<%= pkg.name %>.zip'
+				dest: '../../<%= pkg.name %>.zip'
 			}
 		},
 
@@ -341,10 +341,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'ftp', ['ftp-deploy'] );
 
 	// Compress
-	grunt.registerTask( 'compress', [
-		'default',
-		'zip'
-	] );
+	grunt.registerTask( 'compress', ['zip'] );
 
 	// Bootstrap Task
 	grunt.registerTask( 'bootstrap', [

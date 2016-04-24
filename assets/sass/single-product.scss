@@ -1,0 +1,41 @@
+.breadcrumb {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600 !important;
+	background: none !important;
+	margin-top:-20px;
+
+	li + li::before {
+		content: ' > ' !important;
+		color: #969494 !important;
+	}
+	li *, li {
+		color:#969494 !important;
+		text-transform: uppercase;
+	}
+}
+body.woocommerce {
+	#main-navigation .navbar-collapse {
+		border-bottom: 3px solid #912d1e !important;
+	}
+	.woocommerce-main {
+		display: flex;
+		justify-content:center;
+	}
+	.product img {
+		border:1px solid #E3E3E3;
+	}
+	.woocommerce-main img {
+		padding:10px;
+	}
+	.zoom::before {
+		font: normal normal normal 14px/1 FontAwesome;
+		content: '\f002';
+		color: #000;
+		float: right;
+		font-size: 16px;
+		margin-top: -5px;
+		margin-bottom: -30px;
+		margin-right: 10px;
+		padding-top: 15px;
+	}
+}
