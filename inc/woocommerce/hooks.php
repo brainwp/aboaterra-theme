@@ -55,3 +55,12 @@ add_action( 'odin_content_top', 'woocommerce_breadcrumb', 10 );
 add_filter( 'woocommerce_product_thumbnails_columns', 	'odin_thumbnail_columns' );;
 add_filter( 'loop_shop_per_page', 						'odin_products_per_page' );
 add_filter( 'loop_shop_columns', 						'odin_loop_columns' );
+
+/**
+ * Show link to cart in single product
+ * @return write
+ */
+function show_cart_link_after_btn() {
+	printf( '<a href="%s" class="btn btn-primary btn-cart-link">%s</a>', WC()->cart->get_cart_url(), __( 'Finalizar compra', 'odin' ) );
+}
+add_action( 'woocommerce_after_add_to_cart_button', 'show_cart_link_after_btn' );

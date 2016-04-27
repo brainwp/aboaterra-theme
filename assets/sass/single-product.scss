@@ -38,4 +38,37 @@ body.woocommerce {
 		margin-right: 10px;
 		padding-top: 15px;
 	}
+	.single_add_to_cart_button {
+		font-family: 'BELLABOO-Regular', sans-serif !important;
+		text-align: center;
+		border:none !important;
+		background:#fbb958 !important;
+		color:#FFF !important;
+		display: inline-block;
+		margin-top:20px;
+		border-radius: 0 !important;
+		font-size:1.5em !important;
+		font-weight: normal !important;
+		clear: both;
+		width:100%;
+		margin-top:20px !important;
+		margin-bottom:10px;
+	}
 }
+.btn-cart-link {
+	font-family: 'BELLABOO-Regular', sans-serif !important;
+	text-align: center;
+	border:none !important;
+	background:#b6b4b2 !important;
+	color:#FFF !important;
+	display: inline-block;
+	margin-top:20px;
+	border-radius: 0 !important;
+	font-size:1.5em !important;
+	font-weight: normal !important;
+	clear: both;
+	width:100%;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
