@@ -64,7 +64,10 @@ function show_cart_link_after_btn() {
 	printf( '<a href="%s" class="btn btn-primary btn-cart-link">%s</a>', WC()->cart->get_cart_url(), __( 'Finalizar compra', 'odin' ) );
 }
 add_action( 'woocommerce_after_add_to_cart_button', 'show_cart_link_after_btn' );
-
+/**
+ * Show input qty on single product
+ * @return write
+ */
 function show_select_qty_btn_single() {
 	global $product;
 	$qty = ( isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 );
@@ -77,3 +80,6 @@ function show_select_qty_btn_single() {
 	}
 }
 add_action( 'woocommerce_before_add_to_cart_button', 'show_select_qty_btn_single' );
+
+// remove related products
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
