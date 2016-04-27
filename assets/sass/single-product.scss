@@ -54,6 +54,64 @@ body.woocommerce {
 		margin-top:20px !important;
 		margin-bottom:10px;
 	}
+	#reviews{
+		margin-top: 50px;
+	    border-top: 3px solid #cdcbcb;
+	    padding-left: 60px;
+	    padding-right: 60px;
+	    padding-top: 20px;
+	}
+	#reviews h2{
+		color:#8e2f20;
+		font-size: 18px;
+		text-transform: uppercase;
+		font-weight: bold;
+		margin-bottom: 30px;
+	}
+
+	.star-rating span:before{
+		color: #fbb958;
+	}
+	p.stars a{
+		color: #fbb958;
+	}
+	#reviews h3{
+		font-size: 16px;
+	    text-transform: uppercase;
+	    font-weight: bold;
+	    margin-bottom: 15px;
+
+	}
+
+	#review_form #respond{
+		margin-left: 40px;
+    	margin-top: 20px;
+	}
+	#review_form #respond textarea{
+		padding-left: 5px;
+	}
+	#respond input {
+	    width: 100%;
+	    padding-left: 5px;
+	}
+	#review_form #respond p{
+		text-transform: uppercase;
+	}
+	#review_form #respond .form-submit input{
+		text-transform: uppercase;
+    	background-color: #fbb958;
+    	color:white;
+    	transition: all 200ms ease-in-out;
+
+	}
+	#review_form #respond .form-submit input:hover{
+    	background-color: #f7c478;
+    	transition: all 200ms ease-in-out;
+
+	}
+
+
+
 }
 .btn-cart-link {
 	font-family: 'BELLABOO-Regular', sans-serif !important;
@@ -71,4 +129,5 @@ body.woocommerce {
 	margin-top:10px;
 	margin-bottom:10px;
 }
+
 
