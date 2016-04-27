@@ -64,3 +64,16 @@ function show_cart_link_after_btn() {
 	printf( '<a href="%s" class="btn btn-primary btn-cart-link">%s</a>', WC()->cart->get_cart_url(), __( 'Finalizar compra', 'odin' ) );
 }
 add_action( 'woocommerce_after_add_to_cart_button', 'show_cart_link_after_btn' );
+
+function show_select_qty_btn_single() {
+	global $product;
+	$qty = ( isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 );
+	if ( ! $product->is_sold_individually() ) {
+		echo '<div class="buttons-qty">';
+		echo '<span>+</span>';
+ 		echo '<input class="single-product" data-id="' . $product->id . '" type="text" value="' . $qty . '" />';
+ 		echo '<span>-</span>';
+ 		echo '</div>';
+	}
+}
+add_action( 'woocommerce_before_add_to_cart_button', 'show_select_qty_btn_single' );

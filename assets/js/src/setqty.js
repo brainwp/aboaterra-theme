@@ -7,8 +7,7 @@ jQuery(document).ready(function($) {
 
 		if ( $( this ).html() == '+' ) {
 			var value = value + 1;
-		}
-		else {
+		} else {
 			var value = value - 1;
 			if ( value < 1 ) {
 				return;
@@ -19,7 +18,11 @@ jQuery(document).ready(function($) {
 		$input.trigger( 'change' );
 	});
 	$( '.woocommerce .buttons-qty input').on( 'change', function(e){
-		var $button_cart = $( '.woocommerce .products .post-' + $( this ).attr( 'data-id') + ' .ajax_add_to_cart' );
-		$button_cart.attr( 'data-quantity', $( this ).val() );
+		if ( $( this ).hasClass( 'single-product' ) ) {
+			$( 'input[name="quantity"]').val( $( this ).val() );
+		} else {
+			var $button_cart = $( '.woocommerce .products .post-' + $( this ).attr( 'data-id') + ' .ajax_add_to_cart' );
+			$button_cart.attr( 'data-quantity', $( this ).val() );
+		}
 	});
 });

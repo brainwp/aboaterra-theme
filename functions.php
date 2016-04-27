@@ -388,3 +388,9 @@ if ( is_woocommerce_activated() ) {
  * WP Customizer ( kirki )
  */
 require_once get_template_directory() . '/inc/customizer.php';
+
+/**
+ * ACF and Fields.
+ */
+require_once get_template_directory() . '/inc/acf/acf.php';
+require_once get_template_directory() . '/inc/custom-fields.php';
