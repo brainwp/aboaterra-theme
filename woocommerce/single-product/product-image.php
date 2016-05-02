@@ -52,6 +52,7 @@ $parent_product_post = $post;
 
 	<?php do_action( 'woocommerce_product_thumbnails' ); ?>
 </div>
+<?php if ( $product->is_type( 'grouped' ) ) : ?>
 <div class="product-grouped">
 	<?php
 	foreach ( $product->get_children() as $product_id ) :
@@ -76,3 +77,4 @@ $parent_product_post = $post;
 	setup_postdata( $parent_product_post );
 	?>
 </div><!-- .product-grouped -->
+<?php endif;?>
