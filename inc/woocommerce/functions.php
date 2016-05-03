@@ -13,9 +13,14 @@ if ( ! function_exists( 'odin_before_content' ) ) {
 	 * @return  void
 	 */
 	function odin_before_content() {
-		?>
-		<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
-		<?php
+		global $post;
+		$product = wc_get_product( $post->ID );
+
+		if ( is_object( $product ) && $product->is_type( 'yith_bundle' ) ) : ?>
+			<main id="content" class="col-md-10" tabindex="-1" role="main">
+		<?php else: ?>
+			<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
+		<?php endif;
 	}
 }
 
