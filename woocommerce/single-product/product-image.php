@@ -54,6 +54,9 @@ $parent_product_post = $post;
 </div>
 <?php if ( $product->is_type( 'yith_bundle' ) ) : ?>
 <div class="product-grouped">
+	<span class="col-md-12 product-grouped-list section-title">
+		<?php _e( 'Itens: ', 'odin' );?>
+	</span>
 	<?php
 	foreach ( $product->get_bundled_items() as $product_item ) :
 		$product_id = $product_item->product_id;

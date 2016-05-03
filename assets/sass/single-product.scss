@@ -191,7 +191,7 @@ body.woocommerce {
 
 div.product-type-yith_bundle{
 	margin-bottom: 100px;
-	.product-grouped{
+	.product-grouped {
 		float: left;
 		width: 15%;
 		font-size:15px;
@@ -209,4 +209,29 @@ div.product-type-yith_bundle{
 	table.yith-wcpb-product-bundled-items {
 		display: none !important;
 	}
+	.section-title {
+		display: none !important;
+	}
+	@media screen and (min-width: 700px) {
+		.product-grouped-list {
+			display: inline-block;
+			clear: both;
+		}
+	}
+	@media screen and (max-width: 700px) {
+		.product-grouped {
+			width:100%;
+			clear: both;
+		}
+		.section-title {
+			display: inline-block !important;
+		}
+		.entry-summary {
+			float:left;
+			width:100% !important;
+			clear: both;
+			padding-top:30px;
+		}
+	}
+
 }
