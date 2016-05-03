@@ -59,8 +59,11 @@ body.woocommerce {
 	#reviews{
 		margin-top: 50px;
 	    border-top: 3px solid #cdcbcb;
-	    padding-left: 60px;
-	    padding-right: 60px;
+	    @media screen and (min-width: 700px) {
+	    	padding-left: 60px;
+	    	padding-right: 60px;
+	    }
+
 	    padding-top: 20px;
 	    margin-bottom: 80px;
 	}
@@ -212,13 +215,13 @@ div.product-type-yith_bundle{
 	.section-title {
 		display: none !important;
 	}
-	@media screen and (min-width: 700px) {
+	@media screen and (min-width: 780px) {
 		.product-grouped-list {
 			display: inline-block;
 			clear: both;
 		}
 	}
-	@media screen and (max-width: 700px) {
+	@media screen and (max-width: 780px) {
 		.product-grouped {
 			width:100%;
 			clear: both;
