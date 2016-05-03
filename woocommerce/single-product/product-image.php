@@ -52,10 +52,11 @@ $parent_product_post = $post;
 
 	<?php do_action( 'woocommerce_product_thumbnails' ); ?>
 </div>
-<?php if ( $product->is_type( 'grouped' ) ) : ?>
+<?php if ( $product->is_type( 'yith_bundle' ) ) : ?>
 <div class="product-grouped">
 	<?php
-	foreach ( $product->get_children() as $product_id ) :
+	foreach ( $product->get_bundled_items() as $product_item ) :
+		$product_id = $product_item->product_id;
 		if ( ! $product = wc_get_product( $product_id ) ) {
 			continue;
 		}
