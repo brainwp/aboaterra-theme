@@ -43,7 +43,7 @@ body.woocommerce {
 		font-family: 'BELLABOO-Regular', sans-serif !important;
 		text-align: center;
 		border:none !important;
-		background:#fbb958 !important;
+		background:#ff6600 !important;
 		color:#FFF !important;
 		display: inline-block;
 		margin-top:20px;
@@ -62,6 +62,7 @@ body.woocommerce {
 	    padding-left: 60px;
 	    padding-right: 60px;
 	    padding-top: 20px;
+	    margin-bottom: 80px;
 	}
 	#reviews h2{
 		color:#8e2f20;
@@ -116,7 +117,7 @@ body.woocommerce {
 		text-align: center;
 	}
 	.entry-title {
-		color:#969494 !important;
+		color:#999999 !important;
 		text-transform: uppercase;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 600 !important;
@@ -166,6 +167,8 @@ body.woocommerce {
 	.entry-summary .buttons-qty {
 		display: flex;
 		justify-content:center;
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 }
 .btn-cart-link {
@@ -186,4 +189,22 @@ body.woocommerce {
 	box-shadow: 0px 1px 5px 0px rgba(180,180,181,0.75);
 }
 
+div.product-type-grouped{
+	margin-bottom: 100px;
+	.product-grouped{
+		float: left;
+		width: 15%;
+		font-size:15px;
+		color: #929391;
+		text-align: left;
+		font-weight: bold;
+	}
+	.entry-summary{
+		float: right;
+		width: 28%!important;
+	}
+	.product-grouped-list{
+		margin-bottom: 1.8px;
+	}
 
+}
