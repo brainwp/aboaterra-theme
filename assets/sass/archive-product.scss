@@ -1,0 +1,38 @@
+body.woocommerce.archive {
+
+	.woocommerce-result-count {
+		display: none;
+	}
+	select.orderby {
+		display: none;
+	}
+	#main-navigation .navbar-collapse {
+		border-bottom: 3px solid #cbcbcb !important;
+	}
+}
+nav.woocommerce-pagination {
+	float: right;
+	padding-bottom:30px;
+
+	ul {
+		border:none !important;
+	}
+	li {
+		border:none !important;
+	}
+	* {
+		border: none !important;
+		background: transparent !important;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: 600;
+	}
+	li * {
+		font-weight: 600 !important;
+		font-size:1.3em !important;
+		color:#929393 !important;
+	}
+	li .current {
+		color:#912d1e !important;
+	}
+
+}
