@@ -1,0 +1,74 @@
+body.woocommerce-account {
+	.navbar-collapse{
+		border-bottom: 3px solid #ccc!important;
+	}
+	main#content{
+		display: flex;
+		justify-content: center;
+	}
+	.entry-title{
+		font-family: 'BELLABOO-Regular', sans-serif;
+		color: #912d1e;
+		font-size: 2.5em;
+	}
+	p.myaccount_user{
+		text-transform: uppercase;
+	}
+
+	table.shop_table{
+		border-radius: 0px;
+		border:1px solid #dcddde;
+		margin-top: 20px;
+	}
+	table.shop_table thead{
+		background-color: #dcddde;
+		text-transform: uppercase;
+		font-weight: bold;
+
+	}
+
+	a.button{
+		color: white;
+		border-radius: 0px;
+		background-color: #f46d0b;
+
+	}
+	table.my_account_orders th{
+		padding: 7px;
+	}
+
+	.entry-content table>thead:first-child>tr:first-child>th{
+		font-size: 1.25em;
+    	color: #929393;
+	}
+
+	a.button:hover{
+		background-color: #ea6a0d;
+	}
+
+	.myaccount_address{
+		text-transform: uppercase;
+	}
+	.address .title h3{
+		font-family: 'BELLABOO-Regular', sans-serif;
+		color: #912d1e;
+		font-size: 1.69em;
+		display: inline-block;
+		padding-right: 10px;
+	}
+	.address address{
+		text-transform: uppercase;
+	    font-weight: bold;
+	    font-size: 1.1em;
+	}
+
+}
+
+.woocommerce-account .woocommerce{
+	h2{
+		font-family: 'BELLABOO-Regular', sans-serif;
+		color: #912d1e;
+		font-size: 1.69em;
+	}
+}
+
