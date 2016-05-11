@@ -83,3 +83,6 @@ add_action( 'woocommerce_before_add_to_cart_button', 'show_select_qty_btn_single
 
 // remove related products
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+// remove payment from review section on checkout
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );

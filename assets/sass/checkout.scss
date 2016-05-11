@@ -1,0 +1,12 @@
+#order_review {
+	.woocommerce-info {
+		display: none !important;
+	}
+}
+.each-product-checkout {
+	display: inline-block;
+	clear: both;
+}
+.woocommerce-billing-fields > h3:first-child{
+	display: none !important;
+}
