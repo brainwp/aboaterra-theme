@@ -189,15 +189,25 @@ body.woocommerce-checkout{
 	    color: #a3a4a4;
 	    font-family: 'Source Sans Pro', sans-serif;
 	    text-transform: lowercase;
-	    font-weight: bold;
+	    font-weight: bolder;
 	}
 
-	.each-product-checkout .name{
-	    line-height: 3.5;
+	.each-product-checkout .price{
+	    line-height: 3.4em;
 	    color: #a3a4a4;
 	    font-family: 'Source Sans Pro', sans-serif;
-	    text-transform: lowercase;
-	    font-weight: bold;
+	    font-weight: 700;
+	    letter-spacing: 0.2px;
+	}
+
+	.review-order-section .row{
+		border-bottom: 1px solid;
+    	margin-bottom: 5px;
+	}
+
+	.section-info{
+		font-size: 14px;
+    	display: inline-block;
 	}
 
 
