@@ -1,0 +1,41 @@
+body.woocommerce-checkout{
+	#order_review {
+		.woocommerce-info {
+			display: none !important;
+		}
+	}
+	.each-product-checkout {
+		display: inline-block;
+		clear: both;
+	}
+	.woocommerce-billing-fields > h3:first-child{
+		display: none !important;
+	}
+	.entry-header .entry-title{
+		font-family: 'BELLABOO-Regular', sans-serif;
+	    color: #912d1e;
+	    font-size: 2.1em;
+	    background: none !important;
+	}
+	.navbar-default .navbar-collapse{
+		border-bottom: 3px solid #ccc !important;
+	}
+	.woocommerce-info{
+		border-color:#912d1e;
+		text-transform: uppercase;
+		padding: 0.5em 1em 0.5em 1.75em!important;
+		margin-top: 0.4em!important;
+
+	}
+	.woocommerce-info:before{
+		color: #912d1e;
+		content: '';
+	}
+	.section-block{
+		border: 1px solid #929393;
+	    border-radius: 3px;
+	    padding-top: 15px;
+	    color: #929393;
+	}
+}
+
