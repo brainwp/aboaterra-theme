@@ -40,9 +40,14 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 					<h3 class="section-title"><?php _e( 'Dados pessoais', 'odin');?></h3><!-- .section-title -->
 					<div class="col-md-12 section-block">
 						<?php do_action( 'woocommerce_checkout_billing' ); ?>
+						<div class="col-md-12 text-center">
+							<a href="#delivery-col" class="btn btn-next btn-animation-next">
+								<?php _e( 'Ir para entrega' );?>
+							</a>
+						</div><!-- .col-md-12 text-center -->
 					</div><!-- .col-md-12 section-block -->
 				</div><!-- .col-md-4 -->
-				<div class="col-md-4 checkout-col">
+				<div class="col-md-4 checkout-col" id="delivery-col">
 					<div id="customer-details">
 						<h3 class="section-title"><?php _e( 'Entrega', 'odin');?></h3><!-- .section-title -->
 						<div class="col-md-12 section-block">
@@ -56,10 +61,15 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 								<?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
 
 							<?php endif; ?>
+							<div class="col-md-12 text-center">
+								<a href="#payment-block" class="btn btn-next btn-animation-next">
+									<?php _e( 'Ir para o pagamento' );?>
+								</a>
+							</div><!-- .col-md-12 text-center -->
 						</div>
 					</div><!-- #customer-details -->
 					<h3 class="section-title"><?php _e( 'Pagamento', 'odin');?></h3><!-- .section-title -->
-					<div class="col-md-12 section-block">
+					<div class="col-md-12 section-block" id="payment-block">
 						<?php woocommerce_checkout_payment();?>
 					</div><!-- .col-md-12 section-block -->
 				</div><!-- .col-md-4 -->
