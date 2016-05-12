@@ -21,7 +21,6 @@ body.woocommerce-checkout{
 		border-bottom: 3px solid #ccc !important;
 	}
 	.woocommerce-info{
-		border-color:#912d1e;
 		text-transform: uppercase;
 		padding: 0.5em 1em 0.5em 1.75em!important;
 		margin-top: 0.4em!important;
@@ -245,7 +244,7 @@ body.woocommerce-checkout{
 		height: 3em;
 	}
 
-	input.button {
+	input.button, .btn-next {
 	    font-size: 1.4em;
 	    margin: 0;
 	    line-height: 1;
@@ -268,7 +267,6 @@ body.woocommerce-checkout{
 	    -webkit-box-shadow: none;
 	    text-shadow: none;
 	    font-family: 'BELLABOO-Regular', sans-serif;
-	    box-shadow: 0px 1px 5px 0px rgba(251,185,88,0.75) !important;
 	}
 
 	.woocommerce input.button:hover {
@@ -277,10 +275,21 @@ body.woocommerce-checkout{
 	    background-image: none;
 	    color: white;
 	}
-
-
-
-
-
+	.checkout-column {
+		padding:0 !important;
+	}
+	.wc_payment_methods {
+		border:0 !important;
+	}
+	input[name="apply_coupon"] {
+		box-shadow: none !important;
+	}
+	.btn-next {
+		margin-bottom:10px;
+	}
+	.payment_box .form-row {
+		width:100% !important;
+		clear:both;
+	}
 }
 

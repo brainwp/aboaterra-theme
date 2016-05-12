@@ -57,6 +57,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php wc_cart_totals_subtotal_html(); ?>
 			</div><!-- .col-md-12 cart-subtotal -->
 
+			<div class="col-md-12 cart-subtotal delivery" style="display:none;">
+				<h5 class="section-info"><?php _e( 'Frete', 'odin');?></h5><!-- .section-info -->
+				<span class="amount"></span>
+			</div><!-- .col-md-12 cart-subtotal -->
+
 			<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
 				<div class="col-md-12 coupon title">
 					<?php wc_cart_totals_coupon_label( $coupon ); ?>
@@ -75,14 +80,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div><!-- .col-md-12 cart-subtotal -->
 
 		<?php endforeach; ?>
+		<?php if ( wc_tax_enabled() && 'excl' === WC()->cart->tax_display_cart ) : ?>
+			<?php if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) : ?>
+				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
+					<div class="col-md-12 total">
+						<?php echo esc_html( $tax->label ); ?>
+						<?php echo wp_kses_post( $tax->formatted_amount ); ?>
+					</div><!-- .col-md-12 total -->
+				<?php endforeach; ?>
+			<?php else : ?>
+				<div class="col-md-12 total">
+					<?php echo esc_html( WC()->countries->tax_or_vat() ); ?>
+					<?php wc_cart_totals_taxes_total_html(); ?>
+				</div><!-- .col-md-12 total -->
+			<?php endif; ?>
+		<?php endif; ?>
+		<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
-		<?php //do_action( 'woocommerce_review_order_before_order_total' ); ?>
-
-			<div class="col-md-12 total">
+			<div class="col-md-12 total" id="checkout-total">
 				<?php _e( 'Total:', 'odin');?>
 				<?php wc_cart_totals_order_total_html(); ?>
 			</div><!-- .col-md-12 total -->
 		<?php do_action( 'woocommerce_review_order_after_order_total' ); ?>
-
 	</div><!-- .row -->
 </div><!-- .col-md-12 review-order-section -->
