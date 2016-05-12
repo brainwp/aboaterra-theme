@@ -287,5 +287,9 @@ body.woocommerce-checkout{
 	.btn-next {
 		margin-bottom:10px;
 	}
+	.payment-box .form-row {
+		width:100% !important;
+		clear:both;
+	}
 }
 
