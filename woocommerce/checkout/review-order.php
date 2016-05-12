@@ -102,6 +102,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php wc_cart_totals_order_total_html(); ?>
 			</div><!-- .col-md-12 total -->
 		<?php do_action( 'woocommerce_review_order_after_order_total' ); ?>
-
 	</div><!-- .row -->
 </div><!-- .col-md-12 review-order-section -->

@@ -280,5 +280,11 @@ body.woocommerce-checkout{
 	.checkout-column {
 		padding:0 !important;
 	}
+	.wc_payment_methods {
+		border:0 !important;
+	}
+	input[name="apply_coupon"] {
+		box-shadow: none !important;
+	}
 }
 
