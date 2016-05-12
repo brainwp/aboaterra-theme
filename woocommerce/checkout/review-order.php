@@ -97,7 +97,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php endif; ?>
 		<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
-			<div class="col-md-12 total">
+			<div class="col-md-12 total" id="checkout-total">
 				<?php _e( 'Total:', 'odin');?>
 				<?php wc_cart_totals_order_total_html(); ?>
 			</div><!-- .col-md-12 total -->
