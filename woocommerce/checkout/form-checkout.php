@@ -32,18 +32,17 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 
 ?>
 <div class="col-md-12 form-checkout">
-	<div class="container">
-		<div class="row">
+	<div class="row">
 			<form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
 				<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
-				<div class="col-md-4">
+				<div class="col-md-4 checkout-column">
 					<h3 class="section-title"><?php _e( 'Dados pessoais', 'odin');?></h3><!-- .section-title -->
 					<div class="col-md-12 section-block">
 						<?php do_action( 'woocommerce_checkout_billing' ); ?>
 					</div><!-- .col-md-12 section-block -->
 				</div><!-- .col-md-4 -->
-				<div class="col-md-4">
+				<div class="col-md-4 checkout-col">
 					<div id="customer-details">
 						<h3 class="section-title"><?php _e( 'Entrega', 'odin');?></h3><!-- .section-title -->
 						<div class="col-md-12 section-block">
@@ -64,7 +63,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 						<?php woocommerce_checkout_payment();?>
 					</div><!-- .col-md-12 section-block -->
 				</div><!-- .col-md-4 -->
-				<div class="col-md-4">
+				<div class="col-md-4 checkout-column">
 					<h3 class="section-title"><?php _e( 'Resumo do pedido', 'odin');?></h3><!-- .section-title -->
 					<div id="order_review" class="woocommerce-checkout-review-order col-md-12">
 						<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
@@ -77,6 +76,5 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 			</form>
 
 			<?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
-		</div><!-- .row -->
-	</div><!-- .container -->
+	</div><!-- .row -->
 </div><!-- .col-md-12 form-checkout -->
