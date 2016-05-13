@@ -86,3 +86,10 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_r
 
 // remove payment from review section on checkout
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+
+function change_woocommerce_pagination_text( $args ) {
+	$args['prev_text'] = '<';
+	$args['next_text'] = '>';
+	return $args;
+}
+add_filter( 'woocommerce_pagination_args', 'change_woocommerce_pagination_text' );
