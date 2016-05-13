@@ -1,0 +1,217 @@
+body.woocommerce-cart {
+	main > article {
+		width:100% !important;
+		@media screen and( max-width: 760px ) {
+			padding-bottom:50px;
+		}
+	}
+	@media screen and( max-width: 700px ) {
+		.cart_item td {
+			width:100% !important;
+			clear: both !important;
+		}
+		.yith-wcpb-child-of-bundle-table-item {
+			.product-price,
+			.product-remove,
+			.product-subtotal {
+				display: none !important;
+			}
+		}
+	}
+	@media screen and( min-width: 760px ) {
+		.cart_item .product-thumbnail {
+			a {
+				display: inline-block;
+				height:80px;
+				overflow: hidden;
+			}
+			img {
+				width:150px !important;
+				height:auto !important;
+			}
+		}
+	}
+	.cart_item {
+		.product-name a,
+		div.bundle-items,
+		.product-price {
+			font-family:'Source Sans Pro', sans-serif;
+			font-weight: 600;
+			color:#929393 !important;
+			&:before {
+				color:#000;
+			}
+		}
+		.quantity {
+			display:none;
+		}
+		.buttons-qty {
+			input {
+				margin-top: -10px;
+				background: transparent none repeat scroll 0% 0%;
+				border: 1px solid rgb(195, 195, 195);
+				padding: 7px;
+				text-align: center;
+			}
+		}
+		.product-remove a {
+			color:#929393 !important;
+			font-size:1.2em;
+			font-family: 'Source Sans Pro', sans-serif;
+			display: inline-block !important;
+			width: 32px !important;
+			height:32px !important;
+			background: none !important;
+			transition:300ms ease all;
+			&:hover {
+				margin-top:7px;
+			}
+		}
+		@media screen and( max-width: 700px ) {
+			.buttons-qty {
+				display: none !important;
+			}
+			.quantity {
+				display: block !important;
+			}
+			.product-remove a{
+				text-indent: -99999px;
+				display: inline-block !important;
+				width:100% !important;
+				&:before {
+					float: left;
+					content: attr(data-title);
+					font-weight: 700;
+					text-indent: 0px;
+					width: 100%;
+					display: inline-block;
+					color:#912d1e !important;
+				}
+			}
+		}
+	}
+	.yith-wcpb-child-of-bundle-table-item {
+		.buttons-qty {
+			display: none !important;
+		}
+	}
+	@media screen and( min-width: 760px ) {
+		table.shop_table {
+			border:0 !important;
+			border-collapse:collapse !important;
+			tr {
+				border-bottom: 3px solid #ccc !important;
+			}
+			tr::last-child {
+				border-bottom: 2px solid #FFF !important;
+			}
+			thead > tr {
+				border: 0 !important;
+			}
+			div.bundle-items {
+				width:50%;
+				margin-top:13px;
+			}
+			.product-subtotal {
+				text-align: center;
+			}
+			.product-subtotal span {
+				font-family:'Source Sans Pro', sans-serif;
+				font-weight: 600;
+				color:#000 !important;
+			}
+		}
+		.cart_totals {
+			width:30% !important;
+			td {
+				text-align: right;
+			}
+			table {
+				border:0 !important;
+				border-collapse:collapse !important;
+				tr {
+					border-bottom: 2px solid #FFF !important;
+				}
+			}
+		}
+	}
+	.cart_totals th,
+	.cart_totals td::before {
+		text-transform: uppercase;
+	}
+	.cart_totals .cart-subtotal th,
+	.cart_totals .shipping th {
+		font-weight: normal !important;
+	}
+	.checkout-button {
+		font-family: 'BELLABOO-Regular', sans-serif !important;
+		text-align: center;
+		border:none !important;
+		background:#ff6600 !important;
+		color:#FFF !important;
+		display: inline-block;
+		border-radius: 0 !important;
+		font-size:1.5em !important;
+		font-weight: normal !important;
+		clear: both;
+		width:100%;
+		margin-top:10px !important;
+		box-shadow: 0px 1px 5px 0px rgba(251,185,88,0.75) !important;
+		padding: 16px 12px !important;
+	}
+	.btn-cart-link {
+		margin-top:10px !important;
+		padding: 12px 12px !important;
+	}
+	.cart-links {
+		padding-left:0 !important;
+		padding-right:0 !important;
+		margin-bottom: 20px !important;
+		@media screen and( max-width: 760px ) {
+			padding-bottom:50px;
+		}
+		div {
+			padding:0 !important;
+			@media screen and( max-width: 760px ) {
+				width:100%;
+			}
+		}
+	}
+}
+.cart-coupon {
+	padding:0;
+	label {
+		font-weight: normal;
+		padding:0;
+	}
+	div.col-md-12 {
+		@media screen and( min-width: 760px ) {
+			padding-left:50px;
+		}
+		input[type="text"] {
+			background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+			border: 1px solid rgb(195, 195, 195);
+			padding: 4px;
+			@media screen and( max-width: 760px ) {
+				width:100%;
+			}
+		}
+		input[type="submit"] {
+			font-family: 'BELLABOO-Regular', sans-serif !important;
+			text-align: center;
+			border:none !important;
+			background:#ff6600 !important;
+			color:#FFF !important;
+			display: inline-block;
+			border-radius: 0 !important;
+			font-weight: normal !important;
+			box-shadow: 0px 1px 5px 0px rgba(251,185,88,0.75) !important;
+			margin-top: -2px;
+			@media screen and( max-width: 760px ) {
+				clear:both;
+				width:100%;
+				margin-top:10px;
+			}
+		}
+	}
+}
