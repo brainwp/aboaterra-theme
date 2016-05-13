@@ -14,12 +14,21 @@
 	}
 }
 body.woocommerce {
+
+	.woocommerce-product-rating{
+		display:none!important;
+	}
+
+
 	.product_meta{
 		display: none;
 	}
 
 	div.product .product_title{
 
+	}
+	div[itemprop="offers"]{
+		margin-top: 20px;
 	}
 	div.product form.cart, .woocommerce div.product p.cart {
 	    margin-bottom: 2em;
@@ -150,6 +159,7 @@ body.woocommerce {
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 600 !important;
 		font-size:1.5em !important;
+
 	}
 	.related {
 		.products {
