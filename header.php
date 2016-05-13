@@ -84,6 +84,10 @@
 								<div class="col-md-12 title"><?php _e( 'Carrinho', 'odin');?></div><!-- .col-md-12 -->
 								<div class="separator"></div><!-- .separator -->
 								<?php foreach( WC()->cart->get_cart() as $cart_item ) : ?>
+									<?php if ( isset( $cart_item['bundled_by'] ) ) : ?>
+										<?php continue;?>
+									<?php endif;?>
+
 									<div class="col-md-4 pull-left img">
 										<?php if ( has_post_thumbnail( $cart_item['product_id'] ) ) : ?>
 											<?php echo get_the_post_thumbnail( $cart_item['product_id'], 'thumbnail', null );?>
