@@ -13,7 +13,26 @@
 		text-transform: uppercase;
 	}
 }
+body.tax-product_cat{
+	.buttons-qty input{
+		margin-left: 6px!important;
+    	margin-right: 6px!important;
+	}
+	ul.products li.product .price{
+		font-weight: bolder!important;
+	}
+
+	.woocommerce-pagination{
+		.page-numbers:last-child{
+			a{
+				display:none!Important;
+			}
+		}
+	}
+}
 body.woocommerce {
+
+
 
 	.woocommerce-product-rating{
 		display:none!important;
