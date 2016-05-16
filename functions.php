@@ -394,3 +394,8 @@ require_once get_template_directory() . '/inc/customizer.php';
  */
 require_once get_template_directory() . '/inc/acf/acf.php';
 require_once get_template_directory() . '/inc/custom-fields.php';
+
+/**
+ * Order to TXT
+ */
+require_once get_template_directory() . '/inc/class-order-to-txt.php';
