@@ -2,6 +2,11 @@
  	background-color: #41a140;
  	box-shadow: 0px 3px 14px 0px rgba(109, 107, 107, 0.40);
  	margin-bottom:40px;
+	position: fixed;
+	clear: both;
+	z-index: 9999999;
+	width:100%;
+
  	.container {
 		padding-top:3.5px;
 		padding-bottom: 3.5px;
@@ -25,6 +30,9 @@
 			line-height: 23px;
 		}
 	}
+}
+header#header {
+	padding-top:70px;
 }
 #header #main-navigation {
 	clear: both;
@@ -54,6 +62,10 @@
 }
 #header .woocommerce-infos {
 	margin-top:-5px;
+	@media screen and (max-width:800px) {
+		text-align:center;
+		padding-top:15px;
+	}
 	a {
 		font-weight: 600;
 	}
@@ -71,6 +83,11 @@
 		font-family: 'BELLABOO-Regular', sans-serif;
 		font-size:1.2em;
 		padding-left:10px;
+	}
+}
+@media screen and (max-width:800px) {
+	.search-form {
+		padding-top:20px;
 	}
 }
 #header .menu-institucional {

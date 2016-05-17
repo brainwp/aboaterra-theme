@@ -53,7 +53,7 @@
 	</div><!-- .col-md-12 prices-warn -->
 	<header id="header" role="banner">
 		<div class="container">
-			<div class="header-image col-md-4">
+			<div class="header-image col-md-4 col-xs-12">
 				<?php
 					$header_image = get_header_image();
 					if ( ! empty( $header_image ) ) :
@@ -63,11 +63,11 @@
 					</a>
 				<?php endif; ?>
 			</div><!-- .site-header-->
-			<div class="col-md-7 pull-right">
-				<div class="col-md-8 pull-left search-form">
+			<div class="col-md-7 col-xs-12 pull-right">
+				<div class="col-md-8 col-xs-12 pull-left search-form">
 					<?php get_search_form( true );?>
 				</div><!-- .col-md-7 pull-left search-form -->
-				<div class="col-md-4 pull-right woocommerce-infos">
+				<div class="col-md-4 col-xs-12 pull-right woocommerce-infos">
 					<?php $myaccount_page = get_option( 'woocommerce_myaccount_page_id' );?>
 					<?php if ( $myaccount_page ) : ?>
 						<a href="<?php echo get_permalink( $myaccount_page );?>" class="myacc"><?php _e( 'minha conta', 'odin');?></a>
@@ -116,7 +116,7 @@
 					<?php endif;?>
 				</div><!-- .col-md-4 pull-right -->
 			</div><!-- .col-md-6 pull-right -->
-			<div class="col-md-6 pull-right menu-institucional">
+			<div class="col-md-6 col-xs-12 pull-right menu-institucional">
 				<?php echo wp_nav_menu(
 						array(
 							'theme_location' => 'institucional',
