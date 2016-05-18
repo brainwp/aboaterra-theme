@@ -30,6 +30,11 @@ if ( ! is_ajax() ) {
 	<div id="update-subtotal" style="display:none;">
 		<?php wc_cart_totals_subtotal_html();?>
 	</div><!-- #update-totals -->
+	<div id="update-product-list" style="display:none;">
+		<?php get_template_part( 'parts/checkout-product-list' );?>
+	</div><!-- #update-totals -->
+
+
 
 	<?php if ( WC()->cart->needs_payment() ) : ?>
 		<ul class="wc_payment_methods payment_methods methods">

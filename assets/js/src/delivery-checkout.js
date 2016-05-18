@@ -22,6 +22,7 @@ jQuery(document).ready(function($) {
 	$( document ).ajaxComplete(function( event, xhr, settings ) {
 		$( '#checkout-total strong' ).html( $( '#update-totals strong' ).html() );
 		$( '#checkout-subtotal' ).html( $( '#update-subtotal' ).html() );
+		$( '#product-list' ).html( $( '#update-product-list' ).html() );
 	});
 
 } );
