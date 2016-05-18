@@ -63,6 +63,9 @@ class Brasa_Order_To_TXT {
 		$items = '';
 		foreach( $order->get_items() as $item ) {
 			if ( $sku = get_post_meta( $item['item_meta']['_product_id'][0], '_sku', true ) ) {
+				if ( isset( $item[ 'bundled_by'] ) ) {
+					continue;
+				}
 				$items .= sprintf( '%s,%s;', $sku, $item[ 'item_meta' ][ '_qty'][0] );
 			}
 		}
