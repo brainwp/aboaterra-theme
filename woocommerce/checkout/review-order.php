@@ -54,7 +54,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="row">
 			<div class="col-md-12 cart-subtotal">
 				<h5 class="section-info"><?php _e( 'Sub-total', 'odin');?></h5><!-- .section-info -->
-				<?php wc_cart_totals_subtotal_html(); ?>
+				<span id="checkout-subtotal">
+					<?php wc_cart_totals_subtotal_html(); ?>
+				</span>
 			</div><!-- .col-md-12 cart-subtotal -->
 
 			<div class="col-md-12 cart-subtotal delivery" style="display:none;">

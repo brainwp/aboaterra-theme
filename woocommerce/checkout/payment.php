@@ -27,6 +27,10 @@ if ( ! is_ajax() ) {
 	<div id="update-totals" style="display:none;">
 		<?php wc_cart_totals_order_total_html();?>
 	</div><!-- #update-totals -->
+	<div id="update-subtotal" style="display:none;">
+		<?php wc_cart_totals_subtotal_html();?>
+	</div><!-- #update-totals -->
+
 	<?php if ( WC()->cart->needs_payment() ) : ?>
 		<ul class="wc_payment_methods payment_methods methods">
 			<?php
