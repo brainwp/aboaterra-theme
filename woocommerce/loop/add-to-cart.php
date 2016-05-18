@@ -23,6 +23,12 @@ global $product;
 if ( ! isset( $quantity ) ) {
 	$quantity = 1;
 }
+if ( isset( $class ) ) {
+	$class .= ' ajax_add_to_cart';
+}
+else {
+	$class = ' ajax_add_to_cart';
+}
 ?>
 <div class="add-to-cart-container">
 	<div class="buttons-qty col-md-8 pull-left">
