@@ -15,6 +15,9 @@
  * @version     2.5.0
  */
 
+
+// Single.
+add_filter( 'single_add_to_cart_text', 'cs_add_to_cart_text' );
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -29,6 +32,7 @@ if ( isset( $class ) ) {
 else {
 	$class = ' ajax_add_to_cart';
 }
+
 ?>
 <div class="add-to-cart-container">
 	<div class="buttons-qty col-md-8 pull-left">

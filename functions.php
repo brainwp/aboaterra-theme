@@ -178,7 +178,13 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		add_image_size( 'mini-thumbnail', 80, 80 );
 	}
 }
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );    // 2.1 +
 
+function woo_custom_cart_button_text() {
+
+        return __( 'ADICIONAR NO CARRINHO', 'odin' );
+
+}
 add_action( 'after_setup_theme', 'odin_setup_features' );
 
 /**
@@ -399,3 +405,5 @@ require_once get_template_directory() . '/inc/custom-fields.php';
  * Order to TXT
  */
 require_once get_template_directory() . '/inc/class-order-to-txt.php';
+
+

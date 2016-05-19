@@ -81,6 +81,9 @@ body.woocommerce {
 		background: #FFF;
 	}
 	.single_add_to_cart_button {
+		max-width: 280px;
+    	max-height: 47px;
+		line-height: 0.7em!important;
 		font-family: 'BELLABOO-Regular', sans-serif !important;
 		text-align: center;
 		border:none !important;
@@ -89,7 +92,7 @@ body.woocommerce {
 		display: inline-block;
 		margin-top:20px;
 		border-radius: 0 !important;
-		font-size:1.5em !important;
+		font-size: 1.7em !important;
 		font-weight: normal !important;
 		clear: both;
 		width:70%;
@@ -226,8 +229,10 @@ body.woocommerce {
 	display: inline-block;
 	margin-top:20px;
 	border-radius: 0 !important;
-	font-size:1.5em !important;
+	font-size:1.7em !important;
 	font-weight: normal !important;
+	max-width: 280px;
+    max-height: 47px;
 	clear: both;
 	width:70%;
 	margin-top:20px!important;
