@@ -255,9 +255,6 @@ body.woocommerce {
 
 div.product-type-yith_bundle{
 	margin-bottom: 100px;
-	.entry-summary .buttons-qty{
-		width: 70%;
-	}
 	.product-grouped {
 		float: left;
 		width: 15%;
@@ -269,9 +266,15 @@ div.product-type-yith_bundle{
 	.cart{
 		display: block!important;
 	}
+	.single_add_to_cart_button{
+		width: 100%!important;
+	}
+	.btn-primary, .btn-cart-link{
+		width: 100%!important;
+	}
 	.entry-summary{
-		float: left!important;
-		width:37%!important;
+		float: right!important;
+		width:25%!important;
 	}
 	.product-grouped-list{
 		margin-bottom: 1.8px;
