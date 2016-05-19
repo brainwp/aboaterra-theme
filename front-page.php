@@ -15,7 +15,6 @@ get_header(); ?>
 		<?php endif;?>
 	</section><!-- .col-md-12 home-slider -->
 	<?php get_template_part( '/parts/slider', 'destaques' );?>
-	<?php get_template_part( '/parts/query', 'mais-pedidos' );?>
 	<div class="col-md-12">
 		<div class="container">
 			<div class="row">

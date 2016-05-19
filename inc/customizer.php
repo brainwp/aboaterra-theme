@@ -30,10 +30,6 @@ function boaterra_register_section( $wp_customize ) {
 		'title'       => __( 'Informações / Redes Sociais', 'odin' ),
 		'priority'    => 10,
 	) );
-	$wp_customize->add_section( 'home', array(
-		'title'       => __( 'Seção Mais pedidos', 'odin' ),
-		'priority'    => 10,
-	) );
 	$wp_customize->add_section( 'footer', array(
 		'title'       => __( 'Rodapé', 'odin' ),
 		'priority'    => 10,
@@ -72,45 +68,6 @@ function boaterra_kirki_fields( $fields ) {
 		'section'  => 'social',
 		'default'  => '',
 		'priority' => 1,
-	);
-	$fields[] = array(
-		'type'     => 'text',
-		'setting'  => 'mais-pedidos-title',
-		'label'    => __( 'Título da seção ( Mais Pedidos )', 'odin' ),
-		'section'  => 'home',
-		'default'  => 'Mais pedidos',
-		'priority' => 1,
-	);
-	$fields[] = array(
-		'type'     => 'number',
-		'setting'  => 'mais-pedidos-per-page',
-		'label'    => __( 'Numero de produtos exibidos ( Mais Pedidos )', 'odin' ),
-		'section'  => 'home',
-		'default'  => '8',
-		'priority' => 1,
-	);
-	$fields[] = array(
-		'type'     => 'number',
-		'setting'  => 'mais-pedidos-per-page',
-		'label'    => __( 'Numero de produtos exibidos ( Mais Pedidos )', 'odin' ),
-		'section'  => 'home',
-		'default'  => '8',
-		'priority' => 1,
-	);
-	$choices = array();
-	$tags = get_terms( 'product_tag' );
-	foreach ( $tags as $tag ) {
-		$choices[ $tag->term_id ] = $tag->name;
-	}
-	$fields[] = array(
-		'type'			=> 'select',
-		'setting'    	=> 'mais-pedidos-tag',
-		'label'       	=> __( 'Tags para exibir ( Mais Pedidos )', 'odin' ),
-		'section'		=> 'home',
-		'priority'    	=> 10,
-		'multiple'   	=> 99999,
-		'default'		=> '',
-		'choices'    	=> $choices
 	);
 	$fields[] = array(
 		'type'     => 'image',
