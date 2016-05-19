@@ -18,13 +18,15 @@
 }
 button.slick-prev {
 	width:40px;
-	height:60px;
+	height:76px;
 	background: url('../images/slider-prev.png') no-repeat !important;
+	margin-left:35px;
 }
 button.slick-next {
 	width:40px;
-	height:60px;
+	height:76px;
 	background: url('../images/slider-next.png') no-repeat !important;
+	margin-right:35px;
 }
 button.slick-prev, button.slick-next {
 	&:before {
