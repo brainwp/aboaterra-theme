@@ -347,6 +347,11 @@ body.home .textwidget {
 			background: url("../images/slider-prev.png") no-repeat !important;
 			left:-35px;
 			top:45%;
+			opacity:1 !important;
+			@media screen and ( max-width: 800px ) {
+				left:-12px;
+			}
+
 		}
 		.owl-next {
 			width: 40px !important;
@@ -354,6 +359,10 @@ body.home .textwidget {
 			background: url("../images/slider-next.png") no-repeat !important;
 			right:-35px;
 			top:45%;
+			opacity:1 !important;
+			@media screen and ( max-width: 800px ) {
+				right:-12px;
+			}
 		}
 	}
 }
