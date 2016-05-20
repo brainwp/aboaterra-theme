@@ -102,10 +102,11 @@ body.woocommerce {
 		justify-content:center;
 	}
 	.product img {
-		border:1px solid #E3E3E3;
+	    border: 3px solid #dcddde;
+	    border-radius: 4px;
 	}
 	.woocommerce-main img {
-		padding:10px;
+		padding:0px;
 	}
 	.zoom::before {
 		font: normal normal normal 14px/1 FontAwesome;
