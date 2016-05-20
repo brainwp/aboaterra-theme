@@ -58,7 +58,10 @@ body.tax-product_cat{
 	}
 }
 body.woocommerce {
-
+	span.onsale{
+		background-color: #ff6600!Important;
+		z-index: 9999999;
+	}
 
 
 	.woocommerce-product-rating{
