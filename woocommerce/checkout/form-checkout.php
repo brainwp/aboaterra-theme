@@ -79,7 +79,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 						<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 						<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 						<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
-						<?php woocommerce_checkout_coupon_form();?>
+						<?php get_template_part( 'parts/form-coupon-checkout' );?>
 						<div class="form-row place-order pull-right">
 							<noscript>
 								<?php _e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce' ); ?>
