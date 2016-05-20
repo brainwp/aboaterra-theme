@@ -13,6 +13,12 @@
 		text-transform: uppercase;
 	}
 }
+
+body.single-product{
+	.col-md-10{
+		width:100%!important;
+	}
+}
 body.tax-product_cat{
 	.buttons-qty input{
 		margin-left: 6px!important;
@@ -42,6 +48,10 @@ body.woocommerce {
 	div.product .product_title{
 
 	}
+
+	div.product{
+		margin-left: 80px;
+	}
 	div[itemprop="offers"]{
 		margin-top: 20px;
 	}
@@ -51,6 +61,9 @@ body.woocommerce {
 	    flex-flow: column;
 	    justify-content: center;
 	    align-items: center;
+	}
+	.product-type-yith_bundle div.product p.cart{
+		display: none!important;
 	}
 	div[itemprop="description"] p{
 		display:none;
@@ -81,6 +94,9 @@ body.woocommerce {
 		background: #FFF;
 	}
 	.single_add_to_cart_button {
+		max-width: 280px;
+    	max-height: 47px;
+		line-height: 0.7em!important;
 		font-family: 'BELLABOO-Regular', sans-serif !important;
 		text-align: center;
 		border:none !important;
@@ -89,7 +105,7 @@ body.woocommerce {
 		display: inline-block;
 		margin-top:20px;
 		border-radius: 0 !important;
-		font-size:1.5em !important;
+		font-size: 1.7em !important;
 		font-weight: normal !important;
 		clear: both;
 		width:70%;
@@ -226,8 +242,10 @@ body.woocommerce {
 	display: inline-block;
 	margin-top:20px;
 	border-radius: 0 !important;
-	font-size:1.5em !important;
+	font-size:1.7em !important;
 	font-weight: normal !important;
+	max-width: 280px;
+    max-height: 47px;
 	clear: both;
 	width:70%;
 	margin-top:20px!important;
@@ -245,9 +263,18 @@ div.product-type-yith_bundle{
 		text-align: left;
 		font-weight: bold;
 	}
+	.cart{
+		display: block!important;
+	}
+	.single_add_to_cart_button {
+		width: 100%!important;
+	}
+	.btn-primary, .btn-cart-link{
+		width: 100%!important;
+	}
 	.entry-summary{
-		float: right;
-		width: 28%!important;
+		float: right!important;
+		width:25%!important;
 	}
 	.product-grouped-list{
 		margin-bottom: 1.8px;
