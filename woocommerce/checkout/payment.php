@@ -33,8 +33,17 @@ if ( ! is_ajax() ) {
 	<div id="update-product-list" style="display:none;">
 		<?php get_template_part( 'parts/checkout-product-list' );?>
 	</div><!-- #update-totals -->
-
-
+	<div id="update-coupon-display" style="display:none;">
+		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
+			<h5 class="section-info">
+				<?php _e( 'Cupom', 'odin');?>
+			</h5><!-- .section-info -->
+			<?php $amount = WC()->cart->get_coupon_discount_amount( $code, WC()->cart->display_cart_ex_tax );?>
+			<?php if ( $amount ) : ?>
+				<?php echo wc_price( $amount, array( 'price_format' => '- ' . get_woocommerce_price_format() ) );?>
+			<?php endif;?>
+		<?php endforeach; ?>
+	</div><!-- #coupon-display -->
 
 	<?php if ( WC()->cart->needs_payment() ) : ?>
 		<ul class="wc_payment_methods payment_methods methods">

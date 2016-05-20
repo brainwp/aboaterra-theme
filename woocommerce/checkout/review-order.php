@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="col-md-12 review-order-section">
+<div class="col-md-12 woocommerce-checkout-review-order-table review-order-section">
 	<div class="row" id="product-list">
 		<?php get_template_part( 'parts/checkout-product-list' );?>
 	</div><!-- .row -->
@@ -32,20 +32,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</span>
 			</div><!-- .col-md-12 cart-subtotal -->
 
-			<div class="col-md-12 cart-subtotal delivery" style="display:none;">
-				<h5 class="section-info"><?php _e( 'Frete', 'odin');?></h5><!-- .section-info -->
-				<span class="amount"></span>
-			</div><!-- .col-md-12 cart-subtotal -->
-
-			<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
-				<div class="col-md-12 coupon title">
-					<?php wc_cart_totals_coupon_label( $coupon ); ?>
+			<?php if ( WC()->shipping->shipping_total ) : ?>
+				<div class="col-md-12 cart-subtotal delivery">
+					<h5 class="section-info"><?php _e( 'Frete', 'odin');?></h5><!-- .section-info -->
+					<?php echo wc_price( WC()->shipping->shipping_total );?>
 				</div><!-- .col-md-12 cart-subtotal -->
-				<div class="col-md-12 coupon price">
-					<?php wc_cart_totals_coupon_html( $coupon );?>
-				</div><!-- .col-md-12 cart-subtotal -->
-			<?php endforeach; ?>
-
+			<?php endif;?>
+			<div id="coupon-display" class="cart-subtotal col-md-12">
+				<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
+					<h5 class="section-info">
+						<?php _e( 'Cupom', 'odin');?>
+					</h5><!-- .section-info -->
+					<?php $amount = WC()->cart->get_coupon_discount_amount( $code, WC()->cart->display_cart_ex_tax );?>
+					<?php if ( $amount ) : ?>
+						<?php echo wc_price( $amount, array( 'price_format' => '- ' . get_woocommerce_price_format() ) );?>
+					<?php endif;?>
+				<?php endforeach; ?>
+			</div><!-- #coupon-display -->
 		<?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
 			<div class="col-md-12 fee title">
 				<?php echo esc_html( $fee->name ); ?>
