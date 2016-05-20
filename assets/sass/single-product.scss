@@ -18,6 +18,31 @@ body.single-product{
 	.col-md-10{
 		width:100%!important;
 	}
+	.col-md-9{
+		width: auto!important;
+	}
+	/* |||||||||||||||||||| */
+	.cart{
+		display: block!important;
+	}
+	.single_add_to_cart_button {
+		width: 100%!important;
+	}
+	.btn-primary, .btn-cart-link{
+		width: 100%!important;
+	}
+	.entry-summary{
+		float: left!important;
+	    margin-left: 15%;
+		width:25%!important;
+	}
+	.product-grouped-list{
+		margin-bottom: 1.8px;
+	}
+	.section-title {
+		display: none !important;
+	}
+	/* ||||||||||||||||||||||||||||| */
 }
 body.tax-product_cat{
 	.buttons-qty input{
@@ -61,6 +86,7 @@ body.woocommerce {
 	    flex-flow: column;
 	    justify-content: center;
 	    align-items: center;
+	    margin-top: 3.2em;
 	}
 	.product-type-yith_bundle div.product p.cart{
 		display: none!important;
@@ -179,16 +205,16 @@ body.woocommerce {
 	.entry-title {
 		color:#999999 !important;
 		text-transform: uppercase;
-		font-family: 'Source Sans Pro', sans-serif;
-		font-weight: 600 !important;
-		font-size:2em !important;
+		font-family: 'Source Sans Pro', sans-serif!important;
 		margin-bottom: -5px;
+		font-weight: 700!important;
+	    font-size: 1.4em!important;
 	}
 	.entry-summary .price .amount {
-		color:#000 !important;
+		color:#030303 !important;
 		text-transform: uppercase;
 		font-family: 'Source Sans Pro', sans-serif;
-		font-weight: 600 !important;
+		font-weight: bolder !important;
 		font-size:1.5em !important;
 
 	}
@@ -240,7 +266,6 @@ body.woocommerce {
 	background:#b6b4b2 !important;
 	color:#FFF !important;
 	display: inline-block;
-	margin-top:20px;
 	border-radius: 0 !important;
 	font-size:1.7em !important;
 	font-weight: normal !important;
@@ -248,7 +273,7 @@ body.woocommerce {
     max-height: 47px;
 	clear: both;
 	width:70%;
-	margin-top:20px!important;
+	margin-top:35px!important;
 	margin-bottom:10px;
 	box-shadow: 0px 1px 5px 0px rgba(180,180,181,0.75);
 }
