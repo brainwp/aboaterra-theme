@@ -14,7 +14,10 @@
 	}
 }
 .woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images{
-	width: 43%!important;
+	width: 46%!important;
+}
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page .product-type-yith_bundle div.product div.images {
+	width: 48%;
 }
 body.single-product{
 	.col-md-10{
