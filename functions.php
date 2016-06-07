@@ -406,4 +406,7 @@ require_once get_template_directory() . '/inc/custom-fields.php';
  */
 require_once get_template_directory() . '/inc/class-order-to-txt.php';
 
-
+/**
+ * Check Delivery
+ */
+require_once get_template_directory() . '/inc/class-check-delivery.php';
