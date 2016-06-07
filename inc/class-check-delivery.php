@@ -58,17 +58,26 @@ class Brasa_Check_Delivery {
 		}
 		return $region;
 	}
+	/**
+	 * Execute ajax & check delivery area
+	 * @return null
+	 */
 	public function ajax() {
 		if ( ! class_exists( 'WCPBC_Customer' ) ) {
-			wp_die( sprintf( $this->error, __( 'Lamento, nós não entregamos nesse endereço.', 'odin' ) ) );
+			header( sprintf( 'delivery-status: %s', 'false' ) );
+			wp_die( sprintf( $this->error, __( 'Lamento, nós não entregamos nesse CEP.', 'odin' ) ) );
 		}
 		new WCPBC_Customer();
 		$customer_data = WC()->session->get( 'wcpbc_customer' );
+		var_dump( $customer_data );
 		if ( is_array( $customer_data ) && ! empty( $customer_data ) && isset( $customer_data[ 'message'] ) ) {
-			printf( '<div class="success">%s</div>', $customer_data[ 'message'] );
+			header( sprintf( 'delivery-status: %s', 'true' ) );
+			printf( '<div class="success">%s</div>', apply_filters( 'the_content', $customer_data[ 'message'] ) );
 			wp_die();
 		}
-		wp_die( sprintf( $this->error, __( 'Lamento, nós não entregamos nesse endereço.', 'odin' ) ) );
+		header( sprintf( 'delivery-status: %s', 'false' ) );
+		WC()->session->set( 'wcpbc_customer', array() );
+		wp_die( sprintf( $this->error, __( 'Lamento, nós não entregamos nesse CEP.', 'odin' ) ) );
 	}
 	public function get_woocommerce_zipcode( $code ) {
 		if ( ! $this->is_ajax() ) {

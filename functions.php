@@ -284,7 +284,18 @@ function odin_flush_rewrite() {
 	flush_rewrite_rules();
 }
 
+
 add_action( 'after_switch_theme', 'odin_flush_rewrite' );
+
+function odin_unlogged_user_body_class( $classes ) {
+	if ( ! is_user_logged_in() ) {
+		$classes[] = 'unlogged-user';
+	}
+
+    // return the $classes array
+    return $classes;
+}
+add_filter( 'body_class', 'odin_unlogged_user_body_class' );
 
 /**
  * Load site scripts.
