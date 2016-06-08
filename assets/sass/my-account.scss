@@ -154,7 +154,7 @@ body.woocommerce-account #customer_login {
 	}
 	.success {
 		background: #41a140;
-		color:#FFF;
+		color:#FFF !important;
 		font-weight: 600;
 		padding-left:15px;
 		padding-top:20px;
@@ -163,10 +163,14 @@ body.woocommerce-account #customer_login {
 		margin-top: 20px;
 		font-size: 1.4em;
 		display: inline-block;
+		a {
+			color:#FFF !important;
+			text-decoration: underline;
+		}
 	}
 	.error {
 		background: #912d1e;
-		color:#FFF;
+		color:#FFF !important;
 		font-weight: 600;
 		padding-left:15px;
 		padding-top:20px;
@@ -175,6 +179,9 @@ body.woocommerce-account #customer_login {
 		margin-top: 20px;
 		font-size: 1.4em;
 		display: inline-block;
+		a {
+			color:#FFF !important;
+			text-decoration: underline;
+		}
 	}
-
 }

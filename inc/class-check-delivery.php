@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Check delivery
@@ -10,10 +11,22 @@ class Brasa_Check_Delivery {
 	private $error = '<span class="error animated bounceInUp">%s</span>';
 
 	/**
+	 * success html
+	 */
+	private $success = '<span class="success animated bounceInUp">%s</span>';
+
+	/**
 	 * init class
 	 * @return boolean
 	 */
-	public function __construct() {
+	public function __construct( $success = '', $error = '' ) {
+		// init vars
+		if ( ! empty( $success ) ) {
+			$this->success = $success;
+		}
+		if ( ! empty( $error ) ) {
+			$this->error = $error;
+		}
 		// add fields to product price based on zipcode plugin
 		add_action( 'wc_price_based_zipcode_admin_region_fields', array( &$this, 'add_fields' ) );
 		add_filter( 'wc_price_based_zipcode_save_region_data', array( &$this, 'save_region_message' ) );
@@ -36,7 +49,7 @@ class Brasa_Check_Delivery {
 			'placeholder' => ''
 		), $atts, 'brasa_check_delivery' );
 		$html = '<form class="brasa-check-delivery-container">';
-		$html .= sprintf( '<label>%s</label>', apply_filters( 'the_title', $atts[ 'label'] ) );
+		$html .= sprintf( '<label>%s</label>', $atts[ 'label'] );
 		$html .= sprintf( '<input class="input-text" type="text" name="check-delivery" placeholder="%s">', $atts[ 'placeholder' ] );
 		$html .= sprintf( '<button class="woocommerce-Button button" data-load="%s">%s</button>', $atts[ 'button_load_text'], $atts[ 'button_text' ] );
 		$html .= '<div class="response"></div>';
@@ -92,7 +105,7 @@ class Brasa_Check_Delivery {
 		$customer_data = WC()->session->get( 'wcpbc_customer' );
 		if ( is_array( $customer_data ) && ! empty( $customer_data ) && isset( $customer_data[ 'message'] ) ) {
 			header( sprintf( 'delivery-status: %s', 'true' ) );
-			printf( '<span class="success animated bounceInUp">%s</span>', apply_filters( 'the_title', $customer_data[ 'message'] ) );
+			printf( $this->success, apply_filters( 'the_title', $customer_data[ 'message'] ) );
 			wp_die();
 		}
 		header( sprintf( 'delivery-status: %s', 'false' ) );
@@ -107,4 +120,3 @@ class Brasa_Check_Delivery {
 		return $code;
 	}
 }
-new Brasa_Check_Delivery();
