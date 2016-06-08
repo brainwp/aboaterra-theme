@@ -325,6 +325,7 @@ function odin_enqueue_scripts() {
 		// Grunt main file with Bootstrap, FitVids and others libs.
 		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
 	}
+	wp_localize_script( 'odin-main-min', 'odin', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 
 	// Grunt watch livereload in the browser.
 	// wp_enqueue_script( 'odin-livereload', 'http://localhost:35729/livereload.js?snipver=1', array(), null, true );

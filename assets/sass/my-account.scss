@@ -101,7 +101,7 @@ body.woocommerce-account #customer_login {
 		font-weight: 600;
 		color:#929393;
 	}
-	input.woocommerce-Button {
+	.woocommerce-Button {
 		font-family: 'BELLABOO-Regular', sans-serif !important;
 		text-align: center;
 		border: none !important;
@@ -133,4 +133,48 @@ body.woocommerce-account #customer_login {
 			border-right:3px solid #f66d00;
 		}
 	}
+}
+.brasa-check-delivery-container {
+	background: none !important;
+	width:100%;
+
+	.input-text {
+		width:60% !important;
+		background: #fff;
+		border: 1px solid #c3c3c3;
+		padding: 4px;
+	}
+	label {
+		width:100%;
+		clear: both;
+	}
+	.button {
+		margin-top: -4px !important;
+		margin-left: 8px !important;
+	}
+	.success {
+		background: #41a140;
+		color:#FFF;
+		font-weight: 600;
+		padding-left:15px;
+		padding-top:20px;
+		padding-bottom: 20px;
+		padding-right:15px;
+		margin-top: 20px;
+		font-size: 1.4em;
+		display: inline-block;
+	}
+	.error {
+		background: #912d1e;
+		color:#FFF;
+		font-weight: 600;
+		padding-left:15px;
+		padding-top:20px;
+		padding-bottom: 20px;
+		padding-right:15px;
+		margin-top: 20px;
+		font-size: 1.4em;
+		display: inline-block;
+	}
+
 }

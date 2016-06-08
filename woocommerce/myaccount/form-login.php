@@ -114,7 +114,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
 
 		</form>
-
+		<div class="col-md-12">
+			<h2><?php _e( 'Quero informar meu cep antes para verificar se entregam na minha casa', 'odin');?></h2>
+		</div><!-- .col-md-12 -->
+		<?php $label = __( 'CEP', 'odin' );?>
+		<?php $loading_txt = __( 'Carregando..', 'odin' );?>
+		<?php echo do_shortcode( sprintf( '[brasa_check_delivery label="%s" button_load_text="%s"]', $label, $loading_txt ) );?>
 	</div>
 
 </div>
