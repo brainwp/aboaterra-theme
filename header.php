@@ -23,6 +23,9 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+	<?php if ( $value = get_theme_mod( 'code_open_body', false ) ) : ?>
+		<?php echo html_entity_decode( $value );?>
+	<?php endif;?>
 	<a id="skippy" class="sr-only sr-only-focusable" href="#content">
 		<div class="container">
 			<span class="skiplink-text"><?php _e( 'Skip to content', 'odin' ); ?></span>
