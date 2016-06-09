@@ -46,13 +46,20 @@ class Brasa_Check_Delivery {
 			'label' => '',
 			'button_text' => 'Ok',
 			'button_load_text' => __( 'Loading..'),
-			'placeholder' => ''
+			'placeholder' => '',
+			'container_width' => ''
 		), $atts, 'brasa_check_delivery' );
-		$html = '<form class="brasa-check-delivery-container">';
+		$container_style = '';
+		if ( ! empty( $atts[ 'container_width' ] ) ) {
+			$container_style = sprintf( 'style="width:%s;"', $atts[ 'container_width' ] );
+		}
+		$html = sprintf( '<form class="brasa-check-delivery-container">' );
+		$html .= sprintf( '<div class="elements" %s>', $container_style );
 		$html .= sprintf( '<label>%s</label>', $atts[ 'label'] );
 		$html .= sprintf( '<input class="input-text" type="text" name="check-delivery" placeholder="%s">', $atts[ 'placeholder' ] );
 		$html .= sprintf( '<button class="woocommerce-Button button" data-load="%s">%s</button>', $atts[ 'button_load_text'], $atts[ 'button_text' ] );
 		$html .= '<div class="response"></div>';
+		$html .= '</div>';
 		$html .= '</form>';
 		return $html;
 	}
