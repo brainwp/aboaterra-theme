@@ -1,7 +1,8 @@
 /* my account login page */
 jQuery(document).ready(function($) {
-	$( '.brasa-check-delivery-container').on( 'submit', function( e ) {
+	$( 'body').on( 'submit', '.brasa-check-delivery-container', function( e ) {
 		e.preventDefault();
+		console.log( '111');
 		var $form = $( this );
 		var $elements_div = $( this ).children( '.elements' );
 		var $submit_btn = $elements_div.children( 'button' );
