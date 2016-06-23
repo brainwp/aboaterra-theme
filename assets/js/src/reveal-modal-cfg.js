@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+	var reveal_str = $( 'meta[name=reveal-modal-cfg-str]' ).attr('content');
 	$( document ).ajaxComplete( function( e ) {
 		var $content = $( '#reveal-modal-id' );
 		if ( $content.find( '.woocommerce').length > 0 ) {
@@ -9,7 +10,6 @@ jQuery(document).ready(function($) {
 	});
 	$( 'body' ).on( 'click', '#reveal-modal-id a', function( e ){
 		var _href = $(this).attr('href');
-		var reveal_str = $( 'meta[name=reveal-modal-cfg-str]' ).attr('content');
 
 		if ( _href !== undefined && _href.lastIndexOf(reveal_str) != -1 ) {
 			e.preventDefault();
@@ -24,7 +24,12 @@ jQuery(document).ready(function($) {
 			});
 		} else {
 			e.preventDefault();
-			console.log( 'ooooooooooooooH NAO!');
 		}
 	} );
+	$( 'body.unlogged-user .add_to_cart_button' ).on( 'click', function( e ){
+		$modal_link = $( '.prices-warn .pull-left a' );
+		if ( $modal_link.length && $modal_link.attr( 'href' ).lastIndexOf(reveal_str) != -1 ) {
+			$modal_link.trigger( 'click' );
+		}
+	} )
 });
