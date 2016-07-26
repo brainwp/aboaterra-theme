@@ -1,0 +1,21 @@
+#reveal-modal-id {
+	@media screen and ( min-width: 800px ) {
+		width: 25% !important;
+		margin-left: 0px !important;
+		left: 37% !important;
+		right: 37% !important;
+	}
+	h1, h2, h3, h4, h5 {
+		color:#912d1e;
+		font-family: 'BELLABOO-Regular', sans-serif;
+	}
+	p {
+		color:#929393;
+		margin:0;
+		font-weight: bold;
+		font-size: 1.2em;
+	}
+	.prev-post-reveal-nav, .next-post-reveal-nav {
+		display: none !important;
+	}
+}

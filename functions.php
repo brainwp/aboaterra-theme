@@ -284,7 +284,18 @@ function odin_flush_rewrite() {
 	flush_rewrite_rules();
 }
 
+
 add_action( 'after_switch_theme', 'odin_flush_rewrite' );
+
+function odin_unlogged_user_body_class( $classes ) {
+	if ( ! is_user_logged_in() ) {
+		$classes[] = 'unlogged-user';
+	}
+
+    // return the $classes array
+    return $classes;
+}
+add_filter( 'body_class', 'odin_unlogged_user_body_class' );
 
 /**
  * Load site scripts.
@@ -314,6 +325,7 @@ function odin_enqueue_scripts() {
 		// Grunt main file with Bootstrap, FitVids and others libs.
 		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
 	}
+	wp_localize_script( 'odin-main-min', 'odin', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 
 	// Grunt watch livereload in the browser.
 	// wp_enqueue_script( 'odin-livereload', 'http://localhost:35729/livereload.js?snipver=1', array(), null, true );
@@ -406,4 +418,16 @@ require_once get_template_directory() . '/inc/custom-fields.php';
  */
 require_once get_template_directory() . '/inc/class-order-to-txt.php';
 
-
+/**
+ * Check Delivery
+ */
+require_once get_template_directory() . '/inc/class-check-delivery.php';
+function init_brasa_check_delivery_aboaterra() {
+	$error = null;
+	if ( $value = get_theme_mod( 'delivery_error', false ) ) {
+		$value = htmlspecialchars_decode( $value );
+		$error = "<span class='error animated bounceInUp'>{$value}</span>";
+	}
+	new Brasa_Check_Delivery( null, $error );
+}
+add_action( 'init', 'init_brasa_check_delivery_aboaterra', 9999 );

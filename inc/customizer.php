@@ -34,6 +34,11 @@ function boaterra_register_section( $wp_customize ) {
 		'title'       => __( 'Rodapé', 'odin' ),
 		'priority'    => 10,
 	) );
+	$wp_customize->add_section( 'delivery', array(
+		'title'       => __( 'Mensagens/Informações de entrega', 'odin' ),
+		'priority'    => 10,
+	) );
+
 }
 add_action( 'customize_register', 'boaterra_register_section' );
 function boaterra_kirki_fields( $fields ) {
@@ -74,6 +79,14 @@ function boaterra_kirki_fields( $fields ) {
 		'setting'  => 'footer-image',
 		'label'    => __( 'Logo no rodapé', 'odin' ),
 		'section'  => 'footer',
+		'priority' => 1,
+	);
+	$fields[] = array(
+		'type'     => 'textarea',
+		'setting'  => 'delivery_error',
+		'label'    => __( 'Mensagem de endereço não atendido (erro)', 'odin' ),
+		'section'  => 'delivery',
+		'sanitize_callback' => 'esc_html',
 		'priority' => 1,
 	);
 	return $fields;
