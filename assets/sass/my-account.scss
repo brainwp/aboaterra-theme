@@ -140,7 +140,7 @@ body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 	width:100%;
 
 	.input-text {
-		width:60% !important;
+		width:48% !important;
 		background: #fff;
 		border: 1px solid #c3c3c3;
 		padding: 4px;
@@ -148,6 +148,7 @@ body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 	label {
 		width:100%;
 		clear: both;
+		font-size:1.2em;
 	}
 	.button {
 		margin-top: -4px !important;
@@ -164,6 +165,7 @@ body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 		margin-top: 20px;
 		font-size: 1.4em;
 		display: inline-block;
+		margin-bottom: 15px;
 		a {
 			color:#FFF !important;
 			text-decoration: underline;

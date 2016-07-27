@@ -13,7 +13,6 @@ jQuery(document).ready(function($) {
 
 		if ( _href !== undefined && _href.lastIndexOf(reveal_str) != -1 ) {
 			e.preventDefault();
-			console.log( 'ahhhhhhuu' );
 			$( '#reveal-modal-id' ).find( '.close-reveal-modal').trigger( 'click' );
 			$.get( _href + '?reveal-modal-ajax=true', {}, function( response ){
 				var html = '<a class="close-reveal-modal">&#215;</a>' + response;
@@ -31,5 +30,10 @@ jQuery(document).ready(function($) {
 		if ( $modal_link.length && $modal_link.attr( 'href' ).lastIndexOf(reveal_str) != -1 ) {
 			$modal_link.trigger( 'click' );
 		}
-	} )
+	} );
+	$( 'body.unlogged-user' ).on( 'closed.fndtn.reveal', '#reveal-modal-id', function( e ){
+		setTimeout( function(){
+			location.reload();
+		}, 120 );
+	} );
 });

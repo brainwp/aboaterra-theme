@@ -90,6 +90,22 @@ function boaterra_kirki_fields( $fields ) {
 	);
 	$fields[] = array(
 		'type'     => 'textarea',
+		'setting'  => 'delivery_success',
+		'label'    => __( 'Mensagem de endereço atendido (sucesso)', 'odin' ),
+		'section'  => 'delivery',
+		'sanitize_callback' => 'aboaterra_esc_url_raw',
+		'priority' => 1,
+	);
+	$fields[] = array(
+		'type'     => 'textarea',
+		'setting'  => 'delivery_error_redirect',
+		'label'    => __( 'URL para redirecionar quando o endereço não for atendido', 'odin' ),
+		'section'  => 'delivery',
+		'sanitize_callback' => 'aboaterra_esc_url_raw',
+		'priority' => 1,
+	);
+	$fields[] = array(
+		'type'     => 'textarea',
 		'setting'  => 'code_open_body',
 		'label'    => __( 'Bloco de código após a abertura da tag <body>', 'odin' ),
 		'section'  => 'geral',
