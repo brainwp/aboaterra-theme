@@ -135,6 +135,7 @@ class Brasa_Check_Delivery {
 		}
 		header( sprintf( 'delivery-status: %s', 'false' ) );
 		WC()->session->set( 'wcpbc_customer', array() );
+		WC()->cart->empty_cart();
 		wp_die( sprintf( $this->error, __( 'Lamento, nós não entregamos nesse CEP.', 'odin' ) ) );
 	}
 	public function get_woocommerce_zipcode( $code ) {
