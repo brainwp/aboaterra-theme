@@ -82,14 +82,6 @@ function boaterra_kirki_fields( $fields ) {
 	);
 	$fields[] = array(
 		'type'     => 'textarea',
-		'setting'  => 'delivery_error',
-		'label'    => __( 'Mensagem de endereço não atendido (erro)', 'odin' ),
-		'section'  => 'delivery',
-		'sanitize_callback' => 'aboaterra_esc_url_raw',
-		'priority' => 1,
-	);
-	$fields[] = array(
-		'type'     => 'textarea',
 		'setting'  => 'delivery_success',
 		'label'    => __( 'Mensagem de endereço atendido (sucesso)', 'odin' ),
 		'section'  => 'delivery',
