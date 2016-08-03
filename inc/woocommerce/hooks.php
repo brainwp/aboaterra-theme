@@ -93,3 +93,14 @@ function change_woocommerce_pagination_text( $args ) {
 	return $args;
 }
 add_filter( 'woocommerce_pagination_args', 'change_woocommerce_pagination_text' );
+/**
+ * Redirect to my account page on login failed
+ * @param string $username
+ * @return null
+ */
+function redirect_to_my_account_on_fail( $username ) {
+	wc_add_notice( __( 'Ocorreu um erro ao fazer login: Verifique suas credenciais e tente novamente.', 'odin' ), 'error' );
+	wp_redirect( odin_get_my_account_url() . '?login_failed=true' );
+	exit;
+}
+add_action( 'wp_login_failed', 'redirect_to_my_account_on_fail' );

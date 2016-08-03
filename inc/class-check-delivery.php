@@ -116,6 +116,11 @@ class Brasa_Check_Delivery {
 		$customer_data = WC()->session->get( 'wcpbc_customer' );
 		if ( is_array( $customer_data ) && ! empty( $customer_data ) && isset( $customer_data[ 'message'] ) ) {
 			header( sprintf( 'delivery-status: %s', 'true' ) );
+			if ( ! is_user_logged_in() ) {
+				$code = wc_format_postcode( $_REQUEST[ 'postcode'], WC()->customer->get_shipping_country() );
+				WC()->customer->set_postcode( $code );
+				WC()->customer->set_shipping_postcode( $code );
+			}
 			if ( isset( $_REQUEST[ 'show_accept_message'] ) && $_REQUEST[ 'show_accept_message'] == 'true' ) {
 				if ( $value = get_theme_mod( 'delivery_success', false ) ) {
 					printf( $this->success, apply_filters( 'the_title', $value ) );
@@ -125,11 +130,6 @@ class Brasa_Check_Delivery {
 				}
 			} else {
 				printf( $this->success, apply_filters( 'the_title', $customer_data[ 'message'] ) );
-			}
-			if ( ! is_user_logged_in() ) {
-				$code = wc_format_postcode( $_REQUEST[ 'postcode'], WC()->customer->get_shipping_country() );
-				WC()->customer->set_postcode( $code );
-				WC()->customer->set_shipping_postcode( $code );
 			}
 			wp_die();
 		}

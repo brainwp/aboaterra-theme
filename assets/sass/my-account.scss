@@ -3,6 +3,9 @@ body.woocommerce-account.unlogged-user {
 		display: none;
 	}
 }
+body.woocommerce-account main .close-modal {
+	display: none !important;
+}
 body.woocommerce-page {
 	.navbar-collapse{
 		border-bottom: 3px solid #ccc!important;
