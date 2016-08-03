@@ -104,3 +104,9 @@ function redirect_to_my_account_on_fail( $username ) {
 	exit;
 }
 add_action( 'wp_login_failed', 'redirect_to_my_account_on_fail' );
+
+function aboaterra_remove_reviews( $tabs ) {
+	unset( $tabs['reviews'] );
+	return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'aboaterra_remove_reviews', 98 );
