@@ -11,10 +11,23 @@ jQuery(document).ready(function($) {
 			'action': 'brasa_check_delivery',
 			'postcode': $elements_div.children( '[name="check-delivery"]' ).val()
 		};
-
-		$.post( odin.ajax_url, data, function(response) {
-			$elements_div.children( '.response' ).html( response );
-			$submit_btn.html( default_text );
+		$.ajax({
+			type: 'POST',
+			url: odin.ajax_url,
+			data: data,
+			complete: function( response ){
+				if ( response.getResponseHeader( 'delivery-status' ) == 'false' ) {
+					window.location = $form.attr( 'data-redirect-error' );
+				} else {
+					$elements_div.children( '.response' ).html( response.responseText );
+					if( $form.attr( 'data-redirect-success' ) && $form.attr( 'data-redirect-success' ) != '' ) {
+						 setTimeout( function(){
+						 	window.location = $form.attr( 'data-redirect-success' );
+						 }, 4000);
+					}
+				}
+				$submit_btn.html( default_text );
+			}
 		});
 	});
 	$( 'body').on( 'submit', '.register-check-delivery', function( e ) {
@@ -37,9 +50,13 @@ jQuery(document).ready(function($) {
 			complete: function( response ){
 				if ( response.getResponseHeader( 'delivery-status' ) == 'false' ) {
 					window.location = $form.attr( 'data-redirect-error' );
-				}
-				else {
+				} else {
 					$elements_div.children( '.response' ).html( response.responseText );
+					if( $form.attr( 'data-redirect-success' ) && $form.attr( 'data-redirect-success' ) != '' ) {
+						 setTimeout( function(){
+						 	window.location = $form.attr( 'data-redirect-success' );
+						 }, 4000);
+					}
 				}
 				$submit_btn.html( default_text );
 			}
@@ -48,5 +65,10 @@ jQuery(document).ready(function($) {
 	$( 'body' ).on( 'click', '.close-modal', function( e ){
 		e.preventDefault();
 		$( '#reveal-modal-id .close-reveal-modal' ).trigger( 'click' );
+	});
+	$( 'body' ).on( 'click', '.btn-show-element', function( e ){
+		e.preventDefault();
+		var $elem = $( $( this ).attr( 'data-element' ) );
+		$elem.show( 1000 );
 	});
 } );

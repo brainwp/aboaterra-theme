@@ -49,13 +49,14 @@ class Brasa_Check_Delivery {
 			'container_width' 	=> '',
 			'form_tag' 			=> 'form',
 			'redirect_error'	=> '',
+			'redirect_success'	=> '',
 			'show_btn' => true
 		), $atts, 'brasa_check_delivery' );
 		$container_style = '';
 		if ( ! empty( $atts[ 'container_width' ] ) ) {
 			$container_style = sprintf( 'style="width:%s;"', $atts[ 'container_width' ] );
 		}
-		$html = sprintf( '<%s class="brasa-check-delivery-container" data-redirect-error="%s">', $atts[ 'form_tag' ], $atts[ 'redirect_error' ] );
+		$html = sprintf( '<%s class="brasa-check-delivery-container" data-redirect-error="%s" data-redirect-success="%s">', $atts[ 'form_tag' ], $atts[ 'redirect_error' ], $atts[ 'redirect_success' ] );
 		$html .= sprintf( '<div class="elements" %s>', $container_style );
 		$html .= sprintf( '<label>%s</label>', $atts[ 'label'] );
 		$html .= sprintf( '<input class="input-text" type="text" name="check-delivery" placeholder="%s">', $atts[ 'placeholder' ] );
