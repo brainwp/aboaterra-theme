@@ -309,7 +309,7 @@ body.home .textwidget {
 }
 .bx-wrapper .bx-prev {
 	width: 40px !important;
-	height: 60px !important;
+	height: 70px !important;
 	background: url("../images/slider-prev.png") no-repeat !important;
 	left:-35px !important;
 	@media screen and ( max-width: 800px ) {
@@ -317,9 +317,12 @@ body.home .textwidget {
 	}
 
 }
+.slick-dots{
+	display: none!Important;
+}
 .bx-wrapper .bx-next {
 	width: 40px !important;
-	height: 60px !important;
+	height: 70px !important;
 	background: url("../images/slider-next.png") no-repeat !important;
 	right:-35px !important;
 	@media screen and ( max-width: 800px ) {
