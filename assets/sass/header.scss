@@ -1,29 +1,36 @@
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+	margin-top: 10px;
+}
+#menu-menu-principal span {
+	padding-left: 10px;
+}
 .prices-warn {
  	background-color: #41a140;
  	box-shadow: 0px 3px 14px 0px rgba(109, 107, 107, 0.40);
- 	margin-bottom:40px;
 	position: fixed;
 	clear: both;
 	z-index: 99;
 	width:100%;
 
  	.container {
-		padding-top:3.5px;
-		padding-bottom: 3.5px;
+		padding-top:1.5px;
+		padding-bottom: 1.5px;
 	}
 	.text {
 		color: #FFF;
 		font-weight: 600;
+		text-align: right;
 		a {
 			color: #FFF !important;
-			font-weight: bold;
+			font-weight: normal;
 			text-decoration: underline;
 			cursor: pointer;
+			letter-spacing: 0.7px;
 		}
 		.icon {
 			text-decoration: none !important;
 			margin-right:10px;
-			font-size:1.1em;
+			font-size:16px;
 		}
 		.fa {
 			font-size:21px;
@@ -39,7 +46,7 @@ header#header {
 }
 .header-image {
 	img {
-		max-width: 100% !important;
+		max-width: 85% !important;
 	}
 }
 #searchform {
@@ -49,6 +56,8 @@ header#header {
 		width:100% !important;
 		border-color:#fbb958;
 		box-shadow: 0 0 1px rgba(251,185,88,0.6);
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 	button {
 		position: absolute;
@@ -58,31 +67,36 @@ header#header {
 		background:transparent;
 		border: none;
 		color:#fbb958;
+		padding-top: 12px;
 	}
 }
 #header .woocommerce-infos {
-	margin-top:-5px;
+	margin-top:3px;
+	padding-left: 0px!important;
+    padding-right: 0px!important;
+    text-align: right;
 	@media screen and (max-width:800px) {
 		text-align:center;
 		padding-top:15px;
 	}
 	a {
 		font-weight: 600;
+		font-family: arial;
 	}
 	* {
 		color:#912d1e;
 	}
 	.fa {
-		font-size:32px;
+		font-size:26px;
 	}
 	.separator {
-		padding-right: 10px;
-		padding-left:10px;
+		padding-right: 6px;
+		padding-left:6px;
 	}
 	.cart-infos {
-		font-family: 'BELLABOO-Regular', sans-serif;
+		font-family: arial;
 		font-size:1.2em;
-		padding-left:10px;
+		line-height: 29px;
 	}
 }
 @media screen and (max-width:800px) {
@@ -92,8 +106,9 @@ header#header {
 }
 #header .menu-institucional {
 	padding-top:10px;
+	float: right;
 	li, a {
-		font-weight:600;
+		font-weight:700;
 		color:#000;
 		transition:200ms ease-in-out all;
 		background: transparent !important;
@@ -176,9 +191,12 @@ header#header {
 	ul.nav > li > a {
 		font-family: 'BELLABOO-Regular', sans-serif;
 		color:#912d1e;
-		font-size: 2.1em;
+		font-size: 1.9em;
 		background: none !important;
-
+		padding-left: 0px;
+		padding-bottom: 17px;
+		padding-right: 25px!important;
+		font-weight: 500
 		span {
 			font-size:0.8em;
 			padding-left:16px;
@@ -195,4 +213,9 @@ header#header {
 	background: none !important;
 	border:transparent !important;
 	padding-top:25px;
+}
+@media all and(max-width:767px){
+	#header .menu-institucional{
+		float: initial;
+	}
 }
