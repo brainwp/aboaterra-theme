@@ -19,3 +19,14 @@
 		display: none !important;
 	}
 }
+#reveal-modal-id.modal-bigger {
+	@media screen and ( min-width: 800px ) {
+		margin-left: -40% !important;
+		width: 80% !important;
+		left: 50% !important;
+		right: 0 !important;
+	}
+	> h1 {
+		display: none;
+	}
+}

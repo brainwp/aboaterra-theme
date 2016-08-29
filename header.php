@@ -23,6 +23,9 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+	<?php if ( $value = get_theme_mod( 'code_open_body', false ) ) : ?>
+		<?php echo html_entity_decode( $value );?>
+	<?php endif;?>
 	<a id="skippy" class="sr-only sr-only-focusable" href="#content">
 		<div class="container">
 			<span class="skiplink-text"><?php _e( 'Skip to content', 'odin' ); ?></span>
@@ -33,9 +36,9 @@
 			<div class="row">
 				<div class="col-md-7 pull-left text">
 					<?php if ( is_user_logged_in() ) : ?>
-						<?php _e( 'Bem-vindo ao nosso sítio!', 'odin' );?>
+						<?php echo get_theme_mod( 'header_warn_logged', '' );?>
 					<?php else : ?>
-						<?php printf( __( 'Região de visitação - Preços praticados - %s. Faça o <a class="login-modal-open">log in</a> para conferir os preços na sua região' ), get_the_city() );?>
+						<?php echo get_theme_mod( 'header_warn_unlogged', '' );?>
 					<?php endif;?>
 				</div><!-- .col-md-6 pull-left -->
 				<div class="col-md-4 pull-right text">

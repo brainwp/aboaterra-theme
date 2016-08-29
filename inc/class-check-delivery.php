@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Check delivery
@@ -43,24 +42,30 @@ class Brasa_Check_Delivery {
 	}
 	public function shortcode( $atts, $content = '' ) {
 		$atts = shortcode_atts( array(
-			'label' => '',
-			'button_text' => 'Ok',
-			'button_load_text' => __( 'Loading..'),
-			'placeholder' => '',
-			'container_width' => ''
+			'label'				=> '',
+			'button_text'		=> 'Ok',
+			'button_load_text'	=> __( 'Loading..'),
+			'placeholder' 		=> '',
+			'container_width' 	=> '',
+			'form_tag' 			=> 'form',
+			'redirect_error'	=> '',
+			'redirect_success'	=> '',
+			'show_btn' => true
 		), $atts, 'brasa_check_delivery' );
 		$container_style = '';
 		if ( ! empty( $atts[ 'container_width' ] ) ) {
 			$container_style = sprintf( 'style="width:%s;"', $atts[ 'container_width' ] );
 		}
-		$html = sprintf( '<form class="brasa-check-delivery-container">' );
+		$html = sprintf( '<%s class="brasa-check-delivery-container" data-redirect-error="%s" data-redirect-success="%s">', $atts[ 'form_tag' ], $atts[ 'redirect_error' ], $atts[ 'redirect_success' ] );
 		$html .= sprintf( '<div class="elements" %s>', $container_style );
 		$html .= sprintf( '<label>%s</label>', $atts[ 'label'] );
 		$html .= sprintf( '<input class="input-text" type="text" name="check-delivery" placeholder="%s">', $atts[ 'placeholder' ] );
-		$html .= sprintf( '<button class="woocommerce-Button button" data-load="%s">%s</button>', $atts[ 'button_load_text'], $atts[ 'button_text' ] );
+		if ( $atts[ 'show_btn' ] === true ) {
+			$html .= sprintf( '<button class="woocommerce-Button button" data-load="%s">%s</button>', $atts[ 'button_load_text'], $atts[ 'button_text' ] );
+		}
 		$html .= '<div class="response"></div>';
 		$html .= '</div>';
-		$html .= '</form>';
+		$html .= sprintf( '</%s>', $atts[ 'form_tag'] );
 		return $html;
 	}
 	public function is_ajax() {
@@ -112,11 +117,26 @@ class Brasa_Check_Delivery {
 		$customer_data = WC()->session->get( 'wcpbc_customer' );
 		if ( is_array( $customer_data ) && ! empty( $customer_data ) && isset( $customer_data[ 'message'] ) ) {
 			header( sprintf( 'delivery-status: %s', 'true' ) );
-			printf( $this->success, apply_filters( 'the_title', $customer_data[ 'message'] ) );
+			if ( ! is_user_logged_in() ) {
+				$code = wc_format_postcode( $_REQUEST[ 'postcode'], WC()->customer->get_shipping_country() );
+				WC()->customer->set_postcode( $code );
+				WC()->customer->set_shipping_postcode( $code );
+			}
+			if ( isset( $_REQUEST[ 'show_accept_message'] ) && $_REQUEST[ 'show_accept_message'] == 'true' ) {
+				if ( $value = get_theme_mod( 'delivery_success', false ) ) {
+					printf( $this->success, apply_filters( 'the_title', $value ) );
+					_e( '<a href="#" class="close-modal woocommerce-Button button">Fechar</a>', 'odin' );
+				} else {
+					printf( $this->success, apply_filters( 'the_title', $customer_data[ 'message'] ) );
+				}
+			} else {
+				printf( $this->success, apply_filters( 'the_title', $customer_data[ 'message'] ) );
+			}
 			wp_die();
 		}
 		header( sprintf( 'delivery-status: %s', 'false' ) );
 		WC()->session->set( 'wcpbc_customer', array() );
+		WC()->cart->empty_cart();
 		wp_die( sprintf( $this->error, __( 'Lamento, nós não entregamos nesse CEP.', 'odin' ) ) );
 	}
 	public function get_woocommerce_zipcode( $code ) {

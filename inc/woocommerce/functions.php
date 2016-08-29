@@ -66,3 +66,15 @@ function odin_thumbnail_columns() {
 function odin_products_per_page() {
 	return intval( apply_filters( 'odin_products_per_page', 12 ) );
 }
+/**
+ * Get WooCommerce My Account Page URL
+ * @return string
+ */
+function odin_get_my_account_url() {
+	$id = get_option( 'woocommerce_myaccount_page_id' );
+	if ( $id ) {
+		return get_permalink( $id );
+	}
+	return '#';
+}
+

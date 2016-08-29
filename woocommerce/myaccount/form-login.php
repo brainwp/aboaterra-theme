@@ -72,54 +72,42 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="col-xs-12 col-sm-12 col-md-6 pull-right register-form">
 
-		<form method="post" class="register">
+		<form method="post" class="register register-check-delivery">
 			<h2><?php _e( 'Quero me cadastrar', 'odin' ); ?></h2>
 
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
 
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
-
-				<p class="col-md-6">
-					<label for="reg_username"><?php _e( 'Username', 'woocommerce' ); ?> <span class="required">*</span></label>
-					<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
-				</p><!-- .col-md-6 -->
-
-			<?php endif; ?>
-
-			<p class="col-md-6">
-				<label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
-				<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" />
-			</p><!-- .col-md-6 -->
-
-			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 				<p class="col-md-12"></p><!-- .col-md-12 -->
 				<p class="col-md-6">
-					<label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
-					<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" />
+					<label for="reg_username"><?php _e( 'Username', 'woocommerce' ); ?> <span class="required">*</span></label>
+					<input required type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
 				</p><!-- .col-md-6 -->
 
 			<?php endif; ?>
+			<p class="col-md-12"></p><!-- .col-md-12 -->
+			<p class="col-md-6">
+				<label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
+				<input required type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" />
+			</p><!-- .col-md-6 -->
 
 			<!-- Spam Trap -->
 			<div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;"><label for="trap"><?php _e( 'Anti-spam', 'woocommerce' ); ?></label><input type="text" name="email_2" id="trap" tabindex="-1" /></div>
 
 			<?php do_action( 'woocommerce_register_form' ); ?>
 			<?php do_action( 'register_form' ); ?>
+			<?php $label = __( 'CEP', 'odin' );?>
+			<?php $loading_txt = __( 'Carregando..', 'odin' );?>
+			<?php $redirect_error = '';?>
+			<?php if ( $value = get_theme_mod( 'delivery_error_redirect', false ) ) : ?>
+				<?php $redirect_error = $value;?>
+			<?php endif;?>
+			<?php echo do_shortcode( sprintf( '[brasa_check_delivery label="%s" button_load_text="%s" form_tag="div" redirect_error="%s"]', $label, $loading_txt, $redirect_error ) );?>
 
-			<p class="col-md-6">
-				<?php wp_nonce_field( 'woocommerce-register' ); ?>
-				<input type="submit" class="woocommerce-Button button" name="register" value="<?php esc_attr_e( 'Ok', 'odin' ); ?>" />
-			</p><!-- .col-md-3 -->
+			<?php wp_nonce_field( 'woocommerce-register' ); ?>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
-
 		</form>
-		<div class="col-md-12">
-			<h2><?php _e( 'Quero informar meu cep antes para verificar se entregam na minha casa', 'odin');?></h2>
-		</div><!-- .col-md-12 -->
-		<?php $label = __( 'CEP', 'odin' );?>
-		<?php $loading_txt = __( 'Carregando..', 'odin' );?>
-		<?php echo do_shortcode( sprintf( '[brasa_check_delivery label="%s" button_load_text="%s"]', $label, $loading_txt ) );?>
 	</div>
 
 </div>

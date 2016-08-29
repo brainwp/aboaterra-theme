@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACC,qBAAW,CACV,UAAU,CAAE,OAAO,CACnB,UAAU,CAAC,IAAI,CACf,aAAa,CAAE,IAAI",
+"sources": ["../sass/page-regioes.scss"],
+"names": [],
+"file": "page-regioes.css"
+}
