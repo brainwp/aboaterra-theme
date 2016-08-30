@@ -34,14 +34,14 @@
 	<div class="prices-warn">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-7 pull-left text">
+				<div class="pull-left text">
 					<?php if ( is_user_logged_in() ) : ?>
 						<?php echo get_theme_mod( 'header_warn_logged', '' );?>
 					<?php else : ?>
 						<?php echo get_theme_mod( 'header_warn_unlogged', '' );?>
 					<?php endif;?>
 				</div><!-- .col-md-6 pull-left -->
-				<div class="container pull-right text">
+				<div class="pull-right text">
 					<?php if ( $value = get_theme_mod( 'phone', false ) ) : ?>
 						<i class="fa fa-phone"></i>
 						<a class="phone icon"><?php echo apply_filters( 'the_title', $value );?></a>
