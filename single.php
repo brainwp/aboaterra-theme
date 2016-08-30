@@ -7,7 +7,7 @@
  */
 
 get_header(); ?>
-<div class="container">
+<div class="container blog-container">
 	<div id="primary" class="<?php echo odin_classes_page_sidebar(); ?>">
 		<main id="main-content" class="site-main" role="main">
 			<?php

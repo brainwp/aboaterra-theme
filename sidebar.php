@@ -9,7 +9,7 @@
  */
 ?>
 
-<aside id="sidebar" class="<?php echo odin_classes_page_sidebar_aside(); ?>" role="complementary">
+<aside id="sidebar" class="<?php echo odin_classes_page_sidebar_aside(); ?> pull-right" role="complementary">
 	<?php
 		if ( ! dynamic_sidebar( 'main-sidebar' ) ) {
 			the_widget( 'WP_Widget_Recent_Posts', array( 'number' => 10 ) );
