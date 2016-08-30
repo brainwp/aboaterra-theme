@@ -7,7 +7,7 @@
  */
 
 get_header(); ?>
-
+<div class="container">
 	<div id="primary" class="<?php echo odin_classes_page_sidebar(); ?>">
 		<main id="main-content" class="site-main" role="main">
 			<?php
@@ -29,7 +29,8 @@ get_header(); ?>
 			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 <?php
 get_sidebar();
+echo '</div>';
+
 get_footer();
