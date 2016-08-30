@@ -1,0 +1,51 @@
+#page-center {
+	.row {
+		display: flex;
+		justify-content:center;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color:#912d1e;
+		font-family: 'BELLABOO-Regular', sans-serif;
+	}
+	.brasa-check-delivery-container {
+		display: flex;
+		justify-content:center;
+	}
+}
+.brasa-check-delivery-container {
+	button {
+		font-family: 'BELLABOO-Regular', sans-serif !important;
+		text-align: center;
+		border: none !important;
+		background: #ff6600 !important;
+		color: #FFF !important;
+		display: inline-block;
+		border-radius: 0 !important;
+		font-weight: normal !important;
+		box-shadow: 0px 1px 5px 0px rgba(251,185,88,0.75) !important;
+		margin-top: 24px;
+	}
+}
+.zilla-button.orange {
+	font-family: 'BELLABOO-Regular', sans-serif !important;
+	text-align: center;
+	border: none !important;
+	background: #ff6600 !important;
+	color: #FFF !important;
+	display: inline-block;
+	border-radius: 0 !important;
+	font-weight: normal !important;
+	box-shadow: 0px 1px 5px 0px rgba(251,185,88,0.75) !important;
+	margin-top: 24px;
+}
+#page-center {
+	h1 .zilla-button {
+		margin-left: 20px !important;
+		margin-top: 21px !important;
+	}
+}

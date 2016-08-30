@@ -1,3 +1,11 @@
+body.woocommerce-account.unlogged-user {
+	.entry-header {
+		display: none;
+	}
+}
+body.woocommerce-account main .close-modal {
+	display: none !important;
+}
 body.woocommerce-page {
 	.navbar-collapse{
 		border-bottom: 3px solid #ccc!important;
@@ -61,10 +69,125 @@ body.woocommerce-page {
 }
 
 .woocommerce-account .woocommerce{
+	padding-bottom: 30px;
 	h2{
 		font-family: 'BELLABOO-Regular', sans-serif;
 		color: #912d1e;
 		font-size: 1.69em;
 	}
 }
+body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
+	h2 {
+		padding-bottom:25px;
+	}
+	form {
+		border:none;
+		padding:0;
+		display: inline-block;
+		border-radius:0 !important;
+	}
+	p.col-md-6 {
+		padding:0;
+		padding-right:10px;
+	}
+	p.col-md-12 {
+		padding:0;
+	}
+	.input-text {
+		width:100%;
+		background: #fff;
+		border: 1px solid #c3c3c3;
+		padding: 4px;
+	}
+	label {
+		text-transform: uppercase;
+		font-weight: 600;
+		color:#929393;
+	}
+	.woocommerce-Button {
+		font-family: 'BELLABOO-Regular', sans-serif !important;
+		text-align: center;
+		border: none !important;
+		background: #ff6600 !important;
+		color: #FFF !important;
+		display: inline-block;
+		border-radius: 0 !important;
+		font-weight: normal !important;
+		box-shadow: 0px 1px 5px 0px rgba(251,185,88,0.75) !important;
+		margin-top: 24px;
+	}
+	label[for="rememberme"] {
+		display: none;
+	}
+	.btn-cart-link {
+		max-width: none !important;
+		width:auto !important;
+	}
+	.register-form form {
+		width:100%;
+		background: #E3E3E3;
+		display: inline-block;
+		border-radius: 0 !important;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 15px;
+	}
+	.login-form {
+		@media screen and ( min-width: 800px ) {
+			border-right:3px solid #f66d00;
+		}
+	}
+}
+.brasa-check-delivery-container {
+	background: none !important;
+	width:100%;
 
+	.input-text {
+		width:48% !important;
+		background: #fff;
+		border: 1px solid #c3c3c3;
+		padding: 4px;
+	}
+	label {
+		width:100%;
+		clear: both;
+		font-size:1.2em;
+	}
+	.button {
+		margin-top: -4px !important;
+		margin-left: 8px !important;
+	}
+	.success {
+		background: #41a140;
+		color:#FFF !important;
+		font-weight: 600;
+		padding-left:15px;
+		padding-top:20px;
+		padding-bottom: 20px;
+		padding-right:15px;
+		margin-top: 20px;
+		font-size: 1.4em;
+		display: inline-block;
+		margin-bottom: 15px;
+		a {
+			color:#FFF !important;
+			text-decoration: underline;
+		}
+	}
+	.error {
+		background: #912d1e;
+		color:#FFF !important;
+		font-weight: 600;
+		padding-left:15px;
+		padding-top:20px;
+		padding-bottom: 20px;
+		padding-right:15px;
+		margin-top: 20px;
+		font-size: 1.4em;
+		display: inline-block;
+		a {
+			color:#FFF !important;
+			text-decoration: underline;
+		}
+	}
+}

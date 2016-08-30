@@ -23,22 +23,25 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+	<?php if ( $value = get_theme_mod( 'code_open_body', false ) ) : ?>
+		<?php echo html_entity_decode( $value );?>
+	<?php endif;?>
 	<a id="skippy" class="sr-only sr-only-focusable" href="#content">
 		<div class="container">
 			<span class="skiplink-text"><?php _e( 'Skip to content', 'odin' ); ?></span>
 		</div>
 	</a>
-	<div class="col-md-12 prices-warn">
+	<div class="prices-warn">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7 pull-left text">
 					<?php if ( is_user_logged_in() ) : ?>
-						<?php _e( 'Bem-vindo ao nosso sítio!', 'odin' );?>
+						<?php echo get_theme_mod( 'header_warn_logged', '' );?>
 					<?php else : ?>
-						<?php printf( __( 'Região de visitação - Preços praticados - %s. Faça o <a class="login-modal-open">log in</a> para conferir os preços na sua região' ), get_the_city() );?>
+						<?php echo get_theme_mod( 'header_warn_unlogged', '' );?>
 					<?php endif;?>
 				</div><!-- .col-md-6 pull-left -->
-				<div class="col-md-4 pull-right text">
+				<div class="container pull-right text">
 					<?php if ( $value = get_theme_mod( 'phone', false ) ) : ?>
 						<i class="fa fa-phone"></i>
 						<a class="phone icon"><?php echo apply_filters( 'the_title', $value );?></a>
@@ -116,7 +119,7 @@
 					<?php endif;?>
 				</div><!-- .col-md-4 pull-right -->
 			</div><!-- .col-md-6 pull-right -->
-			<div class="col-md-6 col-xs-12 pull-right menu-institucional">
+			<div class="menu-institucional">
 				<?php echo wp_nav_menu(
 						array(
 							'theme_location' => 'institucional',
