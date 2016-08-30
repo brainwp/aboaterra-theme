@@ -8,8 +8,8 @@
 
 get_header(); ?>
 
-	<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
-
+	<main id="content" class="container error-page" tabindex="-1" role="main">
+		<div class="col-md-12">
 			<header class="page-header">
 				<h1 class="page-title"><?php _e( 'Not Found', 'odin' ); ?></h1>
 			</header>
@@ -19,7 +19,7 @@ get_header(); ?>
 
 				<?php get_search_form(); ?>
 			</div><!-- .page-content -->
-
+		</div>
 	</main><!-- #main -->
 
 <?php
