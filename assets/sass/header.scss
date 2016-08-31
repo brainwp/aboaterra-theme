@@ -1,6 +1,9 @@
 .navbar-default .navbar-collapse, .navbar-default .navbar-form{
 	margin-top: 10px;
 }
+.navbar-main-navigation ul.nav>li.open{
+	box-shadow: none!important;
+}
 #menu-menu-principal span {
 	padding-left: 10px;
 }
@@ -62,7 +65,7 @@ header#header {
 	button {
 		position: absolute;
 		left: 0;
-		z-index: 99;
+		z-index: 5;
 		margin-left: 16px;
 		background:transparent;
 		border: none;
