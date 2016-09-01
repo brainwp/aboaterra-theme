@@ -40,6 +40,21 @@ if ( $order ) : ?>
 			<div class="orderd"><?php _e( 'Pedido Número:', 'woocommerce' ); ?></div>
 			<div class="oder-number"><?php echo $order->get_order_number(); ?></div>
 		</div>
+		<div class="tY">
+			<div class="uH">Que tal acompanhar o que acontece aqui na roça!?</div>
+			<div class="socialM">
+					<?php if ( $value = get_theme_mod( 'facebook', false ) ) : ?>
+						<a href="<?php echo esc_url( $value );?>" class="rounded-icon">
+							<i class="fa fa-facebook"></i>
+						</a>
+					<?php endif;?>
+					<?php if ( $value = get_theme_mod( 'instagram', false ) ) : ?>
+						<a href="<?php echo esc_url( $value );?>" class="rounded-icon">
+							<i class="fa fa-instagram"></i>
+						</a>
+					<?php endif;?>
+			</div>
+		</div>
 
 	</div>
 
