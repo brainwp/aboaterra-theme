@@ -41,6 +41,7 @@ function aboaterra_esc_url_raw( $str ) {
 	return $str;
 }
 function boaterra_kirki_fields( $fields ) {
+
 	$fields[] = array(
 		'type'     => 'text',
 		'setting'  => 'phone',
@@ -88,6 +89,7 @@ function boaterra_kirki_fields( $fields ) {
 		'sanitize_callback' => 'aboaterra_esc_url_raw',
 		'priority' => 1,
 	);
+
 	$fields[] = array(
 		'type'     => 'textarea',
 		'setting'  => 'delivery_error_redirect',
