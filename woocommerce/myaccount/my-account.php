@@ -26,10 +26,15 @@ wc_print_notices();
  * My Account navigation.
  * @since 2.6.0
  */
+?>
+<div class="col-md-2">
+<?php
 do_action( 'woocommerce_account_navigation' );
 global $wp;
 $endpoint = WC()->query->get_current_endpoint();
 ?>
+</div>
+
 <?php if ( $endpoint_title = WC()->query->get_endpoint_title( $endpoint ) ) : ?>
 	<h3 class="endpoint-title">
 		<?php echo apply_filters( 'the_title', $endpoint_title );?>

@@ -15,9 +15,11 @@
  * @package 	WooCommerce/Templates
  * @version     2.2.0
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
 if ( $order ) : ?>
 	<?php if ( $order->has_status( 'failed' ) ) : ?>
 
@@ -31,6 +33,7 @@ if ( $order ) : ?>
 		</p>
 
 	<?php else : ?>
+
 	<div class="thank">
 
 		<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Agradecemos por escolher A Boa Terra!' ), $order ); ?></p>
@@ -57,7 +60,6 @@ if ( $order ) : ?>
 		</div>
 
 	</div>
-
 	<?php endif; ?>
 
 	<?php do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>

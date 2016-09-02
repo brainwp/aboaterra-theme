@@ -3,6 +3,25 @@ body.woocommerce-account.unlogged-user {
 		display: none;
 	}
 }
+.woocommerce-account .woocommerce-MyAccount-navigation{
+	width: 100%!important;
+}
+.woocommerce-account .woocommerce-MyAccount-content{
+	float: left!important;
+}
+.titleDP{
+	font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #717171;
+    margin-top: 20px;
+}
+.superTitle {
+    font-family: 'BELLABOO-Regular', sans-serif;
+    color: #912d1e;
+    font-size: 1.8em;
+    font-weight: 100;
+}
 body.woocommerce-account main .close-modal {
 	display: none !important;
 }
@@ -69,6 +88,7 @@ body.woocommerce-page {
 
 .woocommerce-account .woocommerce{
 	padding-bottom: 30px;
+	margin-top: 22px;
 	h2{
 		font-family: 'BELLABOO-Regular', sans-serif;
 		color: #912d1e;
@@ -110,7 +130,27 @@ body.woocommerce-account {
 	h3.endpoint-title {
 		color:#912d1e;
 		font-family: 'BELLABOO-Regular', sans-serif;
+		margin-top: 0px;
 	}
+	.billing-data {
+		.each-item {
+			width:100%;
+		}
+	}
+}
+.each-item.col-md-12 {
+    padding: 0px;
+}
+body.woocommerce-account .billing-data .each-item {
+    width: 100%;
+    border-bottom: 1px solid;
+    color: #717171;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+.pull-left.title {
+    font-weight: normal;
+    font-size: 1.0em;
 }
 body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 	h2 {
@@ -125,6 +165,16 @@ body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 	p.col-md-6 {
 		padding:0;
 		padding-right:10px;
+	}
+	.woocommerce-Address {
+    	margin-top: 34px;
+	}
+	legend{
+		margin-bottom: 0px;
+    	padding-top: 12px;
+	}
+	.woocommerce-Button button{
+		margin-top: 17px;
 	}
 	p.col-md-12 {
 		padding:0;
