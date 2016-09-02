@@ -412,6 +412,10 @@ require_once get_template_directory() . '/inc/customizer.php';
  */
 require_once get_template_directory() . '/inc/acf/acf.php';
 require_once get_template_directory() . '/inc/custom-fields.php';
+/**
+ * Extra WC Fields
+ */
+require_once get_template_directory() . '/inc/class-extra-fields.php';
 
 /**
  * Order to TXT
@@ -431,3 +435,4 @@ function init_brasa_check_delivery_aboaterra() {
 	new Brasa_Check_Delivery( null, $error );
 }
 add_action( 'init', 'init_brasa_check_delivery_aboaterra', 9999 );
+

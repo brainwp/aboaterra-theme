@@ -111,6 +111,12 @@ body.woocommerce-account {
 		color:#912d1e;
 		font-family: 'BELLABOO-Regular', sans-serif;
 	}
+	.billing-data {
+		.each-item {
+			width:100%;
+			border:1px solid #E3E3E3;
+		}
+	}
 }
 body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 	h2 {

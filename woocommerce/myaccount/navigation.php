@@ -21,27 +21,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 do_action( 'woocommerce_before_account_navigation' );
+$user = wp_get_current_user();
 ?>
-
 <nav class="woocommerce-MyAccount-navigation">
-	<h3 class="user-name">
-		<?php $user = wp_get_current_user();?>
-		<?php echo apply_filters( 'the_title', $user->display_name );?>
-	</h3><!-- .user-name -->
 	<ul>
 		<?php $current_endpoint = WC()->query->get_current_endpoint();?>
 		<?php $items = wc_get_account_menu_items();?>
-		<?php unset( $items[ 'dashboard'], $items['downloads'] );?>
+		<?php unset( $items['downloads'] );?>
 		<?php $items[ 'orders' ] = __( 'Meus Pedidos', 'odin' );?>
-		<?php $new_items = array();?>
-		<?php $new_items[ 'edit-account' ] = $items[ 'edit-account' ];?>
-		<?php unset( $items[ 'edit-account'] );?>
-		<?php $new_items = array_merge( $new_items, $items );?>
-		<?php foreach ( $new_items as $endpoint => $label ) : ?>
+		<?php $items[ 'dashboard' ] = $user->display_name;?>
+		<?php $items[ 'edit-account' ] = __( 'Minha conta', 'odin' );?>
+		<?php foreach ( $items as $endpoint => $label ) : ?>
 			<?php $classes = wc_get_account_menu_item_classes( $endpoint );?>
-			<?php if ( $current_endpoint == '' && $endpoint == 'edit-account' ) : ?>
-				<?php $classes .= ' is-active';?>
-			<?php endif;?>
 			<li class="<?php echo $classes;?>">
 				<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
 			</li>
