@@ -16,6 +16,12 @@
  * @version     2.2.0
  */
 
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -34,29 +40,33 @@ if ( $order ) : ?>
 
 	<?php else : ?>
 
-		<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
+	<div class="thank">
 
-		<ul class="woocommerce-thankyou-order-details order_details">
-			<li class="order">
-				<?php _e( 'Order Number:', 'woocommerce' ); ?>
-				<strong><?php echo $order->get_order_number(); ?></strong>
-			</li>
-			<li class="date">
-				<?php _e( 'Date:', 'woocommerce' ); ?>
-				<strong><?php echo date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) ); ?></strong>
-			</li>
-			<li class="total">
-				<?php _e( 'Total:', 'woocommerce' ); ?>
-				<strong><?php echo $order->get_formatted_order_total(); ?></strong>
-			</li>
-			<?php if ( $order->payment_method_title ) : ?>
-			<li class="method">
-				<?php _e( 'Payment Method:', 'woocommerce' ); ?>
-				<strong><?php echo $order->payment_method_title; ?></strong>
-			</li>
-			<?php endif; ?>
-		</ul>
-		<div class="clear"></div>
+		<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Agradecemos por escolher A Boa Terra!' ), $order ); ?></p>
+		<p class="quote">"Saúde para você e vida para o planeta"</p>
+
+		<div class="thankyou col-md-7">
+			<div class="orderd"><?php _e( 'Pedido Número:', 'woocommerce' ); ?></div>
+			<div class="oder-number"><?php echo $order->get_order_number(); ?></div>
+		</div>
+		<div class="tY">
+			<div class="uH">Que tal acompanhar o que acontece aqui na roça!?</div>
+			<div class="socialM">
+					<?php if ( $value = get_theme_mod( 'facebook', false ) ) : ?>
+						<a href="<?php echo esc_url( $value );?>" class="rounded-icon">
+							<i class="fa fa-facebook"></i>
+						</a>
+					<?php endif;?>
+					<?php if ( $value = get_theme_mod( 'instagram', false ) ) : ?>
+						<a href="<?php echo esc_url( $value );?>" class="rounded-icon">
+							<i class="fa fa-instagram"></i>
+						</a>
+					<?php endif;?>
+			</div>
+		</div>
+
+	</div>
+
 
 	<?php endif; ?>
 
