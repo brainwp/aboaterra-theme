@@ -110,3 +110,6 @@ function aboaterra_remove_reviews( $tabs ) {
 	return $tabs;
 }
 add_filter( 'woocommerce_product_tabs', 'aboaterra_remove_reviews', 98 );
+
+// remove order again button after order items table
+remove_action( 'woocommerce_order_details_after_order_table', 'woocommerce_order_again_button' );
