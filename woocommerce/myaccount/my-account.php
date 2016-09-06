@@ -40,7 +40,14 @@ $endpoint = WC()->query->get_current_endpoint();
 		<?php echo apply_filters( 'the_title', $endpoint_title );?>
 	</h3><!-- .endpoint-title -->
 <?php endif;?>
-<div class="woocommerce-MyAccount-content">
+
+
+
+<?php
+	if(is_view_order_page()):
+
+?>
+<div class="col-md-10 noNo">
 	<?php
 		/**
 		 * My Account content.
@@ -49,3 +56,20 @@ $endpoint = WC()->query->get_current_endpoint();
 		do_action( 'woocommerce_account_content' );
 	?>
 </div>
+
+<?php
+	else :
+?>
+
+<div class="woocommerce-MyAccount-content">
+
+	<?php
+		/**
+		 * My Account content.
+		 * @since 2.6.0
+		 */
+		do_action( 'woocommerce_account_content' );
+	?>
+</div>
+
+<?php endif; ?>

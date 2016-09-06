@@ -33,7 +33,26 @@ body.woocommerce-account.unlogged-user {
 	    border: 0px!important;
 	    font-weight: normal!important;
 }
+.noNo{
+	padding: 0px!important;
+    margin: 0px;
+}
+
+@media all and(max-width:769px) {
+	table.shop_table td{
+		max-width: initial!important;
+	}
+}
 .woocommerce-orders, .woocommerce-view-order{
+	table.shop_table td{
+		max-width: 249px;
+	}
+	table.shop_table{
+		border: 0px;
+	}
+	h2 {
+		font-size: 23px!important;
+	}
 	.each-order-list{
 		border: 1px solid;
 	    margin-bottom: 17px;
