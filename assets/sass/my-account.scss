@@ -3,9 +3,138 @@ body.woocommerce-account.unlogged-user {
 		display: none;
 	}
 }
-p.woocommerce-FormRow.woocommerce-FormRow--wide.form-row.form-row-wide{
+.woocommerce-EditAccountForm, .edit-account{
 	padding: 0px;
 	margin-top:10px;
+}
+.bttht{
+		display: flex;
+    	align-items: center;
+    	justify-content: center;
+    	padding-top: 25px;
+	}
+.btt-ordersS{
+		border-radius: 0px;
+    	font-family: 'BELLABOO-Regular', sans-serif;
+	    font-size: 1.3em;
+	    padding-left: 20px;
+	    padding-right: 20px;
+	    background: darkgrey;
+		margin-right: 14px;
+	    border: 0px;
+}
+.ordersBTT{
+		background-color: #ea6a0d;
+	    border-radius: 0px!important;
+	    font-family: 'BELLABOO-Regular', sans-serif;
+	    font-size: 1.3em!important;
+	    padding-left: 25px!important;
+	    padding-right: 25px!important;
+	    background: #f46d0b !important;
+	    border: 0px!important;
+	    font-weight: normal!important;
+}
+.btt-ordersR{
+		background-color: #ea6a0d;
+	    border-radius: 0px!important;
+	    font-family: 'BELLABOO-Regular', sans-serif;
+	    font-size: 1.3em!important;
+	    padding-left: 25px!important;
+	    padding-right: 25px!important;
+	    background: #f46d0b !important;
+	    border: 0px!important;
+	    font-weight: normal!important;
+}
+.btt-ordersS:hover, .btt-ordersS:active{
+		background: darkgrey;
+}
+.noNo{
+	padding: 0px!important;
+    margin: 0px;
+}
+
+@media all and(max-width:769px) {
+	table.shop_table td{
+		max-width: initial!important;
+	}
+	.each-order-list{
+	    height: 208px!important;
+	}
+}
+.woocommerce-view-order{
+	.btt-ordersS{
+		background: darkgrey;
+		margin-right: 14px
+	}
+
+	.btt-ordersR{
+		background-color: #ea6a0d;
+	    border-radius: 0px!important;
+	    font-family: 'BELLABOO-Regular', sans-serif;
+	    font-size: 1.3em!important;
+	    padding-left: 25px!important;
+	    padding-right: 25px!important;
+	    background: #f46d0b !important;
+	    border: 0px!important;
+	    font-weight: normal!important;
+	}
+}
+.woocommerce-orders, .woocommerce-view-order{
+	.product-name{
+
+	}
+
+	table.shop_table td{
+		max-width: 249px;
+	}
+	td.product-quantity {
+    	text-align: center;
+	}
+	td.product-price {
+    	text-align: center;
+    	color: initial!important;
+    	font-weight: normal;
+	}
+	td.product-subtotal {
+    	text-align: center;
+    	color: black;
+    	font-weight: 900;
+	}
+	.product-price{
+		color: initial;
+    	font-weight: initial;
+	}
+	tfoot .amount{
+		color: black;
+		font-weight: 900;
+	}
+	.product-name a{
+		text-decoration: none;
+		color: grey
+	}
+	table.shop_table{
+		border: 0px!important;
+	}
+	h2 {
+		font-size: 23px!important;
+	}
+	.each-order-list{
+		border: 1px solid;
+	    margin-bottom: 17px;
+	    padding: 15px;
+	    height: 116px;
+	}
+	.each-order-list .list-data{
+		font-weight: normal;
+	}
+	.status-on-hold, .status-completed {
+	    font-weight: bold;
+	    color: black;
+	}
+
+	h3.endpoint-title{
+		margin-bottom: 30px
+	}
 }
 .pass-change-c{
 	margin-top: 27px;

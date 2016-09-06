@@ -6,7 +6,7 @@
 global $order;
 ?>
 <article class="col-md-12 each-order-list">
-	<div class="col-md-5 pull-left list-data">
+	<div class="col-md-5 col-xs-12 list-data">
 		<div class="col-md-5">
 			<?php _e( 'Número', 'odin' );?>
 		</div><!-- .col-md-3 -->
@@ -32,13 +32,13 @@ global $order;
 			<?php echo wc_get_order_status_name( $order->get_status() ); ?>
 		</div><!-- .col-md-9 pull-right -->
 	</div><!-- .col-md-5 pull-left list-data -->
-	<div class="col-md-6 pull-right order-buttons">
-		<a href="<?php echo $order->get_view_order_url();?>" class="btn btn-primary btn-details">
+	<div class="col-md-7 col-xs-12 pull-right order-buttons bttht">
+		<a href="<?php echo $order->get_view_order_url();?>" class="btn btn-primary btn-details btt-ordersS">
 			<?php _e( 'Detalhes do pedido', 'odin' );?>
 		</a>
 		<?php if ( $order->get_status() == 'completed' ) : ?>
 			<?php $buy_again_url = wp_nonce_url( add_query_arg( 'order_again', $order->id ) , 'woocommerce-order_again' );?>
-			<a href="<?php echo $buy_again_url;?>" class="btn btn-primary btn-order-again">
+			<a href="<?php echo $buy_again_url;?>" class="btn btn-primary btn-order-again btt-ordersR">
 				<?php _e( 'Recomprar', 'odin' );?>
 			</a>
 		<?php endif;?>
