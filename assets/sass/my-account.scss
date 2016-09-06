@@ -12,6 +12,7 @@ body.woocommerce-account.unlogged-user {
     	align-items: center;
     	justify-content: center;
     	padding-top: 25px;
+    	margin-right: 40px;
 	}
 .btt-ordersS{
 		border-radius: 0px;
@@ -19,7 +20,8 @@ body.woocommerce-account.unlogged-user {
 	    font-size: 1.3em;
 	    padding-left: 20px;
 	    padding-right: 20px;
-	    background: #f46d0b;
+	    background: darkgrey;
+		margin-right: 14px;
 	    border: 0px;
 }
 .ordersBTT{
@@ -32,6 +34,20 @@ body.woocommerce-account.unlogged-user {
 	    background: #f46d0b !important;
 	    border: 0px!important;
 	    font-weight: normal!important;
+}
+.btt-ordersR{
+		background-color: #ea6a0d;
+	    border-radius: 0px!important;
+	    font-family: 'BELLABOO-Regular', sans-serif;
+	    font-size: 1.3em!important;
+	    padding-left: 25px!important;
+	    padding-right: 25px!important;
+	    background: #f46d0b !important;
+	    border: 0px!important;
+	    font-weight: normal!important;
+}
+.btt-ordersS:hover, .btt-ordersS:active{
+		background: darkgrey;
 }
 .noNo{
 	padding: 0px!important;
@@ -51,9 +67,7 @@ body.woocommerce-account.unlogged-user {
 		background: darkgrey;
 		margin-right: 14px
 	}
-	.btt-ordersS:hover, .btt-ordersS:active{
-		background: darkgrey;
-	}
+
 	.btt-ordersR{
 		background-color: #ea6a0d;
 	    border-radius: 0px!important;
@@ -70,6 +84,7 @@ body.woocommerce-account.unlogged-user {
 	.product-name{
 
 	}
+
 	table.shop_table td{
 		max-width: 249px;
 	}
@@ -113,7 +128,7 @@ body.woocommerce-account.unlogged-user {
 	.each-order-list .list-data{
 		font-weight: normal;
 	}
-	.status-on-hold {
+	.status-on-hold, .status-completed {
 	    font-weight: bold;
 	    color: black;
 	}
