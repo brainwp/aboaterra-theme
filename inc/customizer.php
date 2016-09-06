@@ -100,6 +100,22 @@ function boaterra_kirki_fields( $fields ) {
 	);
 	$fields[] = array(
 		'type'     => 'textarea',
+		'setting'  => 'delivery_error',
+		'label'    => __( 'Mensagem de erro de CEP não atendido no checkout', 'odin' ),
+		'section'  => 'delivery',
+		'sanitize_callback' => 'aboaterra_esc_url_raw',
+		'priority' => 1,
+	);
+	$fields[] = array(
+		'type'     => 'textarea',
+		'setting'  => 'delivery_time',
+		'label'    => __( 'Mensagem de portaria 24hrs com link', 'odin' ),
+		'section'  => 'delivery',
+		'sanitize_callback' => 'aboaterra_esc_url_raw',
+		'priority' => 1,
+	);
+	$fields[] = array(
+		'type'     => 'textarea',
 		'setting'  => 'code_open_body',
 		'label'    => __( 'Bloco de código após a abertura da tag <body>', 'odin' ),
 		'section'  => 'geral',

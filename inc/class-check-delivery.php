@@ -15,6 +15,26 @@ class Brasa_Check_Delivery {
 	private $success = '<span class="success animated bounceInUp">%s</span>';
 
 	/**
+ 	 * Instance of this class.
+ 	 *
+	 * @var object
+	*/
+	protected static $instance = null;
+
+	/**
+	 * Return an instance of this class.
+	 *
+	 * @return object A single instance of this class.
+	*/
+	public static function get_instance() {
+		// If the single instance hasn't been set, set it now.
+		if ( null == self::$instance ) {
+			self::$instance = new self;
+		}
+		return self::$instance;
+	}
+
+	/**
 	 * init class
 	 * @return boolean
 	 */
@@ -39,6 +59,9 @@ class Brasa_Check_Delivery {
 
 		// shortcode form
 		add_shortcode( 'brasa_check_delivery', array( &$this, 'shortcode' ) );
+
+		// prevent send checkout form with invalid postcode.
+		add_action( 'woocommerce_checkout_process', array( &$this, 'validate_checkout_postcode' ) );
 	}
 	public function shortcode( $atts, $content = '' ) {
 		$atts = shortcode_atts( array(
@@ -146,4 +169,21 @@ class Brasa_Check_Delivery {
 		$code = wc_format_postcode( $_REQUEST[ 'postcode'], WC()->customer->get_shipping_country() );
 		return $code;
 	}
+	public function check_postcode() {
+		$customer = new WCPBC_Customer();
+		$customer->save_data();
+		$customer_data = WC()->session->get( 'wcpbc_customer' );
+		if ( is_array( $customer_data ) && ! empty( $customer_data ) && isset( $customer_data[ 'message'] ) ) {
+			return $customer_data[ 'message'];
+		} else {
+			return false;
+		}
+	}
+	public function validate_checkout_postcode() {
+		if ( ! $this->check_postcode() ) {
+			$message = get_theme_mod( 'delivery_error', __( 'CEP não atendido', 'odin' ) );
+			wc_add_notice( $message, 'error' );
+		}
+	}
+
 }
