@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div><!-- .col-md-5 pull-right data -->
 		</div><!-- .each-item -->
 	<?php endforeach;?>
-	<div class="text-right">
+	<div class="text-right pull-right text-right col-md-8 btt-clas-btt">
 		<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>/edit-account" class="btn btn-primary btn-cart-link">
 			<?php _e( 'Editar', 'odin' );?>
 		</a>

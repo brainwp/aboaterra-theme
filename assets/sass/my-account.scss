@@ -3,11 +3,44 @@ body.woocommerce-account.unlogged-user {
 		display: none;
 	}
 }
+p.woocommerce-FormRow.woocommerce-FormRow--wide.form-row.form-row-wide{
+	padding: 0px;
+	margin-top:10px;
+}
+.pass-change-c{
+	margin-top: 27px;
+	.password-change{
+		border: 0px;
+	    margin-bottom: 0px;
+	    font-family: 'BELLABOO-Regular', sans-serif;
+	    color: #912d1e;
+	    font-weight: normal;
+	}
+}
+.submitPassBtt{
+	background: #f46d0b!important;
+    color: white!important;
+    border-radius: 0px!important;
+    text-transform: uppercase!important;
+    font-size: 1.3em!important;
+    margin-top: 17px!important;
+    font-family: 'BELLABOO-Regular', sans-serif!Important;
+    font-weight: normal!important;
+}
+.submitPassBtt:hover{
+	background: #f46d0b!important;
+	color: white!important;
+}
 .woocommerce-account .woocommerce-MyAccount-navigation{
 	width: 100%!important;
 }
 .woocommerce-account .woocommerce-MyAccount-content{
 	float: left!important;
+}
+.btt-clas-btt{
+	padding:0px;
+	margin:0px;
+	margin-top:20px;
 }
 .titleDP{
 	font-size: 16px;
