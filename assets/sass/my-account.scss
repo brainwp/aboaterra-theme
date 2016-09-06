@@ -19,7 +19,7 @@ body.woocommerce-account.unlogged-user {
 	    font-size: 1.3em;
 	    padding-left: 20px;
 	    padding-right: 20px;
-	    background: #f46d0b !important;
+	    background: #f46d0b;
 	    border: 0px;
 }
 .ordersBTT{
@@ -41,6 +41,26 @@ body.woocommerce-account.unlogged-user {
 @media all and(max-width:769px) {
 	table.shop_table td{
 		max-width: initial!important;
+	}
+}
+.woocommerce-view-order{
+	.btt-ordersS{
+		background: darkgrey;
+		margin-right: 14px
+	}
+	.btt-ordersS:hover, .btt-ordersS:active{
+		background: darkgrey;
+	}
+	.btt-ordersR{
+		background-color: #ea6a0d;
+	    border-radius: 0px!important;
+	    font-family: 'BELLABOO-Regular', sans-serif;
+	    font-size: 1.3em!important;
+	    padding-left: 25px!important;
+	    padding-right: 25px!important;
+	    background: #f46d0b !important;
+	    border: 0px!important;
+	    font-weight: normal!important;
 	}
 }
 .woocommerce-orders, .woocommerce-view-order{
