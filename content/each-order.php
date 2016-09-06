@@ -6,7 +6,7 @@
 global $order;
 ?>
 <article class="col-md-12 each-order-list">
-	<div class="col-md-5 pull-left list-data">
+	<div class="col-md-5 col-xs-12 list-data">
 		<div class="col-md-5">
 			<?php _e( 'Número', 'odin' );?>
 		</div><!-- .col-md-3 -->
@@ -32,7 +32,7 @@ global $order;
 			<?php echo wc_get_order_status_name( $order->get_status() ); ?>
 		</div><!-- .col-md-9 pull-right -->
 	</div><!-- .col-md-5 pull-left list-data -->
-	<div class="col-md-6 pull-right order-buttons bttht">
+	<div class="col-md-6 col-xs-12 pull-right order-buttons bttht">
 		<a href="<?php echo $order->get_view_order_url();?>" class="btn btn-primary btn-details btt-ordersS">
 			<?php _e( 'Detalhes do pedido', 'odin' );?>
 		</a>

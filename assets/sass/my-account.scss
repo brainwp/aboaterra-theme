@@ -42,6 +42,9 @@ body.woocommerce-account.unlogged-user {
 	table.shop_table td{
 		max-width: initial!important;
 	}
+	.each-order-list{
+	    height: 219px!important;
+	}
 }
 .woocommerce-view-order{
 	.btt-ordersS{
@@ -105,6 +108,7 @@ body.woocommerce-account.unlogged-user {
 		border: 1px solid;
 	    margin-bottom: 17px;
 	    padding: 15px;
+	    height: 116px;
 	}
 	.each-order-list .list-data{
 		font-weight: normal;
