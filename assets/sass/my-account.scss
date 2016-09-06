@@ -55,14 +55,25 @@ body.woocommerce-account.unlogged-user {
 	}
 	td.product-price {
     	text-align: center;
+    	color: initial!important;
+    	font-weight: normal;
+	}
+	td.product-subtotal {
+    	text-align: center;
+    	color: black;
+    	font-weight: 900;
 	}
 	.product-price{
 		color: initial;
     	font-weight: initial;
 	}
-	.amount{
+	tfoot .amount{
 		color: black;
 		font-weight: 900;
+	}
+	.product-name a{
+		text-decoration: none;
+		color: grey
 	}
 	table.shop_table{
 		border: 0px;
