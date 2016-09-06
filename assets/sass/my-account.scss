@@ -7,6 +7,50 @@ body.woocommerce-account.unlogged-user {
 	padding: 0px;
 	margin-top:10px;
 }
+.bttht{
+		display: flex;
+    	align-items: center;
+    	justify-content: center;
+    	padding-top: 25px;
+	}
+.btt-ordersS{
+		border-radius: 0px;
+    	font-family: 'BELLABOO-Regular', sans-serif;
+	    font-size: 1.3em;
+	    padding-left: 20px;
+	    padding-right: 20px;
+	    background: #f46d0b !important;
+	    border: 0px;
+}
+.ordersBTT{
+		background-color: #ea6a0d;
+	    border-radius: 0px!important;
+	    font-family: 'BELLABOO-Regular', sans-serif;
+	    font-size: 1.3em!important;
+	    padding-left: 25px!important;
+	    padding-right: 25px!important;
+	    background: #f46d0b !important;
+	    border: 0px!important;
+	    font-weight: normal!important;
+}
+.woocommerce-orders, .woocommerce-view-order{
+	.each-order-list{
+		border: 1px solid;
+	    margin-bottom: 17px;
+	    padding: 15px;
+	}
+	.each-order-list .list-data{
+		font-weight: normal;
+	}
+	.status-on-hold {
+	    font-weight: bold;
+	    color: black;
+	}
+
+	h3.endpoint-title{
+		margin-bottom: 30px
+	}
+}
 .pass-change-c{
 	margin-top: 27px;
 	.password-change{

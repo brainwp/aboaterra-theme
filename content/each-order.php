@@ -32,8 +32,8 @@ global $order;
 			<?php echo wc_get_order_status_name( $order->get_status() ); ?>
 		</div><!-- .col-md-9 pull-right -->
 	</div><!-- .col-md-5 pull-left list-data -->
-	<div class="col-md-6 pull-right order-buttons">
-		<a href="<?php echo $order->get_view_order_url();?>" class="btn btn-primary btn-details">
+	<div class="col-md-6 pull-right order-buttons bttht">
+		<a href="<?php echo $order->get_view_order_url();?>" class="btn btn-primary btn-details btt-ordersS">
 			<?php _e( 'Detalhes do pedido', 'odin' );?>
 		</a>
 		<?php if ( $order->get_status() == 'completed' ) : ?>
