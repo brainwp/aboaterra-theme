@@ -44,8 +44,25 @@ body.woocommerce-account.unlogged-user {
 	}
 }
 .woocommerce-orders, .woocommerce-view-order{
+	.product-name{
+
+	}
 	table.shop_table td{
 		max-width: 249px;
+	}
+	td.product-quantity {
+    	text-align: center;
+	}
+	td.product-price {
+    	text-align: center;
+	}
+	.product-price{
+		color: initial;
+    	font-weight: initial;
+	}
+	.amount{
+		color: black;
+		font-weight: 900;
 	}
 	table.shop_table{
 		border: 0px;
