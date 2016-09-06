@@ -1,4 +1,8 @@
 body.woocommerce-cart {
+	.cart-coupon div.col-md-12 input[type="submit"]{
+		margin-top: -3px!important;
+    	padding: 7.5px!important;
+	}
 	main > article {
 		width:100% !important;
 		@media screen and( max-width: 760px ) {
@@ -117,7 +121,7 @@ body.woocommerce-cart {
 			}
 			.product-subtotal span {
 				font-family:'Source Sans Pro', sans-serif;
-				font-weight: 600;
+				font-weight: 800;
 				color:#000 !important;
 			}
 		}
@@ -166,7 +170,8 @@ body.woocommerce-cart {
 	.cart-links {
 		padding-left:0 !important;
 		padding-right:0 !important;
-		margin-bottom: 20px !important;
+		margin-bottom: 70px !important;
+    	margin-top: 30px;
 		@media screen and( max-width: 760px ) {
 			padding-bottom:50px;
 		}

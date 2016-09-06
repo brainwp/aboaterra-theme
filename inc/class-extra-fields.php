@@ -18,7 +18,8 @@
 		 */
 		public function __construct() {
 			add_action( 'woocommerce_after_checkout_billing_form', array( $this, 'add_checkout_billing_fields' ), 9999 );
-			add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'add_checkout_billing_fields' ) );
+			add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'save_checkout_fields' ) );
+			add_action( 'init', array( $this, 'save_user_fields' ), 9999 );
 		}
 
 		/**
@@ -67,6 +68,7 @@
 				update_post_meta( get_current_user_id(), 'cpf', $_POST[ 'cpf' ] );
 			}
 		}
+
 		public function get_billing_fields() {
 			$fields = array();
 			$fields[ 'billing_first_name' ] = __( 'Nome', 'odin' );
@@ -75,6 +77,27 @@
 			$fields[ 'cpf' ] = __( 'CPF/CNPJ', 'odin' );
 			$fields[ 'billing_phone' ] = __( 'Telefone', 'odin' );
 			return $fields;
+		}
+		public function get_billing_only_meta_fields() {
+			$fields = array();
+			$fields[ 'cpf' ] = __( 'CPF/CNPJ', 'odin' );
+			$fields[ 'billing_phone' ] = __( 'Telefone', 'odin' );
+			return $fields;
+		}
+		public function save_user_fields() {
+			if ( ! isset( $_REQUEST[ 'wc_edit_my_account_form'] ) ) {
+				return;
+			}
+			if ( ! is_user_logged_in() ) {
+				return;
+			}
+			$user = wp_get_current_user();
+			$fields = $this->get_billing_only_meta_fields();
+			foreach( $fields as $key => $value ) {
+				if ( isset( $_REQUEST[ $key ] ) ) {
+					update_user_meta( $user->ID, $key, sanitize_text_field( $_REQUEST[ $key ] ) );
+				}
+			}
 		}
 	}
 	new Brasa_WC_Extra_Fields();

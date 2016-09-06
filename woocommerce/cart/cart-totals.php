@@ -93,12 +93,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <?php if ( ! is_ajax() ) : ?>
 <div class="col-md-12 cart-links">
-	<div class="col-md-5 pull-left">
+	<div class="col-md-4 pull-left">
 		<a href="<?php echo home_url();?>" class="btn btn-cart-link">
 			<?php _e( 'Continuar comprando', 'odin' );?>
 		</a>
 	</div><!-- .pull-left -->
-	<div class="col-md-5 pull-right text-right">
+	<div class="col-md-4 pull-right text-right">
 		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 	</div><!-- .col-md-5 pull-right -->
 </div><!-- .col-md-12 cart-links -->

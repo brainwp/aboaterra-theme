@@ -30,16 +30,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$user = wp_get_current_user();
 	$fields = Brasa_WC_Extra_Fields::get_instance()->get_billing_fields();
 ?>
-<section class="col-md-10 pull-left billing-data">
-	<h4>
+<section class="col-md-9 pull-left billing-data">
+	<div class="superTitle">
+				<?php _e('Minha Conta', 'odin') ?>
+	</div>
+	<h4 class="titleDP">
 		<?php _e( 'Dados Pessoais', 'odin' );?>
 	</h4>
 	<?php foreach( $fields as $key => $name ) : ?>
-		<div class="each-item">
-			<div class="col-md-5 pull-left title">
+		<div class="each-item col-md-12">
+
+			<div class="pull-left title">
 				<?php echo $name;?>
 			</div><!-- .col-md-5 pull-left title -->
-			<div class="col-md-5 pull-right data">
+			<div class="pull-right data">
 				<?php if ( $key == 'email' ) : ?>
 					<?php $value = $user->user_email;?>
 				<?php else : ?>
