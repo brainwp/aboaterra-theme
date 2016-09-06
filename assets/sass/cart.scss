@@ -1,4 +1,8 @@
 body.woocommerce-cart {
+	.cart-coupon div.col-md-12 input[type="submit"]{
+		margin-top: -3px!important;
+    	padding: 7.5px!important;
+	}
 	main > article {
 		width:100% !important;
 		@media screen and( max-width: 760px ) {
@@ -117,7 +121,7 @@ body.woocommerce-cart {
 			}
 			.product-subtotal span {
 				font-family:'Source Sans Pro', sans-serif;
-				font-weight: 600;
+				font-weight: 800;
 				color:#000 !important;
 			}
 		}
