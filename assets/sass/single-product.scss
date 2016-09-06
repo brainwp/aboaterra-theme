@@ -7,6 +7,16 @@
 		font-size: 0.8em;
 	}
 }
+span.woocommerce-Price-amount.amount{
+	color: black;
+	font-weight: 800;
+}
+.woocommerce ul#shipping_method .amount {
+    font-weight: 800;
+}
+tr.order-total {
+    color: black;
+}
 .breadcrumb {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 600 !important;
