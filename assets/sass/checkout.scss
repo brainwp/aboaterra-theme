@@ -4,9 +4,23 @@ body.woocommerce-checkout{
 			display: none !important;
 		}
 	}
+	.woocommerce-billing-fields, .woocommerce-shipping-fields{
+		font-size: 0.95em;
+	}
 	.each-product-checkout {
 		display: block;
 		clear: both;
+	}
+	input[type="checkbox"].input-checkbox {
+		position: initial!important;
+	}
+	.woocommerce ul#shipping_method li input{
+		margin-left: 2px!important;
+    	margin-right: 9px!important;
+    	margin-bottom: -1.1px!important;
+	}
+	.create-account p:first-child{
+		padding: 3px;
 	}
 	.woocommerce-billing-fields > h3:first-child{
 		display: none !important;
