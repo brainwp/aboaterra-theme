@@ -80,5 +80,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php wc_cart_totals_order_total_html(); ?>
 			</div><!-- .col-md-12 total -->
 		<?php do_action( 'woocommerce_review_order_after_order_total' ); ?>
+		<?php if ( Brasa_Check_Delivery::get_instance()->check_postcode() ) : ?>
+			<div class="col-md-12" id="shipping-status" data-value="true">
+				<?php echo Brasa_Check_Delivery::get_instance()->check_postcode();?>
+			</div><!-- #shipping-status.col-md-12 -->
+		<?php else : ?>
+			<div class="col-md-12" id="shipping-status" data-value="false">
+				<?php echo get_theme_mod( 'delivery_error', __( 'CEP não atendido', 'odin' ) );?>
+			</div><!-- #shipping-status.col-md-12 -->
+		<?php endif;?>
 	</div><!-- .row -->
 </div><!-- .col-md-12 review-order-section -->
