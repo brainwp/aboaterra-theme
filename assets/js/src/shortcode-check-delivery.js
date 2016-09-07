@@ -71,4 +71,20 @@ jQuery(document).ready(function($) {
 		var $elem = $( $( this ).attr( 'data-element' ) );
 		$elem.show( 1000 );
 	});
+	if ( $( 'body').hasClass( 'woocommerce-checkout' ) ) {
+		$( document ).ajaxComplete( function() {
+			if ( $( '#shipping-status' ).attr( 'data-value' ) == 'true' ) {
+				$( '#place_order' ).show();
+				$( 'form.woocommerce-checkout' ).removeAttr( 'onsubmit' );
+			} else {
+				$( '#place_order' ).hide();
+				$( 'form.woocommerce-checkout' ).attr('onsubmit', 'return false');
+			}
+		});
+		$( 'form.woocommerce-checkout' ).on( 'submit', function( e ) {
+			if ( $( '#shipping-status' ).attr( 'data-value' ) == 'false' ) {
+				e.preventDefault();
+			}
+		});
+	}
 } );

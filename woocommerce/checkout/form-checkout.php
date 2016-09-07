@@ -59,7 +59,6 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 								<?php wc_cart_totals_shipping_html(); ?>
 
 								<?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
-
 							<?php endif; ?>
 							<div class="col-md-12 text-center">
 								<a href="#payment-block" class="btn btn-next btn-animation-next">
