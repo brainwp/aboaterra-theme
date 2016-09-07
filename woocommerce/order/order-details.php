@@ -92,7 +92,7 @@ $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_cu
 
 					<td class="product-quantity" data-title="<?php _e( 'Quantity', 'woocommerce' ); ?>">
 						<div class="buttons-qty">
- 							<input type="text" value="<?php echo esc_attr( $cart_item[ 'item_meta']['_qty'][0] );?>" />
+ 							<input type="text" value="<?php echo esc_attr( $cart_item[ 'item_meta']['_qty'][0] );?>" disabled />
 						</div><!-- .buttons-qty -->
 
 					</td>
@@ -112,20 +112,21 @@ $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_cu
 		}
 	?>
 	</tbody>
-	<tfoot>
-		<?php
-			foreach ( $order->get_order_item_totals() as $key => $total ) {
-				?>
-				<tr>
-					<th scope="row"><?php echo $total['label']; ?></th>
-					<td><?php echo $total['value']; ?></td>
-				</tr>
-				<?php
-			}
-		?>
-	</tfoot>
 </table>
-
+<div class="col-md-12">
+	<div class="col-md-8 pull-right totals">
+		<?php foreach ( $order->get_order_item_totals() as $key => $total ) : ?>
+			<div class="col-md-12 each-total <?php echo esc_attr( sanitize_title( $total[ 'label' ] ) );?>">
+				<div class="col-md-7 pull-left list-data text-right">
+					<?php echo $total['label']; ?>
+				</div><!-- .col-md-6 pull-left list-data -->
+				<div class="col-md-5 pull-right list-price text-right">
+					<?php echo $total['value']; ?>
+				</div><!-- .col-md-6 pull-right list-price -->
+			</div><!-- .col-md-12 each-total -->
+		<?php endforeach; ?>
+	</div><!-- .col-md-5 pull-right totals -->
+</div><!-- .col-md-12 -->
 <?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
 
 <?php if ( $show_customer_details ) : ?>

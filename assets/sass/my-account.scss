@@ -7,6 +7,17 @@ body.woocommerce-account.unlogged-user {
 	padding: 0px;
 	margin-top:10px;
 }
+.totals {
+	div.total .list-data {
+		color:#000;
+	}
+	.list-price {
+		color:#000;
+	}
+	.each-total {
+		padding-bottom:10px;
+	}
+}
 .bttht{
 		display: flex;
     	align-items: center;
