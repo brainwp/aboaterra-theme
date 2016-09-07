@@ -4,9 +4,15 @@ body.woocommerce-checkout{
 			display: none !important;
 		}
 	}
+	.woocommerce-billing-fields, .woocommerce-shipping-fields{
+		font-size: 0.95em;
+	}
 	.each-product-checkout {
 		display: block;
 		clear: both;
+	}
+	.create-account p:first-child{
+		padding: 3px;
 	}
 	.woocommerce-billing-fields > h3:first-child{
 		display: none !important;
