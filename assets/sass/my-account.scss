@@ -17,6 +17,12 @@ body.woocommerce-account.unlogged-user {
 	.each-total {
 		padding-bottom:10px;
 	}
+	@media screen and ( max-width: 700px ) {
+		padding-bottom:20px;
+		* {
+			text-align: left !important;
+		}
+	}
 }
 .bttht{
 		display: flex;

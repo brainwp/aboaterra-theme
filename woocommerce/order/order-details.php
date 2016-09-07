@@ -117,10 +117,10 @@ $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_cu
 	<div class="col-md-8 pull-right totals">
 		<?php foreach ( $order->get_order_item_totals() as $key => $total ) : ?>
 			<div class="col-md-12 each-total <?php echo esc_attr( sanitize_title( $total[ 'label' ] ) );?>">
-				<div class="col-md-7 pull-left list-data text-right">
+				<div class="col-md-7 col-xs-12 pull-left list-data text-right">
 					<?php echo $total['label']; ?>
 				</div><!-- .col-md-6 pull-left list-data -->
-				<div class="col-md-5 pull-right list-price text-right">
+				<div class="col-md-5 col-xs-12 pull-right list-price text-right">
 					<?php echo $total['value']; ?>
 				</div><!-- .col-md-6 pull-right list-price -->
 			</div><!-- .col-md-12 each-total -->
