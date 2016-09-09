@@ -1,10 +1,7 @@
 /*
-Error: File to import not found or unreadable: bootstrap/type.
-        on line 18 of ../assets/sass/bootstrap/_bootstrap.scss
-        from line 15 of ../assets/sass/style.scss
+Error: File to import not found or unreadable: fonts.scss.
+        on line 20 of ../assets/sass/style.scss
 
-13: @import
-14: 	"variables",           // Theme       Custom Variables
 15: 	"bootstrap/bootstrap", // Bootstrap   Styles Core
 16: 	"wordpress/wordpress",	 // WordPress   Styles Core
 17: 	//"woocommerce",      	 // WooCommerce Styles Core
@@ -14,28 +11,16 @@ Error: File to import not found or unreadable: bootstrap/type.
 21: 	"header.scss",			// Theme       Custom Layout
 22: 	"footer.scss",			// Theme       Custom Layout
 23: 	"page.scss",
+24: 	"page-center.scss",
+25: 	"single-product.scss",	// Theme       Custom Layout
 
 Backtrace:
-../assets/sass/bootstrap/_bootstrap.scss:18
-../assets/sass/style.scss:15
+../assets/sass/style.scss:20
 C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:67:in `rescue in import'
 C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:45:in `import'
 C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:28:in `imported_file'
 C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:37:in `css_import?'
 C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:313:in `visit_import'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `map'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
 C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
 C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
@@ -68,4 +53,4 @@ C:/Ruby23-x64/bin/sass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: bootstrap/type.\A         on line 18 of ../assets/sass/bootstrap/_bootstrap.scss\A         from line 15 of ../assets/sass/style.scss\A \A 13: @import\A 14: 	\"variables\",           // Theme       Custom Variables\A 15: 	\"bootstrap/bootstrap\", // Bootstrap   Styles Core\A 16: 	\"wordpress/wordpress\",	 // WordPress   Styles Core\A 17: 	//\"woocommerce\",      	 // WooCommerce Styles Core\A 18: 	\"odin/core\",          	 // Odin        Styles Core\A 19: 	\"layout\",              	// Theme       Custom Layout\A 20: 	\"fonts.scss\",           // Theme       Custom fonts\A 21: 	\"header.scss\",			// Theme       Custom Layout\A 22: 	\"footer.scss\",			// Theme       Custom Layout\A 23: 	\"page.scss\","; }
+  content: "Error: File to import not found or unreadable: fonts.scss.\A         on line 20 of ../assets/sass/style.scss\A \A 15: 	\"bootstrap/bootstrap\", // Bootstrap   Styles Core\A 16: 	\"wordpress/wordpress\",	 // WordPress   Styles Core\A 17: 	//\"woocommerce\",      	 // WooCommerce Styles Core\A 18: 	\"odin/core\",          	 // Odin        Styles Core\A 19: 	\"layout\",              	// Theme       Custom Layout\A 20: 	\"fonts.scss\",           // Theme       Custom fonts\A 21: 	\"header.scss\",			// Theme       Custom Layout\A 22: 	\"footer.scss\",			// Theme       Custom Layout\A 23: 	\"page.scss\",\A 24: 	\"page-center.scss\",\A 25: 	\"single-product.scss\",	// Theme       Custom Layout"; }
