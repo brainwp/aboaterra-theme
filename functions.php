@@ -206,7 +206,7 @@ function odin_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name' => __( 'Home E-mail Sidebar', 'odin' ),
+			'name' => __( 'Home E-mail/Mais pedidos Sidebar', 'odin' ),
 			'id' => 'home-email-sidebar',
 			'description' => __( 'Home E-mail Sidebar', 'odin' ),
 			'before_widget' => '',
