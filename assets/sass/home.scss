@@ -19,9 +19,15 @@ body.woocommerce .product img{
 	.ajax_add_to_cart .fa.fa-shopping-cart.col-xs-12{
 		margin-top: 17px
 	}
+	#header .menu-institucional{
+		float: left;
+		padding-left: 15px;
+    	padding-right: 15px;
+	}
 	.buttons-qty.col-md-8.pull-left, .buttons-qty.col-md-8.alignleft, .entry-attachment #nav-below .buttons-qty.col-md-8.nav-previous, .gallery .buttons-qty.col-md-8.gallery-item, .widget_calendar #wp-calendar #prev a.buttons-qty.col-md-8{
 		padding-left: 9px!important;
 	}
+
 	.hhgg{
 		text-align: center;
 		margin-left: 0px;
@@ -30,7 +36,7 @@ body.woocommerce .product img{
 		display: none!important;
 	}
 	.nav>li>a{
-		text-align: center;
+		text-align: left;
 	}
 	#header .col-md-7.col-xs-12.pull-right {
     	margin-bottom: 30px;
