@@ -35,7 +35,7 @@ else {
 
 ?>
 <div class="add-to-cart-container">
-	<div class="buttons-qty col-md-8 pull-left">
+	<div class="buttons-qty col-md-8 pull-left col-xs-12">
 		<span>+</span>
  		<input data-id="<?php echo $product->id;?>" type="text" value="<?php echo esc_attr( $quantity );?>" />
  		<span>-</span>

@@ -26,6 +26,15 @@ body.woocommerce .product img{
 		text-align: center;
 		margin-left: 0px;
 	}
+	.prices-warn{
+		display: none!important;
+	}
+	.nav>li>a{
+		text-align: center;
+	}
+	#header .col-md-7.col-xs-12.pull-right {
+    	margin-bottom: 30px;
+	}
 }
 @media all and (min-width: 992px){
 	.hhgg{
