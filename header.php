@@ -91,12 +91,12 @@
 										<?php continue;?>
 									<?php endif;?>
 
-									<div class="col-md-4 pull-left img">
+									<div class="col-md-4 col-xs-12 pull-left img">
 										<?php if ( has_post_thumbnail( $cart_item['product_id'] ) ) : ?>
 											<?php echo get_the_post_thumbnail( $cart_item['product_id'], 'thumbnail', null );?>
 										<?php endif;?>
 									</div><!-- .col-md-6 pull-left img -->
-									<div class="col-md-7 pull-right">
+									<div class="col-md-7 pull-right col-xs-12">
 										<div class="post-title">
 											<?php echo apply_filters( 'the_title', $cart_item['data']->post->post_title );?>
 										</div><!-- .col-md-12 post-title -->
