@@ -1,3 +1,8 @@
+@media all and (max-width: 992px) {
+	body.woocommerce div.product{
+    	margin-left: 0px!important;
+	}
+}
 .buttons-qty.col-md-8.pull-left {
     padding: 0px;
     padding-left: 15px;
@@ -44,10 +49,16 @@
 .woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page .product-type-yith_bundle div.product div.images {
 	width: 48%;
 }
+
 body.single-product{
-	.singleProduct .col-md-6{
+	.thumbnails.columns-4 {
+    	margin-top: 20px;
+	}
+	.singleProduct.col-md-6{
 		margin-left: 0px;
 		margin-right: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 	.col-md-10{
 		width:100%!important;
@@ -157,7 +168,6 @@ body.woocommerce {
 		background: #FFF;
 	}
 	.single_add_to_cart_button {
-		max-width: 280px;
     	max-height: 47px;
 		line-height: 0.7em!important;
 		font-family: 'BELLABOO-Regular', sans-serif !important;
@@ -166,14 +176,13 @@ body.woocommerce {
 		background:#ff6600 !important;
 		color:#FFF !important;
 		display: inline-block;
-		margin-top:20px;
+		margin-bottom: 20px!important;
 		border-radius: 0 !important;
 		font-size: 1.7em !important;
 		font-weight: normal !important;
 		clear: both;
-		width:70%;
+		width:100%;
 		margin-top:20px !important;
-		margin-bottom:10px;
 		box-shadow: 0px 1px 5px 0px rgba(251,185,88,0.75) !important;
 	}
 	#reviews{
@@ -307,9 +316,10 @@ body.woocommerce {
     border-radius: 0 !important;
     font-size: 1.5em !important;
     font-weight: normal !important;
-    max-height: 55px;
+    max-height: 47px;
     clear: both;
     width: 100%;
+    line-height: 1.6em!important;
 }
 
 div.product-type-yith_bundle{
