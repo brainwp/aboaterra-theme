@@ -45,6 +45,10 @@
 	width: 48%;
 }
 body.single-product{
+	.singleProduct .col-md-6{
+		margin-left: 0px;
+		margin-right: 0px;
+	}
 	.col-md-10{
 		width:100%!important;
 	}
@@ -243,7 +247,7 @@ body.woocommerce {
 		font-weight: 700!important;
 	    font-size: 1.4em!important;
 	}
-	.entry-summary .price .amount {
+	.productSingle .price .amount {
 		color:#030303 !important;
 		text-transform: uppercase;
 		font-family: 'Source Sans Pro', sans-serif;
@@ -286,7 +290,7 @@ body.woocommerce {
 	.quantity .qty {
 		display: none !important;
 	}
-	.entry-summary .buttons-qty {
+	.productSingle .buttons-qty {
 		display: flex;
 		justify-content:center;
 		margin-top: 35px;
