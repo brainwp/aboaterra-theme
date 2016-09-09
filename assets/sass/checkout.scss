@@ -1,4 +1,8 @@
 body.woocommerce-checkout{
+	.input-check-checkout{
+		float:left;
+		margin-right:17px;
+	}
 	#order_review {
 		.woocommerce-info {
 			display: none !important;
@@ -159,25 +163,6 @@ body.woocommerce-checkout{
 	    padding-left: 5px;
 	    padding-right: 5px;
 	    border-radius: 15px;
-	    -webkit-appearance: button;
-	    border: double 2px #f46d0b;
-	    background-color: white;
-	    color: #FFF;
-	    white-space: nowrap;
-	    overflow: hidden;
-	    outline: none !important;
-	    width: 15px;
-	    height: 15px;
-	    cursor: pointer;
-	}
-	input[type=checkbox]{
-		padding-left: 5px;
-	    padding-right: 5px;
-	    border-radius: 15px;
-	    -webkit-appearance: button;
-	    border: double 2px #f46d0b;
-	    background-color: white;
-	    color: #FFF;
 	    white-space: nowrap;
 	    overflow: hidden;
 	    outline: none !important;
@@ -186,23 +171,6 @@ body.woocommerce-checkout{
 	    cursor: pointer;
 	}
 
-	input[type=radio]:checked {
-	    background-color: #f46d0b;
-	    border-left-color: #f46d0b;
-	    border-right-color: #f46d0b;
-	}
-	input[type=checkbox]:checked{
-		background-color: #f46d0b;
-	    border-left-color: #f46d0b;
-	    border-right-color: #f46d0b;
-	}
-
-	input[type=radio]:hover {
-   		box-shadow:0px 0px 10px #f46d0b;
-	}
-	input[type=checkbox]:checked{
-		box-shadow:0px 0px 10px #f46d0b;
-	}
 	#order_review{
 		border: 1px solid #929393;
 		border-radius: 3px;
