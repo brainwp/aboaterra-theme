@@ -40,16 +40,16 @@ else {
  		<input data-id="<?php echo $product->id;?>" type="text" value="<?php echo esc_attr( $quantity );?>" />
  		<span>-</span>
 	</div><!-- .buttons-qty -->
-	<div class="col-md-4 pull-right cart-btn">
+	<div class="col-md-4 cart-btn">
 		<?php
 		echo apply_filters( 'woocommerce_loop_add_to_cart_link',
-			sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s">%s</a>',
+			sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s col-xs-12">%s</a>',
 				esc_url( $product->add_to_cart_url() ),
 				esc_attr( $quantity ),
 				esc_attr( $product->id ),
 				esc_attr( $product->get_sku() ),
 				esc_attr( isset( $class ) ? $class : 'button' ),
-				'<i class="fa fa-shopping-cart"></i>'
+				'<i class="fa fa-shopping-cart hhgg col-xs-12"></i>'
 			),
 			$product );
 		?>

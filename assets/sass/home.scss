@@ -6,6 +6,33 @@ body.woocommerce .product img{
 	    width: 1065px!important;
 	}
 }
+@media (max-width: 1200px){
+	.buttons-qty.col-md-8.pull-left{
+		padding-left: 1px;
+	}
+}
+.buttons-qty.col-md-8.pull-left.col-xs-12 {
+    display: flex;
+    justify-content: center;
+}
+@media all and (max-width:992px){
+	.ajax_add_to_cart .fa.fa-shopping-cart.col-xs-12{
+		margin-top: 17px
+	}
+	.buttons-qty.col-md-8.pull-left, .buttons-qty.col-md-8.alignleft, .entry-attachment #nav-below .buttons-qty.col-md-8.nav-previous, .gallery .buttons-qty.col-md-8.gallery-item, .widget_calendar #wp-calendar #prev a.buttons-qty.col-md-8{
+		padding-left: 9px!important;
+	}
+	.hhgg{
+		text-align: center;
+		margin-left: 0px;
+	}
+}
+@media all and (min-width: 992px){
+	.hhgg{
+		margin-left: -23px;
+	}
+}
+
 .home-slider {
 	width:100%;
 	margin-top:-20px;
