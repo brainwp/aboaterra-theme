@@ -21,8 +21,6 @@ jQuery(document).ready(function($) {
 				 	$( '#reveal-modal-id' ).foundation('reveal', 'open');
 				 }, 500 );
 			});
-		} else {
-			e.preventDefault();
 		}
 	} );
 	$( 'body.unlogged-user .add_to_cart_button, body.unlogged-user .single_add_to_cart_button' ).on( 'click', function( e ){
