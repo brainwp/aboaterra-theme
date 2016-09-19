@@ -113,3 +113,14 @@ add_filter( 'woocommerce_product_tabs', 'aboaterra_remove_reviews', 98 );
 
 // remove order again button after order items table
 remove_action( 'woocommerce_order_details_after_order_table', 'woocommerce_order_again_button' );
+
+/**
+ * update mini cart on header
+ * @return null
+ */
+function wc_update_header_cart() {
+	get_template_part( 'parts/wc-infos' );
+	wp_die();
+}
+add_action( 'wp_ajax_update_header_cart', 'wc_update_header_cart' );
+add_action( 'wp_ajax_nopriv_update_header_cart', 'wc_update_header_cart' );
