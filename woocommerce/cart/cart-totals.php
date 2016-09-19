@@ -91,7 +91,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
 
 </div>
-<?php if ( ! is_ajax() ) : ?>
 <div class="col-md-12 cart-links">
 	<div class="col-md-4 pull-left">
 		<a href="<?php echo home_url();?>" class="btn btn-cart-link">
@@ -99,7 +98,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</a>
 	</div><!-- .pull-left -->
 	<div class="col-md-4 pull-right text-right">
+		<input type="submit" class="button btn btn-cart-link" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
 		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 	</div><!-- .col-md-5 pull-right -->
 </div><!-- .col-md-12 cart-links -->
-<?php endif;?>

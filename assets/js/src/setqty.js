@@ -1,6 +1,6 @@
 /* Change product quantity */
 jQuery(document).ready(function($) {
-	$( '.woocommerce .buttons-qty span').on( 'click', function(e){
+	$( document ).on( 'click', '.woocommerce .buttons-qty span', function(e){
 		var $input = $( this ).parent()[0];
 		var $input = $( $input ).children( 'input' );
 		if ( $( 'body' ).hasClass( 'woocommerce-cart' ) ) {
@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 		$input.val( value );
 		$input.trigger( 'change' );
 	});
-	$( '.woocommerce .buttons-qty input').on( 'change', function(e){
+	$( document ).on( 'change', '.woocommerce .buttons-qty input', function(e){
 		if ( $( 'body' ).hasClass( 'woocommerce-cart' ) ) {
 			var selector = 'input[name="' + $( this ).attr( 'data-id' ) + '"]';
 			$( selector ).val( $( this ).val() );
