@@ -21,7 +21,14 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php odin_posted_on(); ?>
+				<span class="theAuth">
+					<?php _e('por ', 'odin');?>
+					<span class="rAuth">
+						<?php the_author_link();  ?>
+					</span>
+				</span>
+				<?php
+				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
