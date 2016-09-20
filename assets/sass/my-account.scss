@@ -368,7 +368,9 @@ body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 		text-transform: uppercase;
 		font-weight: 600;
 		color:#929393;
+		margin-top: 10px;
 	}
+
 	.woocommerce-Button {
 		font-family: 'BELLABOO-Regular', sans-serif !important;
 		text-align: center;
@@ -379,7 +381,8 @@ body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 		border-radius: 0 !important;
 		font-weight: normal !important;
 		box-shadow: 0px 1px 5px 0px rgba(251,185,88,0.75) !important;
-		margin-top: 24px;
+		margin-top: 39px;
+    	padding-top: 6px!important;
 	}
 	label[for="rememberme"] {
 		display: none;
@@ -387,6 +390,9 @@ body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 	.btn-cart-link {
 		max-width: none !important;
 		width:auto !important;
+		margin-top: 30px;
+		padding-top: 5px;
+		display: block;
 	}
 	.register-form form {
 		width:100%;
@@ -395,7 +401,7 @@ body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 		border-radius: 0 !important;
 		padding-left: 15px;
 		padding-right: 15px;
-		padding-bottom: 15px;
+		padding-bottom: 20px;
 	}
 	.login-form {
 		@media screen and ( min-width: 800px ) {
