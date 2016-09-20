@@ -315,9 +315,12 @@ ul.products, li.product{
 		text-align: justify;
 	}
 }
+ul.products {
+    padding-bottom: 0px!Important;
+    margin-bottom: 0px!important;
+}
 body.home .textwidget {
 	clear: both;
-	padding-top:30px;
 }
 .testimonials-slider {
 	img {
