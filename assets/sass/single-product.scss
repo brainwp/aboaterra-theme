@@ -1,3 +1,12 @@
+.product-type-simple{
+	.singleProduct .col-md-5{
+		margin-bottom: 45px
+	}
+}
+.product-type-yith_bundle .col-md-offset-1 {
+    margin: 0px;
+    float: right;
+}
 @media all and (max-width: 992px) {
 	body.woocommerce div.product{
     	margin-left: 0px!important;
@@ -181,7 +190,7 @@ body.woocommerce {
 		display: inline-block;
 		margin-bottom: 20px!important;
 		border-radius: 0 !important;
-		font-size: 1.7em !important;
+		font-size: 1.5em !important;
 		font-weight: normal !important;
 		clear: both;
 		width:100%;
@@ -258,14 +267,14 @@ body.woocommerce {
 		font-family: 'Source Sans Pro', sans-serif!important;
 		margin-bottom: -5px;
 		font-weight: 700!important;
-	    font-size: 1.4em!important;
+	    font-size: 1.3em!important;
 	}
 	.productSingle .price .amount {
 		color:#030303 !important;
 		text-transform: uppercase;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: bolder !important;
-		font-size:1.5em !important;
+		font-size:1.4em !important;
 
 	}
 	.related {

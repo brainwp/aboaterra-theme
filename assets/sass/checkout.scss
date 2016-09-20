@@ -8,6 +8,9 @@ body.woocommerce-checkout{
 			display: none !important;
 		}
 	}
+	.wc-credit-card-form-card-number{
+		padding-right: 52px!important;
+	}
 	.woocommerce-billing-fields, .woocommerce-shipping-fields{
 		font-size: 0.95em;
 	}
