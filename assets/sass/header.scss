@@ -20,8 +20,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 	width:100%;
 
  	.container {
-		padding-top:1.5px;
-		padding-bottom: 1.5px;
+
 	}
 	.text {
 		color: #FFF;
@@ -37,16 +36,17 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 		.icon {
 			text-decoration: none !important;
 			margin-right:10px;
-			font-size:16px;
+			font-size:15.8px;
 		}
 		.fa {
 			font-size:21px;
 			line-height: 23px;
+			float: left;
 		}
 	}
 }
 header#header {
-	padding-top:70px;
+	padding-top:45px;
 }
 #header #main-navigation {
 	clear: both;
@@ -198,7 +198,7 @@ header#header {
 	ul.nav > li > a {
 		font-family: 'BELLABOO-Regular', sans-serif;
 		color:#912d1e;
-		font-size: 1.9em;
+		font-size: 1.66em;
 		background: none !important;
 		padding-left: 0px;
 		padding-bottom: 17px;
@@ -219,7 +219,7 @@ header#header {
 #main-navigation {
 	background: none !important;
 	border:transparent !important;
-	padding-top:25px;
+	padding-top:10px;
 }
 @media all and(max-width:767px){
 	#header .menu-institucional{
