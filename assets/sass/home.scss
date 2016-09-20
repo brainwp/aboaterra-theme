@@ -11,6 +11,13 @@ body.woocommerce .product img{
 		padding-left: 1px;
 	}
 }
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+	min-height: 390px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
 .buttons-qty.col-md-8.pull-left.col-xs-12 {
     display: flex;
     justify-content: center;

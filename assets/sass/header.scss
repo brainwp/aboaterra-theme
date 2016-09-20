@@ -18,6 +18,8 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 	clear: both;
 	z-index: 99;
 	width:100%;
+	padding-bottom: 3px;
+    padding-top: 6px;
 
  	.container {
 
@@ -43,6 +45,10 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 			line-height: 23px;
 			float: left;
 		}
+	}
+	.phones{
+		margin-left: 8px;
+    	line-height: 18px;
 	}
 }
 header#header {

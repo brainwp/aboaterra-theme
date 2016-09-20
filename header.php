@@ -44,13 +44,13 @@
 				<div class="pull-right text">
 					<?php if ( $value = get_theme_mod( 'phone', false ) ) : ?>
 						<i class="fa fa-phone"></i>
-						<div class="pull-left">
+						<div class="pull-left phones">
 							<a class="phone icon"><?php echo apply_filters( 'the_title', $value );?></a>
 						</div>
 					<?php endif; ?>
 					<?php if ( $value = get_theme_mod( 'whatsapp', false ) ) : ?>
 						<i class="fa fa-whatsapp"></i>
-						<div class="pull-left">
+						<div class="pull-left phones">
 							<a class="whatsapp icon"><?php echo apply_filters( 'the_title', $value );?></a>
 						</div>
 					<?php endif; ?>
