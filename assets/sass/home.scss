@@ -50,7 +50,8 @@ body.woocommerce .product img{
 		    flex: 1 1 auto;
 		    align-self: auto;
 		    min-width: auto;
-		    min-height: auto;
+		    max-height: 203.5px;
+    		min-height: 203.5px;
 		    text-align: justify;
 		    line-height: 20px;
 		    padding: 2px;
