@@ -4,7 +4,12 @@
 	padding-bottom: 20px;
 	padding-top:20px;
 	clear: both;
-
+	.flexCenterItens {
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	align-content: center;
+	}
 	.image {
 		display: flex;
 		justify-content:center;

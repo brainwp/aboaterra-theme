@@ -11,6 +11,55 @@ body.woocommerce .product img{
 		padding-left: 1px;
 	}
 }
+.home{
+	.col-md-4.recent-posts a{
+		display: flex;
+	    flex-flow: column;
+	    justify-content: space-between!important;
+	    align-items: center;
+	    align-content: center;
+	    height: 485px;
+	    text-decoration: none;
+	}
+
+	.recent-posts {
+		.col-md-12.text-center {
+		    width: 100%;
+		    max-height: 190px;
+		    overflow: hidden;
+		    order: 2;
+		    flex: 1 1 auto;
+		    align-self: auto;
+		    min-width: auto;
+		    min-height: auto;
+		}
+		.image {
+		    max-height: 190px;
+		    overflow: hidden;
+		    order: 1;
+		    flex: 1 1 auto;
+		    align-self: auto;
+		    min-width: auto;
+		    min-height: auto;
+		}
+		 .the-content {
+		    color: #4b4a4a !important;
+		    font-weight: 600;
+		    font-size: 1.10em;
+		    order: 3;
+		    flex: 1 1 auto;
+		    align-self: auto;
+		    min-width: auto;
+		    max-height: 203.5px;
+    		min-height: 203.5px;
+		    text-align: justify;
+		    line-height: 20px;
+		    padding: 2px;
+		}
+	}
+
+
+}
 .rAuth{
 	font-weight: bold;
 
@@ -311,12 +360,16 @@ ul.products, li.product{
 	.the-content {
 		color:#4b4a4a !important;
 		font-weight: 600;
-		font-size:1.2em;
+		font-size:1.15em;
+		text-align: justify;
 	}
+}
+ul.products {
+    padding-bottom: 0px!Important;
+    margin-bottom: 0px!important;
 }
 body.home .textwidget {
 	clear: both;
-	padding-top:30px;
 }
 .testimonials-slider {
 	img {
