@@ -69,8 +69,6 @@ header#header {
 		width:100% !important;
 		border-color:#fbb958;
 		box-shadow: 0 0 1px rgba(251,185,88,0.6);
-		padding-top: 20px;
-		padding-bottom: 20px;
 	}
 	button {
 		position: absolute;
@@ -80,7 +78,7 @@ header#header {
 		background:transparent;
 		border: none;
 		color:#fbb958;
-		padding-top: 12px;
+		padding-top: 6px;
 	}
 }
 #header .woocommerce-infos {

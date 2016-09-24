@@ -39,27 +39,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<?php do_action( 'woocommerce_login_form_start' ); ?>
 
-			<p class="col-md-6">
+			<p class="col-md-8">
 				<label for="username"><?php _e( 'Username or email address', 'woocommerce' ); ?> <span class="required">*</span></label>
 				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
 			</p><!-- .col-md-6 -->
 			<div class="col-md-12"></div><!-- .col-md-12 -->
-			<p class="col-md-6">
+			<p class="col-md-8">
 				<label for="password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
 				<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" />
 			</p><!-- .col-md-6 -->
 
 			<?php do_action( 'woocommerce_login_form' ); ?>
 
-			<p class="col-md-6">
+			<p class="col-md-4">
 				<?php wp_nonce_field( 'woocommerce-login' ); ?>
 				<input type="submit" class="woocommerce-Button button" name="login" value="<?php esc_attr_e( 'Ok', 'odin' ); ?>" />
 				<label for="rememberme" class="inline">
 					<input class="woocommerce-Input woocommerce-Input--checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php _e( 'Remember me', 'woocommerce' ); ?>
 				</label>
 			</p><!-- .col-md-6 -->
-			<p class="col-md-12">
-				<a class="btn btn-primary btn-cart-link" href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a>
+			<p class="col-md-10">
+				<a class="btn btn-primary btn-cart-link col-md-2" href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a>
 			</p><!-- .col-md-6 -->
 
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
@@ -96,7 +96,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<?php do_action( 'woocommerce_register_form' ); ?>
 			<?php do_action( 'register_form' ); ?>
-			<?php $label = __( 'CEP', 'odin' );?>
+			<?php $label = __( 'CEP*', 'odin' );?>
 			<?php $loading_txt = __( 'Carregando..', 'odin' );?>
 			<?php $redirect_error = '';?>
 			<?php if ( $value = get_theme_mod( 'delivery_error_redirect', false ) ) : ?>
