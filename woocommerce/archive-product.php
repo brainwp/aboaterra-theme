@@ -23,6 +23,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header( 'shop' ); ?>
 <div class="container">
 	<div class="row">
+		<?php if ( is_search() ) : ?>
+		<div class="col-md-12 search-infos">
+			<h1 class="search">
+				<?php printf( __( 'Resultados da busca para: %s', 'odin' ), get_search_query() );?>
+			</h1><!-- .search -->
+		</div><!-- .col-md-12 search-infos -->
+		<?php endif;?>
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
