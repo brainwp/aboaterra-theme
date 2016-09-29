@@ -1,0 +1,32 @@
+body.page-template-page-contato {
+	.entry-content,
+	.right-content {
+		iframe {
+			width:100%;
+		}
+		input[type="text"],
+		input[type="email"] {
+			background: #FFF;
+			border:1px solid #c3c3c3;
+		}
+		input[type="email"] {
+			margin-left:3px;
+		}
+		input[type="submit"] {
+			font-family: 'BELLABOO-Regular', sans-serif !important;
+			text-align: center;
+			border: none !important;
+			background: #ff6600 !important;
+			color: #FFF !important;
+			display: inline-block;
+			border-radius: 0 !important;
+			font-weight: normal !important;
+			box-shadow: 0px 1px 5px 0px rgba(251,185,88,0.75) !important;
+			font-size:1.1em;
+		}
+	}
+	.entry-title {
+		padding-left:15px;
+		font-size:1.6em;
+	}
+}
