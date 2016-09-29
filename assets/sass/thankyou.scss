@@ -8,19 +8,20 @@
 	h2{
 		margin-top: 100px;
 	}
-	.rounded-icon{
-	    background: #41A140 !important;
-	    color: #fff !important;
-	    border-radius: 100%;
-	    font-size: 19px;
-	    display: inline-block;
-	    padding-top: 3px;
-	    margin-top: 10px;
-	    width: 32px;
-	    height: 32px;
-	    text-align: center;
-	}
 }
+.rounded-icon{
+	background: #41A140 !important;
+	color: #fff !important;
+	border-radius: 100%;
+	font-size: 19px;
+	display: inline-block;
+	padding-top: 3px;
+	margin-top: 10px;
+	width: 32px;
+	height: 32px;
+	text-align: center;
+}
+
 .thank {
     display: flex;
     flex-flow: column;

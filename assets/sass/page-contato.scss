@@ -28,5 +28,19 @@ body.page-template-page-contato {
 	.entry-title {
 		padding-left:15px;
 		font-size:1.6em;
+		display: inline-block;
+	}
+	.acompanhe {
+		margin-bottom: 120px;
+	}
+}
+.acompanhe {
+	width:100%;
+	clear:both;
+	.entry-title {
+		padding-right:10px;
+	}
+	@media screen and ( max-width:700px ) {
+		text-align: center;
 	}
 }
