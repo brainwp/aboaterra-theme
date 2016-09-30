@@ -79,3 +79,38 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_exibir-produto-destacado-no-rodape-livro',
+		'title' => 'Exibir produto destacado no rodapé (livro)',
+		'fields' => array (
+			array (
+				'key' => 'field_57edc316eb760',
+				'label' => 'Deseja exibir o produto destacado (livro) no rodapé?',
+				'name' => 'show_featured_product',
+				'type' => 'true_false',
+				'message' => '',
+				'default_value' => 1,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'product',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'side',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}

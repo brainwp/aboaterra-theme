@@ -35,6 +35,10 @@ function boaterra_register_section( $wp_customize ) {
 		'title'       => __( 'Cabeçalho de aviso de região', 'odin' ),
 		'priority'    => 10,
 	) );
+	$wp_customize->add_section( 'featured_product', array(
+		'title'       => __( 'Produto destacado (livro)', 'odin' ),
+		'priority'    => 10,
+	) );
 }
 add_action( 'customize_register', 'boaterra_register_section' );
 function aboaterra_esc_url_raw( $str ) {
@@ -146,6 +150,47 @@ function boaterra_kirki_fields( $fields ) {
 		'priority' => 1,
 		'sanitize_callback' => 'aboaterra_esc_url_raw',
 	);
+	$fields[] = array(
+		'type'     => 'image',
+		'setting'  => 'featured_product_thumb',
+		'label'    => __( 'Imagem', 'odin' ),
+		'section'  => 'featured_product',
+		'priority' => 1,
+		'sanitize_callback' => 'aboaterra_esc_url_raw',
+	);
+	$fields[] = array(
+		'type'     => 'text',
+		'setting'  => 'featured_product_title',
+		'label'    => __( 'Título', 'odin' ),
+		'section'  => 'featured_product',
+		'priority' => 1,
+		'sanitize_callback' => 'aboaterra_esc_url_raw',
+	);
+	$fields[] = array(
+		'type'     => 'textarea',
+		'setting'  => 'featured_product_content',
+		'label'    => __( 'Descrição', 'odin' ),
+		'section'  => 'featured_product',
+		'priority' => 1,
+		'sanitize_callback' => 'aboaterra_esc_url_raw',
+	);
+	$fields[] = array(
+		'type'     => 'text',
+		'setting'  => 'featured_product_readmore',
+		'label'    => __( 'Link Saiba Mais', 'odin' ),
+		'section'  => 'featured_product',
+		'priority' => 1,
+		'sanitize_callback' => 'aboaterra_esc_url_raw',
+	);
+	$fields[] = array(
+		'type'     => 'text',
+		'setting'  => 'featured_product_buy',
+		'label'    => __( 'Link para comprar', 'odin' ),
+		'section'  => 'featured_product',
+		'priority' => 1,
+		'sanitize_callback' => 'aboaterra_esc_url_raw',
+	);
+
 	return $fields;
 }
 add_filter( 'kirki/fields', 'boaterra_kirki_fields' );

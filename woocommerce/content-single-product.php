@@ -79,7 +79,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	?>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
+	<?php if ( $value = get_post_meta( get_the_ID(), 'show_featured_product', false ) ) : ?>
+		<?php if ( is_array( $value) && $value[0] == '1' ) : ?>
+			<?php get_template_part( 'parts/featured-product' );?>
+		<?php endif;?>
+	<?php endif;?>
 
 </div><!-- #product-<?php the_ID(); ?> -->
-
 <?php do_action( 'woocommerce_after_single_product' ); ?>
