@@ -1,0 +1,72 @@
+.full-page-thumbnail {
+	width:100%;
+}
+body.page-template-page-cestas {
+	#main-navigation .navbar-collapse {
+		border:none !important;
+	}
+	#content header {
+		padding-top:20px;
+		h1,
+		h2,
+		h3,
+		h4,
+		h5 {
+			font-size: 1.95em;
+			text-align: center;
+		}
+		.col-md-12 {
+			margin-bottom: 20px;
+		}
+	}
+	#content {
+		padding-bottom:120px;
+		@media screen and ( min-width:720px ) {
+			li.product {
+				width:30.4%;
+			}
+			li.product:last-child {
+				margin-right:0px;
+			}
+		}
+		li.product {
+			border:0;
+			border-radius: inherit;
+			padding:0;
+			.all-product {
+				border: 2px solid #e3e3e3;
+				border-radius: 3px;
+				padding: 5px !important;
+			}
+			.each-cesta-title h3 {
+				display: inline-block;
+				width:100%;
+				clear: both;
+				color:#912d1e !important;
+			}
+			.description {
+				text-align: center;
+				font-weight: normal;
+				padding-top: 15px;
+			}
+		}
+		.links {
+			display: flex;
+			justify-content: center;
+			* {
+				font-family: 'BELLABOO-Regular', sans-serif;
+			}
+			.each-link {
+				text-align: center;
+				font-size: 1.4em;
+				color:#912d1e;
+				font-weight: normal;
+				a {
+					width: 100%;
+					display: inline-block;
+					font-size:1.2em;
+				}
+			}
+		}
+	}
+}
