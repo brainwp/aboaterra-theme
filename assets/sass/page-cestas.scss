@@ -13,7 +13,6 @@ body.page-template-page-cestas {
 		h4,
 		h5 {
 			font-size: 1.95em;
-			text-align: center;
 		}
 		.col-md-12 {
 			margin-bottom: 20px;
@@ -48,6 +47,9 @@ body.page-template-page-cestas {
 				text-align: center;
 				font-weight: normal;
 				padding-top: 15px;
+			}
+			@media screen and ( max-width:720px ) {
+				width:100% !important;
 			}
 		}
 		.links {
