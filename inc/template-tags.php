@@ -97,3 +97,22 @@ function get_the_city() {
 	}
 	return apply_filters( 'woocommerce_get_the_city', 'São Paulo' );
 }
+/**
+ * Show menu ou hidden by page
+ * @return boolean
+ */
+function aboaterra_show_menu() {
+	if ( is_page_template( 'page-regioes.php' ) ) {
+		return false;
+	}
+	if ( ! is_user_logged_in() && is_account_page() ) {
+		return false;
+	}
+	if ( is_cart() ) {
+		return false;
+	}
+	if ( is_checkout() && is_wc_endpoint_url( 'order-received' ) ) {
+		return false;
+	}
+	return true;
+}
