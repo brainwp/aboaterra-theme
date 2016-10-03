@@ -116,60 +116,64 @@ if(function_exists("register_field_group"))
 }
 if(function_exists("register_field_group"))
 {
-	register_field_group(array (
-		'id' => 'acf_opcoes-da-cesta',
-		'title' => 'Opções da Cesta',
-		'fields' => array (
-			array (
-				'key' => 'field_57f05f2242849',
-				'label' => 'Título da cesta na página de cestas',
-				'name' => 'cesta_title',
-				'type' => 'text',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_57f05f704284a',
-				'label' => 'Descrição da cesta na página de cestas',
-				'name' => 'cesta_content',
-				'type' => 'textarea',
-				'default_value' => '',
-				'placeholder' => '',
-				'maxlength' => '',
-				'rows' => '',
-				'formatting' => 'br',
-			),
-		),
-		'location' => array (
-			array (
+	function _add_field_product_cat_cesta() {
+		$term = get_term_by( 'slug', 'cesta', 'product_cat', OBJECT, 'raw' );
+		register_field_group(array (
+			'id' => 'acf_opcoes-da-cesta',
+			'title' => 'Opções da Cesta',
+			'fields' => array (
 				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'product',
-					'order_no' => 0,
-					'group_no' => 0,
+					'key' => 'field_57f05f2242849',
+					'label' => 'Título da cesta na página de cestas',
+					'name' => 'cesta_title',
+					'type' => 'text',
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'formatting' => 'html',
+					'maxlength' => '',
 				),
 				array (
-					'param' => 'taxonomy',
-					'operator' => '==',
-					'value' => '18',
-					'order_no' => 1,
-					'group_no' => 0,
+					'key' => 'field_57f05f704284a',
+					'label' => 'Descrição da cesta na página de cestas',
+					'name' => 'cesta_content',
+					'type' => 'textarea',
+					'default_value' => '',
+					'placeholder' => '',
+					'maxlength' => '',
+					'rows' => '',
+					'formatting' => 'br',
 				),
 			),
-		),
-		'options' => array (
-			'position' => 'side',
-			'layout' => 'default',
-			'hide_on_screen' => array (
+			'location' => array (
+				array (
+						array (
+						'param' => 'post_type',
+						'operator' => '==',
+						'value' => 'product',
+						'order_no' => 0,
+						'group_no' => 0,
+						),
+						array (
+						'param' => 'taxonomy',
+						'operator' => '==',
+						'value' => $term->term_id,
+						'order_no' => 1,
+						'group_no' => 0,
+						),
+				),
 			),
-		),
-		'menu_order' => 0,
-	));
+			'options' => array (
+				'position' => 'side',
+				'layout' => 'default',
+				'hide_on_screen' => array (
+				),
+			),
+			'menu_order' => 0,
+		));
+	}
+	add_action( 'admin_init', '_add_field_product_cat_cesta' );
 	register_field_group(array (
 		'id' => 'acf_pagina-de-cestas',
 		'title' => 'Página de Cestas',
