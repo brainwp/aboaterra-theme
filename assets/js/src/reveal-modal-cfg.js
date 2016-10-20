@@ -2,8 +2,11 @@ jQuery(document).ready(function($) {
 	var reveal_str = $( 'meta[name=reveal-modal-cfg-str]' ).attr('content');
 	$( document ).ajaxComplete( function( e ) {
 		var $content = $( '#reveal-modal-id' );
-		if ( $content.find( '.woocommerce').length > 0 ) {
+		if ( $content.find( '.woocommerce').length > 0 || ! $( 'body' ).hasClass( 'woocommerce-checkout' ) ) {
 			$content.addClass( 'modal-bigger' );
+			if ( $content.find( '.woocommerce').length > 0 ) {
+				$content.find( 'h1').first().remove();
+			}
 		} else {
 			$content.removeClass( 'modal-bigger' );
 		}

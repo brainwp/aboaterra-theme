@@ -181,6 +181,7 @@ button.slick-prev, button.slick-next {
 			border:2px solid #e3e3e3;
 			border-radius:3px;
 			padding:5px !important;
+			padding-bottom:15px !important;
 			h3, a, .price {
 				font-family: 'Source Sans Pro', sans-serif;
 				font-weight: 600 !important;
@@ -211,8 +212,10 @@ button.slick-prev, button.slick-next {
 				clear: both;
 				display: block;
 				position: absolute;
-				margin-top: -21px;
-				left: -10px;
+				margin-top: 25px;
+				left: -18px;
+				color: #41a140;
+				text-decoration: underline;
 			}
 
 		}

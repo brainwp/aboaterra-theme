@@ -18,6 +18,9 @@
 	.prev-post-reveal-nav, .next-post-reveal-nav {
 		display: none !important;
 	}
+	> h1 {
+		font-size:1.7em;
+	}
 }
 #reveal-modal-id.modal-bigger {
 	@media screen and ( min-width: 800px ) {
@@ -25,9 +28,6 @@
 		width: 80% !important;
 		left: 50% !important;
 		right: 0 !important;
-	}
-	> h1 {
-		display: none;
 	}
 }
 .brasa-check-delivery-container .elements .woocommerce-Button{

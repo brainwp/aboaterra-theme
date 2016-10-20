@@ -91,7 +91,7 @@
 					);
 				?>
 			</div><!-- .col-md-6 pull-right menu-institucional -->
-
+			<?php if ( aboaterra_show_menu() ) : ?>
 			<div id="main-navigation" class="navbar navbar-default">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-navigation">
@@ -119,6 +119,6 @@
 					?>
 				</nav><!-- .navbar-collapse -->
 			</div><!-- #main-navigation-->
-
+			<?php endif;?>
 		</div><!-- .container-->
 	</header><!-- #header -->

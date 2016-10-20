@@ -203,6 +203,7 @@ body.woocommerce-checkout{
 	    font-family: 'Source Sans Pro', sans-serif;
 	    text-transform: lowercase;
 	    font-weight: bolder;
+	    font-size:0.9em;
 	}
 
 	.each-product-checkout .price{
@@ -325,6 +326,9 @@ body.woocommerce-checkout{
 	.form-row.place-order.pull-right {
     	margin-top: 15px;
     	margin-bottom: 20px;
+	}
+	header.entry-header {
+		display: none;
 	}
 }
 

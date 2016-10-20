@@ -287,7 +287,6 @@ body.woocommerce {
 		}
 	}
 	#tab-description {
-		padding-bottom: 40px;
 		h2:first-child{
 			display:none !important;
 		}
@@ -317,6 +316,31 @@ body.woocommerce {
 		justify-content:center;
 		margin-top: 35px;
 		margin-bottom: 35px;
+	}
+	.featured-product {
+		@media screen and ( min-width:720px ) {
+			a.btn-cart-link {
+				margin-right: 25px;
+			}
+		}
+		a {
+			font-size:1.3em !important;
+			width:auto !important;
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-top: 8px;
+			padding-bottom: 8px;
+			line-height: 1.6em !important;
+		}
+		h4 {
+			color:#8e2f20;
+			font-size: 1.3em;
+			font-family: 'BELLABOO-Regular', sans-serif !important;
+		}
+		.content p {
+			color:#999999;
+			font-weight: bold;
+		}
 	}
 }
 .btn-cart-link {
