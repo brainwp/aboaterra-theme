@@ -78,11 +78,17 @@ body.woocommerce-checkout{
 		font-weight: 500;
 		font-size: 0.99em;
 	}
+	#add_payment_method #payment div.payment_box input.input-text, #add_payment_method #payment div.payment_box textarea, .woocommerce-cart #payment div.payment_box input.input-text, .woocommerce-cart #payment div.payment_box textarea, .woocommerce-checkout #payment div.payment_box input.input-text, .woocommerce-checkout #payment div.payment_box textarea{
+		font-size: 1.16em!important;
+    	padding-left: 7px!important;
+    	padding-top: 2px!important;
+    	padding-bottom: 2px!important;
+	}
 
 	.form-row input.input-text{
 	    border-radius: 2px;
 	    border:1px solid #929393;
-	    font-weight: 800;
+	    font-weight: normal;
 	    padding-left: 6px;
 	    color: #393939;
 		padding-top: 2px;
