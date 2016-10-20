@@ -3,6 +3,10 @@ body.woocommerce-cart {
 		margin-top: -3px!important;
     	padding: 7.5px!important;
 	}
+	header#header {
+    	padding-top: 45px;
+    	padding-bottom: 25px;
+	}
 	main > article {
 		width:100% !important;
 		@media screen and( max-width: 760px ) {
