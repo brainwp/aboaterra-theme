@@ -87,3 +87,10 @@
 	padding-top: 3px;
 	margin-top: 10px;
 }
+
+@media all and(max-width:767px){
+	#footer-default .flexCenterItens{
+		flex-flow: column;
+		text-align: center;
+	}
+}

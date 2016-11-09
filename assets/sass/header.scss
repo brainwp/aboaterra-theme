@@ -229,4 +229,17 @@ header#header {
 	#header .menu-institucional{
 		float: initial;
 	}
+	.mobile-thing{
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+
+	}
+}
+@media all and(min-width:767px){
+	.default-hidden{
+		display: none;
+	}
+
 }

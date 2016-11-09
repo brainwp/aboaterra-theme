@@ -15,7 +15,7 @@
 			<?php $slider = get_page_by_title( $slider_name, OBJECT, 'brasa_slider_cpt' );?>
 			<?php if ( $slider && is_object( $slider ) && class_exists( 'Brasa_Slider' ) ) : ?>
 				<?php $brasa_slider = new Brasa_Slider();?>
-				<?php $json = '{"dots": true,"infinite": true,"speed": 3000, "autoplay":true, "autoplaySpeed": 5000, "slidesToShow": 3, "responsive": [ {"breakpoint": 800, "settings": { "slidesToShow": 1, "slidesToScroll": 1 }}]}';?>
+				<?php $json = '{"dots": true,"infinite": true,"speed": 3000, "autoplay":true, "autoplaySpeed": 5000, "slidesToShow": 3, "responsive": [ {"breakpoint": 800, "settings": { "slidesToShow": 3, "slidesToScroll": 1 }}]}';?>
 				<?php echo $brasa_slider->shortcode( array( 'name' => $slider_name, 'json' => $json  ) );?>
 			<?php endif;?>
 		</div><!-- .row -->

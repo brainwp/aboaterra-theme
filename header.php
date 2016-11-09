@@ -60,15 +60,16 @@
 	</div><!-- .col-md-12 prices-warn -->
 	<header id="header" role="banner">
 		<div class="container">
-			<div class="header-image col-md-4 col-xs-12">
+			<div class="header-image col-md-4 col-xs-12 mobile-thing">
 				<?php
 					$header_image = get_header_image();
 					if ( ! empty( $header_image ) ) :
 				?>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<img src="<?php echo esc_url( $header_image ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="" />
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="mobile-thing">
+						<img src="<?php echo esc_url( $header_image ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="" class="col-xs-7 col-md-12"/>
 					</a>
 				<?php endif; ?>
+
 			</div><!-- .site-header-->
 			<div class="col-md-7 col-xs-12 pull-right">
 				<div class="col-md-8 col-xs-12 pull-left search-form">
@@ -78,7 +79,7 @@
 					<?php get_template_part( 'parts/wc-infos' );?>
 				</div><!-- .col-md-4 pull-right -->
 			</div><!-- .col-md-6 pull-right -->
-			<div class="menu-institucional">
+			<div class="menu-institucional hidden-xs">
 				<?php echo wp_nav_menu(
 						array(
 							'theme_location' => 'institucional',
@@ -117,6 +118,19 @@
 							)
 						);
 					?>
+					<div class="default-hidden">
+						<?php echo wp_nav_menu(
+							array(
+								'theme_location' => 'institucional',
+								'depth'          => 2,
+								'container'      => false,
+								'menu_class'     => 'nav navbar-nav',
+								'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
+								'walker'         => new Odin_Bootstrap_Nav_Walker()
+							)
+						);
+						?>
+					</div>
 				</nav><!-- .navbar-collapse -->
 			</div><!-- #main-navigation-->
 			<?php endif;?>
