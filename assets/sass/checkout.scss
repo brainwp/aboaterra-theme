@@ -1,4 +1,5 @@
 body.woocommerce-checkout{
+
 	.input-check-checkout{
 		float:left;
 		margin-right:17px;
@@ -330,5 +331,10 @@ body.woocommerce-checkout{
 	header.entry-header {
 		display: none;
 	}
+	input.wc-credit-card-form-card-number::-webkit-input-placeholder {
+    font-size: 0.9em!important;
+	}
+
+
 }
 

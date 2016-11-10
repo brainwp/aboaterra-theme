@@ -242,6 +242,10 @@ header#header {
 	body.woocommerce-account .billing-data .each-item{
 		padding-bottom: 33px!important;
 	}
+	.checkout-col, .checkout-column {
+    padding-left: 0px;
+    padding-right: 0px;
+	}
 
 }
 @media all and(min-width:767px){
