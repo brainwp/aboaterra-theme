@@ -236,6 +236,13 @@ header#header {
 		align-items: center;
 
 	}
+	#breadcrumbs{
+		display: block;
+	}
+	body.woocommerce-account .billing-data .each-item{
+		padding-bottom: 33px!important;
+	}
+
 }
 @media all and(min-width:767px){
 	.default-hidden{

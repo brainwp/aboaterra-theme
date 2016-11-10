@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$user = wp_get_current_user();
 	$fields = Brasa_WC_Extra_Fields::get_instance()->get_billing_fields();
 ?>
-<section class="col-md-9 pull-left billing-data">
+<section class="col-md-9 col-xs-12 pull-left billing-data">
 	<div class="superTitle">
 				<?php _e('Minha Conta', 'odin') ?>
 	</div>

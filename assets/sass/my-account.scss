@@ -75,7 +75,7 @@ body.woocommerce-account.unlogged-user {
 		max-width: initial!important;
 	}
 	.each-order-list{
-	    height: 208px!important;
+	    height: 264px!important;
 	}
 }
 .woocommerce-view-order{
@@ -459,6 +459,16 @@ body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 		a {
 			color:#FFF !important;
 			text-decoration: underline;
+		}
+	}
+}
+@media all and(max-width:767px){
+	.woocommerce-account{
+		.bttht{
+			flex-flow: column;
+		}
+		.btt-ordersS{
+			margin-bottom: 13px;
 		}
 	}
 }
