@@ -187,6 +187,15 @@ function woo_custom_cart_button_text() {
 }
 add_action( 'after_setup_theme', 'odin_setup_features' );
 
+// WooCommerce Checkout Fields Hook
+add_filter( 'woocommerce_checkout_fields' , 'hjs_wc_checkout_fields' );
+
+
+function hjs_wc_checkout_fields( $fields ) {
+    $fields['billing']['billing_email']['label'] = 'Email';
+    return $fields;
+}
+
 /**
  * Register widget areas.
  *
