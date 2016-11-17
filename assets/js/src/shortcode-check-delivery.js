@@ -5,10 +5,10 @@ jQuery(document).ready(function($) {
 		var $form = $( this );
 		var $elements_div = $( this ).children( '.elements' );
 		var $submit_btn = $elements_div.children( 'button' );
-		var default_text = $submit_btn.html();
-		if ( $elements_div.children( '[name="check-delivery"]' ).val() == '' ) {
+		if ( $elements_div.children( '[name="check-delivery"]' ).val().replace(/\s+/g, '' ) == '' ) {
 			return;
 		}
+		var default_text = $submit_btn.html();
 		$submit_btn.html( $submit_btn.attr( 'data-load' ) );
 
 		var data = {
@@ -39,17 +39,21 @@ jQuery(document).ready(function($) {
 		var $form = $( this ).children( '.brasa-check-delivery-container' );
 		var $elements_div = $form.children( '.elements' );
 		var $submit_btn = $elements_div.children( 'button' );
-		var default_text = $submit_btn.html();
-		$submit_btn.html( $submit_btn.attr( 'data-load' ) );
+		if ( $elements_div.children( '[name="check-delivery"]' ).val() == '' ) {
+			return;
+		}
+
 		var data = {
 			'action': 'brasa_check_delivery',
 			'show_accept_message': 'true',
 			'close_modal': 'true',
 			'postcode': $elements_div.children( '[name="check-delivery"]' ).val()
 		};
-		if ( $elements_div.children( '[name="check-delivery"]' ).val() == '' ) {
+		if ( $elements_div.children( '[name="check-delivery"]' ).val().replace(/\s+/g, '') == '' ) {
 			return;
 		}
+		var default_text = $submit_btn.html();
+		$submit_btn.html( $submit_btn.attr( 'data-load' ) );
 
 		$.ajax({
 			type: 'POST',
