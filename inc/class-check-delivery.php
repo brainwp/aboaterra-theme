@@ -148,7 +148,7 @@ class Brasa_Check_Delivery {
 			if ( isset( $_REQUEST[ 'show_accept_message'] ) && $_REQUEST[ 'show_accept_message'] == 'true' ) {
 				if ( $value = get_theme_mod( 'delivery_success', false ) ) {
 					printf( $this->success, apply_filters( 'the_title', $value ) );
-					_e( '<a href="#" class="close-modal woocommerce-Button button">Fechar</a>', 'odin' );
+					_e( '<a href="#" class="close-modal woocommerce-Button button">Ok</a>', 'odin' );
 				} else {
 					printf( $this->success, apply_filters( 'the_title', $customer_data[ 'message'] ) );
 				}
