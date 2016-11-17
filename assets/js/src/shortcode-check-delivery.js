@@ -6,7 +6,11 @@ jQuery(document).ready(function($) {
 		var $elements_div = $( this ).children( '.elements' );
 		var $submit_btn = $elements_div.children( 'button' );
 		var default_text = $submit_btn.html();
+		if ( $elements_div.children( '[name="check-delivery"]' ).val() == '' ) {
+			return;
+		}
 		$submit_btn.html( $submit_btn.attr( 'data-load' ) );
+
 		var data = {
 			'action': 'brasa_check_delivery',
 			'postcode': $elements_div.children( '[name="check-delivery"]' ).val()
@@ -43,6 +47,10 @@ jQuery(document).ready(function($) {
 			'close_modal': 'true',
 			'postcode': $elements_div.children( '[name="check-delivery"]' ).val()
 		};
+		if ( $elements_div.children( '[name="check-delivery"]' ).val() == '' ) {
+			return;
+		}
+
 		$.ajax({
 			type: 'POST',
 			url: odin.ajax_url,
