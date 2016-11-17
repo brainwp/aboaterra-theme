@@ -124,3 +124,13 @@ function wc_update_header_cart() {
 }
 add_action( 'wp_ajax_update_header_cart', 'wc_update_header_cart' );
 add_action( 'wp_ajax_nopriv_update_header_cart', 'wc_update_header_cart' );
+/**
+ * Remove billing company field from checkout
+ * @param array $fields
+ * @return array
+ */
+function remove_billing_company_wc_checkout( $fields ) {
+	unset( $fields[ 'billing']['billing_company'] );
+	return $fields;
+}
+add_filter( 'woocommerce_checkout_fields' , 'remove_billing_company_wc_checkout' );

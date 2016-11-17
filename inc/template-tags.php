@@ -111,7 +111,7 @@ function aboaterra_show_menu() {
 	if ( is_cart() ) {
 		return false;
 	}
-	if ( is_checkout() && is_wc_endpoint_url( 'order-received' ) ) {
+	if ( is_checkout() ) {
 		return false;
 	}
 	return true;
