@@ -89,6 +89,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	</div>
 		<?php if ( $value = get_post_meta( get_the_ID(), 'cesta_content', true ) ) : ?>
 			<div class="description">
+				<?php $value = nl2br( $value );?>
 				<?php echo apply_filters( 'the_title', $value ); ?>
 			</div><!-- .description -->
 		<?php endif;?>
