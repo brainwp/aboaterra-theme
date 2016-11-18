@@ -30,11 +30,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 <li <?php post_class(); ?>>
 	<?php if ( is_page_template( 'page-cestas.php' ) ) : ?>
 		<div class="each-cesta-title">
-			<h3>
-				<?php _e( 'Cesta Orgânica', 'odin' );?>
-			</h3>
 			<?php if ( $value = get_post_meta( get_the_ID(), 'cesta_title', true ) ) : ?>
 				<h3>
+					<?php $value = nl2br( $value );?>
 					<?php echo apply_filters( 'the_title', $value );?>
 				</h3>
 			<?php endif;?>
