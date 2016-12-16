@@ -1,8 +1,8 @@
-<?php 
+<?php
 /**
- * 
+ *
  * wC Informations & mini-cart
- * 
+ *
 */
 ?>
 <?php $myaccount_page = get_option( 'woocommerce_myaccount_page_id' );?>
@@ -11,7 +11,7 @@
 	<span class="separator">|</span>
 <?php endif;?>
 <?php if ( function_exists( 'WC' ) ) : ?>
-	<a  class="myacc" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	<a data-href="<?php echo WC()->cart->get_cart_url();?>" class="myacc mini-cart-icon" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 		<i class="fa fa-shopping-cart"></i>
 		<span class="cart-infos">[<?php echo WC()->cart->get_cart_contents_count();?>]</span>
 	</a>

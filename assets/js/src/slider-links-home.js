@@ -1,7 +1,6 @@
 /* slider links home */
 jQuery(document).ready(function($) {
 	if ( $( '#slider-destaques-row' ).length == 0 ) {
-		console.log( 'are you go now?' );
 		return;
 	}
 	$element = $( '#slider-destaques-row' );
@@ -18,7 +17,6 @@ jQuery(document).ready(function($) {
 			var item = item.replace( '{{src}}', response.items[i][ 'image'][0] );
 			var html = html + item;
 		}
-		console.log( html );
 		$element.html( html );
 	}
 	var slider_by_size = function() {

@@ -14,4 +14,9 @@ jQuery(document).ready(function($) {
 			});
 		}
 	});
+	$( 'body' ).on( 'click', '.mini-cart-icon', function( e ) {
+		if ( $( window ).width() < 800 ) {
+			window.location.href = $( this ).attr( 'data-href' );
+		}
+	});
 } );
