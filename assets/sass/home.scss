@@ -273,6 +273,32 @@ ul.products, li.product{
 		display: inline;
 	}
 }
+.mc4wp-form-fields {
+	width:100%;
+	text-align:center;
+	input[type="email"] {
+		border: 1px solid #f46d0b !important;
+		box-shadow: 0 0 1px rgba(251,185,88,0.6);
+		border-radius:4px;
+		padding-top:10px;
+		padding-bottom: 10px;
+		padding-left:10px;
+		text-transform: lowercase !important;
+		color:#000;
+	}
+	input[type="submit"] {
+		font-family: 'BELLABOO-Regular', sans-serif;
+		text-align: center;
+		border:none !important;
+		background:#f46d0b !important;
+		color:#FFF !important;
+		display: inline-block;
+		border-radius: 0 !important;
+		font-size:1.5em;
+		margin-top:-5px;
+		margin-left:20px;
+	}
+}
 #mdirector_sh_suscription {
 	clear: both;
 	width:100%;
