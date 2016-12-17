@@ -254,3 +254,9 @@ header#header {
 	}
 
 }
+// pages without header menu
+body.no-menu {
+	main#content {
+		padding-top:30px;
+	}
+}

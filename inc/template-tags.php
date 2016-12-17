@@ -116,3 +116,15 @@ function aboaterra_show_menu() {
 	}
 	return true;
 }
+/**
+ * Add body class on pages without header menu
+ * @param array $classes
+ * @return array
+ */
+function add_body_class_on_no_menu_pages( $classes ) {
+	if ( ! aboaterra_show_menu() ) {
+		$classes[] = 'no-menu';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'add_body_class_on_no_menu_pages', 9999 );
