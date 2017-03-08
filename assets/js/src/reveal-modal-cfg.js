@@ -7,6 +7,9 @@ jQuery(document).ready(function($) {
 			if ( $content.find( '.woocommerce').length > 0 ) {
 				$content.find( 'h1').first().remove();
 			}
+			if ( $content.find( '[name="_wp_http_referer"]' ).length > 0 ) {
+				$content.find( '[name="_wp_http_referer"]' ).val( window.location.href );
+			}
 		} else {
 			$content.removeClass( 'modal-bigger' );
 		}
