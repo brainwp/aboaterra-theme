@@ -93,12 +93,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <div class="col-md-12 cart-links">
 	<div class="col-md-4 pull-left">
-		<a href="<?php echo home_url();?>" class="btn btn-cart-link">
-			<?php _e( 'Continuar comprando', 'odin' );?>
-		</a>
 		<?php $empty_cart_url = WC()->cart->get_cart_url . '?empty_cart=true';?>
 		<a href="<?php echo wp_nonce_url( $empty_cart_url, 'empty_cart' );?>" class="btn btn-cart-link">
 			<?php _e( 'Esvaziar Carrinho', 'odin' );?>
+		</a>
+		<a href="<?php echo home_url();?>" class="btn btn-cart-link">
+			<?php _e( 'Continuar comprando', 'odin' );?>
 		</a>
 	</div><!-- .pull-left -->
 	<div class="col-md-4 pull-right text-right">
