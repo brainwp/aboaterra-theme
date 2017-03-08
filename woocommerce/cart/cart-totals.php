@@ -96,6 +96,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<a href="<?php echo home_url();?>" class="btn btn-cart-link">
 			<?php _e( 'Continuar comprando', 'odin' );?>
 		</a>
+		<?php $empty_cart_url = WC()->cart->get_cart_url . '?empty_cart=true';?>
+		<a href="<?php echo wp_nonce_url( $empty_cart_url, 'empty_cart' );?>" class="btn btn-cart-link">
+			<?php _e( 'Esvaziar Carrinho', 'odin' );?>
+		</a>
 	</div><!-- .pull-left -->
 	<div class="col-md-4 pull-right text-right">
 		<input type="submit" class="button btn btn-cart-link" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />

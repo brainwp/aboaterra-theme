@@ -134,3 +134,20 @@ function remove_billing_company_wc_checkout( $fields ) {
 	return $fields;
 }
 add_filter( 'woocommerce_checkout_fields' , 'remove_billing_company_wc_checkout' );
+
+/**
+ * Button for empty WC cart
+ * @return type
+ */
+function aboaterra_empty_cart() {
+	if ( ! isset( $_GET[ 'empty_cart'] ) ) {
+		return;
+	}
+	if ( ! wp_verify_nonce( $_REQUEST[ '_wpnonce' ], 'empty_cart' ) ) {
+		return;
+	}
+	WC()->cart->empty_cart();
+	wp_redirect( home_url() );
+	exit;
+}
+add_action( 'init', 'aboaterra_empty_cart', 9999 );

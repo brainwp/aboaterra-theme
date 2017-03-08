@@ -77,4 +77,3 @@ function odin_get_my_account_url() {
 	}
 	return '#';
 }
-
