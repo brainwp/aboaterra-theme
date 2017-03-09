@@ -151,3 +151,13 @@ function aboaterra_empty_cart() {
 	exit;
 }
 add_action( 'init', 'aboaterra_empty_cart', 9999 );
+/**
+ * Remove WooCommerce wc-checkout js
+ */
+function aboaterra_remove_woocommerce_scripts() {
+	if ( is_checkout() ) {
+		wp_deregister_script( 'wc-checkout' );
+		wp_dequeue_script( 'wc-checkout' );
+	}
+}
+add_action( 'wp_head', 'aboaterra_remove_woocommerce_scripts', 9999 );
