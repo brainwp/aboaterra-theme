@@ -94,7 +94,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="col-md-12 cart-links">
 	<div class="col-md-4 pull-left">
 		<?php $empty_cart_url = WC()->cart->get_cart_url . '?empty_cart=true';?>
-		<a href="<?php echo wp_nonce_url( $empty_cart_url, 'empty_cart' );?>" class="btn btn-cart-link">
+		<a href="<?php echo wp_nonce_url( $empty_cart_url, 'empty_cart' );?>" class="btn btn-cart-link" id="cart-empty-link" data-confirm="<?php esc_attr_e( 'Você realmente deseja esvaziar completamente o carrinho?', 'odin' );?>">
 			<?php _e( 'Esvaziar Carrinho', 'odin' );?>
 		</a>
 		<a href="<?php echo home_url();?>" class="btn btn-cart-link">
