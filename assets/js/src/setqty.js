@@ -23,7 +23,6 @@ jQuery(document).ready(function($) {
 		if ( $( 'body' ).hasClass( 'woocommerce-cart' ) ) {
 			var selector = 'input[name="' + $( this ).attr( 'data-id' ) + '"]';
 			$( selector ).val( $( this ).val() );
-			return;
 		}
 
 		if ( $( this ).hasClass( 'single-product' ) ) {

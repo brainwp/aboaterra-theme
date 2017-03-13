@@ -10,4 +10,21 @@ jQuery(document).ready(function($) {
 			e.preventDefault();
 		}
 	});
+	/**
+	 * Atualiza o cart (Pagina cart) automaticamente no desktop
+	*/
+	$( document ).on( 'change', 'body.woocommerce-cart .buttons-qty input', function( e ) {
+		$( this ).parent( '.buttons-qty' ).on( 'mouseout', function(){
+			$( 'input[name="update_cart"]' ).trigger( 'click' );
+		});
+	});
+	/**
+	 * Atualiza o cart (Pagina cart) automaticamente no mobile
+	*/
+	$( document ).on( 'change', 'body.woocommerce-cart .quantity input', function( e ) {
+		if ( $( window ).width() <= 728 ) {
+			$( 'input[name="update_cart"]' ).trigger( 'click' );
+		}
+	});
+
 } );

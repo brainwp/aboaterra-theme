@@ -1,6 +1,8 @@
 /* global wc_checkout_params */
 jQuery( function( $ ) {
-
+	if ( ! $( 'body' ).hasClass( 'woocommerce-checkout' ) ) {
+		return;
+	}
 	// wc_checkout_params is required to continue, ensure the object exists
 	console.log( wc_checkout_params );
 	if ( typeof wc_checkout_params === 'undefined' ) {
