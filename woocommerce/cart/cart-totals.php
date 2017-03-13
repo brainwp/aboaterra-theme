@@ -102,7 +102,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</a>
 	</div><!-- .pull-left -->
 	<div class="col-md-4 pull-right text-right">
-		<input type="submit" class="button btn btn-cart-link" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
+		<input type="submit" class="button btn btn-cart-link" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" style="display:none;"/>
 		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 	</div><!-- .col-md-5 pull-right -->
 </div><!-- .col-md-12 cart-links -->
