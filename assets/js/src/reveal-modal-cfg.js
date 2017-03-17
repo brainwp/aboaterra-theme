@@ -8,7 +8,11 @@ jQuery(document).ready(function($) {
 				$content.find( 'h1').first().remove();
 			}
 			if ( $content.find( '[name="_wp_http_referer"]' ).length > 0 ) {
-				$content.find( '[name="_wp_http_referer"]' ).val( window.location.href );
+				if ( 'localhost' === window.location.hostname || 'dev.brasa.art.br' === window.location.hostname ) {
+					$content.find( '[name="_wp_http_referer"]' ).val( window.location.href );
+				} else {
+					$content.find( '[name="_wp_http_referer"]' ).val( '/?home' );
+				}
 			}
 		} else {
 			$content.removeClass( 'modal-bigger' );
