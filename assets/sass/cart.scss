@@ -50,7 +50,7 @@ body.woocommerce-cart {
 				color:#000;
 			}
 		}
-		.quantity {
+		td.product-quantity select {
 			display:none;
 		}
 		.buttons-qty {
@@ -79,8 +79,8 @@ body.woocommerce-cart {
 			.buttons-qty {
 				display: none !important;
 			}
-			.quantity {
-				display: block !important;
+			td.product-quantity select {
+				display: inline !important;
 			}
 			.product-remove a{
 				text-indent: -99999px;

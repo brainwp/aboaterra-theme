@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
 	});
 	$( document ).on( 'change', '.woocommerce .buttons-qty input', function(e){
 		if ( $( 'body' ).hasClass( 'woocommerce-cart' ) ) {
-			var selector = 'input[name="' + $( this ).attr( 'data-id' ) + '"]';
+			var selector = 'select[name="' + $( this ).attr( 'data-id' ) + '"]';
 			$( selector ).val( $( this ).val() );
 		}
 

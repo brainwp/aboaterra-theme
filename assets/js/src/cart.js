@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
 	/**
 	 * Atualiza o cart (Pagina cart) automaticamente no mobile
 	*/
-	$( document ).on( 'change', 'body.woocommerce-cart .quantity input', function( e ) {
+	$( document ).on( 'change', 'body.woocommerce-cart .product-quantity select', function( e ) {
 		if ( $( window ).width() <= 728 ) {
 			$( 'input[name="update_cart"]' ).trigger( 'click' );
 		}
