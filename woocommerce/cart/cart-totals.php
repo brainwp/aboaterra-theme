@@ -92,17 +92,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 </div>
 <div class="col-md-12 cart-links">
-	<div class="col-md-4 pull-left">
-		<?php $empty_cart_url = WC()->cart->get_cart_url . '?empty_cart=true';?>
-		<a href="<?php echo wp_nonce_url( $empty_cart_url, 'empty_cart' );?>" class="btn btn-cart-link" id="cart-empty-link" data-confirm="<?php esc_attr_e( 'Você realmente deseja esvaziar completamente o carrinho?', 'odin' );?>">
-			<?php _e( 'Esvaziar Carrinho', 'odin' );?>
-		</a>
-		<a href="<?php echo home_url();?>" class="btn btn-cart-link">
-			<?php _e( 'Continuar comprando', 'odin' );?>
-		</a>
-	</div><!-- .pull-left -->
-	<div class="col-md-4 pull-right text-right">
-		<input type="submit" class="button btn btn-cart-link" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" style="display:none;"/>
-		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
-	</div><!-- .col-md-5 pull-right -->
+	<?php if ( ! wp_is_mobile() ) : ?>
+		<div class="col-md-4 pull-left">
+			<a href="<?php echo home_url();?>" class="btn btn-cart-link">
+				<?php _e( 'Continuar comprando', 'odin' );?>
+			</a>
+			<?php $empty_cart_url = WC()->cart->get_cart_url . '?empty_cart=true';?>
+			<a href="<?php echo wp_nonce_url( $empty_cart_url, 'empty_cart' );?>" class="btn btn-cart-link" id="cart-empty-link" data-confirm="<?php esc_attr_e( 'Você realmente deseja esvaziar completamente o carrinho?', 'odin' );?>">
+				<?php _e( 'Esvaziar Carrinho', 'odin' );?>
+			</a>
+		</div><!-- .pull-left -->
+		<div class="col-md-4 pull-right text-right">
+			<input type="submit" class="button btn btn-cart-link" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" style="display:none;"/>
+			<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+		</div><!-- .col-md-5 pull-right -->
+	<?php else : ?>
+		<div class="col-md-12 pull-left">
+			<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+			<a href="<?php echo home_url();?>" class="btn btn-cart-link">
+				<?php _e( 'Continuar comprando', 'odin' );?>
+			</a>
+			<?php $empty_cart_url = WC()->cart->get_cart_url . '?empty_cart=true';?>
+			<a href="<?php echo wp_nonce_url( $empty_cart_url, 'empty_cart' );?>" class="btn btn-cart-link" id="cart-empty-link" data-confirm="<?php esc_attr_e( 'Você realmente deseja esvaziar completamente o carrinho?', 'odin' );?>">
+				<?php _e( 'Esvaziar Carrinho', 'odin' );?>
+			</a>
+			<input type="submit" class="button btn btn-cart-link" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" style="display:none;"/>
+		</div><!-- .pull-left -->
+	<?php endif;?>
 </div><!-- .col-md-12 cart-links -->
