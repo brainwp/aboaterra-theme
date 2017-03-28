@@ -21,6 +21,9 @@
 	> h1 {
 		font-size:1.7em;
 	}
+	a.back-home.woocommerce-Button.button {
+		display: none !important;
+	}
 }
 #reveal-modal-id.modal-bigger {
 	@media screen and ( min-width: 800px ) {
