@@ -149,6 +149,9 @@ class Brasa_Check_Delivery {
 				if ( $value = get_theme_mod( 'delivery_success', false ) ) {
 					printf( $this->success, apply_filters( 'the_title', $value ) );
 					_e( '<a href="#" class="close-modal woocommerce-Button button">Ok</a>', 'odin' );
+					if ( 'true' != get_post_meta( get_the_ID(), 'is_reveal_modal', false ) ) {
+						printf( __( '<a href="%s" class="woocommerce-Button button">Ok</a>', 'odin' ), get_home_url() );
+					}
 				} else {
 					printf( $this->success, apply_filters( 'the_title', $customer_data[ 'message'] ) );
 				}
