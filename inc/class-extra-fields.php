@@ -18,7 +18,7 @@
 		 */
 		public function __construct() {
 			// add checkout custom fields
-			add_action( 'woocommerce_after_checkout_billing_form', array( $this, 'add_checkout_billing_fields' ), 9999 );
+			/*add_action( 'woocommerce_after_checkout_billing_form', array( $this, 'add_checkout_billing_fields' ), 9999 );*/
 			add_action( 'woocommerce_review_order_after_shipping', array( $this, 'add_checkout_order_fields' ), 9999 );
 
 			// process custom fields
@@ -60,7 +60,7 @@
 		 * Add fields to checkout billing section
 		 * @param object $checkout
 		 * @return null
-		 */
+		 *
 		public function add_checkout_billing_fields( $checkout ) {
 
 			$default_value = '';
@@ -87,9 +87,9 @@
 			if ( ! is_user_logged_in() ) {
 				return;
 			}
-			if ( isset( $_POST[ 'cpf'] ) && ! empty( $_POST[ 'cpf'] ) ) {
+			/*if ( isset( $_POST[ 'cpf'] ) && ! empty( $_POST[ 'cpf'] ) ) {
 				update_post_meta( get_current_user_id(), 'cpf', $_POST[ 'cpf' ] );
-			}
+			}*/
 		}
 
 		public function get_billing_fields() {
@@ -97,13 +97,14 @@
 			$fields[ 'billing_first_name' ] = __( 'Nome', 'odin' );
 			$fields[ 'billing_last_name'] = __( 'Sobrenome', 'odin' );
 			$fields[ 'email' ] = __( 'Email', 'odin' );
-			$fields[ 'cpf' ] = __( 'CPF/CNPJ', 'odin' );
+			$fields[ 'billing_cpf' ] = __( 'CPF', 'odin' );
+			/*$fields[ 'billing_cnpj' ] = __( 'CNPJ', 'odin' );*/
 			$fields[ 'billing_phone' ] = __( 'Telefone', 'odin' );
 			return $fields;
 		}
 		public function get_billing_only_meta_fields() {
 			$fields = array();
-			$fields[ 'cpf' ] = __( 'CPF/CNPJ', 'odin' );
+			$fields[ 'billing_cpf' ] = __( 'CPF', 'odin' );
 			$fields[ 'billing_phone' ] = __( 'Telefone', 'odin' );
 			return $fields;
 		}

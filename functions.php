@@ -196,6 +196,13 @@ function hjs_wc_checkout_fields( $fields ) {
     return $fields;
 }
 
+// Adiciona 32 itens por pagina
+add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
+
+function new_loop_shop_per_page( $cols ) {
+    return 32;
+}
+
 /**
  * Register widget areas.
  *
@@ -459,4 +466,11 @@ function init_brasa_check_delivery_aboaterra() {
 	new Brasa_Check_Delivery( null, $error );
 }
 add_action( 'init', 'init_brasa_check_delivery_aboaterra', 9999 );
+
+?>
+<?php
+function wc_remove_related_products( $args ) { 
+         return array();
+}
+add_filter('woocommerce_related_products_args','wc_related_products', 10);
 
