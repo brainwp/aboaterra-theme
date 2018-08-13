@@ -23,9 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 // Ensure visibility
-if ( empty( $product ) || ! $product->is_visible() ) {
-	return;
-}
+// if ( empty( $product ) || ! $product->is_visible() ) {
+// 	return;
+// }
 ?>
 <li <?php post_class(); ?>>
 	<?php if ( is_page_template( 'page-cestas.php' ) ) : ?>

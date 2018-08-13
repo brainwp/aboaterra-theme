@@ -167,16 +167,6 @@ class WC_Widget_Products_By_Tag extends WC_Widget {
 					'desc' => __( 'DESC', 'woocommerce' ),
 				)
 			),
-			'hide_free' => array(
-				'type'  => 'checkbox',
-				'std'   => 0,
-				'label' => __( 'Hide free products', 'woocommerce' )
-			),
-			'show_hidden' => array(
-				'type'  => 'checkbox',
-				'std'   => 0,
-				'label' => __( 'Show hidden products', 'woocommerce' )
-			)
 		);
 
 		parent::__construct();
@@ -203,19 +193,6 @@ class WC_Widget_Products_By_Tag extends WC_Widget {
 			'meta_query'     => array()
 		);
 
-		if ( empty( $instance['show_hidden'] ) ) {
-			$query_args['meta_query'][] = WC()->query->visibility_meta_query();
-			$query_args['post_parent']  = 0;
-		}
-
-		if ( ! empty( $instance['hide_free'] ) ) {
-			$query_args['meta_query'][] = array(
-				'key'     => '_price',
-				'value'   => 0,
-				'compare' => '>',
-				'type'    => 'DECIMAL',
-			);
-		}
 
 		$query_args['meta_query'][] = WC()->query->stock_status_meta_query();
 		$query_args['meta_query']   = array_filter( $query_args['meta_query'] );
@@ -238,6 +215,14 @@ class WC_Widget_Products_By_Tag extends WC_Widget {
 			default :
 				$query_args['orderby']  = 'date';
 		}
+		$query_args['tax_query'][] = array(
+			array(
+				 'taxonomy' => 'product_visibility',
+				 'field'    => 'name',
+				 'terms'    => array('exclude-from-search', 'exclude-from-catalog'),
+				 'operator' => 'NOT IN'
+			 ),
+		);
 
 		return new WP_Query( apply_filters( 'woocommerce_products_widget_query_args', $query_args ) );
 	}
