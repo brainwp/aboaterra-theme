@@ -469,8 +469,63 @@ add_action( 'init', 'init_brasa_check_delivery_aboaterra', 9999 );
 
 ?>
 <?php
-function wc_remove_related_products( $args ) { 
+function wc_remove_related_products( $args ) {
          return array();
 }
 add_filter('woocommerce_related_products_args','wc_related_products', 10);
 
+
+// adiciona quantidade de ítens em uma nova coluna na listagem de produtos
+
+function sv_wc_cogs_add_qty_column_header( $columns ) {
+
+    $new_columns = array();
+
+    foreach ( $columns as $column_name => $column_info ) {
+        $new_columns[ $column_name ] = $column_info;
+        if ( 'order_number' === $column_name ) {
+            $new_columns['qty'] = __( 'Comprado', 'odin' );
+        }
+    }
+
+    return $new_columns;
+}
+add_filter( 'manage_edit-shop_order_columns', 'sv_wc_cogs_add_qty_column_header', 20 );
+
+
+function sv_wc_cogs_add_qty_column_content( $column ) {
+    global $post;
+    if ( 'qty' === $column ) {
+        $order    = wc_get_order( $post->ID );
+		$bundle_qty = 0;
+		$itens_qty = 0;
+		foreach( $order->get_items() as $item ) {
+			$product = $item->get_product();
+			// if ( $sku = $product->get_sku() ) {
+				if ( isset( $item[ 'bundled_by'] ) ) {
+					$bundle_qty++;
+					continue;
+				}
+				$itens_qty++;
+			// }
+		}
+		if ($itens_qty == 1) {
+			echo $itens_qty . ' item ';
+		}
+		else{
+			echo $itens_qty . ' itens ';
+		}
+		if ($bundle_qty) {
+			if ($bundle_qty == 1) {
+				echo '[ '. $bundle_qty .' produto agrupado ]';
+			}
+			else{
+				echo '[ '. $bundle_qty .' produtos agrupados ]';
+			}
+
+		}
+    }
+}
+add_action( 'manage_shop_order_posts_custom_column', 'sv_wc_cogs_add_qty_column_content' );
+
+// adiciona quantidade de ítens em uma nova coluna na listagem de produtos
