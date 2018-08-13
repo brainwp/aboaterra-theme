@@ -71,5 +71,6 @@
 <?php if ( $value = get_theme_mod( 'code_close_body', false ) ) : ?>
 	<?php echo html_entity_decode( $value );?>
 <?php endif;?>
+
 </body>
 </html>

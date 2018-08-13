@@ -1,0 +1,21 @@
+[08-Apr-2017 16:04:54 America/Chicago] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20131226
+These options need to match
+ in Unknown on line 0
+[08-Apr-2017 16:04:54 America/Chicago] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20131226
+These options need to match
+ in Unknown on line 0
+[08-Apr-2017 16:04:54 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/aboat918/public_html/wp-content/themes/aboaterra-theme/404.php on line 9
+[15-Feb-2018 09:12:36 America/Sao_Paulo] PHP Fatal error:  Call to undefined function get_header() in /home/aboat918/public_html/wp-content/themes/aboaterra-theme/page.php on line 13
+[02-Mar-2018 19:15:55 America/Sao_Paulo] PHP Fatal error:  Call to undefined function get_header() in /home/aboat918/public_html/wp-content/themes/aboaterra-theme/404.php on line 9
+[03-Mar-2018 03:19:04 America/Sao_Paulo] PHP Fatal error:  Call to undefined function get_header() in /home/aboat918/public_html/wp-content/themes/aboaterra-theme/404.php on line 9
+[24-Mar-2018 03:10:35 America/Sao_Paulo] PHP Fatal error:  Call to undefined function get_header() in /home/aboat918/public_html/wp-content/themes/aboaterra-theme/archive.php on line 19
+[24-Mar-2018 05:06:11 America/Sao_Paulo] PHP Fatal error:  Call to undefined function get_header() in /home/aboat918/public_html/wp-content/themes/aboaterra-theme/archive.php on line 19
+[25-Mar-2018 06:37:02 America/Sao_Paulo] PHP Fatal error:  Call to undefined function language_attributes() in /home/aboat918/public_html/wp-content/themes/aboaterra-theme/header.php on line 11
+[25-Mar-2018 07:37:39 America/Sao_Paulo] PHP Fatal error:  Call to undefined function language_attributes() in /home/aboat918/public_html/wp-content/themes/aboaterra-theme/header.php on line 11
+[26-Mar-2018 00:17:08 America/Sao_Paulo] PHP Fatal error:  Call to undefined function get_header() in /home/aboat918/public_html/wp-content/themes/aboaterra-theme/index.php on line 16
+[26-Mar-2018 00:37:49 America/Sao_Paulo] PHP Fatal error:  Call to undefined function get_header() in /home/aboat918/public_html/wp-content/themes/aboaterra-theme/index.php on line 16
+[07-May-2018 11:01:37 America/Sao_Paulo] PHP Fatal error:  Call to undefined function get_header() in /home/aboat918/public_html/wp-content/themes/aboaterra-theme/404.php on line 9

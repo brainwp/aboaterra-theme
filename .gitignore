@@ -35,3 +35,5 @@ src/.ftppass
 src/tmp/*
 odin.zip
 
+
+.remote-sync.json
