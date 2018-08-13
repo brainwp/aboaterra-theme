@@ -11,18 +11,21 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
+ * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 2.6.1
  */
 
-defined( 'ABSPATH' ) || exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 global $product;
 
-// Ensure visibility.
-if ( empty( $product ) || ! $product->is_visible() ) {
-	return;
-}
+// Ensure visibility
+// if ( empty( $product ) || ! $product->is_visible() ) {
+// 	return;
+// }
 ?>
 <li <?php post_class(); ?>>
 	<?php if ( is_page_template( 'page-cestas.php' ) ) : ?>
@@ -38,14 +41,14 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	<?php endif;?>
 	<?php
 	/**
-	 * Hook: woocommerce_before_shop_loop_item.
+	 * woocommerce_before_shop_loop_item hook.
 	 *
 	 * @hooked woocommerce_template_loop_product_link_open - 10
 	 */
 	do_action( 'woocommerce_before_shop_loop_item' );
 
 	/**
-	 * Hook: woocommerce_before_shop_loop_item_title.
+	 * woocommerce_before_shop_loop_item_title hook.
 	 *
 	 * @hooked woocommerce_show_product_loop_sale_flash - 10
 	 * @hooked woocommerce_template_loop_product_thumbnail - 10
@@ -54,17 +57,18 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	if ( $product->product_type == 'yith_bundle' && is_page_template( 'page-cestas.php' ) ) :
 		echo '<h3>' . count( $product->bundle_data ) . ' '. __( 'Ítens' ) . '</h3>';
 	endif;
+
 	/**
-	 * Hook: woocommerce_shop_loop_item_title.
+	 * woocommerce_shop_loop_item_title hook.
 	 *
 	 * @hooked woocommerce_template_loop_product_title - 10
 	 */
-	 if ( ! is_page_template( 'page-cestas.php' ) ) {
- 		do_action( 'woocommerce_shop_loop_item_title' );
- 	}
+	if ( ! is_page_template( 'page-cestas.php' ) ) {
+		do_action( 'woocommerce_shop_loop_item_title' );
+	}
 
 	/**
-	 * Hook: woocommerce_after_shop_loop_item_title.
+	 * woocommerce_after_shop_loop_item_title hook.
 	 *
 	 * @hooked woocommerce_template_loop_rating - 5
 	 * @hooked woocommerce_template_loop_price - 10
@@ -72,13 +76,14 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	do_action( 'woocommerce_after_shop_loop_item_title' );
 
 	/**
-	 * Hook: woocommerce_after_shop_loop_item.
+	 * woocommerce_after_shop_loop_item hook.
 	 *
 	 * @hooked woocommerce_template_loop_product_link_close - 5
 	 * @hooked woocommerce_template_loop_add_to_cart - 10
 	 */
 	do_action( 'woocommerce_after_shop_loop_item' );
-	?><?php if ( is_page_template( 'page-cestas.php' ) ) : ?>
+	?>
+	<?php if ( is_page_template( 'page-cestas.php' ) ) : ?>
 	</div>
 		<?php if ( $value = get_post_meta( get_the_ID(), 'cesta_content', true ) ) : ?>
 			<div class="description">

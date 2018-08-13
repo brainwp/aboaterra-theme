@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
 	*/
 	$( document ).on( 'change', 'body.woocommerce-cart .buttons-qty input', function( e ) {
 		$( this ).parent( '.buttons-qty' ).on( 'mouseout', function(){
-			$( 'input[name="update_cart"]' ).trigger( 'click' );
+			$( 'button[name="update_cart"]' ).trigger( 'click' );
 		});
 	});
 	/**
@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
 	*/
 	$( document ).on( 'change', 'body.woocommerce-cart .product-quantity select', function( e ) {
 		if ( $( window ).width() <= 728 ) {
-			$( 'input[name="update_cart"]' ).trigger( 'click' );
+			$( 'button[name="update_cart"]' ).trigger( 'click' );
 		}
 	});
 

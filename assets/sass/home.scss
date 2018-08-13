@@ -191,7 +191,7 @@ button.slick-prev, button.slick-next {
 				font-weight: 600 !important;
 				text-transform: uppercase;
 			}
-			h3 {
+			h3,h2 {
 				color:#929393 !important;
 				text-align: center;
 				font-size:1.2 !important;
@@ -213,6 +213,7 @@ button.slick-prev, button.slick-next {
 				}
 			}
 			.added_to_cart {
+				width: 100px;
 				clear: both;
 				display: block;
 				position: absolute;
@@ -220,8 +221,12 @@ button.slick-prev, button.slick-next {
 				left: -18px;
 				color: #41a140;
 				text-decoration: underline;
+
 			}
 
+			#respond input#submit.added::after,  a.button.added::after,  button.button.added::after,  input.button.added::after{
+				content:'';
+			}
 		}
 	}
 	.add-to-cart-container{
