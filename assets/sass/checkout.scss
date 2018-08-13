@@ -20,7 +20,8 @@ body.woocommerce-checkout{
 		clear: both;
 	}
 	input[type="checkbox"].input-checkbox {
-		position: initial!important;
+		position: relative!important;
+		z-index: 999;
 	}
 	.woocommerce ul#shipping_method li input{
 		margin-left: 2px!important;
@@ -337,4 +338,3 @@ body.woocommerce-checkout{
 
 
 }
-
