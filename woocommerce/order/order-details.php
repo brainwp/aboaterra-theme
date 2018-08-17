@@ -4,22 +4,24 @@
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/order/order-details.php.
  *
- * HOWEVER, on occasion WooCommerce will need to update template files and you (the theme developer).
- * will need to copy the new files to your theme to maintain compatibility. We try to do this.
- * as little as possible, but it does happen. When this occurs the version of the template file will.
- * be bumped and the readme will list any important changes.
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
  *
- * @see 	    http://docs.woothemes.com/document/template-structure/
+ * @see 	https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 9.9.9
+ * @version 3.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
-$order = wc_get_order( $order_id );
+if ( ! $order = wc_get_order( $order_id ) ) {
+	return;
+}
 
 $show_purchase_note    = $order->has_status( apply_filters( 'woocommerce_purchase_note_order_statuses', array( 'completed', 'processing' ) ) );
 $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_current_user_id();
@@ -44,8 +46,9 @@ $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_cu
 				continue;
 			}
 
-			$_product = wc_get_product( $cart_item[ 'item_meta'][ '_product_id'][0] );
-			$product_id = $cart_item[ 'item_meta'][ '_product_id'][0];
+			$_product = $cart_item->get_product() ;
+
+			$product_id = $_product->get_id();
 
 			if ( $_product && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
@@ -92,18 +95,19 @@ $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_cu
 
 					<td class="product-quantity" data-title="<?php _e( 'Quantity', 'woocommerce' ); ?>">
 						<div class="buttons-qty">
- 							<input type="text" value="<?php echo esc_attr( $cart_item[ 'item_meta']['_qty'][0] );?>" disabled />
+ 							<input type="text" value="<?php echo esc_attr( $cart_item->get_quantity() ); ?>" disabled />
 						</div><!-- .buttons-qty -->
 
 					</td>
 					<td class="product-price" data-title="<?php _e( 'Price', 'woocommerce' ); ?>">
 						<?php
-							echo apply_filters( 'woocommerce_cart_item_price', wc_price( $cart_item[ 'item_meta']['_line_total'][0] ), $cart_item, $cart_item_key );
+
+							echo apply_filters( 'woocommerce_cart_item_price', wc_price( $_product->get_price()  ), $cart_item, $cart_item_key );
 						?>
 					</td>
 					<td class="product-subtotal" data-title="<?php _e( 'Total', 'woocommerce' ); ?>">
 						<?php
-							echo apply_filters( 'woocommerce_cart_item_subtotal', wc_price( $cart_item[ 'item_meta']['_line_subtotal'][0] ), $cart_item, $cart_item_key );
+							echo apply_filters( 'woocommerce_cart_item_subtotal', wc_price( $cart_item->get_subtotal() ), $cart_item, $cart_item_key );
 						?>
 					</td>
 				</tr>

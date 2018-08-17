@@ -15,12 +15,13 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.6.0
+ * @version 3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
 global $order;
 $order = wc_get_order( $order_id );
 get_template_part( 'content/each-order' );
