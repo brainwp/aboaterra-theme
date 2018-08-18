@@ -529,3 +529,41 @@ function sv_wc_cogs_add_qty_column_content( $column ) {
 add_action( 'manage_shop_order_posts_custom_column', 'sv_wc_cogs_add_qty_column_content' );
 
 // adiciona quantidade de ítens em uma nova coluna na listagem de produtos
+add_action( 'woocommerce_before_single_product_summary', 'product_list_bundle',  40);
+
+// lista produtos na cache_javascript_headers()
+function product_list_bundle(){
+	global $product;
+	print_r(get_post_meta( $product->id ));
+	print_r($product->id);
+	if ( $product->is_type( 'yith_bundle' ) ) : ?>
+	<div class="product-grouped">
+		<span class="col-md-12 product-grouped-list section-title">
+			<?php _e( 'Itens: ', 'odin' );?>
+		</span>
+		<?php
+		foreach ( $product->get_bundled_items() as $product_item ) :
+			$product_id = $product_item->product_id;
+			if ( ! $product = wc_get_product( $product_id ) ) {
+				continue;
+			}
+
+			if ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) && ! $product->is_in_stock() ) {
+				continue;
+			}
+
+			$post = $product->post;
+			setup_postdata( $post );
+		?>
+			<span class="col-md-12 product-grouped-list">
+				<?php echo get_the_title( $product_id );?>
+			</span>
+		<?php endforeach;
+		// Reset to parent grouped product
+		$post = $parent_product_post;
+		$product = wc_get_product( $parent_product_post->ID );
+		setup_postdata( $parent_product_post );
+		?>
+	</div><!-- .product-grouped -->
+	<?php endif;
+}
