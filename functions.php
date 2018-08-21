@@ -529,7 +529,7 @@ function sv_wc_cogs_add_qty_column_content( $column ) {
 add_action( 'manage_shop_order_posts_custom_column', 'sv_wc_cogs_add_qty_column_content' );
 
 // adiciona quantidade de ítens em uma nova coluna na listagem de produtos
-add_action( 'woocommerce_before_single_product_summary', 'product_list_bundle',  40);
+// add_action( 'woocommerce_before_single_product_summary', 'product_list_bundle',  40);
 
 // lista produtos na cache_javascript_headers()
 function product_list_bundle(){

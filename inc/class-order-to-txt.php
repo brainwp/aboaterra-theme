@@ -63,12 +63,12 @@ class Brasa_Order_To_TXT {
 		$items = '';
 		foreach( $order->get_items() as $item ) {
 			$product = $item->get_product();
-			// if ( $sku = $product->get_sku() ) {
+			if ( $sku = $product->get_sku() ) {
 				if ( isset( $item[ 'bundled_by'] ) ) {
 					continue;
 				}
 				$items .= sprintf( '%s,%s;', $sku, $item->get_quantity() );
-			// }
+			}
 		}
 		echo $items;
 		wp_die();
