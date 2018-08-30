@@ -87,8 +87,15 @@ body.single-product{
 	}
 	.entry-summary{
 		float: left!important;
-	    margin-left: 15%;
-		width:25%!important;
+
+		@media screen and (min-width: 992px) {
+			margin-left: 8.3%;
+		  	width:33%!important;
+	    }
+		@media screen and (max-width: 991px) {
+			margin-left: 0%;
+		  	width:100%!important;
+	    }
 	}
 	.product-grouped-list{
 		margin-bottom: 1.8px;
