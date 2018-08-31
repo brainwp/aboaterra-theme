@@ -226,6 +226,10 @@ button.slick-prev, button.slick-next {
 				left: -18px;
 				color: #41a140;
 				text-decoration: underline;
+				@media screen and (max-width: 992px) {
+					left: auto;
+					text-align: center;
+				}
 
 			}
 
@@ -407,9 +411,20 @@ ul.products, li.product{
 		text-align: justify;
 	}
 }
-ul.products {
+.home .woocommerce ul.products {
     padding-bottom: 0px!Important;
     margin-bottom: 0px!important;
+	li.product{
+		@media screen and ( max-width: 992px ) {
+			width: 48%!important;
+		    float: left;
+		    clear:none;
+			margin: 0 1.8% 2.992em 0;
+			&:nth-child(2n+1){
+				clear:left;
+			}
+		}
+	}
 }
 body.home .textwidget {
 	clear: both;
