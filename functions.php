@@ -319,6 +319,7 @@ add_filter( 'body_class', 'odin_unlogged_user_body_class' );
  * @since 2.2.0
  */
 function odin_enqueue_scripts() {
+
 	$template_url = get_template_directory_uri();
 
 	// Loads Odin main stylesheet.
@@ -364,6 +365,13 @@ function odin_enqueue_scripts() {
 	// Load Thread comments WordPress script.
 	if ( is_singular() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
+	if (is_account_page()) {
+		wp_enqueue_script( 'jquery-mask', get_template_directory_uri() . '/assets/js/jquery.mask.min.js', array(), false, true );
+		wp_add_inline_script( 'jquery-mask', 'jQuery(document).ready(function($) {
+jQuery("#billing_phone").mask("(00) 0000-00009");});' );
+
+
 	}
 }
 

@@ -48,7 +48,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php $value = $user->user_email;?>
 				<?php else : ?>
 					<?php $value = get_user_meta( $user->ID, $key, true );?>
-					<?php if ( ! $value ) $value = '';?>
+					<?php
+						if ( ! $value ) $value = '';
+						if ($key == 'billing_phone') {
+							$value_array = explode('-', $value);
+							$value = "(".$value_array[1].")". " " .$value_array[2]. "-". $value_array[3] ;
+						}
+					?>
 				<?php endif;?>
 				<?php echo apply_filters( 'the_title', $value );?>
 			</div><!-- .col-md-5 pull-right data -->

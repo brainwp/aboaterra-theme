@@ -42,7 +42,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
 
 			<?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
-
+			<?php add_filter( 'woocommerce_shipping_package_name', 'custom_shipping_package_name' );
+			function custom_shipping_package_name( $name ) {
+			  return 'Frete';
+			} ?>
 			<?php wc_cart_totals_shipping_html(); ?>
 
 			<?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>

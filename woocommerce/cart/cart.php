@@ -55,7 +55,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<?php
 								// @codingStandardsIgnoreLine
 								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-									'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+									'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><spam class="remover-mobile">Remover este item</spam><spam class="remover-desktop">&times;</spam></a>',
 									esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 									__( 'Remove this item', 'woocommerce' ),
 									esc_attr( $product_id ),
@@ -121,20 +121,31 @@ do_action( 'woocommerce_before_cart' ); ?>
 						if ( $_product->is_sold_individually() ) {
 							$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
 						} else {
-							$product_quantity = woocommerce_quantity_input( array(
-								'input_name'   => "cart[{$cart_item_key}][qty]",
-								'input_value'  => $cart_item['quantity'],
-								'max_value'    => $_product->get_max_purchase_quantity(),
-								'min_value'    => '0',
-								'product_name' => $_product->get_name(),
-							), $_product, false );
+							printf( '<select name="%s">', "cart[{$cart_item_key}][qty]" );
+							$max_value = $_product->get_max_purchase_quantity();
+							if ($max_value == -1){
+								if (wp_is_mobile() ) {
+									$max_value = 31;
+								} else {
+									$max_value = 500;
+								}
+							}
+							// print_r($max_value);
+							for ( $i = 1; $i < $max_value; $i++ ) {
+								if ( (int) $cart_item['quantity'] === $i ) {
+									printf( '<option value="%s" selected>%s</option>', $i, $i );
+								} else {
+									printf( '<option value="%s">%s</option>', $i, $i );
+								}
+							}
+							echo '</select>';
 						}
 
 						// echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 						?>
 						<div class="buttons-qty">
 							<span>+</span>
-							<input type="text" id="quantity_<?php echo "{$cart_item_key}";?>" class="input-text qty text" step="1" min="0" max="" name="<?php echo "cart[{$cart_item_key}][qty]";?>" value="<?php echo esc_attr( $cart_item['quantity'] );?>">
+							<input type="text" id="quantity_<?php echo "{$cart_item_key}";?>" class="input-text qty text" step="1" min="0" max="<?php echo $max_value; ?>" name="<?php echo "cart[{$cart_item_key}][qty]";?>" value="<?php echo esc_attr( $cart_item['quantity'] );?>">
  							<span>-</span>
 						</div><!-- .buttons-qty -->
 						</td>

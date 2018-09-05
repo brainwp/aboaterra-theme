@@ -76,11 +76,17 @@ body.woocommerce-cart {
 			height:32px !important;
 			background: none !important;
 			transition:300ms ease all;
+			.remover-mobile{
+				display: none;
+			}
+			.remover-desktop{
+				display: block;
+			}
 			&:hover {
 				margin-top:7px;
 			}
 		}
-		@media screen and( max-width: 700px ) {
+		@media screen and( max-width: 768px ) {
 			.buttons-qty {
 				display: none !important;
 			}
@@ -88,9 +94,18 @@ body.woocommerce-cart {
 				display: inline !important;
 			}
 			.product-remove a{
-				text-indent: -99999px;
+				display: flex!important;
+			    width: 100% !important;
+			    justify-items: center;
+			    align-items: center;
 				display: inline-block !important;
 				width:100% !important;
+				.remover-mobile{
+					display: block;
+				}
+				.remover-desktop{
+					display: none;
+				}
 				&:before {
 					float: left;
 					content: attr(data-title);
