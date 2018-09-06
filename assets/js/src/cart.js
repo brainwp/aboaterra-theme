@@ -18,6 +18,8 @@ jQuery(document).ready(function($) {
 			$( 'button[name="update_cart"]' ).trigger( 'click' );
 		});
 	});
+	// mascara do telefone
+	// jQuery("#billing_phone").mask("(00) 0000-00009");
 	/**
 	 * Atualiza o cart (Pagina cart) automaticamente no mobile
 	*/
