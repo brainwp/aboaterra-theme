@@ -50,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php $value = get_user_meta( $user->ID, $key, true );?>
 					<?php
 						if ( ! $value ) $value = '';
-						if ($key == 'billing_phone' ) {
+						if ($key == 'billing_phone' && FALSE ) {
 							$value_array = explode('-', $value);
 							$value = "(".$value_array[1].")". " " .$value_array[2]. "-". $value_array[3] ;
 						}

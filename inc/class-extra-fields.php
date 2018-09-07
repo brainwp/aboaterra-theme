@@ -43,7 +43,7 @@
 			return self::$instance;
 		}
 		public function show_order_fields( $order ) {
-			if ( $value = get_post_meta( $order->id, 'order_delivery_time', true ) ) {
+			if ( $value = get_post_meta( $order->get_id(), 'order_delivery_time', true ) ) {
 				echo '<p><strong>'.__( 'Possui portaria 24horas?', 'odin' ).':</strong> ' . $value . '</p>';
 			}
 		}
