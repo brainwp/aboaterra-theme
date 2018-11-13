@@ -18,20 +18,40 @@ jQuery(document).ready(function($) {
 			$( 'button[name="update_cart"]' ).trigger( 'click' );
 		});
 	});
+	// if ($('body').hasClass('admin-bar') ) {
+	// 	alert('js novo')
+	//
+	// }
 	// mascara do telefone
 	if ($('body').hasClass('woocommerce-checkout') || $('body').hasClass('woocommerce-account')) {
-		if($('#billing_phone, #billing_cellphone').val().length == 15){ // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
-		  $('#billing_phone, #billing_cellphone').mask('(00) 00000-0009');
-		} else {
-		  $('#billing_phone, #billing_cellphone').mask('(00) 0000-00009');
-		}
-		$('#billing_phone, #billing_cellphone').blur(function(event) {
-			if($(this).val().length == 15){ // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
-			  $('#billing_phone, #billing_cellphone').mask('(00) 00000-0009');
+		if (typeof $('#billing_phone').val() !== 'undefined') {
+			if($('#billing_phone').val().length == 15){ // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
+			  $('#billing_phone').mask('(00) 00000-0009');
 			} else {
-			  $('#billing_phone, #billing_cellphone').mask('(00) 0000-00009');
+			  $('#billing_phone').mask('(00) 0000-00009');
 			}
-		});
+			$('#billing_phone').blur(function(event) {
+				if($(this).val().length == 15){ // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
+				  $('#billing_phone').mask('(00) 00000-0009');
+				} else {
+				  $('#billing_phone').mask('(00) 0000-00009');
+				}
+			});
+		}
+		if (typeof $('#billing_cellphone').val() !== 'undefined') {
+			if($('#billing_cellphone').val().length == 15){ // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
+			  $('#billing_cellphone').mask('(00) 00000-0009');
+			} else {
+			  $('#billing_cellphone').mask('(00) 0000-00009');
+			}
+			$('#billing_cellphone').blur(function(event) {
+				if($(this).val().length == 15){ // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
+				  $('#billing_cellphone').mask('(00) 00000-0009');
+				} else {
+				  $('#billing_cellphone').mask('(00) 0000-00009');
+				}
+			});
+		}
 	}
 
 	/**

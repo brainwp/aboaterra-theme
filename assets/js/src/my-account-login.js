@@ -7,6 +7,5 @@ jQuery(document).ready(function($) {
 		return;
 	}
 	var height = $( '.register-form' ).height() + 30 + 'px';
-	console.log( height );
 	$( '.login-form' ).css( 'height', height );
 } );

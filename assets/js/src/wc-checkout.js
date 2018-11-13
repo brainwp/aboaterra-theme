@@ -4,7 +4,7 @@ jQuery( function( $ ) {
 		return;
 	}
 	// wc_checkout_params is required to continue, ensure the object exists
-	console.log( wc_checkout_params );
+	// console.log( wc_checkout_params );
 	if ( typeof wc_checkout_params === 'undefined' ) {
 		return false;
 	}
