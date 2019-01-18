@@ -8,6 +8,10 @@ class Brasa_Check_Delivery {
 	 * Error html
 	 */
 	private $error = '<span class="error animated bounceInUp">%s</span>';
+	/**
+	 * Failure html
+	 */
+	private $failure = '<span class="error animated bounceInUp">%s</span>';
 
 	/**
 	 * success html
@@ -136,7 +140,7 @@ class Brasa_Check_Delivery {
 			header( sprintf( 'delivery-status: %s', '' ) );
 			WC()->session->set( 'wcpbc_customer', array() );
 			WC()->cart->empty_cart();
-			wp_die( sprintf( '<span class="error animated bounceInUp">%s</span>', __( 'Este e-mail já esta cadastrado. Por favor faça login ao lado.', 'odin' ) ) );
+			wp_die( sprintf( $this->failure, __( 'Este e-mail já esta cadastrado. Por favor faça login ao lado.', 'odin' ) ) );
 		}
 		WC()->session->set( 'wcpbc_customer', array() );
 		if ( ! class_exists( 'WCPBC_Customer' ) ) {
@@ -189,10 +193,10 @@ class Brasa_Check_Delivery {
 			}
 			wp_die();
 		}
-		header( sprintf( 'delivery-status: %s', 'false' ) );
+		header( sprintf( 'delivery-status: %s', '' ) );
 		WC()->session->set( 'wcpbc_customer', array() );
 		WC()->cart->empty_cart();
-		wp_die( sprintf( $this->error, __( 'Lamento, nós não entregamos nesse CEP.', 'odin' ) ) );
+		wp_die( sprintf( $this->failure, __( 'Lamento, nós não entregamos nesse CEP. Por enquanto só atentemos em São Paulo, Ribeirão Preto, Holambra, Itobi, São José do Rio Pardo, Vargem Grande do Sul e Casa Branca', 'odin' ) ) );
 	}
 	public function get_woocommerce_zipcode( $code ) {
 		if ( ! $this->is_ajax() ) {
