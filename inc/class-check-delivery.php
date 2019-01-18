@@ -130,11 +130,22 @@ class Brasa_Check_Delivery {
 	 * @return null
 	 */
 	public function ajax() {
+		$email = $_REQUEST['email'];
+		if (email_exists($email)) {
+			header( sprintf( 'delivery-status: %s', '' ) );
+			WC()->session->set( 'wcpbc_customer', array() );
+			WC()->cart->empty_cart();
+			printf( $this->success, apply_filters( 'the_title', 'Este e-mail já esta cadastrado. Por favor faça login ao lado.' ) );
+			wp_die();
+
+		}
 		WC()->session->set( 'wcpbc_customer', array() );
 		if ( ! class_exists( 'WCPBC_Customer' ) ) {
 			header( sprintf( 'delivery-status: %s', 'false' ) );
 			wp_die( sprintf( $this->error, __( 'Lamento, nós não entregamos nesse CEP.', 'odin' ) ) );
 		}
+		print_r($_REQUEST);
+		die;
 		$customer = new WCPBC_Customer();
 		$customer->save_data();
 		$customer_data = WC()->session->get( 'wcpbc_customer' );
@@ -145,6 +156,16 @@ class Brasa_Check_Delivery {
 				WC()->customer->set_postcode( $code );
 				WC()->customer->set_shipping_postcode( $code );
 			}
+			// $email = $_REQUEST['email'];
+			// $password = wp_generate_password();
+			// $user = wc_create_new_customer( $email, $email, $password );
+			// // Caso de erro criando o usuário
+			// if ( is_wp_error( $user )) {
+			// 	header( sprintf( 'delivery-status: %s', 'false' ) );
+			// 	WC()->session->set( 'wcpbc_customer', array() );
+			// 	WC()->cart->empty_cart();
+			// 	wp_die( sprintf( $this->error, __( $user->get_error_message(), 'odin' ) ) );
+			// }
 			if ( isset( $_REQUEST[ 'show_accept_message'] ) && $_REQUEST[ 'show_accept_message'] == 'true' ) {
 				if ( $value = get_theme_mod( 'delivery_success', false ) ) {
 					printf( $this->success, apply_filters( 'the_title', $value ) );

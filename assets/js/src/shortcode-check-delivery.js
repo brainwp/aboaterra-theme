@@ -47,7 +47,9 @@ jQuery(document).ready(function($) {
 			'action': 'brasa_check_delivery',
 			'show_accept_message': 'true',
 			'close_modal': 'true',
-			'postcode': $elements_div.children( '[name="check-delivery"]' ).val()
+			'postcode': $elements_div.children( '[name="check-delivery"]' ).val(),
+			'email': $( 'input[name="email"]' ).val();
+
 		};
 		if ( $elements_div.children( '[name="check-delivery"]' ).val().replace(/\s+/g, '') == '' ) {
 			return;
