@@ -151,35 +151,45 @@ class Brasa_Check_Delivery {
 		$customer->save_data();
 		$customer_data = WC()->session->get( 'wcpbc_customer' );
 		if ( is_array( $customer_data ) && ! empty( $customer_data ) && isset( $customer_data[ 'message'] ) ) {
+			WC()->session->set( 'wcpbc_customer', array() );
 			header( sprintf( 'delivery-status: %s', 'true' ) );
 			if ( ! is_user_logged_in() ) {
+				$password = wp_generate_password();
+				$user = wc_create_new_customer( $email, $email, $password );
+				// Caso de erro criando o usuário
+				if ( is_wp_error( $user )) {
+					header( sprintf( 'delivery-status: %s', 'false' ) );
+					WC()->session->set( 'wcpbc_customer', array() );
+					WC()->cart->empty_cart();
+					wp_die( sprintf( $this->error, __( $user->get_error_message(), 'odin' ) ) );
+				}
+				// força login
+				$creds = array(
+			        'user_login'    => $email,
+			        'user_password' => $password,
+			        'remember'      => false
+			    );
+			    $logged_user = wp_signon( $creds, false );
+				// caso login retorne erro
+			    if ( is_wp_error( $logged_user ) ) {
+					header( sprintf( 'delivery-status: %s', '' ) );
+					WC()->session->set( 'wcpbc_customer', array() );
+					WC()->cart->empty_cart();
+					wp_die( sprintf( $this->failure, __( $logged_user->get_error_message(), 'odin' ) ) );
+			    }
+				// cadastra o cep no usuário
 				$code = wc_format_postcode( $_REQUEST[ 'postcode'], WC()->customer->get_shipping_country() );
-				WC()->customer->set_postcode( $code );
-				WC()->customer->set_shipping_postcode( $code );
-			}
-			$password = wp_generate_password();
-			$user = wc_create_new_customer( $email, $email, $password );
-			// Caso de erro criando o usuário
-			if ( is_wp_error( $user )) {
-				header( sprintf( 'delivery-status: %s', 'false' ) );
-				WC()->session->set( 'wcpbc_customer', array() );
-				WC()->cart->empty_cart();
-				wp_die( sprintf( $this->error, __( $user->get_error_message(), 'odin' ) ) );
-			}
-			$creds = array(
-		        'user_login'    => $email,
-		        'user_password' => $password,
-		        'remember'      => false
-		    );
+				update_user_meta( $user, 'shipping_postcode', $code );
+				update_user_meta( $user, 'billing_postcode', $code );
+				update_user_meta( $user, 'postcode', $code );
 
-		    $logged_user = wp_signon( $creds, false );
+				// $customer = new WC_Customer( $user );
+				// $customer->set_postcode( $code );
+				// $customer->set_shipping_postcode( $code );
+				// $customer->save_data();
 
-		    if ( is_wp_error( $logged_user ) ) {
-				header( sprintf( 'delivery-status: %s', '' ) );
-				WC()->session->set( 'wcpbc_customer', array() );
-				WC()->cart->empty_cart();
-				wp_die( sprintf( '<span class="error animated bounceInUp">%s</span>', __( $logged_user->get_error_message(), 'odin' ) ) );
-		    }
+			}
+
 			if ( isset( $_REQUEST[ 'show_accept_message'] ) && $_REQUEST[ 'show_accept_message'] == 'true' ) {
 				if ( $value = get_theme_mod( 'delivery_success', false ) ) {
 					printf( $this->success, apply_filters( 'the_title', $value ) );
@@ -196,7 +206,7 @@ class Brasa_Check_Delivery {
 		header( sprintf( 'delivery-status: %s', '' ) );
 		WC()->session->set( 'wcpbc_customer', array() );
 		WC()->cart->empty_cart();
-		wp_die( sprintf( $this->failure, __( 'Lamento, nós não entregamos nesse CEP. Por enquanto só atentemos em São Paulo, Ribeirão Preto, Holambra, Itobi, São José do Rio Pardo, Vargem Grande do Sul e Casa Branca', 'odin' ) ) );
+		wp_die( sprintf( $this->failure, __( 'Lamento, nós não entregamos nesse CEP. <br>Por enquanto atentemos em:<span> <ul><li>São Paulo</li> <li>Ribeirão Preto</li><li>Holambra</li> <li>Itobi</li> <li>São José do Rio Pardo</li> <li>Vargem Grande do Sul</li> <li>Casa Branca</li></span>', 'odin' ) ) );
 	}
 	public function get_woocommerce_zipcode( $code ) {
 		if ( ! $this->is_ajax() ) {

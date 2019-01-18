@@ -304,7 +304,7 @@ function odin_flush_rewrite() {
 add_action( 'after_switch_theme', 'odin_flush_rewrite' );
 
 function odin_unlogged_user_body_class( $classes ) {
-	if ( ! is_user_logged_in() && ! WCPBZIP()->customer->group_key ) {
+	if ( ! is_user_logged_in() ) {
 		$classes[] = 'unlogged-user';
 	}
 

@@ -399,7 +399,7 @@ body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 		background: #E3E3E3;
 		display: inline-block;
 		border-radius: 0 !important;
-		padding-left: 50px;
+		padding: 30px 30px 60px;
     	padding-bottom: 60px;
     	padding-top: 30px;
 	}
@@ -453,6 +453,7 @@ body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 		}
 	}
 	.error {
+		width: 100%;
 		background: #912d1e;
 		color:#FFF !important;
 		font-weight: 600;
@@ -463,6 +464,9 @@ body.woocommerce-account #customer_login, #reveal-modal-id #customer_login {
 		margin-top: 20px;
 		font-size: 1.4em;
 		display: inline-block;
+		span{
+			font-size:0.7em;
+		}
 		a {
 			color:#FFF !important;
 			text-decoration: underline;
