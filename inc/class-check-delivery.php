@@ -135,17 +135,14 @@ class Brasa_Check_Delivery {
 			header( sprintf( 'delivery-status: %s', '' ) );
 			WC()->session->set( 'wcpbc_customer', array() );
 			WC()->cart->empty_cart();
-			printf( $this->success, apply_filters( 'the_title', 'Este e-mail já esta cadastrado. Por favor faça login ao lado.' ) );
-			wp_die();
-
+			wp_die( sprintf( '<span class="error animated bounceInUp">%s</span>', __( 'Este e-mail já esta cadastrado. Por favor faça login ao lado.', 'odin' ) ) );
 		}
 		WC()->session->set( 'wcpbc_customer', array() );
 		if ( ! class_exists( 'WCPBC_Customer' ) ) {
 			header( sprintf( 'delivery-status: %s', 'false' ) );
 			wp_die( sprintf( $this->error, __( 'Lamento, nós não entregamos nesse CEP.', 'odin' ) ) );
 		}
-		print_r($_REQUEST);
-		die;
+
 		$customer = new WCPBC_Customer();
 		$customer->save_data();
 		$customer_data = WC()->session->get( 'wcpbc_customer' );
