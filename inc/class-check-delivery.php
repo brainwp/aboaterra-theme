@@ -169,7 +169,8 @@ class Brasa_Check_Delivery {
 			        'user_password' => $password,
 			        'remember'      => false
 			    );
-			    $logged_user = wp_signon( $creds, false );
+				update_user_meta( $user, 'generated_pass', 1 );
+				$logged_user = wp_signon( $creds, false );
 				// caso login retorne erro
 			    if ( is_wp_error( $logged_user ) ) {
 					header( sprintf( 'delivery-status: %s', '' ) );

@@ -27,6 +27,13 @@
 			add_action( 'init', array( $this, 'save_user_fields' ), 9999 );
 			// show custom fields on order admin page
 			add_action( 'woocommerce_admin_order_data_after_billing_address', array( $this, 'show_order_fields' ), 10, 1 );
+			add_action( 'woocommerce_after_checkout_billing_form', array( $this, 'add_checkout_password' ), 10, 1 );
+			// save password after first checkout
+			add_action( 'woocommerce_checkout_order_processed', array( $this, 'save_checkout_password' ), 1, 2 );
+			// validate password
+			add_action('woocommerce_checkout_process', array( $this,'validate_pass'));
+
+
 		}
 
 		/**
@@ -46,6 +53,51 @@
 			if ( $value = get_post_meta( $order->get_id(), 'order_delivery_time', true ) ) {
 				echo '<p><strong>'.__( 'Possui portaria 24horas?', 'odin' ).':</strong> ' . $value . '</p>';
 			}
+		}
+		public function save_checkout_password($order_id, $posted_data){
+			print_r($posted_data);
+			die;
+		}
+		public function validate_pass() {
+			// wc_add_notice( $_POST['brasa_checkout_password'], 'error' );
+
+		    $pass = $_POST['brasa_checkout_password'];
+			$pass_confirmation = $_POST['brasa_checkout_password_confirm'];
+			if (!$pass || !$pass_confirmation) {
+				wc_add_notice( __( 'Preencha corretamente a senha e a confirmação.' ), 'error' );
+			}
+			if ($pass != $pass_confirmation) {
+				wc_add_notice( __( 'A confirmação não é igual a senha.' ), 'error' );
+			}
+
+		    // your function's body above, and if error, call this wc_add_notice
+
+		}
+		public function add_checkout_password($checkout){
+			$meta = get_user_meta( get_current_user_id(), 'generated_pass', true);
+			if ($meta[0]) {
+				?>
+				<p class="form-row validate-required" id="brasa_password_field" data-priority="">
+					<label for="brasa_checkout_password" class="">
+						Criar uma senha para sua conta&nbsp;<abbr class="required" title="obrigatório">*</abbr>
+					</label>
+					<span class="woocommerce-input-wrapper">
+						<input type="password" class="input-text " name="brasa_checkout_password" id="brasa_checkout_password" placeholder="Senha" value="" required>
+					</span>
+				</p>
+				<p class="form-row validate-required" id="brasa_password_confirm_field" data-priority="">
+					<label for="brasa_checkout_password_confirm" class="">
+						Repita sua senha&nbsp;<abbr class="required" title="obrigatório">*</abbr>
+					</label>
+					<span class="woocommerce-input-wrapper">
+						<input type="password" class="input-text " name="brasa_checkout_password_confirm" id="brasa_checkout_password_confirm" placeholder="Confirmação da Senha" value="" required>
+					</span>
+				</p>
+				<?php wp_nonce_field( 'checkout_pass', 'checkout_pass_nonce' ); ?>
+				<?php
+
+			}
+
 		}
 		public function add_checkout_order_fields( $checkout ) {
 			$label = get_theme_mod( 'delivery_time', __( 'Possui entrega 24hrs?', 'odin' ) );
