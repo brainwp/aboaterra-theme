@@ -55,21 +55,41 @@
 			}
 		}
 		public function save_checkout_password($order_id, $posted_data){
-			print_r($posted_data);
-			die;
+			$meta = get_user_meta( get_current_user_id(), 'generated_pass', true);
+			if ($meta[0]) {
+				if ( ! isset( $_POST['checkout_pass_nonce'] )
+				|| ! wp_verify_nonce( $_POST['checkout_pass_nonce'], 'checkout_pass' )
+				) {
+				   print 'Sorry, your nonce did not verify.';
+				   exit;
+				} else {
+					$user_id = get_current_user_id();
+					$user = get_user_by( 'ID', $user_id );
+	    			wp_set_password( $_POST['brasa_checkout_password'], $user_id );
+					$creds = array(
+				        'user_login'    => $user->user_login,
+				        'user_password' => $_POST['brasa_checkout_password'],
+				        'remember'      => false
+				    );
+					update_user_meta( $user_id, 'generated_pass', 0 );
+					$logged_user = wp_signon( $creds, false );
+	    			// print_r($posted_data);
+				}
+			}
 		}
 		public function validate_pass() {
 			// wc_add_notice( $_POST['brasa_checkout_password'], 'error' );
-
-		    $pass = $_POST['brasa_checkout_password'];
-			$pass_confirmation = $_POST['brasa_checkout_password_confirm'];
-			if (!$pass || !$pass_confirmation) {
-				wc_add_notice( __( 'Preencha corretamente a senha e a confirmação.' ), 'error' );
+			$meta = get_user_meta( get_current_user_id(), 'generated_pass', true);
+			if ($meta[0]) {
+			    $pass = $_POST['brasa_checkout_password'];
+				$pass_confirmation = $_POST['brasa_checkout_password_confirm'];
+				if (!$pass || !$pass_confirmation) {
+					wc_add_notice( __( 'Preencha corretamente a senha e a confirmação.' ), 'error' );
+				}
+				if ($pass != $pass_confirmation) {
+					wc_add_notice( __( 'A confirmação não é igual a senha.' ), 'error' );
+				}
 			}
-			if ($pass != $pass_confirmation) {
-				wc_add_notice( __( 'A confirmação não é igual a senha.' ), 'error' );
-			}
-
 		    // your function's body above, and if error, call this wc_add_notice
 
 		}

@@ -78,10 +78,11 @@
 
  			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
  				<p class="col-md-12"></p><!-- .col-md-12 -->
- 				<p class="col-md-6">
+ 				<!-- <p class="col-md-6">
  					<label for="reg_username"><?php _e( 'Username', 'woocommerce' ); ?> <span class="required">*</span></label>
  					<input required type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
- 				</p><!-- .col-md-6 -->
+ 				</p> -->
+				<!-- .col-md-6 -->
 
  			<?php endif; ?>
  			<p class="col-md-12"></p><!-- .col-md-12 -->
