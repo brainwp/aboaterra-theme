@@ -112,6 +112,9 @@
 					<span class="woocommerce-input-wrapper">
 						<input type="password" class="input-text " name="brasa_checkout_password_confirm" id="brasa_checkout_password_confirm" placeholder="Confirmação da Senha" value="" required>
 					</span>
+					<span id="pass_validation">
+						
+					</span>
 				</p>
 				<?php wp_nonce_field( 'checkout_pass', 'checkout_pass_nonce' ); ?>
 				<?php

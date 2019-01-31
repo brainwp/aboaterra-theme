@@ -13,6 +13,9 @@ body.woocommerce-checkout{
 		padding-right: 52px!important;
 	}
 	.woocommerce-billing-fields, .woocommerce-shipping-fields{
+		#pass_validation{
+			color:red;
+		}
 		font-size: 0.95em;
 	}
 	.each-product-checkout {

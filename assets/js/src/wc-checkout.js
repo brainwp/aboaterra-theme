@@ -3,6 +3,19 @@ jQuery( function( $ ) {
 	if ( ! $( 'body' ).hasClass( 'woocommerce-checkout' ) ) {
 		return;
 	}
+	$( "#brasa_checkout_password_confirm" ).focusout(function() {
+		confirm = $( "#brasa_checkout_password_confirm" ).val();
+		pass = $( "#brasa_checkout_password" ).val();
+		if (confirm != pass) {
+			$('#place_order').prop('disabled', true);
+			$("#pass_validation").html('As senhas não correspondem.')
+		}
+		else{
+			$('#place_order').prop('disabled', false);
+			$("#pass_validation").html('')
+		}
+	  $( "#focus-count" ).text( "focusout fired: " + focus + "x" );
+	})
 	// wc_checkout_params is required to continue, ensure the object exists
 	// console.log( wc_checkout_params );
 	if ( typeof wc_checkout_params === 'undefined' ) {
