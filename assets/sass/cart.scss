@@ -1,4 +1,26 @@
 body.woocommerce-cart {
+	.donate_button_div{
+		clear:both;
+		padding:10px 0;
+		input[type="radio"] {
+        visibility: hidden;
+		height: 0;
+		}
+
+		label {
+		    display: block;
+		    border: 2px solid transparent;
+		    float: left;
+			margin-top:-5px
+		}
+
+		input[type="radio"]:checked+label {
+		    border-color: #ff6700;
+		}
+		p{
+			margin-bottom:0;
+		}
+	}
 	.cart-coupon div.col-md-12 input[type="submit"]{
 		margin-top: -3px!important;
     	padding: 7.5px!important;
