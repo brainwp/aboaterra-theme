@@ -452,7 +452,10 @@ require_once get_template_directory() . '/inc/custom-fields.php';
  * Extra WC Fields
  */
 require_once get_template_directory() . '/inc/class-extra-fields.php';
-
+/**
+ * Brasa Donate
+ */
+require_once get_template_directory() . '/inc/class-donate-plugin.php';
 /**
  * Order to TXT
  */
