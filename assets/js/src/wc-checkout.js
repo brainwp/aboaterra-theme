@@ -3,7 +3,7 @@ jQuery( function( $ ) {
 	if ( ! $( 'body' ).hasClass( 'woocommerce-checkout' ) ) {
 		return;
 	}
-	$( "#brasa_checkout_password_confirm" ).focusout(function() {
+	$( "#brasa_checkout_password_confirm" ).keyup(function() {
 		confirm = $( "#brasa_checkout_password_confirm" ).val();
 		pass = $( "#brasa_checkout_password" ).val();
 		if (confirm != pass) {
