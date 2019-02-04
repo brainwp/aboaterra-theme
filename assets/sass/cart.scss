@@ -1,26 +1,40 @@
-body.woocommerce-cart {
+body.woocommerce-cart, body.woocommerce-checkout {
 	.donate_button_div{
 		clear:both;
 		padding:10px 0;
 		input[type="radio"] {
-        visibility: hidden;
+		visibility: hidden;
 		height: 0;
 		}
 
 		label {
-		    display: block;
-		    border: 2px solid transparent;
-		    float: left;
+			width: 100%;
+			text-align: center;
+			display: block;
+			border: 2px solid transparent;
+			float: left;
 			margin-top:-5px
+		}
+		h4{
+			text-align: center;
+			clear: both;
+			font-size: 16px;
+			margin-top:10px;
 		}
 
 		input[type="radio"]:checked+label {
-		    border-color: #ff6700;
+			border-color: #ff6700;
 		}
 		p{
 			margin-bottom:0;
 		}
+		img{
+			width:100%;
+		}
 	}
+}
+body.woocommerce-cart {
+
 	.cart-coupon div.col-md-12 input[type="submit"]{
 		margin-top: -3px!important;
     	padding: 7.5px!important;
