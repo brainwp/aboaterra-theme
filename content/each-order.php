@@ -31,6 +31,18 @@ global $order;
 		<div class="col-md-7 pull-right status-<?php echo esc_attr( $order->get_status() );?>">
 			<?php echo wc_get_order_status_name( $order->get_status() ); ?>
 		</div><!-- .col-md-9 pull-right -->
+
+		<?php
+			if (get_post_meta( $order->id, 'instituicao', true )):
+				$title = get_the_title(get_post_meta( $order->id, 'instituicao', true ));
+				?>
+			<div class="col-md-5">
+				<?php _e( 'Instituição', 'odin' );?>
+			</div><!-- .col-md-3 -->
+			<div class="col-md-7 pull-right status-<?php echo esc_attr( $order->get_status() );?>">
+				<?php echo $title ?>
+			</div><!-- .col-md-9 pull-right -->
+		<?php endif; ?>
 	</div><!-- .col-md-5 pull-left list-data -->
 	<div class="col-md-7 col-xs-12 pull-right order-buttons bttht">
 		<a href="<?php echo $order->get_view_order_url();?>" class="btn btn-primary btn-details btt-ordersS">

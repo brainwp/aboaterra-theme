@@ -30,6 +30,15 @@
 			// save data to wc->session
 			add_action( 'wp_ajax_donation_checkout_field_ajax', array( $this, 'donation_checkout_field_ajax' ) );
 			add_action( 'wp_ajax_nopriv_donation_checkout_field_ajax', array( $this, 'donation_checkout_field_ajax' ) );
+			/**
+			 * Update the order meta with donation
+			 */
+			add_action( 'woocommerce_checkout_update_order_meta', array( $this,'donation_checkout_field_save' ) );
+			/**
+			 * Display donation on the order edit page
+			 */
+			add_action( 'woocommerce_admin_order_data_after_billing_address', array( $this,'donation_checkout_field_order_show') , 10, 1 );
+
 		}
 
 		/**
@@ -45,7 +54,18 @@
 
 			return self::$instance;
 		}
-
+		function donation_checkout_field_order_show($order){
+			if (get_post_meta( $order->id, 'instituicao', true ) ) {
+				$titulo = get_the_title(get_post_meta( $order->id, 'instituicao', true ));
+				echo '<p><strong>'.__('Instituição').':</strong> ' . $titulo . '</p>';
+			}
+		}
+		public function donation_checkout_field_save( $order_id ) {
+			if ( ! empty( $_POST['instituicao'] ) ) {
+				update_post_meta( $order_id, 'instituicao', sanitize_text_field( $_POST['instituicao'] ) );
+				WC()->session->set( 'doacao', $instituicao );
+			}
+		}
 		public function donation_checkout_field_checkout(){
 			// WC()->session->set( 'doacao', 'instituicao' );
 			$instituicao = WC()->session->get( 'doacao' );
@@ -64,7 +84,7 @@
 				$id = get_the_id();
 					?>
 					<div class="col-md-4">
-						<input type="radio" name="imagem" id="<?php echo $id ?>" <?php echo ( $id == $instituicao ?  'checked="checked"' : ''); ?>/>
+						<input type="radio" name="instituicao" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php echo ( $id == $instituicao ?  'checked="checked"' : ''); ?>/>
 						<label for="<?php echo $id; ?>"><img src="<?php echo get_the_post_thumbnail_url( )  ;?>" alt=""></label>
 						<h4><?php echo get_the_title( ); ?></h4>
 					</div>
@@ -98,7 +118,7 @@
 					?>
 					<div class="col-md-4">
 
-						<input type="radio" name="imagem" id="<?php echo get_the_id() ?>" />
+						<input type="radio" name="instituicao" id="<?php echo get_the_id() ?>" />
 						<label for="<?php echo get_the_id(); ?>"><img src="<?php echo get_the_post_thumbnail_url( )  ;?>" alt=""></label>
 						<h4><?php echo get_the_title( ); ?></h4>
 					</div>
