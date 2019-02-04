@@ -21,10 +21,15 @@
 			add_action( 'init', array( $this,'cpt_instituicoes'), 0 );
 			// add custom fields
 			add_action('init', array( $this,'my_acf_add_local_field_groups'));
+			// add donation field to cart
+			add_action( 'woocommerce_after_cart_table', array( $this,'donation_checkout_field_cart' ));
+
 			// add donation field to checkout
-			add_action( 'woocommerce_after_cart_table', array( $this,'donation_checkout_field' ));
+			add_action( 'woocommerce_after_checkout_billing_form', array( $this, 'donation_checkout_field_checkout' ), 10, 1 );
 
-
+			// save data to wc->session
+			add_action( 'wp_ajax_donation_checkout_field_ajax', array( $this, 'donation_checkout_field_ajax' ) );
+			add_action( 'wp_ajax_nopriv_donation_checkout_field_ajax', array( $this, 'donation_checkout_field_ajax' ) );
 		}
 
 		/**
@@ -40,8 +45,43 @@
 
 			return self::$instance;
 		}
+
+		public function donation_checkout_field_checkout(){
+			// WC()->session->set( 'doacao', 'instituicao' );
+			$instituicao = WC()->session->get( 'doacao' );
+			?>
+			<div class="donate_button_div col-sm-6">
+				<h2>Faça uma doação</h2>
+				<p>A cada compra você pode doar 1 real para colaborar com uma das instituições abaixo</p>
+				<?php
+				$loop = new WP_Query( array(
+					'post_type' => 'instituicoes',
+					'posts_per_page' => -1
+				  )
+				);
+				?>
+				<?php while ( $loop->have_posts() ) : $loop->the_post();
+				$id = get_the_id();
+					?>
+					<div class="col-md-4">
+						<input type="radio" name="imagem" id="<?php echo $id ?>" <?php echo ( $id == $instituicao ?  'checked="checked"' : ''); ?>/>
+						<label for="<?php echo $id; ?>"><img src="<?php echo get_the_post_thumbnail_url( )  ;?>" alt=""></label>
+						<h4><?php echo get_the_title( ); ?></h4>
+					</div>
+				<?php endwhile; wp_reset_query(); ?>
+			</div>
+			<?php
+		}
+		// Add data to session via ajax
+		public function donation_checkout_field_ajax(){
+			$instituicao = $_REQUEST['instituicao'];
+			global $woocommerce;
+    		WC()->session->set( 'doacao', $instituicao );
+			echo 'ok';
+			wp_die();
+		}
 		// Add donation field to checkout
-		public function donation_checkout_field( $checkout ) {
+		public function donation_checkout_field_cart( $checkout ) {
 			?>
 			<div class="donate_button_div col-sm-6">
 				<h2>Faça uma doação</h2>
@@ -62,6 +102,7 @@
 						<label for="<?php echo get_the_id(); ?>"><img src="<?php echo get_the_post_thumbnail_url( )  ;?>" alt=""></label>
 						<h4><?php echo get_the_title( ); ?></h4>
 					</div>
+
 
 
 				<?php endwhile; wp_reset_query(); ?>

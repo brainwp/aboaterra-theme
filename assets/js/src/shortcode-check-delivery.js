@@ -1,5 +1,33 @@
 /* my account login page */
 jQuery(document).ready(function($) {
+	$('.donate_button_div input[type=radio]').change(function(e) {
+		console.log('mudou');
+		escolha = $( this ).attr('id');
+		console.log(escolha);
+		var data = {
+			'action': 'donation_checkout_field_ajax',
+			'instituicao': escolha
+		};
+		$.ajax({
+			type: 'POST',
+			url: odin.ajax_url,
+			data: data,
+			complete: function( response ){
+				console.log(response.responseText)
+				// if ( response.getResponseHeader( 'delivery-status' ) == 'false' ) {
+				// 	window.location = $form.attr( 'data-redirect-error' );
+				// } else {
+				// 	$elements_div.children( '.response' ).html( response.responseText );
+				// 	if( $form.attr( 'data-redirect-success' ) && $form.attr( 'data-redirect-success' ) != '' ) {
+				// 		 setTimeout( function(){
+				// 		 	window.location = $form.attr( 'data-redirect-success' );
+				// 		 }, 4000);
+				// 	}
+				// }
+				// $submit_btn.html( default_text );
+			}
+		});
+	});
 	$( 'body').on( 'submit', 'form.brasa-check-delivery-container', function( e ) {
 		e.preventDefault();
 		var $form = $( this );
