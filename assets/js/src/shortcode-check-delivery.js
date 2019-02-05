@@ -14,17 +14,6 @@ jQuery(document).ready(function($) {
 			data: data,
 			complete: function( response ){
 				console.log(response.responseText)
-				// if ( response.getResponseHeader( 'delivery-status' ) == 'false' ) {
-				// 	window.location = $form.attr( 'data-redirect-error' );
-				// } else {
-				// 	$elements_div.children( '.response' ).html( response.responseText );
-				// 	if( $form.attr( 'data-redirect-success' ) && $form.attr( 'data-redirect-success' ) != '' ) {
-				// 		 setTimeout( function(){
-				// 		 	window.location = $form.attr( 'data-redirect-success' );
-				// 		 }, 4000);
-				// 	}
-				// }
-				// $submit_btn.html( default_text );
 			}
 		});
 	});

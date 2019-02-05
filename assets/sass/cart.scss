@@ -13,13 +13,14 @@ body.woocommerce-cart, body.woocommerce-checkout {
 			display: block;
 			border: 2px solid transparent;
 			float: left;
-			margin-top:-5px
+			margin-top:-5px;
+			margin-bottom:10px;
+
 		}
 		h4{
 			text-align: center;
 			clear: both;
 			font-size: 16px;
-			margin-top:10px;
 		}
 
 		input[type="radio"]:checked+label {
