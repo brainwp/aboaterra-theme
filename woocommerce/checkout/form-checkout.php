@@ -67,6 +67,10 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 							</div><!-- .col-md-12 text-center -->
 						</div>
 					</div><!-- #customer-details -->
+					<h3 class="section-title"><?php _e( 'Doação', 'odin');?></h3>
+					<div class="section-block" id='donate-block'>
+						<?php do_action( 'brasa_donate' );?>
+					</div>
 					<h3 class="section-title"><?php _e( 'Pagamento', 'odin');?></h3><!-- .section-title -->
 					<div class="col-md-12 section-block" id="payment-block">
 						<?php woocommerce_checkout_payment();?>

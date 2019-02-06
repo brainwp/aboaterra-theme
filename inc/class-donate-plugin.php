@@ -25,7 +25,7 @@
 			add_action( 'woocommerce_after_cart_table', array( $this,'donation_checkout_field_cart' ));
 
 			// add donation field to checkout
-			add_action( 'woocommerce_after_checkout_billing_form', array( $this, 'donation_checkout_field_checkout' ), 10, 1 );
+			add_action( 'brasa_donate', array( $this, 'donation_checkout_field_checkout' ), 10, 1 );
 
 			// save data to wc->session
 			add_action( 'wp_ajax_donation_checkout_field_ajax', array( $this, 'donation_checkout_field_ajax' ) );
@@ -71,7 +71,6 @@
 			$instituicao = WC()->session->get( 'doacao' );
 			?>
 			<div class="donate_button_div col-sm-12">
-				<h2>Faça uma doação</h2>
 				<p>A cada compra, escolha uma causa para receber uma doação de R$1,00, e você não paga nada a mais por isso.</p>
 				<?php
 				$loop = new WP_Query( array(
