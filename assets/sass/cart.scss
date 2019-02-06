@@ -1,30 +1,61 @@
 body.woocommerce-cart, body.woocommerce-checkout {
+
 	.donate_button_div{
 		clear:both;
 		padding:10px 0;
 		input[type="radio"] {
 		visibility: hidden;
 		height: 0;
-		}
-
-		label {
-			width: 100%;
-			text-align: center;
-			display: block;
-			border: 2px solid transparent;
-			float: left;
-			margin-top:-5px;
-			margin-bottom:10px;
 
 		}
+		.instituicoes{
+			display: flex;
+			justify-content: center;
+			.instituicao{
+				max-width: 150px;
+				margin:20px;
+				label {
+					position: relative;
+					width: 100%;
+					text-align: center;
+					display: block;
+					border: 4px solid transparent;
+					float: left;
+					margin-top:-5px;
+					margin-bottom:10px;
+					&:before{
+						background-color: #0000000f;
+						content: '';
+					    height: 100%;
+					    width: 100%;
+					    position: absolute;
+						opacity: 0;
+						-webkit-transition: opacity 0.5s ease-in-out;
+						  -moz-transition: opacity 0.5s ease-in-out;
+						  -ms-transition: opacity 0.5s ease-in-out;
+						  -o-transition: opacity 0.5s ease-in-out;
+						  transition: opacity 0.5s ease-in-out;
+					}
+				}
+				input[type="radio"]:checked+label {
+					border-color: #ff6700;
+					opacity: 0.8;
+					&:before{
+						-webkit-transition: opacity 0.5s ease-in-out;
+						  -moz-transition: opacity 0.5s ease-in-out;
+						  -ms-transition: opacity 0.5s ease-in-out;
+						  -o-transition: opacity 0.5s ease-in-out;
+						  transition: opacity 0.5s ease-in-out;
+						opacity: 1;
+					}
+				}
+			}
+		}
+
 		h4{
 			text-align: center;
 			clear: both;
 			font-size: 16px;
-		}
-
-		input[type="radio"]:checked+label {
-			border-color: #ff6700;
 		}
 		p{
 			margin-bottom:0;
@@ -281,5 +312,35 @@ body.woocommerce-cart {
 				margin-top:10px;
 			}
 		}
+	}
+}
+@media (min-width: 992px)
+{
+	body.woocommerce-cart, body.woocommerce-checkout {
+
+		.donate_button_div{
+			.instituicoes{
+				justify-content: left;
+				.instituicao{
+					&:first-child{
+						margin-left:0;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 991px)
+{
+	.donate_button_div{
+	    border: 1px solid #dcddde;
+	    margin-top: 20px;
+	    border-radius: 0;
+	    padding-top: 13px;
+	    padding-left: 8px;
+	    margin-top: 23px;
+	    padding-right: 8px;
+	    float: left;
+	    text-align: center;
 	}
 }

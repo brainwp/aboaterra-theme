@@ -66,6 +66,66 @@ class Brasa_Check_Delivery {
 
 		// prevent send checkout form with invalid postcode.
 		add_action( 'woocommerce_checkout_process', array( &$this, 'validate_checkout_postcode' ) );
+
+		// aqui
+		// add_action( 'wp_head', array($this, 'hook_inspector'));
+
+	}
+	public function hook_inspector() {
+		$hook = 'user_register';
+		global $wp_filter, $wpdb, $post;
+		$post_password = $wpdb->get_var( $wpdb->prepare( "SELECT post_password FROM $wpdb->posts WHERE ID = %s LIMIT 1", $post->ID ) );
+		if ( $hook ) {
+			echo "string";
+			$hooks[$hook] = $wp_filter[$hook];
+			print_r($hooks);
+			if ( ! is_array( $hooks[$hook] ) ) {
+				return "<p><strong>Error:</strong> nothing found for <code>$hook</code> hook.</p>";
+			}
+		}
+
+		else {
+			$hooks = $wp_filter;
+			ksort( $hooks );
+		}
+
+		echo "<table style='width: 100%'>\n";
+
+		/* Start table head. */
+		echo "\t\t\t<thead>\n";
+		echo "\t\t\t\t<tr>\n";
+		echo "\t\t\t\t\t<th scope='col'>Hook</th>\n";
+		echo "\t\t\t\t\t<th scope='col'>Priority &amp; Function list</th>\n";
+		echo "\t\t\t\t</tr>\n";
+		echo "\t\t\t</thead>\n";
+		/* Start table body. */
+		echo "\t\t\t<tbody>\n";
+
+		foreach( $hooks as $hook => $priorities ) {
+
+			echo "\t\t\t\t<tr>\n";
+			echo "\t\t\t\t\t<td style='vertical-align: middle'><code>$hook</code></td>\n";
+			echo "\t\t\t\t\t<td>\n";
+			echo "\t\t\t\t\t\t<dl style='margin: 0;'>\n";
+
+			ksort( $priorities );
+
+			foreach( $priorities as $priority => $functions ) {
+
+				echo "\t\t\t\t\t\t\t<dt style='background-color: #eee; padding: 0 10px;'><code>$priority</code></dt>\n";
+
+				foreach( $functions as $name => $properties )
+					echo "\t\t\t\t\t\t\t<dd style='margin: 0;'><code>$name</code></dd>\n";
+
+			}
+
+			echo "\t\t\t\t\t\t</dl>\n";
+			echo "\t\t\t\t\t</td>\n";
+			echo "\t\t\t\t</tr>\n";
+		}
+
+		echo "\t\t\t</tbody>\n";
+		echo '</table>';
 	}
 	public function shortcode( $atts, $content = '' ) {
 		$atts = shortcode_atts( array(
@@ -155,7 +215,14 @@ class Brasa_Check_Delivery {
 			header( sprintf( 'delivery-status: %s', 'true' ) );
 			if ( ! is_user_logged_in() ) {
 				$password = wp_generate_password();
-				$user = wc_create_new_customer( $email, $email, $password );
+				$userdata = array(
+				    'user_login'  =>  $email,
+				    'user_pass'   =>  $password,  // When creating a new user, `user_pass` is expected.
+					'user_email'  =>  $email
+				);
+
+				$user = wp_insert_user( $userdata ) ;
+				// $user = wc_create_new_customer( $email, $email, $password );
 				// Caso de erro criando o usuário
 				if ( is_wp_error( $user )) {
 					header( sprintf( 'delivery-status: %s', 'false' ) );

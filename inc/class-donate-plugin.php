@@ -72,7 +72,7 @@
 			?>
 			<div class="donate_button_div col-sm-12">
 				<h2>Faça uma doação</h2>
-				<p>A cada compra você pode doar 1 real para colaborar com uma das instituições abaixo</p>
+				<p>A cada compra, escolha uma causa para receber uma doação de R$1,00, e você não paga nada a mais por isso.</p>
 				<?php
 				$loop = new WP_Query( array(
 					'post_type' => 'instituicoes',
@@ -80,15 +80,18 @@
 				  )
 				);
 				?>
-				<?php while ( $loop->have_posts() ) : $loop->the_post();
-				$id = get_the_id();
-					?>
-					<div class="col-md-6">
-						<input type="radio" name="instituicao" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php echo ( $id == $instituicao ?  'checked="checked"' : ''); ?>/>
-						<label for="<?php echo $id; ?>"><img src="<?php echo get_the_post_thumbnail_url( )  ;?>" alt=""></label>
-						<h4><?php echo get_the_title( ); ?></h4>
-					</div>
-				<?php endwhile; wp_reset_query(); ?>
+				<div class="instituicoes">
+					<?php while ( $loop->have_posts() ) : $loop->the_post();
+					$id = get_the_id();
+						?>
+						<div class="instituicao">
+							<input type="radio" name="instituicao" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php echo ( $id == $instituicao ?  'checked="checked"' : ''); ?>/>
+							<label for="<?php echo $id; ?>"><img src="<?php echo get_the_post_thumbnail_url( )  ;?>" alt=""></label>
+							<h4><?php echo get_the_title( ); ?></h4>
+						</div>
+					<?php endwhile; wp_reset_query(); ?>
+				</div>
+
 			</div>
 			<?php
 		}
@@ -105,7 +108,7 @@
 			?>
 			<div class="donate_button_div col-sm-6">
 				<h2>Faça uma doação</h2>
-				<p>A cada compra você pode doar 1 real para colaborar com uma das instituições abaixo</p>
+				<p>A cada compra, escolha uma causa para receber uma doação de R$1,00, e você não paga nada a mais por isso.</p>
 				<?php
 				$loop = new WP_Query( array(
 				    'post_type' => 'instituicoes',
@@ -113,19 +116,18 @@
 				  )
 				);
 				?>
+				<div class="instituicoes">
 
 				<?php while ( $loop->have_posts() ) : $loop->the_post();
 					?>
-					<div class="col-md-4">
+					<div class="instituicao">
 
 						<input type="radio" name="instituicao" id="<?php echo get_the_id() ?>" />
 						<label for="<?php echo get_the_id(); ?>"><img src="<?php echo get_the_post_thumbnail_url( )  ;?>" alt=""></label>
 						<h4><?php echo get_the_title( ); ?></h4>
 					</div>
-
-
-
 				<?php endwhile; wp_reset_query(); ?>
+				</div>
 			</div>
 			<?php
 		}
