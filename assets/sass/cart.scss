@@ -332,14 +332,19 @@ body.woocommerce-cart {
 @media (max-width: 991px)
 {
 	.donate_button_div{
-	    border: 1px solid #dcddde;
-	    margin-top: 20px;
-	    border-radius: 0;
-	    padding-top: 13px;
-	    padding-left: 8px;
-	    margin-top: 23px;
-	    padding-right: 8px;
-	    float: left;
-	    text-align: center;
+		text-align: center;
+	}
+	body.woocommerce-cart {
+		.donate_button_div{
+		    border: 1px solid #dcddde;
+		    margin-top: 20px;
+		    border-radius: 0;
+		    padding-top: 13px;
+		    padding-left: 8px;
+		    margin-top: 23px;
+		    padding-right: 8px;
+		    float: left;
+
+		}
 	}
 }

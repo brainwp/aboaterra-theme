@@ -195,6 +195,8 @@ class Brasa_Check_Delivery {
 	 */
 	public function ajax() {
 		$email = $_REQUEST['email'];
+		$cep = $_REQUEST['postcode'];
+
 		// checa se o email já existe
 		if (email_exists($email)) {
 			header( sprintf( 'delivery-status: %s', '' ) );
@@ -204,6 +206,13 @@ class Brasa_Check_Delivery {
 		}
 		WC()->session->set( 'wcpbc_customer', array() );
 		if ( ! class_exists( 'WCPBC_Customer' ) ) {
+			$to = 'brmagrini@gmail.com, gustavo@aboaterra.com.br ';
+			$subject = 'Usuário em CEP não atendido';
+			$body = 'O usuário ' . $email . ' e CEP ' . $cep . ' tentou se cadastrar.';
+			$headers = array('Content-Type: text/html; charset=UTF-8');
+
+			echo wp_mail( $to, $subject, $body, $headers );
+
 			header( sprintf( 'delivery-status: %s', 'false' ) );
 			wp_die( sprintf( $this->error, __( 'Lamento, nós não entregamos nesse CEP.', 'odin' ) ) );
 		}
@@ -274,7 +283,14 @@ class Brasa_Check_Delivery {
 		header( sprintf( 'delivery-status: %s', '' ) );
 		WC()->session->set( 'wcpbc_customer', array() );
 		WC()->cart->empty_cart();
+		$to = 'brmagrini@gmail.com, gustavo@aboaterra.com.br ';
+		$subject = 'Usuário em CEP não atendido';
+		$body = 'O usuário ' . $email . ' e CEP ' . $cep . ' tentou se cadastrar.';
+		$headers = array('Content-Type: text/html; charset=UTF-8');
+
+		wp_mail( $to, $subject, $body, $headers );
 		wp_die( sprintf( $this->failure, __( 'Lamento, nós não entregamos nesse CEP. <br>Por enquanto atentemos em:<span> <ul><li>São Paulo</li> <li>Ribeirão Preto</li><li>Holambra</li> <li>Itobi</li> <li>São José do Rio Pardo</li> <li>Vargem Grande do Sul</li> <li>Casa Branca</li></span>', 'odin' ) ) );
+
 	}
 	public function get_woocommerce_zipcode( $code ) {
 		if ( ! $this->is_ajax() ) {
