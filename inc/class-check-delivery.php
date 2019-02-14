@@ -196,7 +196,7 @@ class Brasa_Check_Delivery {
 	public function ajax() {
 		$email = $_REQUEST['email'];
 		$cep = $_REQUEST['postcode'];
-
+		$phone = $_REQUEST['phone'];
 		// checa se o email já existe
 		if (email_exists($email)) {
 			header( sprintf( 'delivery-status: %s', '' ) );
@@ -208,7 +208,7 @@ class Brasa_Check_Delivery {
 		if ( ! class_exists( 'WCPBC_Customer' ) ) {
 			$to = 'brmagrini@gmail.com, gustavo@aboaterra.com.br ';
 			$subject = 'Usuário em CEP não atendido';
-			$body = 'O usuário ' . $email . ' e CEP ' . $cep . ' tentou se cadastrar.';
+			$body = 'O usuário ' . $email . ', telefone' . $phone . ' e CEP ' . $cep . ' tentou se cadastrar.';
 			$headers = array('Content-Type: text/html; charset=UTF-8');
 
 			echo wp_mail( $to, $subject, $body, $headers );
@@ -258,6 +258,7 @@ class Brasa_Check_Delivery {
 				$code = wc_format_postcode( $_REQUEST[ 'postcode'], WC()->customer->get_shipping_country() );
 				update_user_meta( $user, 'shipping_postcode', $code );
 				update_user_meta( $user, 'billing_postcode', $code );
+				update_user_meta( $user, 'billing_phone', $phone );
 				update_user_meta( $user, 'postcode', $code );
 
 				// $customer = new WC_Customer( $user );
@@ -285,11 +286,11 @@ class Brasa_Check_Delivery {
 		WC()->cart->empty_cart();
 		$to = 'brmagrini@gmail.com, gustavo@aboaterra.com.br ';
 		$subject = 'Usuário em CEP não atendido';
-		$body = 'O usuário ' . $email . ' e CEP ' . $cep . ' tentou se cadastrar.';
+		$body = 'O usuário ' . $email . ', telefone ' . $phone . ' e CEP ' . $cep . ' tentou se cadastrar.';
 		$headers = array('Content-Type: text/html; charset=UTF-8');
 
 		wp_mail( $to, $subject, $body, $headers );
-		wp_die( sprintf( $this->failure, __( 'Lamento, nós não entregamos nesse CEP. <br>Por enquanto atentemos em:<span> <ul><li>São Paulo</li> <li>Ribeirão Preto</li><li>Holambra</li> <li>Itobi</li> <li>São José do Rio Pardo</li> <li>Vargem Grande do Sul</li> <li>Casa Branca</li></span>', 'odin' ) ) );
+		wp_die( sprintf( $this->failure, __( 'O CEP informado não corresponde a uma região atendida atualmente, mas se você quiser pode escolher um novo CEP para receber seus orgânicos.<br>Por enquanto atendemos em:<span> <ul><li>São Paulo</li> <li>Ribeirão Preto</li><li>Holambra</li> <li>Itobi</li> <li>São José do Rio Pardo</li> <li>Vargem Grande do Sul</li> <li>Casa Branca</li></span>', 'odin' ) ) );
 
 	}
 	public function get_woocommerce_zipcode( $code ) {

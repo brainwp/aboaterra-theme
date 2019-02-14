@@ -366,7 +366,7 @@ function odin_enqueue_scripts() {
 	if ( is_singular() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	if (is_account_page() || is_cart()) {
+	if (is_account_page() || is_cart() ||is_home()) {
 		wp_enqueue_script( 'jquery-mask', get_template_directory_uri() . '/assets/js/jquery.mask.min.js', array(), false, true );
 
 	}

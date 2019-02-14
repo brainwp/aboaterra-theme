@@ -91,6 +91,12 @@
  				<input required type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" />
  			</p><!-- .col-md-6 -->
 
+			<p class="col-md-12"></p><!-- .col-md-12 -->
+			<p class="col-md-6">
+				<label for="reg_phone"><?php _e( 'Phone', 'woocommerce' ); ?> </label>
+				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="phone" id="billing_phone" value="<?php if ( ! empty( $_POST['reg_phone'] ) ) echo esc_attr( $_POST['reg_phone'] ); ?>" />
+			</p><!-- .col-md-6 -->
+
  			<!-- Spam Trap -->
  			<div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;"><label for="trap"><?php _e( 'Anti-spam', 'woocommerce' ); ?></label><input type="text" name="email_2" id="trap" tabindex="-1" /></div>
 

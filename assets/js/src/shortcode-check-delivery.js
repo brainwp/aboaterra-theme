@@ -65,7 +65,8 @@ jQuery(document).ready(function($) {
 			'show_accept_message': 'true',
 			'close_modal': 'true',
 			'postcode': $elements_div.children( '[name="check-delivery"]' ).val(),
-			'email': $( 'input[name="email"]' ).val()
+			'email': $( 'input[name="email"]' ).val(),
+			'phone': $( 'input[name="phone"]' ).val()
 
 		};
 		if ( $elements_div.children( '[name="check-delivery"]' ).val().replace(/\s+/g, '') == '' ) {
