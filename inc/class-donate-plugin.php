@@ -86,33 +86,31 @@
 
 			}
 		}
-		public function donation_checkout_field_checkout(){
+		public function donation_checkout_field_checkout($loop){
 			// WC()->session->set( 'doacao', 'instituicao' );
 			$instituicao = WC()->session->get( 'doacao' );
 			?>
-			<div class="donate_button_div col-sm-12">
-				<p>A cada compra, escolha uma causa para receber uma doação de R$1,00, e você não paga nada a mais por isso.</p>
-				<?php
-				$loop = new WP_Query( array(
-					'post_type' => 'instituicoes',
-					'posts_per_page' => -1
-				  )
-				);
-				?>
-				<div class="instituicoes">
-					<?php while ( $loop->have_posts() ) : $loop->the_post();
-					$id = get_the_id();
-						?>
-						<div class="instituicao">
-							<input type="radio" name="instituicao" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php echo ( $id == $instituicao ?  'checked="checked"' : ''); ?>/>
-							<label for="<?php echo $id; ?>"><img src="<?php echo get_the_post_thumbnail_url( )  ;?>" alt=""></label>
-							<h4><?php echo get_the_title( ); ?></h4>
-						</div>
-					<?php endwhile; wp_reset_query(); ?>
-				</div>
-
-			</div>
 			<?php
+			if ($loop->found_posts) {
+				?>
+				<div class="donate_button_div col-sm-12">
+					<p>A cada compra, escolha uma causa para receber uma doação de R$1,00, e você não paga nada a mais por isso.</p>
+
+					<div class="instituicoes">
+						<?php while ( $loop->have_posts() ) : $loop->the_post();
+						$id = get_the_id();
+							?>
+							<div class="instituicao">
+								<input type="radio" name="instituicao" id="<?php echo $id ?>" value="<?php echo $id ?>" <?php echo ( $id == $instituicao ?  'checked="checked"' : ''); ?>/>
+								<label for="<?php echo $id; ?>"><img src="<?php echo get_the_post_thumbnail_url( )  ;?>" alt=""></label>
+								<h4><?php echo get_the_title( ); ?></h4>
+							</div>
+						<?php endwhile; wp_reset_query(); ?>
+					</div>
+
+				</div>
+				<?php
+			}
 		}
 		// Add data to session via ajax
 		public function donation_checkout_field_ajax(){
@@ -124,29 +122,33 @@
 		// Add donation field to checkout
 		public function donation_checkout_field_cart( $checkout ) {
 			?>
-			<div class="donate_button_div col-sm-6">
-				<h2>Faça uma doação</h2>
-				<p>A cada compra, escolha uma causa para receber uma doação de R$1,00, e você não paga nada a mais por isso.</p>
-				<?php
-				$loop = new WP_Query( array(
-				    'post_type' => 'instituicoes',
-				    'posts_per_page' => -1
-				  )
-				);
-				?>
-				<div class="instituicoes">
+			<?php
+			$loop = new WP_Query( array(
+				'post_type' => 'instituicoes',
+				'posts_per_page' => -1
+			  )
+			);
+			?>
+			<?php if ($loop->found_posts): ?>
+				<div class="donate_button_div col-sm-6">
+					<h2>Faça uma doação</h2>
+					<p>A cada compra, escolha uma causa para receber uma doação de R$1,00, e você não paga nada a mais por isso.</p>
 
-				<?php while ( $loop->have_posts() ) : $loop->the_post();
-					?>
-					<div class="instituicao">
+					<div class="instituicoes">
 
-						<input type="radio" name="instituicao" id="<?php echo get_the_id() ?>" />
-						<label for="<?php echo get_the_id(); ?>"><img src="<?php echo get_the_post_thumbnail_url( )  ;?>" alt=""></label>
-						<h4><?php echo get_the_title( ); ?></h4>
+					<?php while ( $loop->have_posts() ) : $loop->the_post();
+						?>
+						<div class="instituicao">
+
+							<input type="radio" name="instituicao" id="<?php echo get_the_id() ?>" />
+							<label for="<?php echo get_the_id(); ?>"><img src="<?php echo get_the_post_thumbnail_url( )  ;?>" alt=""></label>
+							<h4><?php echo get_the_title( ); ?></h4>
+						</div>
+					<?php endwhile; wp_reset_query(); ?>
 					</div>
-				<?php endwhile; wp_reset_query(); ?>
 				</div>
-			</div>
+			<?php endif; ?>
+
 			<?php
 		}
 		// Register Custom Post Type instituições
