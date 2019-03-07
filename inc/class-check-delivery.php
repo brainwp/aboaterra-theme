@@ -230,8 +230,8 @@ class Brasa_Check_Delivery {
 					'user_email'  =>  $email
 				);
 
-				$user = wp_insert_user( $userdata ) ;
-				// $user = wc_create_new_customer( $email, $email, $password );
+				// $user = wp_insert_user( $userdata ) ;
+				$user = wc_create_new_customer( $email, $email, $password );
 				// Caso de erro criando o usuário
 				if ( is_wp_error( $user )) {
 					header( sprintf( 'delivery-status: %s', 'false' ) );
