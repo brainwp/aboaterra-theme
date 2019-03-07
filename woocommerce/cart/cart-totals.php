@@ -47,8 +47,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			  return 'Frete';
 			} ?>
 			<?php wc_cart_totals_shipping_html(); ?>
-
 			<?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
+
 
 		<?php endif; ?>
 
@@ -70,12 +70,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<tr class="tax-rate tax-rate-<?php echo sanitize_title( $code ); ?>">
 						<th><?php echo esc_html( $tax->label ) . $estimated_text; ?></th>
 						<td data-title="<?php echo esc_attr( $tax->label ); ?>"><?php echo wp_kses_post( $tax->formatted_amount ); ?></td>
+
 					</tr>
 				<?php endforeach; ?>
 			<?php else : ?>
 				<tr class="tax-total">
 					<th><?php echo esc_html( WC()->countries->tax_or_vat() ) . $estimated_text; ?></th>
 					<td data-title="<?php echo esc_attr( WC()->countries->tax_or_vat() ); ?>"><?php wc_cart_totals_taxes_total_html(); ?></td>
+
 				</tr>
 			<?php endif; ?>
 		<?php endif; ?>
@@ -85,9 +87,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<tr class="order-total">
 			<th><?php _e( 'Total', 'woocommerce' ); ?></th>
 			<td data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
+
 		</tr>
 
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
+
 
 	</table>
 
