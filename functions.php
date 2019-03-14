@@ -456,6 +456,13 @@ require_once get_template_directory() . '/inc/class-extra-fields.php';
  * Brasa Donate
  */
 // require_once get_template_directory() . '/inc/class-donate-plugin.php';
+
+    function plugin_prefix_unregister_post_type(){
+        unregister_post_type( 'instituicoes' );
+    }
+
+add_action('init','plugin_prefix_unregister_post_type');
+
 /**
  * Order to TXT
  */

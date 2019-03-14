@@ -206,7 +206,7 @@ class Brasa_Check_Delivery {
 		}
 		WC()->session->set( 'wcpbc_customer', array() );
 		if ( ! class_exists( 'WCPBC_Customer' ) ) {
-			$to = 'brmagrini@gmail.com, gustavo@aboaterra.com.br ';
+			$to = 'julio@aboaterra.com.br, gustavo@aboaterra.com.br ';
 			$subject = 'Usuário em CEP não atendido';
 			$body = 'O usuário ' . $email . ', telefone' . $phone . ' e CEP ' . $cep . ' tentou se cadastrar.';
 			$headers = array('Content-Type: text/html; charset=UTF-8');
@@ -284,7 +284,7 @@ class Brasa_Check_Delivery {
 		header( sprintf( 'delivery-status: %s', '' ) );
 		WC()->session->set( 'wcpbc_customer', array() );
 		WC()->cart->empty_cart();
-		$to = 'brmagrini@gmail.com, gustavo@aboaterra.com.br ';
+		$to = 'julio@aboaterra.com.br, gustavo@aboaterra.com.br ';
 		$subject = 'Usuário em CEP não atendido';
 		$body = 'O usuário ' . $email . ', telefone ' . $phone . ' e CEP ' . $cep . ' tentou se cadastrar.';
 		$headers = array('Content-Type: text/html; charset=UTF-8');

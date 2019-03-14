@@ -1,5 +1,11 @@
 body.woocommerce-cart, body.woocommerce-checkout {
-
+	.product-quantity{
+		.buttons-qty{
+			span{
+				padding-top: 4px;
+			}
+		}
+	}
 	.donate_button_div{
 		clear:both;
 		padding:10px 0;
