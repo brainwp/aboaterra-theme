@@ -118,7 +118,7 @@ class WP_Widget_Section_Title extends WP_Widget {
  * @version  2.3.0
  * @extends  WC_Widget
  */
-class WC_Widget_Products_By_Tag extends WC_Widget {
+class WC_Widget_Products_By_Tag_2 extends WC_Widget {
 
 	/**
 	 * Constructor.
@@ -126,7 +126,7 @@ class WC_Widget_Products_By_Tag extends WC_Widget {
 	public function __construct() {
 		$this->widget_cssclass    = 'woocommerce widget_products';
 		$this->widget_description = __( 'Display a list of your products on your site.', 'woocommerce' );
-		$this->widget_id          = 'woocommerce_products';
+		$this->widget_id          = 'woocommerce_products_2';
 		$this->widget_name        = __( 'WC Query por tags', 'woocommerce' );
 		$this->settings           = array(
 			'title'  => array(
@@ -141,6 +141,14 @@ class WC_Widget_Products_By_Tag extends WC_Widget {
 				'max'   => '',
 				'std'   => 5,
 				'label' => __( 'Number of products to show', 'woocommerce' )
+			),
+			'columns' => array(
+				'type'  => 'number',
+				'step'  => 1,
+				'min'   => 3,
+				'max'   => 5,
+				'std'   => 4,
+				'label' => __( 'Number of Columns to show', 'odin' )
 			),
 			'show' => array(
 				'type'  => 'text',
@@ -181,6 +189,7 @@ class WC_Widget_Products_By_Tag extends WC_Widget {
 	public function get_products( $args, $instance ) {
 		$number  = ! empty( $instance['number'] ) ? absint( $instance['number'] ) : $this->settings['number']['std'];
 		$show    = ! empty( $instance['show'] ) ? sanitize_title( $instance['show'] ) : $this->settings['show']['std'];
+		$columns    = ! empty( $instance['columns'] ) ? sanitize_title( $instance['columns'] ) : $this->settings['columns']['std'];
 		$orderby = ! empty( $instance['orderby'] ) ? sanitize_title( $instance['orderby'] ) : $this->settings['orderby']['std'];
 		$order   = ! empty( $instance['order'] ) ? sanitize_title( $instance['order'] ) : $this->settings['order']['std'];
 
@@ -239,7 +248,7 @@ class WC_Widget_Products_By_Tag extends WC_Widget {
 		if ( $this->get_cached_widget( $args ) ) {
 			return;
 		}
-
+		$columns    = ! empty( $instance['columns'] ) ? sanitize_title( $instance['columns'] ) : $this->settings['columns']['std'];
 		ob_start();
 
 		if ( ( $products = $this->get_products( $args, $instance ) ) && $products->have_posts() ) {
@@ -248,6 +257,21 @@ class WC_Widget_Products_By_Tag extends WC_Widget {
 			echo apply_filters( 'woocommerce_before_widget_product_list', '<div class="col-md-12 woocommerce"><ul class="products">' );
 
 			while ( $products->have_posts() ) {
+				global $class;
+				$index = $products->current_post + 1;
+				// echo "index".$index;
+				// echo "columns".$columns;
+				// echo "mod".$index%$columns;
+				$size = intval(100/$columns);
+				if ($index%$columns==0) {
+					$class = 'clear-left '.' size-'.$size;
+				}
+				elseif(intval($index+1)%$columns==0){
+					$class = 'clear-right '.' size-'.$size;
+				}
+				else{
+					$class = 'size-'.$size;
+				}
 				$products->the_post();
 				wc_get_template( 'content-product.php', array( 'show_rating' => false ) );
 			}
@@ -511,7 +535,7 @@ class WP_Widget_Section_Instagram_Title extends WP_Widget {
  */
 function wp_widget_section_title_register() {
 	register_widget( 'WP_Widget_Section_Title' );
-	register_widget( 'WC_Widget_Products_By_Tag' );
+	register_widget( 'WC_Widget_Products_By_Tag_2' );
 	register_widget( 'WP_Widget_Recent_Blog' );
 	register_widget( 'WP_Widget_Section_Instagram_Title' );
 }

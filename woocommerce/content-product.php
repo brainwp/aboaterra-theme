@@ -18,13 +18,15 @@
 defined( 'ABSPATH' ) || exit;
 
 global $product;
+global $class;
 
 // Ensure visibility.
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
+
 ?>
-<li <?php post_class(); ?>>
+<li <?php post_class($class); ?>>
 	<?php if ( is_page_template( 'page-cestas.php' ) ) : ?>
 		<div class="each-cesta-title">
 			<?php if ( $value = get_post_meta( get_the_ID(), 'cesta_title', true ) ) : ?>
