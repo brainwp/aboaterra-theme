@@ -525,6 +525,7 @@ ul.products {
 	li.product {
 		@media screen and (max-width: 992px) {
 			width: 48%!important;
+			flex: 0 0 48%!important;
 			float: left!important;
 			clear: none!important;
 			margin: 0 1.8% 2.992em 0!important;
