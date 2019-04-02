@@ -17,6 +17,7 @@ body.woocommerce .product img {
 		display: flex;
         flex-wrap: wrap;
 		li{
+			min-height: 0!important;
 			float: left!important;
 			clear: none!important;
 			&.size-33{
@@ -524,6 +525,7 @@ ul.products {
 
 	li.product {
 		@media screen and (max-width: 992px) {
+
 			width: 48%!important;
 			flex: 0 0 48%!important;
 			float: left!important;
@@ -532,6 +534,12 @@ ul.products {
 
 			&:nth-child(2n+1) {
 				clear: left!important;
+			}
+			&.size-33{
+				flex: 0 0 100%!important;
+			}
+			&.size-20{
+				flex: 0 0 100%!important;
 			}
 		}
 	}
