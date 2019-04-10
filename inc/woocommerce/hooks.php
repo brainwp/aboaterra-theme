@@ -130,7 +130,8 @@ add_action( 'wp_ajax_nopriv_update_header_cart', 'wc_update_header_cart' );
  * @return array
  */
 function remove_billing_company_wc_checkout( $fields ) {
-	unset( $fields[ 'billing']['billing_company'] );
+	$fields[ 'billing']['billing_company']['required'] = true;
+
 	return $fields;
 }
 add_filter( 'woocommerce_checkout_fields' , 'remove_billing_company_wc_checkout' );
