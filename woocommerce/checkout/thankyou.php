@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="thank">
 
 					<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Agradecemos por escolher A Boa Terra!' ), $order ); ?></p>
-					<p class="quote">"Saúde para você e vida para o planeta"</p>
+					<p class="quote">" Saúde pra você. Vida para o planeta! "</p>
 
 					<div class="thankyou col-md-7">
 						<div class="orderd"><?php _e( 'Pedido Número:', 'woocommerce' ); ?></div>
