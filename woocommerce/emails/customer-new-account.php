@@ -27,26 +27,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php /* translators: %1$s: Site title, %2$s: Username, %3$s: My account link */ ?>
 
-<p><?php printf( __( '
-Seja bem-vindo ao Sítio A Boa Terra! <br>
-Seu nome de usuário é é %2$s. <br>
-
-Aqui você alimenta a sua saúde e a saúde do campo!
-Conheça um pouco mais de nossa história de 38 anos nos orgânicos. <a href=https://aboaterra.com.br/nossa-historia> Conheça nossa história.</a> <br>
-<br><br>
-A credibilidade nos alimentos orgânicos que oferecemos é nosso valor número um!<br>
-Assim queremos compartilhar com você que além de sermos certificados pelo IBD ( Instituto Biodinâmico), tanto em nossa produção orgânica quanto em nossa comercialização de cestas orgânicas, também investimos em uma rotina de análises laboratoriais de resíduos de agrotóxicos em nossas frutas, legumes e verduras comercializadas.
-<br><br>
-Investimos também no selo eureciclo, que faz a compensação ambiental de nossas embalagens, promovendo a reciclagem com responsabilidade social e nos certifica do cumprimento com a Política Nacional de Resíduos Sólidos. <br>
-As embalagens se fazem necessárias para o controle de rastreabilidade dos alimentos orgânicos que chegam em sua casa!<br>
-Conhece uma alternativa mais ecológica e biodegradável para nossas embalagens? <br>
-Vamos adorar receber a sugestão!<br>
-Será analisada por sua sustentabilidade ambiental e financeira. <br><br>
-
-Parabéns por escolher saúde, praticidade e credibilidade! <br>
-Você pode acessar sua conta para ver pedidos, alterar sua senha e muito mais em: %3$s <br>
+<p style="text-align: justify;"><?php printf( __( '
+Olá! <br>
+Seu nome de usuário é %2$s. <br>
 <br>
-Equipe A Boa Terra
+Aqui você alimenta a sua saúde e a saúde do campo!<br><br>
+O Sítio A Boa Terra é um dos primeiros a acreditar e cultivar alimentos orgânicos no Brasil e a entregar cestas orgânicas na porta de casa. Tudo começou lá em 1981, com 3 casais, quando “falar sobre orgânicos e esse tal estilo de vida mais justo” ainda era pouco comum e desacreditado. Convidamos você a saber mais detalhes sobre essa <a href=https://aboaterra.com.br/nossa-historia> NOSSA HISTORIA.</a> <br>
+<br>
+A <strong>credibilidade</strong> nos alimentos orgânicos que oferecemos é nosso valor número um! Assim queremos compartilhar com você que além de sermos certificados pelo IBD (Instituto Biodinâmico), desde 1994, tanto em nossa produção orgânica quanto em nossa comercialização de cestas orgânicas, também investimos em uma rotina de análises laboratoriais de resíduos de agrotóxicos em nossas frutas, legumes e verduras comercializadas.
+<br><br>
+Para que sua cesta orgânica fique ainda mais completa, ela é composta por orgânicos do Sítio e também de outros produtores orgânicos certificados.
+Nosso <strong>certificado orgânico</strong> de produtor e comercializador está disponível pra você em <a href=https://www.aboaterra.com.br/faq-2/> FAQ</a>, e claro você também pode solicitar por whatsapp ou email. <br><br>
+Além de nossa produção orgânica e entrega de cestas em casa, para nós fica cada vez mais claro o quanto estar em meio à natureza viva nos faz bem e o quanto ela é parte de nós e nós somos parte dela.
+Assim, em 2003, surge no Sítio A Boa Terra o nosso <strong>Centro de Ecologia</strong> - educação ambiental. Diversas escolas públicas e particulares, além de universidades, já vivenciaram aqui inúmeras atividades na natureza e em nossas hortas orgânicas.
+Acreditamos que essa reconexão com a natureza e com a origem dos alimentos, é “o primeiro passo” para uma cultura de cuidado, cuidado com nossa saúde e a saúde do planeta. Saiba mais sobre nosso <a href=https://www.aboaterra.com.br/quer-nos-visitar/> CENTRO DE ECOLOGIA.</a> <br>
+<br>
+Parabéns por escolher saúde, praticidade e credibilidade! <br><br>
+<strong>Garanta agora mesmo seus orgânicos! https://www.aboaterra.com.br/  <br><br></strong>
+
+<strong>Você pode acessar sua conta para ver pedidos, alterar sua senha e muito mais em: %3$s <br></strong>
+<br>
+Grande Abraço de nossa Equipe A Boa Terra
 
 ', 'woocommerce' ), esc_html( $blogname ), '<strong>' . esc_html( $user_login ) . '</strong>', make_clickable( esc_url( wc_get_page_permalink( 'myaccount' ) ) ) ); ?></p><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
 
