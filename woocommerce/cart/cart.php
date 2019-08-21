@@ -180,7 +180,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<div class="col-md-4 cart-coupon pull-left">
 		<?php if ( wc_coupons_enabled() ) { ?>
 			<label for="coupon_code" class="col-md-12">
-				<?php _e( 'Cupom de desconto', 'odin' );?>
+				<?php _e( 'Cupom de Desconto', 'odin' );?>
 			</label>
 			<div class="col-md-12">
 				<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'OK', 'odin' ); ?>" />
