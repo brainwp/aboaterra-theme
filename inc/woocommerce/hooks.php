@@ -131,7 +131,7 @@ add_action( 'wp_ajax_nopriv_update_header_cart', 'wc_update_header_cart' );
  */
 function remove_billing_company_wc_checkout( $fields ) {
 	// $fields[ 'billing']['billing_company']['required'] = true;
-	$fields[ 'billing']['billing_company']['label'] = "Nome da Empresa <abbr class='required' title='obrigatório'>*</abbr>";
+
 	return $fields;
 }
 add_filter( 'woocommerce_checkout_fields' , 'remove_billing_company_wc_checkout' );
