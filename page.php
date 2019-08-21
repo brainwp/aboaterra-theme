@@ -32,6 +32,6 @@ get_header(); ?>
 				</main><!-- #main -->
 			</div><!-- .row -->
 		</div><!-- .container -->
-	</div><!-- .col-md-16 -->
+	</div><!-- .col-md-12 -->
 <?php
 get_footer();
