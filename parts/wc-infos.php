@@ -18,7 +18,10 @@
 	<?php if ( ! WC()->cart->is_empty() ) : ?>
 		<ul class="dropdown-menu cart-dropdown" aria-labelledby="dLabel">
 			<div class="col-md-12">
-				<div class="col-md-12 title"><?php _e( 'Carrinho', 'odin');?></div><!-- .col-md-12 -->
+				<div class="col-md-12 text-center">
+					<a href="<?php echo WC()->cart->get_cart_url();?>" class="btn btn-primary btn-large btn-buy"><?php _e( 'Ver Carrinho', 'odin' );?></a>
+				</div><!-- .col-md-12 text-center -->
+
 				<div class="separator"></div><!-- .separator -->
 				<?php foreach( WC()->cart->get_cart() as $cart_item ) : ?>
 					<?php if ( isset( $cart_item['bundled_by'] ) ) : ?>
@@ -44,9 +47,7 @@
 				</div><!-- .post-title -->
 				<div class="separator"></div><!-- .separator -->
 				<div class="post-title"><?php printf( __( 'TOTAL: <span class="big">%s</span>', 'odin'), WC()->cart->get_cart_total() );?></div><!-- .post-title -->
-				<div class="col-md-12 text-center">
-					<a href="<?php echo WC()->cart->get_cart_url();?>" class="btn btn-primary btn-large btn-buy"><?php _e( 'Comprar', 'odin' );?></a>
-				</div><!-- .col-md-12 text-center -->
+
 			</div><!-- .col-md-12 -->
   		</ul>
   	<?php endif;?>
