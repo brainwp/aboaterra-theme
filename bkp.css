@@ -1,0 +1,316 @@
+#masthead{
+	/* background-color:#011683; */
+	    z-index: 9999;
+
+}
+#masthead #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after, #nav-toggle.nav-is-visible span:before, #nav-toggle.nav-is-visible span:after{
+	background:#fff;
+}
+#nav-toggle.nav-is-visible span{
+	background:transparent!important;
+}
+#masthead .menu-item a {
+    color: #fff;
+}
+
+#masthead .coletivo-current-item a, #masthead .menu-item a:hover{
+	color:#cc3333;
+}
+#masthead .site-logo-div img {
+	/* width:350px; */
+	-webkit-transition: width 0.5s; /* Safari prior 6.1 */
+  transition: width 2s;
+
+}
+.home section{
+	min-height:100vh
+}
+#emporio h2, #emporio p{
+	color:#fff;
+}
+#emporio #imagem{
+	float:left;
+	width:50%;
+}
+#emporio #texto{
+	float:left;
+	width:50%;
+	padding: 0 20px;
+}
+main{
+	background:#000;
+}
+.feature-item{
+	margin-bottom:40px
+}
+.section-services  .service-item {
+	text-align:center;
+
+}
+.section-services  .service-title{
+	font-size:24px;
+	margin-top:10px
+
+}
+.section-parallax .parallax-bg:before{
+	background:none;
+}
+.section-parallax .container {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+#youtube-feed{
+	background:#fff;
+}
+#produtos:after {
+    /* transform: rotate(180deg); */
+    background: linear-gradient(-45deg, #000 6px, transparent 0), linear-gradient(45deg, #000 6px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 12px 12px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 12px;
+}
+#instagram-feed:before{
+	transform:rotate(180deg);
+    background: linear-gradient(-45deg, #fff 6px, transparent 0), linear-gradient(45deg, #fff 6px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 12px 12px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+	height: 12px;
+}
+.slick-dotted.slick-slider {
+    margin-bottom: 30px;
+    max-width: 35%;
+    float: left;
+	margin-right:50px
+}
+#videolightbox:after{
+
+	background: linear-gradient(-45deg, #fff 6px, transparent 0), linear-gradient(45deg, #fff 6px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 12px 12px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 12px;
+}
+#emporio:after{
+
+	background: linear-gradient(-45deg, #fff 6px, transparent 0), linear-gradient(45deg, #fff 6px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 12px 12px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 12px;
+}
+#instagram-feed:after{
+
+	background: linear-gradient(-45deg, #fff 6px, transparent 0), linear-gradient(45deg, #fff 6px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 12px 12px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 12px;
+}
+#produtos .section-title-area{
+	margin-bottom:10px;
+}
+#social:before{
+	transform:rotate(180deg);
+	background: linear-gradient(-45deg, #fff 6px, transparent 0), linear-gradient(45deg, #fff 6px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 12px 12px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 12px;
+}
+#social:after{
+	background: linear-gradient(-45deg, #fff 6px, transparent 0), linear-gradient(45deg, #fff 6px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 12px 12px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 12px;
+}
+.team-member .member-thumb{
+	text-align:center;
+}
+.team-member .member-thumb img{
+	height:200px;
+	width:auto;
+}
+.team-member .member-info {
+    padding: 0 20px;
+}
+.section-services  .service-item .service-image{
+	float:none;
+	margin:10px 0 ;
+}
+.section-services  .service-item .service-image img{
+	max-width:100%
+}
+#masthead .menu-item a{
+	/* color:#fff; */
+}
+/* #videolightbox:before{
+transform:	rotate(180deg);
+	 background: linear-gradient(-45deg, #cc3333 6px, transparent 0), linear-gradient(45deg, #cc3333 6px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 12px 12px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 12px;
+} */
+#o-bodeiro:before{
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0))!important;
+	}
+#o-bodeiro:after{
+content: "";
+ background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),#cc3333)!important;    height: 400px;
+    opacity: 1!important;
+    display: block;
+    position: absolute;
+    width: 100vw;
+    z-index: 99;
+    bottom: 0;
+	}
+#videolightbox:before{
+  background: linear-gradient(to bottom,rgba(204,51,51,1), rgba(204,51,51,0.5),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0))!important;
+	}
+.hero-slideshow-wrapper:after{
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))!important;
+	opacity:1!important;
+}
+#o-bodeiro{
+	min-height:100vh;
+	background-attachment:fixed!important;
+
+}
+#o-bodeiro h2, #o-bodeiro p {
+	color:#fff!important;
+}
+#masthead.header-fixed .custom-logo-link img{
+	width:120px;
+		height:auto;
+	 -webkit-transition: width 0.5s; /* Safari prior 6.1 */
+  transition: width 2s;
+
+}
+.page p{
+	font-size:18px;
+}
+/* torna foto do destaque redonda */
+#destaques img{
+	border-radius:200px
+}
+/*  */
+/* muda cor do paragrafo pagina destacada
+ */
+.section-featuredpage p {
+ color:#000;
+}
+.section-featuredpage h2.section-title {
+    color: #000;
+}
+/* Logo deslocado absolute */
+#social{
+	min-height:initial;
+}
+@media (min-width: 1200px)
+{
+/* Logo deslocado absolute */
+
+#masthead .custom-logo-link img{
+	position:absolute;
+	height:auto;
+	margin-top:30px;
+}
+#masthead.header-fixed .custom-logo-link img{
+	margin-top:10px;
+	}
+}
+/* para telas menores muda o tamanho e magem  do logo */
+@media (max-width: 1200px)
+{
+	#texto{
+		margin-top:20px;
+	}
+
+	#masthead .menu-item a{
+		color:#000;
+	}
+#emporio #imagem{
+	float:left;
+	width:100%;
+}
+#emporio #texto{
+	float:left;
+	width:100%;
+	padding: 0 20px;
+}
+		#masthead .custom-logo-link img, #masthead.header-fixed .custom-logo-link img{
+		position:relative;
+		width:100px;
+	}
+
+
+/* 	#masthead .custom-logo-link img{
+		margin-top:10px;
+
+		position:relative;
+	} */
+
+}
+@media (max-width: 992px)
+{
+	.slick-dotted.slick-slider {
+    margin-bottom: 30px;
+    max-width: 100%;
+    float: left;
+	margin-right:0px
+}
+}
