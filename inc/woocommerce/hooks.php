@@ -162,3 +162,10 @@ function aboaterra_remove_woocommerce_scripts() {
 	}
 }
 add_action( 'wp_head', 'aboaterra_remove_woocommerce_scripts', 9999 );
+/* muda texto do botão de ir pro checkout */
+
+add_filter( 'woocommerce_order_button_text', 'woo_custom_order_button_text' );
+
+function woo_custom_order_button_text() {
+    return __( 'Fechar Pedido', 'woocommerce' );
+}
