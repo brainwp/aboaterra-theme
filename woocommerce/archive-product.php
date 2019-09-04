@@ -17,16 +17,11 @@
 
 defined( 'ABSPATH' ) || exit;
 
-get_header( 'shop' );?>
+get_header( 'shop' );
+?>
 <div class="container">
 	<div class="row">
-		<?php if ( is_search() ) : ?>
-		<div class="col-md-12 search-infos">
-			<h1 class="search">
-				<?php printf( __( 'Resultados da busca para: %s', 'odin' ), get_search_query() );?>
-			</h1><!-- .search -->
-		</div><!-- .col-md-12 search-infos -->
-		<?php endif;
+<?php
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -35,15 +30,12 @@ get_header( 'shop' );?>
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
 do_action( 'woocommerce_before_main_content' );
-
-?>
-<?php
 if ( woocommerce_product_loop() ) {
 
 	/**
 	 * Hook: woocommerce_before_shop_loop.
 	 *
-	 * @hooked wc_print_notices - 10
+	 * @hooked woocommerce_output_all_notices - 10
 	 * @hooked woocommerce_result_count - 20
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
@@ -57,8 +49,6 @@ if ( woocommerce_product_loop() ) {
 
 			/**
 			 * Hook: woocommerce_shop_loop.
-			 *
-			 * @hooked WC_Structured_Data::generate_product_data() - 10
 			 */
 			do_action( 'woocommerce_shop_loop' );
 
@@ -95,6 +85,7 @@ do_action( 'woocommerce_after_main_content' );
  *
  * @hooked woocommerce_get_sidebar - 10
  */
+do_action( 'woocommerce_sidebar' );
 ?>
 	</div><!-- .row -->
 </div><!-- .container -->
