@@ -405,3 +405,9 @@ body.woocommerce-cart {
 		}
 	}
 }
+@media (max-width: 768px)
+{
+	.woocommerce table.shop_table_responsive tr.yith-wcpb-child-of-bundle-table-item, .woocommerce-page table.shop_table_responsive tr.yith-wcpb-child-of-bundle-table-item {
+	display: none;
+	}
+}
