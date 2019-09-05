@@ -169,3 +169,58 @@ add_filter( 'woocommerce_order_button_text', 'woo_custom_order_button_text' );
 function woo_custom_order_button_text() {
     return __( 'Fechar Pedido', 'woocommerce' );
 }
+add_filter( 'woocommerce_shipping_package_name', 'custom_shipping_package_name' );
+function custom_shipping_package_name( $name ) {
+  return 'Frete';
+}
+function adiciona_limpa_carrinho() {
+	?>
+	<div class="col-md-12 cart-links">
+		<?php if ( ! wp_is_mobile() ) : ?>
+			<div class="col-md-12 pull-left">
+				<div class="col-md-6">
+					<a href="<?php echo home_url();?>" class="btn btn-cart-link">
+						<?php _e( 'Continuar comprando', 'odin' );?>
+					</a>
+				</div>
+				<div class="col-md-6">
+					<?php $empty_cart_url = WC()->cart->get_cart_url . '?empty_cart=true';?>
+					<a href="<?php echo wp_nonce_url( $empty_cart_url, 'empty_cart' );?>" class="btn btn-cart-link" id="cart-empty-link" data-confirm="<?php esc_attr_e( 'Clique em OK para esvaziar o carrinho de compras e retornar para página inicial', 'odin' );?>">
+						<?php _e( 'Esvaziar Carrinho', 'odin' );?>
+					</a>
+				</div>
+			</div><!-- .pull-left -->
+		<?php else : ?>
+			<div class="col-md-6 pull-left">
+				<a href="<?php echo home_url();?>" class="btn btn-cart-link">
+					<?php _e( 'Continuar comprando', 'odin' );?>
+				</a>
+				<?php $empty_cart_url = WC()->cart->get_cart_url . '?empty_cart=true';?>
+				<a href="<?php echo wp_nonce_url( $empty_cart_url, 'empty_cart' );?>" class="btn btn-cart-link" id="cart-empty-link" data-confirm="<?php esc_attr_e( 'Clique em OK para esvaziar o carrinho de compras e retornar para página inicial', 'odin' );?>">
+					<?php _e( 'Esvaziar Carrinho', 'odin' );?>
+				</a>
+				<input type="submit" class="button btn btn-cart-link" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" style="display:none;"/>
+			</div><!-- .pull-left -->
+		<?php endif;?>
+	</div><!-- .col-md-12 cart-links -->
+	<?php
+}
+add_action( 'woocommerce_after_cart_table', 'adiciona_limpa_carrinho' );
+
+// ---------------------------------------------
+// Display Only 3 Cross Sells instead of default 4
+
+add_filter( 'woocommerce_cross_sells_total', 'bbloomer_change_cross_sells_product_no' );
+
+function bbloomer_change_cross_sells_product_no( $columns ) {
+	return 4;
+}
+add_filter( 'woocommerce_cart_item_thumbnail', 'no_image_for_bundle', 10, 3 );
+function no_image_for_bundle(  $product_get_image, $cart_item, $cart_item_key  ) {
+	if ($cart_item['bundled_by']) {
+		return ;
+	}
+	else{return $product_get_image;}
+
+
+}

@@ -1,4 +1,50 @@
 body.woocommerce-cart, body.woocommerce-checkout {
+
+	tr.yith-wcpb-child-of-bundle-table-item{
+		border:none;
+		border-bottom: 0 solid #ccc!important;
+		border-top: 0 solid #ccc!important;
+		td.product-name a{
+			font-size: initial;
+			padding: initial!important;
+		}
+	}
+	.cart-links{
+		text-align: center;
+		a{
+			max-width: 400px;
+		}
+	}
+	.cart-collaterals{
+		.cart_totals{
+			float: none;
+			width: 100%!important;
+			text-align: left;
+			.wc-proceed-to-checkout{
+				max-width:400px;
+			}
+		}
+		.cross-sells{
+			width:100%;
+			ul{
+				display: flex;
+				width: 100%;
+				flex-wrap: wrap;
+
+				li{
+					flex-grow: 1;
+					flex-shrink: 0;
+					flex-basis: 33.3333%;
+					flex-basis: 200px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					margin:5px!important;
+				}
+			}
+		}
+	}
+
 	.product-quantity{
 		.buttons-qty{
 			span{
@@ -202,7 +248,12 @@ body.woocommerce-cart {
 			border:0 !important;
 			border-collapse:collapse !important;
 			tr {
-				border-bottom: 3px solid #ccc !important;
+				border-top: 3px solid #ccc !important;
+			}
+			tr.yith-wcpb-child-of-bundle-table-item{
+				border:none;
+				border-bottom: 0 solid #ccc!important;
+				border-top: 0 solid #ccc!important;
 			}
 			tr::last-child {
 				border-bottom: 2px solid #FFF !important;
