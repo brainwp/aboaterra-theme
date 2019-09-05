@@ -205,7 +205,7 @@ function adiciona_limpa_carrinho() {
 	</div><!-- .col-md-12 cart-links -->
 	<?php
 }
-add_action( 'woocommerce_after_cart_table', 'adiciona_limpa_carrinho' );
+add_action( 'woocommerce_after_cart', 'adiciona_limpa_carrinho' );
 
 // ---------------------------------------------
 // Display Only 3 Cross Sells instead of default 4
