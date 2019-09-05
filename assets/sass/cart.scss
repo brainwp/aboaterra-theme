@@ -1,9 +1,9 @@
 body.woocommerce-cart, body.woocommerce-checkout {
-
 	tr.yith-wcpb-child-of-bundle-table-item{
 		border:none;
 		border-bottom: 0 solid #ccc!important;
 		border-top: 0 solid #ccc!important;
+		display: none;
 		td.product-name a{
 			font-size: initial;
 			padding: initial!important;

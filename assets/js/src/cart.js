@@ -62,7 +62,11 @@ jQuery(document).ready(function($) {
 			});
 		}
 	}
-
+	$( ".open-bundle-links" ).click(function(e) {
+		e.preventDefault();
+		var product_key = $(this).attr('data-key');
+		$(this).closest('.cart_item').siblings("tr.yith-wcpb-child-of-bundle-table-item."+product_key).toggle();
+		console.log('iudiknl');	});
 	/**
 	 * Atualiza o cart (Pagina cart) automaticamente no mobile
 	*/

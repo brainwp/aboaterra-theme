@@ -215,6 +215,8 @@ add_filter( 'woocommerce_cross_sells_total', 'bbloomer_change_cross_sells_produc
 function bbloomer_change_cross_sells_product_no( $columns ) {
 	return 4;
 }
+
+// tira imagens de itens de bundle products
 add_filter( 'woocommerce_cart_item_thumbnail', 'no_image_for_bundle', 10, 3 );
 function no_image_for_bundle(  $product_get_image, $cart_item, $cart_item_key  ) {
 	if ($cart_item['bundled_by']) {
@@ -224,3 +226,19 @@ function no_image_for_bundle(  $product_get_image, $cart_item, $cart_item_key  )
 
 
 }
+// adiciona o link para abrir bundles filhos
+add_action( 'woocommerce_after_cart_item_name', 'bundle_child_link', 10, 2);
+function bundle_child_link($cart_item, $cart_item_key) {
+	// print_r($cart_item);
+	// die;
+	if ($cart_item['bundled_items']) {
+		?>
+		<div><a data-key="<?php echo $cart_item_key ?>" class="open-bundle-links" href="#open-bundle-links">Ver itens da cesta</a></div>
+		<?php
+	}
+}
+function key_on_class( $class, $values, $values_key ) {
+        $class .= ' '.$values['bundled_by'];
+    return $class;
+}
+add_filter( 'woocommerce_cart_item_class', 'key_on_class', 10, 3 );
