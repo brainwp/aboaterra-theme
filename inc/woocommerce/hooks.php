@@ -242,3 +242,66 @@ function key_on_class( $class, $values, $values_key ) {
     return $class;
 }
 add_filter( 'woocommerce_cart_item_class', 'key_on_class', 10, 3 );
+
+// adiciona campo no dashboard do my_account
+add_action( 'woocommerce_account_dashboard', 'altera_myaccount_dashboard', 10);
+
+function altera_myaccount_dashboard()
+{
+	$user = wp_get_current_user();
+	$fields = Brasa_WC_Extra_Fields::get_instance()->get_billing_fields();
+	?>
+	<section class="billing-data">
+		<h4 class="titleDP">
+			<?php _e( 'Dados Pessoais', 'odin' );?>
+		</h4>
+		<?php foreach( $fields as $key => $name ) : ?>
+			<div class="each-item col-md-12">
+
+				<div class="pull-left title">
+					<?php echo $name;?>
+				</div><!-- .col-md-5 pull-left title -->
+				<div class="pull-right data">
+					<?php if ( $key == 'email' ) : ?>
+						<?php $value = $user->user_email;?>
+					<?php else : ?>
+						<?php $value = get_user_meta( $user->ID, $key, true );?>
+						<?php
+							if ( ! $value ) $value = '';
+							if ($key == 'billing_phone' && FALSE ) {
+								$value_array = explode('-', $value);
+								$value = "(".$value_array[1].")". " " .$value_array[2]. "-". $value_array[3] ;
+							}
+						?>
+					<?php endif;?>
+					<?php echo apply_filters( 'the_title', $value );?>
+				</div><!-- .col-md-5 pull-right data -->
+			</div><!-- .each-item -->
+		<?php endforeach;?>
+		<div class="text-right pull-right text-right col-md-8 btt-clas-btt">
+			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>/edit-account" class="btn btn-primary btn-cart-link">
+				<?php _e( 'Editar', 'odin' );?>
+			</a>
+		</div><!-- .text-right -->
+	</section><!-- .col-md-10 pull-left billing-data -->
+	<?php
+}
+
+
+/**
+ * Add order again button in my orders actions.
+ *
+ * @param  array $actions
+ * @param  WC_Order $order
+ * @return array
+ */
+function cs_add_order_again_to_my_orders_actions( $actions, $order ) {
+	if ( $order->has_status( 'completed' ) ) {
+		$actions['order-again'] = array(
+			'url'  => wp_nonce_url( add_query_arg( 'order_again', $order->id ) , 'woocommerce-order_again' ),
+			'name' => __( 'Recomprar', 'woocommerce' )
+		);
+	}
+	return $actions;
+}
+add_filter( 'woocommerce_my_account_my_orders_actions', 'cs_add_order_again_to_my_orders_actions', 50, 2 );

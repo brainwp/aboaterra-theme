@@ -177,10 +177,19 @@ body.woocommerce-account.unlogged-user {
 	color: white!important;
 }
 .woocommerce-account .woocommerce-MyAccount-navigation{
-	width: 100%!important;
+	// width: 100%!important;
 }
 .woocommerce-account .woocommerce-MyAccount-content{
 	float: left!important;
+}
+body.woocommerce-account .woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--downloads{
+	display: none;
+}
+body.woocommerce-account .woocommerce-orders-table__cell.woocommerce-orders-table__cell-order-actions a:nth-of-type(2){
+	margin-left: 10px;
+}
+body.woocommerce-account .woocommerce-orders-table__cell.woocommerce-orders-table__cell-order-actions a, .woocommerce-button{
+	font-family: 'BELLABOO-Regular', sans-serif;
 }
 .btt-clas-btt{
 	padding:0px;
@@ -219,7 +228,7 @@ body.woocommerce-page {
 	table.shop_table{
 		border-radius: 0px;
 		border:1px solid #dcddde;
-		margin-top: 20px;
+		// margin-top: 20px;
 	}
 	table.shop_table thead{
 		background-color: #dcddde;
