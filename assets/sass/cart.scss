@@ -3,6 +3,18 @@ body.woocommerce-cart, body.woocommerce-checkout {
 		a.open-bundle-links{
 			margin-top: 10px;
 			color:#fff!important;
+			text-transform: uppercase;
+		}
+	}
+	&.woocommerce-page #content, &.woocommerce-page {
+		table.cart {
+			td.actions {
+				.coupon{
+					.input-text{
+						width: 150px;
+					}
+				}
+			}
 		}
 	}
 	tr.yith-wcpb-child-of-bundle-table-item{
