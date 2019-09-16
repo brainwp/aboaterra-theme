@@ -1,4 +1,10 @@
 body.woocommerce-cart, body.woocommerce-checkout {
+	tr.yith-wcpb-bundle-table-item{
+		a.open-bundle-links{
+			margin-top: 10px;
+			color:#fff!important;
+		}
+	}
 	tr.yith-wcpb-child-of-bundle-table-item{
 		border:none;
 		border-bottom: 0 solid #ccc!important;
@@ -8,6 +14,10 @@ body.woocommerce-cart, body.woocommerce-checkout {
 			font-size: initial;
 			padding: initial!important;
 		}
+		td{
+			border:0;
+		}
+
 	}
 	.cart-links{
 		text-align: left;
@@ -209,6 +219,15 @@ body.woocommerce-cart {
 		@media screen and( max-width: 768px ) {
 			.buttons-qty {
 				display: none !important;
+			}
+			.woocommerce-cart-form__contents{
+				tr{
+					td.product-remove, td.product-thumbnail{
+						width:50%;
+						display: block;
+						clear:none;
+					}
+				}
 			}
 			td.product-quantity select {
 				display: inline !important;

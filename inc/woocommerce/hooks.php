@@ -233,7 +233,7 @@ function bundle_child_link($cart_item, $cart_item_key) {
 	// die;
 	if ($cart_item['bundled_items']) {
 		?>
-		<div><a data-key="<?php echo $cart_item_key ?>" class="open-bundle-links" href="#open-bundle-links">Ver itens da cesta</a></div>
+		<div><a data-key="<?php echo $cart_item_key ?>" class=" button open-bundle-links" href="#open-bundle-links">Ver itens da cesta</a></div>
 		<?php
 	}
 }
