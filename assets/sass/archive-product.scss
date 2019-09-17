@@ -1,5 +1,7 @@
 body.woocommerce.archive {
-
+	.woocommerce-products-header, #breadcrumbs{
+		display: none;
+	}	
 	.woocommerce-result-count {
 		display: none;
 	}

@@ -305,3 +305,39 @@ function cs_add_order_again_to_my_orders_actions( $actions, $order ) {
 	return $actions;
 }
 add_filter( 'woocommerce_my_account_my_orders_actions', 'cs_add_order_again_to_my_orders_actions', 50, 2 );
+
+// Remove woocommerce-smallscreen.css
+function marce_remove_woocommerce_smallscreen_css( $enqueue_styles ) {
+	if ( is_page( 'cart' ) || is_cart() ) {
+      unset( $enqueue_styles['woocommerce-smallscreen'] );
+    }
+		// Remove the smallscreen optimisation
+	return $enqueue_styles;
+}
+add_filter( 'woocommerce_enqueue_styles', 'marce_remove_woocommerce_smallscreen_css' );
+
+// adiciona container na single product
+function container_single_product(  ) {
+	?>
+	<div class="col-md-12">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<?php odin_breadcrumbs( get_bloginfo( 'name' ) );?>
+				</div><!-- .col-md-12 -->
+				<div class="col-md-12 woocommerce-main">
+	<?php
+}
+add_action( 'woocommerce_before_main_content', 'container_single_product' );
+remove_all_actions( 'woocommerce_sidebar' ) ;
+
+// adiciona container na single product
+function fecha_container(  ) {
+	?>
+			</div><!-- .col-md-12 woocommerce-main -->
+		</div><!-- .row -->
+	</div><!-- .container -->
+</div><!-- .col-md-12 -->
+	<?php
+}
+add_action( 'woocommerce_sidebar', 'fecha_container' );

@@ -1,3 +1,4 @@
+
 body.woocommerce-cart, body.woocommerce-checkout {
 	tr.yith-wcpb-bundle-table-item{
 		a.open-bundle-links{
@@ -230,7 +231,7 @@ body.woocommerce-cart {
 		}
 		@media screen and( max-width: 768px ) {
 			.buttons-qty {
-				display: none !important;
+				// display: none !important;
 			}
 			.woocommerce-cart-form__contents{
 				tr{
@@ -440,5 +441,207 @@ body.woocommerce-cart {
 {
 	.woocommerce table.shop_table_responsive tr.yith-wcpb-child-of-bundle-table-item, .woocommerce-page table.shop_table_responsive tr.yith-wcpb-child-of-bundle-table-item {
 	display: none;
+	}
+}
+
+body.woocommerce-cart {
+	.col-md-12{
+		padding: 0px;
+	}
+	@media screen and( max-width: 992px ) {
+		body.woocommerce-cart .cart-collaterals .cross-sells ul li, body.woocommerce-checkout .cart-collaterals .cross-sells ul li{
+			flex-basis: initial;
+		}
+	}
+	@media screen and( max-width: 768px ) {
+		ul.products li.product, .woocommerce-page ul.products li.product{
+			min-height: initial;
+			padding: 10px 10px 25px!important;
+		}
+		.actions{
+			padding: 0;
+			button[name="update_cart"]{
+				width: 100%;
+				clear: both;
+				margin-top: 10px;
+				opacity: 1!important;
+				background: #f46c0c;
+				color: #fff;
+				text-transform: uppercase;
+				font-family: bellaboo-regular,sans-serif!important;
+				text-align: center;
+				border: none!important;
+				background: #f60!important;
+				color: #fff!important;
+				display: inline-block;
+				border-radius: 0!important;
+				font-size: 1.5em!important;
+				font-weight: 400!important;
+				clear: both;
+				width: 100%;
+				margin-top: 10px!important;
+				box-shadow: 0 1px 5px 0 rgba(251,185,88,.75)!important;
+				padding: 16px 12px!important;
+				max-width: initial;
+
+			}
+		}
+		h2{
+			padding: 10px;
+			font-size: 25px;
+		}
+		.cart-collaterals{
+			.cart_totals{
+				.wc-proceed-to-checkout{
+					max-width: 100%;
+				}
+			}
+			.cart-links{
+				a{
+					max-width: 100%;
+				}
+			}
+			.cross-sells{
+
+				ul.products{
+					display: block;
+					.product{
+						min-height: initial;
+						.woocommerce-LoopProduct-link.woocommerce-loop-product__link{
+							img{
+								width: 33%;
+								padding: 8px 5px 0 !important;
+								float: left;
+							}
+							.woocommerce-loop-product__title, .price{
+								text-align: left;
+								padding-left: 10px;
+								width: 66%;
+								float:left;
+							}
+						}
+						.add-to-cart-container{
+							padding-top: 0;
+							clear: none;
+							position: absolute;
+							bottom: 12px;
+							right: 16px;
+							width: 60%;
+							.buttons-qty, .cart-btn{
+								width: 50%!important;
+								padding: 0;
+								clear: none!important;
+								a{
+									padding: 0;
+								}
+							}
+
+						}
+					}
+				}
+			}
+		}
+
+		thead{
+			display: none;
+		}
+		tr.cart_item{
+			display: block;
+			clear:both;
+			td{
+				padding: 8px 5px!important;
+				display: block;
+				float: left;
+				width:65%!important;
+				clear: none!important;
+				&.product-thumbnail{
+					display: block;
+				    float: left;
+				    width: 33%!important;
+				    max-width: 33%!important;
+					img{
+						max-width: 100%;
+						width: 100%;
+					}
+				}
+				&.product-remove{
+					position: absolute;
+					width:33%!important;
+					margin-top: -2px;
+					a{
+						height: auto!important;
+						color: red!important;
+						background: #ffffffb3!important;
+						border-radius: 0;
+
+					}
+
+				}
+				&.product-quantity{
+					width: 41%!important;
+					min-width: 137px!important;
+
+				}
+				&.product-price{
+					width: 22% !important;
+
+				}
+				&.product-subtotal{
+					float:right;
+					text-align: right;
+					margin-bottom: 20px;
+				}
+
+
+
+			}
+
+			&.yith-wcpb-child-of-bundle-table-item{
+				padding:0 20px;
+				width: 80%;
+				margin:0 auto;
+				td{
+					&.product-quantity {
+						width: 50px!important;
+						min-width: initial;
+					}
+					&.product-thumbnail{
+						display: none;
+
+					}
+				}
+			}
+		}
+	}
+	@media screen and( max-width: 500px ) {
+		.cart-collaterals{
+			.cross-sells{
+				ul.products{
+					display: block;
+					li.product{
+						width: 100%;
+						margin:5px 0!important;
+					}
+				}
+			}
+		}
+		tr.cart_item{
+			&.yith-wcpb-child-of-bundle-table-item{
+				padding:0 20px;
+				width: 80%;
+				margin:0 auto;
+				td{
+					&.product-quantity{
+						width: 25%;
+						min-width: initial!important;
+
+					}
+					&.product-name{
+						width: 75%;
+						padding-left: 20px;
+					}
+				}
+			}
+		}
 	}
 }
