@@ -1,5 +1,11 @@
 body.single-product #content{
 	width: 100%!important;
+	.woocommerce-main{
+		flex-wrap: wrap;
+		.woocommerce-notices-wrapper{
+			width: 100%;
+		}
+	}
 }
 .product-type-simple{
 	.singleProduct .col-md-5{
