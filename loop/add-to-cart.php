@@ -11,9 +11,8 @@
  * the readme will list any important changes.
  *
  * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.5.0
+ * @version     3.3.0
  */
  add_filter( 'single_add_to_cart_text', 'cs_add_to_cart_text' );
 if ( ! defined( 'ABSPATH' ) ) {
