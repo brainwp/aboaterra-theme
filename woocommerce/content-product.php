@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 3.6.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -24,20 +24,8 @@ global $class;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
-
 ?>
-<li <?php post_class($class); ?>>
-	<?php if ( is_page_template( 'page-cestas.php' ) ) : ?>
-		<div class="each-cesta-title">
-			<?php if ( $value = get_post_meta( get_the_ID(), 'cesta_title', true ) ) : ?>
-				<h3>
-					<?php $value = nl2br( $value );?>
-					<?php echo apply_filters( 'the_title', $value );?>
-				</h3>
-			<?php endif;?>
-		</div><!-- .each-cesta-title -->
-	<div class="all-product">
-	<?php endif;?>
+<li <?php wc_product_class( $class, $product ); ?>>
 	<?php
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.
@@ -53,17 +41,13 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_product_thumbnail - 10
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
-	if ( $product->product_type == 'yith_bundle' && is_page_template( 'page-cestas.php' ) ) :
-		echo '<h3>' . count( $product->bundle_data ) . ' '. __( 'Ítens' ) . '</h3>';
-	endif;
+
 	/**
 	 * Hook: woocommerce_shop_loop_item_title.
 	 *
 	 * @hooked woocommerce_template_loop_product_title - 10
 	 */
-	 if ( ! is_page_template( 'page-cestas.php' ) ) {
- 		do_action( 'woocommerce_shop_loop_item_title' );
- 	}
+	do_action( 'woocommerce_shop_loop_item_title' );
 
 	/**
 	 * Hook: woocommerce_after_shop_loop_item_title.
@@ -80,13 +64,5 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_add_to_cart - 10
 	 */
 	do_action( 'woocommerce_after_shop_loop_item' );
-	?><?php if ( is_page_template( 'page-cestas.php' ) ) : ?>
-	</div>
-		<?php if ( $value = get_post_meta( get_the_ID(), 'cesta_content', true ) ) : ?>
-			<div class="description">
-				<?php $value = nl2br( $value );?>
-				<?php echo apply_filters( 'the_title', $value ); ?>
-			</div><!-- .description -->
-		<?php endif;?>
-	<?php endif;?>
+	?>
 </li>
