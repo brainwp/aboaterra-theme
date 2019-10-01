@@ -85,7 +85,7 @@ add_action( 'woocommerce_before_add_to_cart_button', 'show_select_qty_btn_single
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 // remove payment from review section on checkout
-remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+// remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 
 function change_woocommerce_pagination_text( $args ) {
 	$args['prev_text'] = '<';
@@ -112,7 +112,7 @@ function aboaterra_remove_reviews( $tabs ) {
 add_filter( 'woocommerce_product_tabs', 'aboaterra_remove_reviews', 98 );
 
 // remove order again button after order items table
-remove_action( 'woocommerce_order_details_after_order_table', 'woocommerce_order_again_button' );
+// remove_action( 'woocommerce_order_details_after_order_table', 'woocommerce_order_again_button' );
 
 /**
  * update mini cart on header
@@ -341,3 +341,16 @@ function fecha_container(  ) {
 	<?php
 }
 add_action( 'woocommerce_sidebar', 'fecha_container' );
+
+function mensagem_frete(  ) {
+	if ( Brasa_Check_Delivery::get_instance()->check_postcode() ) : ?>
+		<div class="col-md-12" id="shipping-status" data-value="true">
+			<?php echo Brasa_Check_Delivery::get_instance()->check_postcode();?>
+		</div><!-- #shipping-status.col-md-12 -->
+	<?php else : ?>
+		<div class="col-md-12" id="shipping-status" data-value="false">
+			<?php echo get_theme_mod( 'delivery_error', __( 'CEP não atendido', 'odin' ) );?>
+		</div><!-- #shipping-status.col-md-12 -->
+	<?php endif;
+}
+// add_action( 'woocommerce_review_order_after_order_total', 'mensagem_frete' );

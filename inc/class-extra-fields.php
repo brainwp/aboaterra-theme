@@ -19,7 +19,7 @@
 		public function __construct() {
 			// add checkout custom fields
 			/*add_action( 'woocommerce_after_checkout_billing_form', array( $this, 'add_checkout_billing_fields' ), 9999 );*/
-			add_action( 'woocommerce_review_order_after_shipping', array( $this, 'add_checkout_order_fields' ), 9999 );
+			add_action( 'woocommerce_checkout_before_order_review', array( $this, 'add_checkout_order_fields' ), 9999 );
 
 			// process custom fields
 			add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'save_checkout_fields' ) );
@@ -113,7 +113,7 @@
 						<input type="password" class="input-text " name="brasa_checkout_password_confirm" id="brasa_checkout_password_confirm" placeholder="Confirmação da Senha" value="" required>
 					</span>
 					<span id="pass_validation">
-						
+
 					</span>
 				</p>
 				<?php wp_nonce_field( 'checkout_pass', 'checkout_pass_nonce' ); ?>
