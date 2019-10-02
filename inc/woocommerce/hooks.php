@@ -366,8 +366,14 @@ add_action( 'woocommerce_checkout_before_order_review', 'mensagem_frete' );
 function mensagem_frete_ajax(  ) {
 	$type = $_REQUEST['type'];
 	$cep = $_REQUEST['postcode'];
-	update_user_meta( get_current_user_id(), 'shipping_postcode', $cep );
-	$meta = get_user_meta(get_current_user_id(), 'shipping_postcode', true);
+	// echo 'tipo:'.$type;
+	$code = wc_format_postcode($cep, WC()->customer->get_shipping_country() );
+
+	update_user_meta( get_current_user_id(), $type.'_postcode', $code );
+	update_user_meta( get_current_user_id(), 'shipping_postcode', $code );
+	// $meta = get_user_meta(get_current_user_id(), 'shipping_postcode', true);
+	// $meta_2 = get_user_meta(get_current_user_id(), 'billing_postcode', true);
+	// echo 'shipping: '.$meta.'<br>billing: '.$meta_2;
 	if ( Brasa_Check_Delivery::get_instance()->check_postcode() ) {
 		$return = '<div class="col-md-12" id="shipping-status" data-value="true">';
 			$return .= Brasa_Check_Delivery::get_instance()->check_postcode();

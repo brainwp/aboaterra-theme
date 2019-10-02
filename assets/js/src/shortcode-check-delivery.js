@@ -105,16 +105,11 @@ jQuery(document).ready(function($) {
 	});
 
 // mudar mensagem do frete quando atualiza o checkout
-	jQuery( document.body ).on( 'update_checkout', function() {
-		if ( $('#ship-to-different-address-checkbox').is(':checked') ){
-			$cep = $('#shipping_postcode').val()
-		}
-		else{
-			$cep = $('#billing_postcode').val();
-		}
+	function check_shipping(cep, type){
 		var data = {
 			'action': 'brasa_checkout_check_delivery',
-			'postcode': $cep,
+			'postcode': cep,
+			'type' : type
 		};
 		$.ajax({
 			type: 'POST',
@@ -123,6 +118,7 @@ jQuery(document).ready(function($) {
 			complete: function( response ){
 				$( "#shipping-status-container" ).empty();
 				$( "#shipping-status-container" ).append(response.responseText);
+				console.log(response.responseText)
 				// if ( response.getResponseHeader( 'delivery-status' ) == 'false' ) {
 				// 	window.location = $form.attr( 'data-redirect-error' );
 				// } else {
@@ -136,6 +132,51 @@ jQuery(document).ready(function($) {
 				// $submit_btn.html( default_text );
 			}
 		});
+
+	}
+
+	// $( 'body' ).on( 'change', '#ship-to-different-address-checkbox', function( e ){
+	// 	if ( $('#ship-to-different-address-checkbox').is(':checked') ){
+	// 		cep = $('#shipping_postcode').val();
+	// 		type = 'shipping'
+	// 		console.log('checked')
+	// 	}
+	// 	else{
+	// 		console.log('unchecked')
+	// 		cep = $('#billing_postcode').val();
+	// 		console.log($cep)
+	// 		type = 'billing'
+	// 	}
+	// 	check_shipping($cep, $type)
+	// });
+	jQuery( document.body ).on( 'change', function() {
+		if ($('#billing_postcode').val() != $('#shipping_postcode').val()) {
+			if ( $('#ship-to-different-address-checkbox').is(':checked') ){
+				$cep = $('#shipping_postcode').val()
+				$type = 'shipping'
+				check_shipping($cep, $type)
+			}
+			else{
+				$cep = $('#billing_postcode').val()
+				$type = 'billing'
+				check_shipping($cep, $type)
+			}
+		}
+	});
+	jQuery( document.body  ).on( 'blur', '#billing_postcode', function() {
+		if ( $('#ship-to-different-address-checkbox').is(':checked') ){
+			$cep = $('#shipping_postcode').val();
+			$type = 'shipping'
+			console.log('checked')
+		}
+		else{
+			console.log('unchecked')
+			$cep = $('#billing_postcode').val();
+			console.log($cep)
+			$type = 'billing'
+		}
+		console.log($type)
+		check_shipping($cep, $type)
 	} );
 
 	if ( $( 'body').hasClass( 'woocommerce-checkout' ) ) {
