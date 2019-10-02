@@ -163,7 +163,7 @@ jQuery(document).ready(function($) {
 			}
 		}
 	});
-	jQuery( document.body  ).on( 'blur', '#billing_postcode', function() {
+	jQuery( document.body ).on( 'update_checkout', function() {
 		if ( $('#ship-to-different-address-checkbox').is(':checked') ){
 			$cep = $('#shipping_postcode').val();
 			$type = 'shipping'
