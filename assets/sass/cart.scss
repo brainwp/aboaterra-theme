@@ -629,13 +629,13 @@ body.woocommerce-cart {
 				}
 				&.product-remove{
 					position: absolute;
-					width:33%!important;
-					margin-top: -2px;
-					bottom: 0;
+					width:auto!important;
+					margin-top: -10px;
+					right: 0;
+					top:0;
 					a{
 						height: auto!important;
 						color: red!important;
-						background: #ffffffb3!important;
 						border-radius: 0;
 
 					}
