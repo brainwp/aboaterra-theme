@@ -103,6 +103,41 @@ jQuery(document).ready(function($) {
 		var $elem = $( $( this ).attr( 'data-element' ) );
 		$elem.show( 1000 );
 	});
+
+// mudar mensagem do frete quando atualiza o checkout
+	jQuery( document.body ).on( 'update_checkout', function() {
+		if ( $('#ship-to-different-address-checkbox').is(':checked') ){
+			$cep = $('#shipping_postcode').val()
+		}
+		else{
+			$cep = $('#billing_postcode').val();
+		}
+		var data = {
+			'action': 'brasa_checkout_check_delivery',
+			'postcode': $cep,
+		};
+		$.ajax({
+			type: 'POST',
+			url: odin.ajax_url,
+			data: data,
+			complete: function( response ){
+				$( "#shipping-status-container" ).empty();
+				$( "#shipping-status-container" ).append(response.responseText);
+				// if ( response.getResponseHeader( 'delivery-status' ) == 'false' ) {
+				// 	window.location = $form.attr( 'data-redirect-error' );
+				// } else {
+				// 	$elements_div.children( '.response' ).html( response.responseText );
+				// 	if( $form.attr( 'data-redirect-success' ) && $form.attr( 'data-redirect-success' ) != '' ) {
+				// 		 setTimeout( function(){
+				// 		 	window.location = $form.attr( 'data-redirect-success' );
+				// 		 }, 4000);
+				// 	}
+				// }
+				// $submit_btn.html( default_text );
+			}
+		});
+	} );
+
 	if ( $( 'body').hasClass( 'woocommerce-checkout' ) ) {
 		$( document ).ajaxComplete( function() {
 			if ( $( '#shipping-status' ).attr( 'data-value' ) == 'true' ) {

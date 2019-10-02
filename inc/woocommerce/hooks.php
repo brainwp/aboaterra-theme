@@ -343,6 +343,10 @@ function fecha_container(  ) {
 add_action( 'woocommerce_sidebar', 'fecha_container' );
 
 function mensagem_frete(  ) {
+	?>
+	<div id="shipping-status-container" class="">
+
+	<?php
 	if ( Brasa_Check_Delivery::get_instance()->check_postcode() ) : ?>
 		<div class="col-md-12" id="shipping-status" data-value="true">
 			<?php echo Brasa_Check_Delivery::get_instance()->check_postcode();?>
@@ -352,5 +356,30 @@ function mensagem_frete(  ) {
 			<?php echo get_theme_mod( 'delivery_error', __( 'CEP não atendido', 'odin' ) );?>
 		</div><!-- #shipping-status.col-md-12 -->
 	<?php endif;
+	?>
+</div> <!--shipping-status-container-->
+
+	<?php
 }
-// add_action( 'woocommerce_review_order_after_order_total', 'mensagem_frete' );
+add_action( 'woocommerce_checkout_before_order_review', 'mensagem_frete' );
+
+function mensagem_frete_ajax(  ) {
+	$type = $_REQUEST['type'];
+	$cep = $_REQUEST['postcode'];
+	update_user_meta( get_current_user_id(), 'shipping_postcode', $cep );
+	$meta = get_user_meta(get_current_user_id(), 'shipping_postcode', true);
+	if ( Brasa_Check_Delivery::get_instance()->check_postcode() ) {
+		$return = '<div class="col-md-12" id="shipping-status" data-value="true">';
+			$return .= Brasa_Check_Delivery::get_instance()->check_postcode();
+		$return .=  '</div><!-- #shipping-status.col-md-12 -->';
+	}
+	else {
+		$return = '<div class="col-md-12" id="shipping-status" data-value="false">';
+			$return .= get_theme_mod( 'delivery_error', __( 'CEP não atendido', 'odin' ) );
+		$return .= '</div><!-- #shipping-status.col-md-12 -->';
+	}
+	echo $return;
+	wp_die( );
+}
+add_action( 'wp_ajax_brasa_checkout_check_delivery', 'mensagem_frete_ajax' );
+add_action( 'wp_ajax_nopriv_brasa_checkout_check_delivery', 'mensagem_frete_ajax');
