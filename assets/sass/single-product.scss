@@ -1,3 +1,17 @@
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images{
+	width: 46%!important;
+	@media screen and( max-width: 768px ) {
+		width: 80%!important;
+		margin:0 auto;
+	}
+}
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page .product-type-yith_bundle div.product div.images {
+	width: 48%;
+	@media screen and( max-width: 768px ) {
+		width: 80%!important;
+		margin:0 auto;
+	}
+}
 body.single-product #content{
 	width: 100%!important;
 	.woocommerce-main{
@@ -35,6 +49,53 @@ body.single-product #content{
 		// 		}
 		// 	}
 		// }
+	}
+
+	@media screen and( max-width: 768px ) {
+		padding: 0;
+		.entry-summary{
+			h1{
+				font-size: 17px!important;
+ 				margin-bottom: 10px;
+			}
+		}
+		.product-grouped{
+			padding: 15px;
+
+
+			.product-grouped-list{
+				font-size: 13px;
+			}
+			.section-title{
+				font-size: 20px;
+			}
+		}
+		.col-md-12{
+			padding: 0;
+		}
+		.breadcrumb{
+			font-size: 12px;
+		}
+		.product{
+			text-align: center;
+			.images{
+
+			}
+		}
+		.upsells.products{
+			ul{
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				.product{
+					min-height: 0;
+					.buttons-qty input {
+					    margin-left: 10px;
+					    margin-right: 10px;
+					}
+				}
+			}
+		}
 	}
 }
 .product-type-simple{
@@ -91,12 +152,7 @@ body.single-product #content{
 		text-transform: uppercase;
 	}
 }
-.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images{
-	width: 46%!important;
-}
-.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page .product-type-yith_bundle div.product div.images {
-	width: 48%;
-}
+
 
 body.single-product{
 	.thumbnails.columns-4 {

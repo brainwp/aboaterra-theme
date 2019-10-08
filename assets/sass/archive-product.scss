@@ -1,7 +1,7 @@
 body.woocommerce.archive {
 	.woocommerce-products-header, #breadcrumbs{
 		display: none;
-	}	
+	}
 	.woocommerce-result-count {
 		display: none;
 	}
@@ -17,6 +17,31 @@ body.woocommerce.archive {
 		font-size:1.5em;
 		width:100%;
 		display: inline-block;
+	}
+	@media screen and( max-width: 768px ) {
+		main#content{
+			.col-md-12{
+				padding: 0;
+			}
+			.woocommerce-main{
+				flex-direction: column;
+				ul.products{
+				    padding: 0;
+				    list-style: none outside;
+				    clear: both;
+				    display: flex;
+				    max-width: 100%;
+				    flex-wrap: wrap;
+					li.product{
+						margin: 1%;
+						padding: 5px 5px !important;
+						min-height: 0;
+					}
+				}
+			}
+			padding: 0;
+
+		}
 	}
 }
 nav.woocommerce-pagination {

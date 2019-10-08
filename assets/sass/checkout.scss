@@ -134,17 +134,20 @@ body.woocommerce-checkout{
 		padding: 8px;
 	}
 
-	input.button.alt{
+	input.button.alt, button.button.alt{
 		background-color: #f46d0b!important;
 		transition:all 150ms ease-in-out ;
 	}
 
-	input.button.alt:hover{
+	input.button.alt:hover, , button.button.alt:hover{
 		background-color: #ff730d!important;
 		transition:all 150ms ease-in-out ;
 	}
-
-	input.button{
+	.wpmc-footer-left, .wpmc-footer-right{
+		width: 50%;
+		padding: 15px;
+	}
+	input.button, , .button.alt{
 	    font-size: 1.4em;
 	    margin: 0;
 	    line-height: 1;
@@ -268,7 +271,7 @@ body.woocommerce-checkout{
 		height: 3em;
 	}
 
-	input.button, .btn-next, span.button {
+	input.button, .btn-next, span.button, button.button {
 	    font-size: 1.4em;
 	    margin: 0;
 	    line-height: 1;
@@ -342,11 +345,63 @@ body.woocommerce-checkout{
 	input.wc-credit-card-form-card-number::-webkit-input-placeholder {
     font-size: 0.9em!important;
 	}
+	#wpmc-prev{
+		background: #b6b4b2!important;
+	}
+	@media screen and( max-width: 768px ) {
 
+		label {
+		    font-size: 13px;
+		}
+		#order_comments{
+			padding: 0;
+		}
+		.form-row.place-order{
+		    width: -moz-calc(100% + 30px);
+		    width: -webkit-calc(100% + 30px);
+		    width: -o-calc(100% + 30px);
+		    width: calc(100% + 30px);
+		    transform: translate(-15px,0);
+			padding: 0!important;
+		}
+		.wpmc-tabs-wrapper .wpmc-tab-item.current .wpmc-tab-number{
+			border-color: #f46d0b;
+		}
+		.wpmc-tabs-wrapper .wpmc-tab-item.current::before{
+			border-bottom-color: #f46d0b;
 
+		}
+		.wpmc-footer-left, .wpmc-footer-right{
+			width: 100%;
+			padding: 0px;
+			margin-bottom: 15px;
+			button{
+				width: 100%;
+				&#wpmc-back-to-cart{
+					background: #b6b4b2 !important;
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: 700px){
 	body.woocommerce-checkout{
+		form{
+			padding: 0 10px;
+			.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+				margin-left: 0px;
+			}
+			#order_review{
+				border: none;
+				padding: 0;
+			}
+			#ship-to-different-address{
+				font-size: 14px;
+			}
+		}
+		.col-md-12{
+			padding: 0px;
+		}
 		.each-product-checkout{
 			.name, .price{
 				font-size:13px;

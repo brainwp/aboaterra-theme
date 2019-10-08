@@ -13,6 +13,14 @@ body.woocommerce .product img {
 }
 
 .home {
+	.col-md-12{
+		@media screen and (max-width:  760px) {
+			padding: 10px;
+			.col-md-12{
+				padding: 0px;
+			}
+		}
+	}
 	.products{
 		display: flex;
         flex-wrap: wrap;
@@ -177,6 +185,14 @@ body.woocommerce .product img {
 }
 
 .slider-destaques {
+	@media screen and (max-width:  760px) {
+		img{
+			max-width: 100%;
+		}
+		.col-md-12{
+			padding: 0;
+		}
+	}
 	@media screen and (min-width: 760px) {
 		.slick-slide {
 			padding-right: 10px;
@@ -319,6 +335,7 @@ button.slick-prev {
 				content: '';
 			}
 		}
+
 	}
 
 	.add-to-cart-container {

@@ -49,6 +49,7 @@ body.woocommerce-cart, body.woocommerce-checkout {
 				.coupon{
 					width: 100%;
 					.input-text{
+						margin: 0;
 						padding: 16px 12px!important;
 						float: right;
 						width: 100%;
@@ -517,10 +518,18 @@ body.woocommerce-cart {
 	@media screen and( max-width: 768px ) {
 		ul.products li.product, .woocommerce-page ul.products li.product{
 			min-height: initial;
-			padding: 10px 10px 25px!important;
+			padding: 10px 0px 25px!important;
 		}
+
 		.actions{
-			padding: 0;
+			padding: 0!important;
+			.coupon{
+				#coupon_code{
+					border-right: 0;
+					border-left: 0;
+					margin-right: 0;
+				}
+			}
 			button[name="update_cart"]{
 				width: 100%;
 				clear: both;
@@ -565,6 +574,7 @@ body.woocommerce-cart {
 			.cross-sells{
 
 				ul.products{
+					padding: 5px;
 					display: block;
 					.product{
 						min-height: initial;
@@ -588,8 +598,13 @@ body.woocommerce-cart {
 							bottom: 12px;
 							right: 16px;
 							width: 60%;
-							.buttons-qty, .cart-btn{
-								width: 50%!important;
+							.cart-btn{
+								width: 30%!important;
+							}
+							.buttons-qty {
+								width: 70%!important;
+							}
+							.buttons-qty, .cart-btn {
 								padding: 0;
 								clear: none!important;
 								a{
@@ -613,6 +628,7 @@ body.woocommerce-cart {
 			clear:both;
 			td{
 				padding: 8px 5px!important;
+				border: none;
 				display: block;
 				float: left;
 				width:65%!important;
