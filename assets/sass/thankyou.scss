@@ -3,10 +3,50 @@
 		display: none;
 	}
 	p{
-		text-align: center;
+		// text-align: center;
 	}
 	h2{
 		margin-top: 100px;
+	}
+	@media screen and( max-width: 768px ) {
+		.woocommerce-order{
+			padding: 0 10px;
+		}
+		&.woocommerce-checkout{
+			form{
+				padding: 0;
+				.form-row-last,.form-row {
+					padding:0;
+					width:100%!important;
+					input{
+						width:100%;
+					}
+				}
+			}
+		}
+		.woocommerce-notice--success{
+			font-size: 18px;
+			margin: 10px 10px 14px;
+			text-align: center;
+		}
+		ul.order_details{
+			margin: 10px;
+			padding: 0;
+			li{
+				width: 100%;
+			}
+
+		}
+		.total {
+		    display: flex;
+		    justify-content: space-between!important;
+		    align-items: center!important;
+			width: 100%;
+
+		}
+		.totals{
+			padding: 0;
+		}
 	}
 }
 .rounded-icon{

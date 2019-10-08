@@ -1,4 +1,19 @@
 body.woocommerce-checkout{
+	.wpmc-nav-wrapper{
+		@media screen and( max-width: 768px ) {
+			display: flex;
+			flex-flow: column-reverse;
+		}
+	}
+	.wpmc-tabs-wrapper {
+		width: 100%;
+		.wpmc-tab-item.current .wpmc-tab-number{
+			border-color: #f46d0b;
+		}
+		.wpmc-tab-item.current::before{
+			border-bottom-color: #f46d0b;
+		}
+	}
 	#donate-block{
 		overflow: hidden;
 	}
@@ -97,9 +112,9 @@ body.woocommerce-checkout{
 	    border:1px solid #929393;
 	    font-weight: normal;
 	    padding-left: 6px;
+		padding-left: 6px;
 	    color: #393939;
-		padding-top: 2px;
-	    padding-bottom: 2px;
+
 	}
 
 	form .form-row.woocommerce-validated input.input-text{
@@ -237,7 +252,7 @@ body.woocommerce-checkout{
 	}
 
 	.cart-subtotal{
-	    display: flex;
+	    // display: flex;
     	justify-content: flex-end;
 	}
 
@@ -249,7 +264,7 @@ body.woocommerce-checkout{
 	}
 
     .cart-subtotal .amount{
-	    float: right;
+	    // float: right;
     	line-height: 2.4em;
 	}
 
@@ -364,13 +379,6 @@ body.woocommerce-checkout{
 		    transform: translate(-15px,0);
 			padding: 0!important;
 		}
-		.wpmc-tabs-wrapper .wpmc-tab-item.current .wpmc-tab-number{
-			border-color: #f46d0b;
-		}
-		.wpmc-tabs-wrapper .wpmc-tab-item.current::before{
-			border-bottom-color: #f46d0b;
-
-		}
 		.wpmc-footer-left, .wpmc-footer-right{
 			width: 100%;
 			padding: 0px;
@@ -383,11 +391,52 @@ body.woocommerce-checkout{
 			}
 		}
 	}
+	@media screen and( min-width: 768px ) {
+		form{
+			input, .select2-container--default .select2-selection--single{
+				padding: 7px;
+				height: auto;
+				.select2-selection__rendered{
+					line-height: initial;
+					padding-left:0px;
+					font-weight: normal;
+				}
+				select{
+					padding: 7px;
+				    -webkit-appearance: none;
+				    -moz-appearance: none;
+				    appearance: none;
+				    width: 100%;
+				    border-radius: 0;
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: 700px){
 	body.woocommerce-checkout{
+
 		form{
 			padding: 0 10px;
+			input, .select2-container--default .select2-selection--single{
+				padding: 2px;
+				height: auto;
+				border-radius: 0;
+				.select2-selection__rendered{
+					line-height: initial;
+					padding-left:0px;
+					font-weight: normal;
+				}
+
+			}
+			select{
+				padding: 2px;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				width: 100%;
+				border-radius: 0;
+			}
 			.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
 				margin-left: 0px;
 			}
