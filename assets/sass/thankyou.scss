@@ -1,4 +1,9 @@
-.woocommerce-order-received{
+html body.woocommerce-order-received{
+	&.woocommerce-checkout{
+		table.cart img {
+	    	width: 100%;
+		}
+	}
 	.entry-title{
 		display: none;
 	}
