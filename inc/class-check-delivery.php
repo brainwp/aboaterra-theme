@@ -283,6 +283,7 @@ class Brasa_Check_Delivery {
 		}
 		header( sprintf( 'delivery-status: %s', '' ) );
 		WC()->session->set( 'wcpbc_customer', array() );
+		// caso usuário fora da area de atendimento
 		WC()->cart->empty_cart();
 		$to = 'julio@aboaterra.com.br, gustavo@aboaterra.com.br ';
 		$subject = 'Usuário em CEP não atendido';

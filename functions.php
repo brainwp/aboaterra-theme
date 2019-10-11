@@ -592,3 +592,13 @@ function misha_deactivate_pass_strength_meter() {
 	wp_dequeue_script( 'wc-password-strength-meter' );
 
 }
+// Redireciona do carrinho e checkout pra home quando não logado
+add_action('template_redirect','redirect_visitor');
+function redirect_visitor(){
+    if ( is_page( 'cart' ) || is_cart() ||  is_page( 'checkout' ) || is_checkout() ) {
+		if(!is_user_logged_in()){
+			wp_safe_redirect( home_url() );
+	        exit(); // Don't forget this one
+		}
+    }
+}

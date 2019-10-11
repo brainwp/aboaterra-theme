@@ -47,11 +47,12 @@ jQuery(document).ready(function($) {
 		}, 120 );
 	} );
 	$( 'body.unlogged-user' ).on( 'click', '.woocommerce-infos .myacc', function( e ){
+		e.preventDefault();
+		e.stopImmediatePropagation();
 		$modal_link = $( '.prices-warn .pull-left a' );
-
 		if ( $modal_link.length && $modal_link.attr( 'href' ).lastIndexOf(reveal_str) != -1 ) {
 			$modal_link.trigger( 'click' );
-			e.preventDefault();
+
 		}
 	});
 });
