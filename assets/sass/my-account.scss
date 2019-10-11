@@ -3,6 +3,16 @@ body.woocommerce-account.unlogged-user {
 		display: none;
 	}
 }
+body.woocommerce-account{
+	form{
+		.form-row{
+			.input-text, textarea{
+				border:solid 1px;
+				padding: 5px;
+			}
+		}
+	}
+}
 .woocommerce-EditAccountForm, .edit-account{
 	padding: 0px;
 	margin-top:10px;

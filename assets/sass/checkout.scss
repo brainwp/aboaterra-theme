@@ -1,4 +1,29 @@
 body.woocommerce-checkout{
+	form {
+		h3{
+			color:#f46d0b;
+		}
+		.form-row{
+			label{
+				font-weight: 900;
+			}
+		}
+	}
+	#order_delivery_time_field{
+		label{
+			font-weight: 900;
+    		color: #5f5c5c;
+			a{
+				display: none;
+			}
+			.optional{
+				display: none;
+			}
+		}
+	}
+	#shipping-status{
+		padding: 0;
+	}
 	.payment_method_picpay{
 		img{
 			max-height: 25px;
