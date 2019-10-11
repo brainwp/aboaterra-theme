@@ -1,15 +1,28 @@
 body.woocommerce-checkout{
+	.payment_method_picpay{
+		img{
+			max-height: 25px;
+			margin-left: 0;
+		}
+	}
 	.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
    		margin-left: 0;
 	}
 	.wpmc-nav-wrapper{
+		display: flex;
+	    align-items: flex-end;
+	    justify-content: right;
+	    flex-flow: column-reverse;
 		@media screen and( max-width: 768px ) {
 			display: flex;
 			flex-flow: column-reverse;
 		}
+		.wpmc-footer-left{
+			text-align: right;
+		}
 	}
 	.wpmc-tabs-wrapper {
-		width: 100%;
+	    width: 100%;
 		.wpmc-tab-item.current .wpmc-tab-number{
 			border-color: #f46d0b;
 		}
@@ -114,6 +127,7 @@ body.woocommerce-checkout{
 			div.form-row{
 				padding: 0;
 				margin-top: 15px;
+				margin-bottom:0;
 			}
 
 		}
