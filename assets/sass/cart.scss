@@ -117,6 +117,9 @@ body.woocommerce-cart, body.woocommerce-checkout {
 				flex-wrap: wrap;
 
 				li{
+					@media screen and( min-width: 760px ) {
+						max-width:25%;
+					}
 					flex-grow: 1;
 					flex-shrink: 0;
 					flex-basis: 33.3333%;

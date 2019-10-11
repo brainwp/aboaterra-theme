@@ -80,6 +80,6 @@ function odin_get_my_account_url() {
 function woocommerce_button_proceed_to_checkout() {
        $checkout_url = WC()->cart->get_checkout_url();
        ?>
-       <a href="<?php echo $checkout_url; ?>" class="checkout-button button alt wc-forward"><?php _e( 'Fechar Pedido', 'woocommerce' ); ?></a>
+       <a href="<?php echo $checkout_url; ?>" class="checkout-button button alt wc-forward"><?php _e( 'Finalizar Pedido', 'woocommerce' ); ?></a>
        <?php
      }

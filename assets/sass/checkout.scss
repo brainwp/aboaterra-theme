@@ -1,4 +1,7 @@
 body.woocommerce-checkout{
+	.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+   		margin-left: 0;
+	}
 	.wpmc-nav-wrapper{
 		@media screen and( max-width: 768px ) {
 			display: flex;
@@ -100,13 +103,21 @@ body.woocommerce-checkout{
 		font-weight: 500;
 		font-size: 0.99em;
 	}
-	#add_payment_method #payment div.payment_box input.input-text, #add_payment_method #payment div.payment_box textarea, .woocommerce-cart #payment div.payment_box input.input-text, .woocommerce-cart #payment div.payment_box textarea, .woocommerce-checkout #payment div.payment_box input.input-text, .woocommerce-checkout #payment div.payment_box textarea{
-		font-size: 1.16em!important;
-    	padding-left: 7px!important;
-    	padding-top: 2px!important;
-    	padding-bottom: 2px!important;
-	}
+	#add_payment_method, .woocommerce-cart, .woocommerce-checkout {
+		#payment {
+				div.payment_box input.input-text, div.payment_box textarea, div.payment_box input.input-text, div.payment_box textarea, div.payment_box input.input-text, div.payment_box textarea{
+				font-size: 1.16em!important;
+		    	padding-left: 7px!important;
+		    	padding-top: 2px!important;
+		    	padding-bottom: 2px!important;
+			}
+			div.form-row{
+				padding: 0;
+				margin-top: 15px;
+			}
 
+		}
+	}
 	.form-row input.input-text{
 	    border-radius: 2px;
 	    border:1px solid #929393;
@@ -160,9 +171,11 @@ body.woocommerce-checkout{
 	}
 	.wpmc-footer-left, .wpmc-footer-right{
 		width: 50%;
-		padding: 15px;
+		margin-top: 15px;
 	}
 	input.button, , .button.alt{
+		width: 100%;
+		max-width: 400px;
 	    font-size: 1.4em;
 	    margin: 0;
 	    line-height: 1;
@@ -360,11 +373,13 @@ body.woocommerce-checkout{
 	input.wc-credit-card-form-card-number::-webkit-input-placeholder {
     font-size: 0.9em!important;
 	}
-	#wpmc-prev{
+	#wpmc-prev, #wpmc-back-to-cart{
 		background: #b6b4b2!important;
 	}
 	@media screen and( max-width: 768px ) {
-
+		.wpmc-footer-right,.wpmc-footer-left{
+			padding: 0;
+		}
 		label {
 		    font-size: 13px;
 		}
@@ -378,11 +393,17 @@ body.woocommerce-checkout{
 		    width: calc(100% + 30px);
 		    transform: translate(-15px,0);
 			padding: 0!important;
+			margin-bottom: 15px;
+			margin-top:0;
+			#place-order{
+				margin:0!important;
+			}
 		}
 		.wpmc-footer-left, .wpmc-footer-right{
 			width: 100%;
 			padding: 0px;
 			margin-bottom: 15px;
+			margin-top:0;
 			button{
 				width: 100%;
 				&#wpmc-back-to-cart{

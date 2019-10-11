@@ -165,9 +165,9 @@ add_action( 'wp_head', 'aboaterra_remove_woocommerce_scripts', 9999 );
 /* muda texto do botão de ir pro checkout */
 
 add_filter( 'woocommerce_order_button_text', 'woo_custom_order_button_text' );
-
+/* Altera o texto do botao d fechar pedido */
 function woo_custom_order_button_text() {
-    return __( 'Fechar Pedido', 'woocommerce' );
+    return __( 'Finalizar Pedido', 'woocommerce' );
 }
 add_filter( 'woocommerce_shipping_package_name', 'custom_shipping_package_name' );
 function custom_shipping_package_name( $name ) {
