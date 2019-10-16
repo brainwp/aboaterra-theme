@@ -78,8 +78,14 @@ function odin_get_my_account_url() {
 	return '#';
 }
 function woocommerce_button_proceed_to_checkout() {
-       $checkout_url = WC()->cart->get_checkout_url();
-       ?>
-       <a href="<?php echo $checkout_url; ?>" class="checkout-button button alt wc-forward"><?php _e( 'Finalizar Pedido', 'woocommerce' ); ?></a>
-       <?php
-     }
+   $checkout_url = WC()->cart->get_checkout_url();
+   ?>
+   <a href="<?php echo $checkout_url; ?>" class="checkout-button button alt wc-forward"><?php _e( 'Finalizar Pedido', 'woocommerce' ); ?></a>
+   <?php
+}
+add_filter( 'gettext', 'bbloomer_translate_like' );
+
+function bbloomer_translate_like($translated) {
+	$translated = str_ireplace('You may be interested in&hellip;', 'Wear with', $translated);
+	return $translated;
+}

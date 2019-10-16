@@ -34,6 +34,7 @@ body.single-product #content{
 		.summary{
 			.price{
 				margin-top:10px;
+				font-weight: bolder;
 			}
 			.buttons-qty{
 				text-align: center;
@@ -43,6 +44,7 @@ body.single-product #content{
 			display: flex;
     		flex-wrap: wrap;
 			.product-grouped-list{
+				font-size: 11px;
 				flex: 1 0 50%;
 				padding: 5px;
 				&.section-title{
@@ -57,7 +59,7 @@ body.single-product #content{
 				.product-grouped-list{
 					flex: 1 0 100%;
 					padding: 5px 10px;
-					font-size: 11px;
+					font-size: 15px;
 				}
 				width:25%;
 			}
