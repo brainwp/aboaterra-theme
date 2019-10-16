@@ -270,7 +270,7 @@ body.woocommerce {
 	#main-navigation .navbar-collapse {
 		border-bottom: 3px solid #912d1e !important;
 	}
-	.woocommerce-main {
+	&.single-product .woocommerce-main {
 		display: flex;
 		justify-content:center;
 	}

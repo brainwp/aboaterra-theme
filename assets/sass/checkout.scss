@@ -143,11 +143,14 @@ body.woocommerce-checkout{
 	}
 	#add_payment_method, .woocommerce-cart, .woocommerce-checkout {
 		#payment {
-				div.payment_box input.input-text, div.payment_box textarea, div.payment_box input.input-text, div.payment_box textarea, div.payment_box input.input-text, div.payment_box textarea{
-				font-size: 1.16em!important;
-		    	padding-left: 7px!important;
-		    	padding-top: 2px!important;
-		    	padding-bottom: 2px!important;
+			div.payment_box{
+				max-width: 500px;
+				input.input-text, div.payment_box textarea, div.payment_box input.input-text, div.payment_box textarea, div.payment_box input.input-text, div.payment_box textarea{
+					font-size: 1.16em!important;
+				    padding-left: 7px!important;
+				    padding-top: 2px!important;
+				    padding-bottom: 2px!important;
+				}
 			}
 			div.form-row{
 				padding: 0;
