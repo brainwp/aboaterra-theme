@@ -61,7 +61,7 @@ add_filter( 'loop_shop_columns', 						'odin_loop_columns' );
  * @return write
  */
 function show_cart_link_after_btn() {
-	printf( '<a href="%s" class="btn btn-primary btn-cart-link">%s</a>', WC()->cart->get_cart_url(), __( 'Finalizar compra', 'odin' ) );
+	printf( '<a href="%s" class="btn btn-primary btn-cart-link">%s</a>', wc_get_cart_url(), __( 'Finalizar compra', 'odin' ) );
 }
 add_action( 'woocommerce_after_add_to_cart_button', 'show_cart_link_after_btn' );
 /**
@@ -184,7 +184,7 @@ function adiciona_limpa_carrinho() {
 					</a>
 				</div>
 				<div class="col-md-6">
-					<?php $empty_cart_url = WC()->cart->get_cart_url . '?empty_cart=true';?>
+					<?php $empty_cart_url = wc_get_cart_url() . '?empty_cart=true';?>
 					<a href="<?php echo wp_nonce_url( $empty_cart_url, 'empty_cart' );?>" class="btn btn-cart-link" id="cart-empty-link" data-confirm="<?php esc_attr_e( 'Clique em OK para esvaziar o carrinho de compras e retornar para página inicial', 'odin' );?>">
 						<?php _e( 'Esvaziar Carrinho', 'odin' );?>
 					</a>
@@ -195,7 +195,7 @@ function adiciona_limpa_carrinho() {
 				<a href="<?php echo home_url();?>" class="btn btn-cart-link">
 					<?php _e( 'Continuar comprando', 'odin' );?>
 				</a>
-				<?php $empty_cart_url = WC()->cart->get_cart_url . '?empty_cart=true';?>
+				<?php $empty_cart_url = wc_get_cart_url() . '?empty_cart=true';?>
 				<a href="<?php echo wp_nonce_url( $empty_cart_url, 'empty_cart' );?>" class="btn btn-cart-link" id="cart-empty-link" data-confirm="<?php esc_attr_e( 'Clique em OK para esvaziar o carrinho de compras e retornar para página inicial', 'odin' );?>">
 					<?php _e( 'Esvaziar Carrinho', 'odin' );?>
 				</a>
@@ -238,7 +238,10 @@ function bundle_child_link($cart_item, $cart_item_key) {
 	}
 }
 function key_on_class( $class, $values, $values_key ) {
+	if (isset($values['bundled_by'])) {
         $class .= ' '.$values['bundled_by'];
+	}
+
     return $class;
 }
 add_filter( 'woocommerce_cart_item_class', 'key_on_class', 10, 3 );

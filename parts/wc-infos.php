@@ -11,7 +11,7 @@
 	<span class="separator">|</span>
 <?php endif;?>
 <?php if ( function_exists( 'WC' ) ) : ?>
-	<a data-href="<?php echo WC()->cart->get_cart_url();?>" class="myacc mini-cart-icon" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	<a data-href="<?php echo wc_get_cart_url();?>" class="myacc mini-cart-icon" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 		<i class="fa fa-shopping-cart"></i>
 		<span class="cart-infos">[<?php echo WC()->cart->get_cart_contents_count();?>]</span>
 	</a>
@@ -19,7 +19,7 @@
 		<ul class="dropdown-menu cart-dropdown" aria-labelledby="dLabel">
 			<div class="col-md-12">
 				<div class="col-md-12 text-center">
-					<a href="<?php echo WC()->cart->get_cart_url();?>" class="btn btn-primary btn-large btn-buy"><?php _e( 'Ver Carrinho', 'odin' );?></a>
+					<a href="<?php echo wc_get_cart_url();?>" class="btn btn-primary btn-large btn-buy"><?php _e( 'Ver Carrinho', 'odin' );?></a>
 				</div><!-- .col-md-12 text-center -->
 
 				<div class="separator"></div><!-- .separator -->
@@ -34,7 +34,13 @@
 					</div><!-- .col-md-6 pull-left img -->
 					<div class="col-md-7 pull-right col-xs-12">
 						<div class="post-title">
-							<?php echo apply_filters( 'the_title', $cart_item['data']->post->post_title );?>
+
+							<?php
+							// echo 'aqui';
+							//
+							// print_r($cart_item['data']);
+							// die;
+							echo apply_filters( 'the_title', $cart_item['data']->get_name() );?>
 						</div><!-- .col-md-12 post-title -->
 						<div class="qty-infos">
 							<?php printf( '%s x %s %s', $cart_item['quantity'], get_woocommerce_currency_symbol(), $cart_item['line_total'] );?>

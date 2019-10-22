@@ -66,7 +66,7 @@
 					if ( ! empty( $header_image ) ) :
 				?>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="mobile-thing">
-						<img src="<?php echo esc_url( $header_image ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="" class="col-xs-7 col-md-12"/>
+						<img src="<?php echo esc_url( $header_image ); ?>"  alt="" class="col-xs-7 col-md-12"/>
 					</a>
 				<?php endif; ?>
 

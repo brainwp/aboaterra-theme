@@ -95,7 +95,7 @@
 		}
 		public function add_checkout_password($checkout){
 			$meta = get_user_meta( get_current_user_id(), 'generated_pass', true);
-			if ($meta[0]) {
+			if (isset($meta[0])) {
 				?>
 				<p class="form-row validate-required" id="brasa_password_field" data-priority="">
 					<label for="brasa_checkout_password" class="">
