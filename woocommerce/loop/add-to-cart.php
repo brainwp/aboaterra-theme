@@ -35,7 +35,7 @@ else {
 <div class="add-to-cart-container">
 	<div class="buttons-qty col-md-8 pull-left col-xs-12">
 		<span>+</span>
- 		<input data-id="<?php echo $product->id;?>" type="text" value="<?php echo esc_attr( $quantity );?>" />
+ 		<input data-id="<?php echo $product->get_id();?>" type="text" value="<?php echo esc_attr( $quantity );?>" />
  		<span>-</span>
 	</div><!-- .buttons-qty -->
 	<div class="col-md-4 cart-btn">
@@ -44,7 +44,7 @@ else {
 			sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s col-xs-12">%s</a>',
 				esc_url( $product->add_to_cart_url() ),
 				esc_attr( $quantity ),
-				esc_attr( $product->id ),
+				esc_attr( $product->get_id() ),
 				esc_attr( $product->get_sku() ),
 				esc_attr( isset( $class ) ? $class : 'button' ),
 				'<i class="fa fa-shopping-cart hhgg col-xs-12"></i>'

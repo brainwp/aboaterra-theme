@@ -44,7 +44,7 @@ if ( $max_value && $min_value === $max_value ) {
 			size="4"
 			pattern="<?php echo esc_attr( $pattern ); ?>"
 			inputmode="<?php echo esc_attr( $inputmode ); ?>"
-			aria-labelledby="<?php echo esc_attr( $labelledby ); ?>" />
+			aria-labelledby="<?php echo esc_attr( $label ); ?>" />
 		<span>-</span>
 		<?php do_action( 'woocommerce_after_quantity_input_field' ); ?>
 	</div>

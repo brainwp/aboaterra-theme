@@ -74,7 +74,7 @@ function show_select_qty_btn_single() {
 	if ( ! $product->is_sold_individually() ) {
 		echo '<div class="buttons-qty">';
 		echo '<span>+</span>';
- 		echo '<input class="single-product" data-id="' . $product->id . '" type="text" value="' . $qty . '" />';
+ 		echo '<input class="single-product" data-id="' . $product->get_id() . '" type="text" value="' . $qty . '" />';
  		echo '<span>-</span>';
  		echo '</div>';
 	}
@@ -219,7 +219,7 @@ function bbloomer_change_cross_sells_product_no( $columns ) {
 // tira imagens de itens de bundle products
 add_filter( 'woocommerce_cart_item_thumbnail', 'no_image_for_bundle', 10, 3 );
 function no_image_for_bundle(  $product_get_image, $cart_item, $cart_item_key  ) {
-	if ($cart_item['bundled_by']) {
+	if (isset($cart_item['bundled_by'])) {
 		return ;
 	}
 	else{return $product_get_image;}
@@ -231,7 +231,7 @@ add_action( 'woocommerce_after_cart_item_name', 'bundle_child_link', 10, 2);
 function bundle_child_link($cart_item, $cart_item_key) {
 	// print_r($cart_item);
 	// die;
-	if ($cart_item['bundled_items']) {
+	if (isset($cart_item['bundled_items'])) {
 		?>
 		<div><a data-key="<?php echo $cart_item_key ?>" class=" button open-bundle-links" href="#open-bundle-links">Ver itens</a></div>
 		<?php

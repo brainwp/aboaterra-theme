@@ -549,8 +549,8 @@ add_action( 'manage_shop_order_posts_custom_column', 'sv_wc_cogs_add_qty_column_
 // lista produtos na cache_javascript_headers()
 function product_list_bundle(){
 	global $product;
-	print_r(get_post_meta( $product->id ));
-	print_r($product->id);
+	print_r(get_post_meta( $product->get_id() ));
+	print_r($product->get_id());
 	if ( $product->is_type( 'yith_bundle' ) ) : ?>
 	<div class="product-grouped">
 		<span class="col-md-12 product-grouped-list section-title">
