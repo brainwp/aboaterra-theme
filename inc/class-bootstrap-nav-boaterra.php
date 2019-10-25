@@ -26,7 +26,7 @@ class Odin_Bootstrap_Boaterra_Nav_Walker extends Walker_Nav_Menu {
 		$class = '';
 		$after = '';
 		if ( $this->product_category  ) {
-			if ( $image_id = get_woocommerce_term_meta( $this->product_category, 'thumbnail_id', true ) ) {
+			if ( $image_id = get_term_meta( $this->product_category, 'thumbnail_id', true ) ) {
 				$image_attributes = wp_get_attachment_image_src( $image_id, 'thumbnail' );
 				$after = sprintf( '<img src="%s" class="pull-right">', $image_attributes[0] );
 				$class = 'has-image';
