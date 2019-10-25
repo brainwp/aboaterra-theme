@@ -43,16 +43,20 @@
 							echo apply_filters( 'the_title', $cart_item['data']->get_name() );?>
 						</div><!-- .col-md-12 post-title -->
 						<div class="qty-infos">
-							<?php printf( '%s x %s %s', $cart_item['quantity'], get_woocommerce_currency_symbol(), $cart_item['line_total'] );?>
+							<?php printf( '%s x %s %s', $cart_item['quantity'], get_woocommerce_currency_symbol(), $cart_item['line_subtotal'] );?>
 						</div><!-- .col-md-12 qty-infos -->
 					</div><!-- .col-md-6 pull-right -->
 					<div class="separator"></div><!-- .separator -->
 				<?php endforeach;?>
 				<div class="post-title"><?php printf( __( 'Total de itens adicionados: <span>%s</span>', 'odin'), WC()->cart->get_cart_contents_count() );?></div><!-- .post-title -->
-				<div class="post-title"><?php printf( __( 'SUBTOTAL: <span>%s</span>', 'odin'), WC()->cart->get_cart_subtotal() );?>
+				<div class="post-title"><?php printf( __( 'Total: <span>%s</span>', 'odin'), WC()->cart->get_cart_subtotal() );?>
 				</div><!-- .post-title -->
 				<div class="separator"></div><!-- .separator -->
-				<div class="post-title"><?php printf( __( 'TOTAL: <span class="big">%s</span>', 'odin'), WC()->cart->get_cart_total() );?></div><!-- .post-title -->
+				<!-- <div class="post-title"> -->
+					<?php
+					// printf( __( 'TOTAL: <span class="big">%s</span>', 'odin'), WC()->cart->cart_contents_total );?>
+				<!-- </div> -->
+				<!-- .post-title -->
 
 			</div><!-- .col-md-12 -->
   		</ul>
