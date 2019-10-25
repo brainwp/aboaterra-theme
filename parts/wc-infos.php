@@ -49,9 +49,7 @@
 					<div class="separator"></div><!-- .separator -->
 				<?php endforeach;?>
 				<div class="post-title"><?php printf( __( 'Total de itens adicionados: <span>%s</span>', 'odin'), WC()->cart->get_cart_contents_count() );?></div><!-- .post-title -->
-				<div class="post-title"><?php printf( __( 'Total: <span>%s</span>', 'odin'), WC()->cart->get_cart_subtotal() );?>
-				</div><!-- .post-title -->
-				<div class="separator"></div><!-- .separator -->
+				<div class="post-title"><?php printf( __( 'TOTAL: <span class="big">%s</span>', 'odin'), WC()->cart->get_cart_subtotal() );?></div><!-- .post-title -->
 				<!-- <div class="post-title"> -->
 					<?php
 					// printf( __( 'TOTAL: <span class="big">%s</span>', 'odin'), WC()->cart->cart_contents_total );?>

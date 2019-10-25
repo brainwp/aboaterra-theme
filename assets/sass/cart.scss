@@ -513,6 +513,11 @@ body.woocommerce-cart {
 	.col-md-12{
 		padding: 0px;
 	}
+	.dropdown-menu{
+		.col-md-12{
+			padding: 15px;
+		}
+	}
 	@media screen and( max-width: 992px ) {
 		body.woocommerce-cart .cart-collaterals .cross-sells ul li, body.woocommerce-checkout .cart-collaterals .cross-sells ul li{
 			flex-basis: initial;
