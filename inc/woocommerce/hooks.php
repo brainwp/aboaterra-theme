@@ -325,9 +325,6 @@ function container_single_product(  ) {
 	<div class="col-md-12">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
-					<?php odin_breadcrumbs( get_bloginfo( 'name' ) );?>
-				</div><!-- .col-md-12 -->
 				<div class="col-md-12 woocommerce-main">
 	<?php
 }
