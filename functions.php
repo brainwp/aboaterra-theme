@@ -468,22 +468,6 @@ add_action('init','plugin_prefix_unregister_post_type');
  */
 require_once get_template_directory() . '/inc/class-order-to-txt.php';
 
-/**
- * Check Delivery
- */
-require_once get_template_directory() . '/inc/class-check-delivery.php';
-function init_brasa_check_delivery_aboaterra() {
-	$error = null;
-	if ( $value = get_theme_mod( 'delivery_error', false ) ) {
-		$value = htmlspecialchars_decode( $value );
-		$error = "<span class='error animated bounceInUp'>{$value}</span>";
-	}
-	new Brasa_Check_Delivery( null, $error );
-}
-add_action( 'init', 'init_brasa_check_delivery_aboaterra', 9999 );
-
-?>
-<?php
 function wc_remove_related_products( $args ) {
          return array();
 }
